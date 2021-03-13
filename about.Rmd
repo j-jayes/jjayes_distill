@@ -1,0 +1,44 @@
+---
+title: "Jonathan Jayes"
+image: "images/lomma.jpeg"
+links:
+  - label: LinkedIn
+    url: "https://www.linkedin.com/in/jonathanjayes/"
+  - label: Twitter
+    url: "https://twitter.com/JonathanJayes"
+  - label: GitHub
+    url: "https://github.com/j-jayes"
+  - label: Email
+    url: "mailto:j0nathanjayes@gmail.com"
+output:
+  postcards::trestles
+---
+ 
+## Bio
+
+I enjoy some of the old and I enjoy the new
+And if I can find a balance between it, that's where I find my satisfaction
+
+## Education
+
+**Lund University** | Lund, Sweden
+
+Exchange Semester | January 2021 - June 2021
+
+**Stellenbosch University** | Stellenbosch, South Africa
+
+MComm in Economics | January 2020 - December 2021
+
+**The University of Cape Town** | Cape Town, South Africa
+
+Honours in Economics | February 2018 - November 2018
+
+**The University of Cape Town** | Cape Town, South Africa
+
+BSocSci in Economics and Economic History | February 2015 - November 2017
+
+## Experience
+
+**Laboratory for the Economics of Africa's Past** | Researcher | January 2020 - Present
+
+**FTI Consulting** | Junior Economist in Economic and Financial Consulting Practice | March 2019 - January 2020
