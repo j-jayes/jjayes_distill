@@ -5,7 +5,7 @@ description: |
 preview: images/reg_1.jpeg
 author:
   - name: Jonathan Jayes
-date: 20-02-2021
+date: 02-20-2021
 output:
   distill::distill_article:
     self_contained: false
