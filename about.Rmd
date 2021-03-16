@@ -6,8 +6,6 @@ links:
     url: "https://www.linkedin.com/in/jonathanjayes/"
   - label: Twitter
     url: "https://twitter.com/JonathanJayes"
-  - label: GitHub
-    url: "https://github.com/j-jayes"
   - label: Email
     url: "mailto:j0nathanjayes@gmail.com"
 output:
@@ -16,7 +14,7 @@ output:
  
 ## Bio
 
-I enjoy some of the old and I enjoy the new
+I enjoy some of the old and I enjoy the new. 
 And if I can find a balance between it, that's where I find my satisfaction
 
 ## Education

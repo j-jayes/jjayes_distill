@@ -1,9 +1,15 @@
 name: "blog"
 title: "Ripe and Ruin"
+favicon: images/favicon.ico
+theme: theme_tidy_models.css
 description: |
   Jonathan Jayes' data blog
 output_dir: "_site"
+creative_commons: CC BY-SA
 navbar:
+  logo:
+    image: images/logo.png
+    href: https://www.linkedin.com/in/jonathanjayes/
   right:
     - text: "Home"
       href: index.html
