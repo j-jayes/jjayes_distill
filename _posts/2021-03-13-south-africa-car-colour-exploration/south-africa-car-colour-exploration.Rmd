@@ -13,7 +13,6 @@ output:
     highlight: haddock
     highlight_downlit: true
     toc: true
-draft: true
 ---
 
 
