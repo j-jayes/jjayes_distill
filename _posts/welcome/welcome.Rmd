@@ -2,6 +2,7 @@
 title: "Welcome to Ripe and Ruin"
 description: |
   Like all good fruit, the balance of life is in the ripe and ruin
+preview: images/alt-j.jpg
 author:
   - name: Jonathan Jayes
 date: 03-13-2021
