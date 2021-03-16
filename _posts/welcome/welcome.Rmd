@@ -4,9 +4,6 @@ description: |
   Like all good fruit, the balance of life is in the ripe and ruin
 author:
   - name: Jonathan Jayes
-    url: https://example.com/norajones
-    affiliation: Spacely Sprockets
-    affiliation_url: https://example.com/spacelysprokets
 date: 03-13-2021
 output:
   distill::distill_article:
