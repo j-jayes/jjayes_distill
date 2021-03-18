@@ -11,8 +11,10 @@ navbar:
     image: images/logo_circo.png
     href: https://www.linkedin.com/in/jonathanjayes/
   right:
-    - text: "Car Price Comparison App"
-      href: http://jonathan-jayes.shinyapps.io/gumtree-price-explorer
+    - text: "Web Apps"
+      menu:
+        text: "Car Price Comparison App"
+        href: http://jonathan-jayes.shinyapps.io/gumtree-price-explorer
     - text: "Home"
       href: index.html
     - text: "About"
