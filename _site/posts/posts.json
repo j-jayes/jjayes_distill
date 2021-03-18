@@ -1,8 +1,8 @@
 [
   {
     "path": "posts/welcome/",
-    "title": "Welcome to Ripe and Ruin",
-    "description": "Like all good fruit, the balance of life is in the ripe and ruin",
+    "title": "Welcome to Interlude One",
+    "description": "\"Like all good fruit, the balance of life is in the ripe and ruin\"",
     "author": [
       {
         "name": "Jonathan Jayes",
@@ -11,10 +11,10 @@
     ],
     "date": "2021-03-13",
     "categories": [],
-    "contents": "\r\n\r\n\r\n\r\n\r\n\r\n",
+    "contents": "\r\nThis is a line from Interlude One off of Alt-J’s first album, An Awesome Wave. I like this lyric a great deal!\r\nI aspire to balance in my own life. This site is a space to share what I find interesting, and encourage me to keep learning and sharing. It includes exploratory data analyses, R tutorials, and answers to some data specific questions. I hope that you enjoy your look around.\r\n\r\n\r\n\r\n\r\n\r\n",
     "preview": "posts/welcome/images/alt-j.jpg",
-    "last_modified": "2021-03-16T16:27:26+01:00",
-    "input_file": "welcome.utf8.md"
+    "last_modified": "2021-03-18T12:05:30+01:00",
+    "input_file": {}
   },
   {
     "path": "posts/2021-03-16-swedish-trade-in-goods-and-exchange-students/",
