@@ -16,12 +16,11 @@ output:
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
-This is a line from Interlude One off of Alt-J's first album, An Awesome Wave. I like this lyric a great deal!
+Here's a [link](http://jonathan-jayes.shinyapps.io/gumtree-price-explorer) to the webapp, along with an image of what it looks like.
 
-<iframe src="http://jonathan-jayes.shinyapps.io/gumtree-price-explorer" width="100%" height="1000px"></iframe>
+<center>
 
-Distill is a publication format for scientific and technical writing, native to the web.
+![Web App](images/preview.png){#id .class width=50% height=50%}
+</center>
 
-Learn more about using Distill at <https://rstudio.github.io/distill>.
-
-
+I hope that you find it useful!
