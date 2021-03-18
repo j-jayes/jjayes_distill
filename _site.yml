@@ -1,6 +1,6 @@
 name: "blog"
 title: "Interlude One"
-favicon: images/favicon_logo.ico
+favicon: images/favicon.ico
 theme: theme_tidy_models.css
 description: |
   Jonathan Jayes' data blog
