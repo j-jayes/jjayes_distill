@@ -13,8 +13,8 @@ navbar:
   right:
     - text: "Web Apps"
       menu:
-        text: "Car Price Comparison App"
-        href: http://jonathan-jayes.shinyapps.io/gumtree-price-explorer
+        - text: "Second Hand Car Price Comparison Tool"
+          href: http://jonathan-jayes.shinyapps.io/gumtree-price-explorer
     - text: "Home"
       href: index.html
     - text: "About"
