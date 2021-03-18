@@ -1,0 +1,28 @@
+---
+title: "Car Price Comparison Tool"
+description: |
+  This webapp helps South Africans gauge the median price for a second hand car. You can compare price by odometer reading, make and model, and province. Ad links are included in a table beside the output.
+preview: images/preview.png
+author:
+  - name: Jonathan Jayes
+date: 03-18-2021
+output:
+  distill::distill_article:
+    self_contained: false
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+You can explore different models by selecting from the box
+
+<iframe src="https://jonathan-jayes.shinyapps.io/gumtree-price-explorer/?_ga=2.172808043.917374292.1616078481-881716955.1612361916" style="border: 0; position:absolute; top:0; left:0; right:0; bottom:0; width:100%; height:100%">
+
+
+Distill is a publication format for scientific and technical writing, native to the web.
+
+Learn more about using Distill at <https://rstudio.github.io/distill>.
+
+

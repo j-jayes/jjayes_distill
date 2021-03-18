@@ -1,5 +1,22 @@
 [
   {
+    "path": "posts/2021-03-18-car-price-explorer/",
+    "title": "Car Price Comparison Tool",
+    "description": "This webapp helps South Africans gauge the median price for a second hand car. You can compare price by odometer reading, make and model, and province. Ad links are included in a table beside the output.",
+    "author": [
+      {
+        "name": "Jonathan Jayes",
+        "url": {}
+      }
+    ],
+    "date": "2021-03-18",
+    "categories": [],
+    "contents": "\r\nYou can explore different models by selecting from the box\r\n\r\nDistill is a publication format for scientific and technical writing, native to the web.\r\nLearn more about using Distill at https://rstudio.github.io/distill.\r\n\r\n\r\n\r\n",
+    "preview": "posts/2021-03-18-car-price-explorer/images/preview.png",
+    "last_modified": "2021-03-18T15:48:54+01:00",
+    "input_file": "car-price-explorer.utf8.md"
+  },
+  {
     "path": "posts/welcome/",
     "title": "Welcome to Interlude One",
     "description": "\"Like all good fruit, the balance of life is in the ripe and ruin\"",
