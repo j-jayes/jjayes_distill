@@ -73,7 +73,7 @@ The first I downloaded from an amazing trade tool called the Observatory of Econ
 <center>
 
 
-![Tree Map](C:/Users/User/Documents/Recon/Misc Graphics/data/Sweden_trade_exchange/tree_map.png){#id .class width=50% height=50%}
+![Tree Map](data/Sweden_trade_exchange/tree_map.png){#id .class width=50% height=50%}
 
 
 The tree map shows the origins of Sweden's imports by value in 2018. Sweden cares about limiting carbon emissions, and so it makes sense that the majority of their imports are sourced within Europe.
