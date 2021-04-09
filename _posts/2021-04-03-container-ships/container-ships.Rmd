@@ -239,6 +239,10 @@ Now that we have had a look at the data, I want to walk through how it can easil
 
 The source of the pre-1970 data is Wikipedia's list of cargo ships, a screenshot of which I include below. The plan to get the data involves collecting a list of links to each page and then scraping the information about each ship from it's page. The code chunks below show the process of scraping the data and you can access the scripts on my [GitHub repository](https://github.com/j-jayes/container-ships).
 
+<aside>
+If you want to follow along with a video of the scraping process, I highly recommend [this video on ramen reviews](https://youtu.be/tCa2di7aEP4) from David Robinson.
+</aside>
+
 <center>
 
 ![List of cargo ships](images/wikipedia_list_of_cargo_ships.png){#id .class width=80% height=80%}
