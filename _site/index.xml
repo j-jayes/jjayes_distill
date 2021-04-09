@@ -12,14 +12,14 @@
       <link>https://interludeone.com/</link>
     </image>
     <generator>Distill</generator>
-    <lastBuildDate>Thu, 08 Apr 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 07 Apr 2021 00:00:00 +0000</lastBuildDate>
     <item>
       <title>Shipping and Scraping - Part 1</title>
       <dc:creator>Jonathan Jayes</dc:creator>
       <link>https://interludeone.com/posts/2021-04-03-container-ships</link>
       <description>In this post I walk through scraping data on cargo ships from Wikipedia as part of a series on shipping. I make use of R, the rvest package for webscraping and the SelectorGadget tool for CSS selection.</description>
       <guid>https://interludeone.com/posts/2021-04-03-container-ships</guid>
-      <pubDate>Thu, 08 Apr 2021 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 07 Apr 2021 00:00:00 +0000</pubDate>
       <media:content url="https://interludeone.com/posts/2021-04-03-container-ships/images/preview_ship_linkedin.jpeg" medium="image" type="image/jpeg"/>
     </item>
     <item>
@@ -46,7 +46,7 @@
       <link>https://interludeone.com/posts/2021-03-18-car-price-explorer</link>
       <description>This web app helps South Africans gauge the median price for a second hand car. You can compare price by odometer reading, make and model, and province. Ad links are included in a table beside the output.</description>
       <guid>https://interludeone.com/posts/2021-03-18-car-price-explorer</guid>
-      <pubDate>Fri, 09 Oct 2020 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 10 Oct 2020 00:00:00 +0000</pubDate>
       <media:content url="https://interludeone.com/posts/2021-03-18-car-price-explorer/images/preview.png" medium="image" type="image/png" width="1136" height="679"/>
     </item>
     <item>

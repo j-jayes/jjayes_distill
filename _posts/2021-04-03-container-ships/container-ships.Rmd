@@ -227,7 +227,7 @@ According to Marc Levinson, author of [The Box: How the Shipping Container Made 
 Bigger ships lowered the cost of carrying each container. Bigger ports with bigger cranes lowered the cost of handling each ship. Bigger containers — the 20-foot box, shippers’ favorite in the early 1970s, was yielding to the 40-footer — cut down on crane movements and reduced the time needed to turn a vessel around in port, making more efficient use of capital. A virtuous circle had developed: lower costs per container permitted lower rates, which drew more freight, which supported yet more investments in order to lower unit costs even more. If ever there was a business in which economies of scale mattered, container shipping was it.
 </blockquote>
 
-The consequences of containerization are fascinating -- including rapidly falling costs of trade, increasingly intermeshed global supply chains, a proliferation of robots at ports, and the environmental challenges associated with ships trucks and trains meeting at transshipping nodes around the world.
+The consequences of containerization are fascinating -- including rapidly falling costs of trade, increasingly intermeshed global supply chains, a proliferation of robots at ports, and the environmental challenges associated with ships, trucks and trains meeting at transshipping nodes around the world.
 
 In the remainder of this post I walk through scraping some of the data presented above.
 
