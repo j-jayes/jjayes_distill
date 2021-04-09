@@ -18,7 +18,7 @@ knitr::opts_chunk$set(echo = FALSE)
 
 Here's a [link](http://jonathan-jayes.shinyapps.io/gumtree-price-explorer) to the web app, along with an image of what it looks like.
 
-The app has three components. In the scatter plot ou can see the price of each car advertised on Gumtree on the y-axis against its odometer reading on the x. Below this is a box and whisker plot of price to show the distribution of prices for the cars in the range. To the right is a table showing the details of each advert along with a link. You can choose the make, model, province, odometer range and year of manufacture in the panel on the left.
+The app has three components. In the scatter plot you can see the price of each car advertised on Gumtree on the y-axis against its odometer reading on the x. Below this is a box and whisker plot of price to show the distribution of prices for the cars in the range. To the right is a table showing the details of each advert along with a link. You can choose the make, model, province, odometer range and year of manufacture in the panel on the left.
 
 <center>
 
