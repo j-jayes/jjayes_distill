@@ -1,5 +1,6 @@
 name: "blog"
 title: "Interlude One"
+base_url: https://interludeone.com/
 favicon: images/favicon.ico
 theme: theme_tidy_models.css
 description: |
