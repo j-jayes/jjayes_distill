@@ -88,7 +88,7 @@ Today, container ships like the *Ever Given* are nearly 400m long, 60m wide, and
 TEUs, or twenty-foot equivalent units, is the measure that shipping companies use to compare volume. A TEU is 6.1m long, 2.4m wide and usually 2.6m high. Source: [Wikipedia](https://en.wikipedia.org/wiki/Twenty-foot_equivalent_unit)
 </aside>
 
-### Increasing size of container ships by lenght, width and tonnage.
+### Increasing size of container ships by length, width and tonnage.
 
 In the plots below we focus only on container ships built after 1970. This era saw the construction of the first ships purpose built to carry ISO containers, which could be loaded and unloaded rapidly at port, repacked and shipped onward on any compatible ship, truck or train. The ISO standard container transformed the shipping industry and replaced the prior status quo of break bulk carriers. One of the consequences was a dramatic reduction in demand for "stevedores" or "longshoremen"; workers who would manually unload cargo from break bulk carriers.
 
