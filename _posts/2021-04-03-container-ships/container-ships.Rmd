@@ -90,7 +90,7 @@ TEUs, or twenty-foot equivalent units, is the measure that shipping companies us
 
 ### Increasing size of container ships by lenght, width and tonnage.
 
-In the plots below we see focus only on container ships built after 1970. This era saw the construction of the first ships purpose built to carry ISO containers, which could be loaded and unloaded rapidly at port, repacked and shipped onward on any compatible ship, truck or train. The ISO standard container transformed the shipping industry and replaced the prior status quo of break bulk carriers. One of the consequences was a dramatic reduction in demand for "stevedores" or "longshoremen"; workers who would manually unload cargo from break bulk carriers.
+In the plots below we focus only on container ships built after 1970. This era saw the construction of the first ships purpose built to carry ISO containers, which could be loaded and unloaded rapidly at port, repacked and shipped onward on any compatible ship, truck or train. The ISO standard container transformed the shipping industry and replaced the prior status quo of break bulk carriers. One of the consequences was a dramatic reduction in demand for "stevedores" or "longshoremen"; workers who would manually unload cargo from break bulk carriers.
 
 <aside>
 If you're interested in containerization, I highly reccomend [this episode](https://www.tradetalkspodcast.com/podcast/133-how-one-man-and-some-metal-boxes-revolutionized-global-trade/) from the podcast Trade Talks, and [this eight-part series](https://cms.megaphone.fm/channel/PPY8156500299?selected=PPY1876923489) from Alexis Madrigal.
