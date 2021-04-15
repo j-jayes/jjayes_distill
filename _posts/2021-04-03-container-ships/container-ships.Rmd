@@ -1,5 +1,5 @@
 ---
-title: "Shipping and Scraping - Part 1"
+title: "Shipping and Scraping - Part 1 in a Series on Shipping"
 description: |
   In this post I walk through scraping data on cargo ships from Wikipedia as part of a series on shipping. I make use of R, the rvest package for webscraping and the SelectorGadget tool for CSS selection.
 preview: images/preview_ship_linkedin.jpeg
