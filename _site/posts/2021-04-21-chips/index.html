@@ -54,84 +54,79 @@ div.sourceCode
 @media screen {
 code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-code span.al { color: #ad0000; } /* Alert */
-code span.an { color: #5e5e5e; } /* Annotation */
-code span.at { color: #20794d; } /* Attribute */
-code span.bn { color: #ad0000; } /* BaseN */
+code span.al { color: #ff0000; } /* Alert */
+code span.an { color: #008000; } /* Annotation */
+code span.at { } /* Attribute */
 code span.bu { } /* BuiltIn */
-code span.cf { color: #007ba5; } /* ControlFlow */
-code span.ch { color: #20794d; } /* Char */
-code span.cn { color: #8f5902; } /* Constant */
-code span.co { color: #5e5e5e; } /* Comment */
-code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
-code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
-code span.dt { color: #ad0000; } /* DataType */
-code span.dv { color: #ad0000; } /* DecVal */
-code span.er { color: #ad0000; } /* Error */
+code span.cf { color: #0000ff; } /* ControlFlow */
+code span.ch { color: #008080; } /* Char */
+code span.cn { } /* Constant */
+code span.co { color: #008000; } /* Comment */
+code span.cv { color: #008000; } /* CommentVar */
+code span.do { color: #008000; } /* Documentation */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
 code span.ex { } /* Extension */
-code span.fl { color: #ad0000; } /* Float */
-code span.fu { color: #4758ab; } /* Function */
 code span.im { } /* Import */
-code span.in { color: #5e5e5e; } /* Information */
-code span.kw { color: #007ba5; } /* Keyword */
-code span.op { color: #5e5e5e; } /* Operator */
-code span.ot { color: #007ba5; } /* Other */
-code span.pp { color: #ad0000; } /* Preprocessor */
-code span.sc { color: #20794d; } /* SpecialChar */
-code span.ss { color: #20794d; } /* SpecialString */
-code span.st { color: #20794d; } /* String */
-code span.va { color: #111111; } /* Variable */
-code span.vs { color: #20794d; } /* VerbatimString */
-code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
+code span.in { color: #008000; } /* Information */
+code span.kw { color: #0000ff; } /* Keyword */
+code span.op { } /* Operator */
+code span.ot { color: #ff4000; } /* Other */
+code span.pp { color: #ff4000; } /* Preprocessor */
+code span.sc { color: #008080; } /* SpecialChar */
+code span.ss { color: #008080; } /* SpecialString */
+code span.st { color: #008080; } /* String */
+code span.va { } /* Variable */
+code span.vs { color: #008080; } /* VerbatimString */
+code span.wa { color: #008000; font-weight: bold; } /* Warning */
 </style>
 
   <!--radix_placeholder_meta_tags-->
-<title>Interlude One: Welcome to Interlude One</title>
+<title>Interlude One: Recreating Our World In Data’s Beautiful Transistor Count Graphic</title>
 
-<meta property="description" itemprop="description" content="&quot;Like all good fruit, the balance of life is in the ripe and ruin&quot;"/>
+<meta property="description" itemprop="description" content="Scraping data from Wikipedia and recreating OWID&#39;s figure with ggplot2."/>
 
-<link rel="canonical" href="https://interludeone.com/posts/welcome/"/>
+<link rel="canonical" href="https://interludeone.com/posts/2021-04-21-chips/"/>
 <link rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/"/>
 <link rel="icon" type="image/vnd.microsoft.icon" href="../../images/favicon.ico"/>
 
 <!--  https://schema.org/Article -->
-<meta property="article:published" itemprop="datePublished" content="2020-03-13"/>
-<meta property="article:created" itemprop="dateCreated" content="2020-03-13"/>
+<meta property="article:published" itemprop="datePublished" content="2020-04-08"/>
+<meta property="article:created" itemprop="dateCreated" content="2020-04-08"/>
 <meta name="article:author" content="Jonathan Jayes"/>
 
 <!--  https://developers.facebook.com/docs/sharing/webmasters#markup -->
-<meta property="og:title" content="Interlude One: Welcome to Interlude One"/>
+<meta property="og:title" content="Interlude One: Recreating Our World In Data’s Beautiful Transistor Count Graphic"/>
 <meta property="og:type" content="article"/>
-<meta property="og:description" content="&quot;Like all good fruit, the balance of life is in the ripe and ruin&quot;"/>
-<meta property="og:url" content="https://interludeone.com/posts/welcome/"/>
-<meta property="og:image" content="https://interludeone.com/posts/welcome/images/alt-j.jpg"/>
+<meta property="og:description" content="Scraping data from Wikipedia and recreating OWID&#39;s figure with ggplot2."/>
+<meta property="og:url" content="https://interludeone.com/posts/2021-04-21-chips/"/>
+<meta property="og:image" content="https://interludeone.com/posts/2021-04-21-chips/figures/Transistors_colour.jpeg"/>
 <meta property="og:locale" content="en_US"/>
 <meta property="og:site_name" content="Interlude One"/>
 
 <!--  https://dev.twitter.com/cards/types/summary -->
 <meta property="twitter:card" content="summary_large_image"/>
-<meta property="twitter:title" content="Interlude One: Welcome to Interlude One"/>
-<meta property="twitter:description" content="&quot;Like all good fruit, the balance of life is in the ripe and ruin&quot;"/>
-<meta property="twitter:url" content="https://interludeone.com/posts/welcome/"/>
-<meta property="twitter:image" content="https://interludeone.com/posts/welcome/images/alt-j.jpg"/>
+<meta property="twitter:title" content="Interlude One: Recreating Our World In Data’s Beautiful Transistor Count Graphic"/>
+<meta property="twitter:description" content="Scraping data from Wikipedia and recreating OWID&#39;s figure with ggplot2."/>
+<meta property="twitter:url" content="https://interludeone.com/posts/2021-04-21-chips/"/>
+<meta property="twitter:image" content="https://interludeone.com/posts/2021-04-21-chips/figures/Transistors_colour.jpeg"/>
 
 <!--  https://scholar.google.com/intl/en/scholar/inclusion.html#indexing -->
-<meta name="citation_title" content="Interlude One: Welcome to Interlude One"/>
-<meta name="citation_fulltext_html_url" content="https://interludeone.com/posts/welcome/"/>
+<meta name="citation_title" content="Interlude One: Recreating Our World In Data’s Beautiful Transistor Count Graphic"/>
+<meta name="citation_fulltext_html_url" content="https://interludeone.com/posts/2021-04-21-chips/"/>
 <meta name="citation_fulltext_world_readable" content=""/>
-<meta name="citation_online_date" content="2020/03/13"/>
-<meta name="citation_publication_date" content="2020/03/13"/>
+<meta name="citation_online_date" content="2020/04/08"/>
+<meta name="citation_publication_date" content="2020/04/08"/>
 <meta name="citation_author" content="Jonathan Jayes"/>
 <!--/radix_placeholder_meta_tags-->
   <!--radix_placeholder_rmarkdown_metadata-->
 
 <script type="text/json" id="radix-rmarkdown-metadata">
-{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["creative_commons","title","description","preview","author","date","output","citation_url","canonical_url"]}},"value":[{"type":"character","attributes":{},"value":["CC BY-SA"]},{"type":"character","attributes":{},"value":["Welcome to Interlude One"]},{"type":"character","attributes":{},"value":["\"Like all good fruit, the balance of life is in the ripe and ruin\""]},{"type":"character","attributes":{},"value":["images/alt-j.jpg"]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name"]}},"value":[{"type":"character","attributes":{},"value":["Jonathan Jayes"]}]}]},{"type":"character","attributes":{},"value":["03-13-2020"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained"]}},"value":[{"type":"logical","attributes":{},"value":[false]}]}]},{"type":"character","attributes":{},"value":["https://interludeone.com/posts/welcome/"]},{"type":"character","attributes":{},"value":["https://interludeone.com/posts/welcome/"]}]}
+{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["creative_commons","title","description","author","preview","date","output","citation_url","canonical_url"]}},"value":[{"type":"character","attributes":{},"value":["CC BY-SA"]},{"type":"character","attributes":{},"value":["Recreating Our World In Data’s Beautiful Transistor Count Graphic"]},{"type":"character","attributes":{},"value":["Scraping data from Wikipedia and recreating OWID's figure with ggplot2."]},{"type":"list","attributes":{},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["name"]}},"value":[{"type":"character","attributes":{},"value":["Jonathan Jayes"]}]}]},{"type":"character","attributes":{},"value":["figures/Transistors_colour.jpeg"]},{"type":"character","attributes":{},"value":["04-08-2020"]},{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["distill::distill_article"]}},"value":[{"type":"list","attributes":{"names":{"type":"character","attributes":{},"value":["self_contained","code_folding","highlight","highlight_downlit","toc"]}},"value":[{"type":"logical","attributes":{},"value":[false]},{"type":"logical","attributes":{},"value":[false]},{"type":"character","attributes":{},"value":["haddock"]},{"type":"logical","attributes":{},"value":[true]},{"type":"logical","attributes":{},"value":[true]}]}]},{"type":"character","attributes":{},"value":["https://interludeone.com/posts/2021-04-21-chips/"]},{"type":"character","attributes":{},"value":["https://interludeone.com/posts/2021-04-21-chips/"]}]}
 </script>
 <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"character","attributes":{},"value":["images/alt-j.jpg","welcome_files/anchor-4.2.2/anchor.min.js","welcome_files/bowser-1.9.3/bowser.min.js","welcome_files/distill-2.2.21/template.v2.js","welcome_files/jquery-1.11.3/jquery.min.js","welcome_files/popper-2.6.0/popper.min.js","welcome_files/tippy-6.2.7/tippy-bundle.umd.min.js","welcome_files/tippy-6.2.7/tippy-light-border.css","welcome_files/tippy-6.2.7/tippy.css","welcome_files/tippy-6.2.7/tippy.umd.min.js","welcome_files/webcomponents-2.0.0/webcomponents.js"]}
+  {"type":"character","attributes":{},"value":["chips_files/anchor-4.2.2/anchor.min.js","chips_files/bowser-1.9.3/bowser.min.js","chips_files/distill-2.2.21/template.v2.js","chips_files/figure-html5/unnamed-chunk-4-1.png","chips_files/jquery-1.11.3/jquery.min.js","chips_files/popper-2.6.0/popper.min.js","chips_files/tippy-6.2.7/tippy-bundle.umd.min.js","chips_files/tippy-6.2.7/tippy-light-border.css","chips_files/tippy-6.2.7/tippy.css","chips_files/tippy-6.2.7/tippy.umd.min.js","chips_files/webcomponents-2.0.0/webcomponents.js","figures/4.1_v1.jpeg","figures/Moore's_Law_Transistor_Count_1971-2018.png","figures/transistor-count-wiki-page.PNG","figures/transistor-table.PNG","figures/Transistors_colour.jpeg"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
 <meta name="distill:offset" content="../.."/>
@@ -2417,7 +2412,7 @@ d-appendix d-footnote-list a.footnote-backlink {
 <!--radix_placeholder_front_matter-->
 
 <script id="distill-front-matter" type="text/json">
-{"title":"Welcome to Interlude One","description":"\"Like all good fruit, the balance of life is in the ripe and ruin\"","authors":[{"author":"Jonathan Jayes","authorURL":"#","affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2020-03-13T00:00:00.000+01:00","citationText":"Jayes, 2020"}
+{"title":"Recreating Our World In Data’s Beautiful Transistor Count Graphic","description":"Scraping data from Wikipedia and recreating OWID's figure with ggplot2.","authors":[{"author":"Jonathan Jayes","authorURL":"#","affiliation":"&nbsp;","affiliationURL":"#","orcidID":""}],"publishedDate":"2020-04-08T00:00:00.000+02:00","citationText":"Jayes, 2020"}
 </script>
 
 <!--/radix_placeholder_front_matter-->
@@ -2456,24 +2451,158 @@ Web Apps
 <!--/radix_placeholder_site_before_body-->
 
 <div class="d-title">
-<h1>Welcome to Interlude One</h1>
+<h1>Recreating Our World In Data’s Beautiful Transistor Count Graphic</h1>
 <!--radix_placeholder_categories-->
 <!--/radix_placeholder_categories-->
-<p><p>“Like all good fruit, the balance of life is in the ripe and ruin”</p></p>
+<p><p>Scraping data from Wikipedia and recreating OWID’s figure with ggplot2.</p></p>
 </div>
 
 <div class="d-byline">
   Jonathan Jayes  
   
-<br/>03-13-2020
+<br/>04-08-2020
 </div>
 
 <div class="d-article">
-<p>This is a line from Interlude One off of Alt-J’s first album, An Awesome Wave. I like this lyric a great deal!</p>
-<p>I aspire to balance in my own life. This site is a space to share what I find interesting, and encourage me to keep learning and sharing. It includes exploratory data analyses, R tutorials, and answers to some data specific questions. I hope that you enjoy your look around.</p>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/gBArR3FJ2ow" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-</iframe>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
+<div class="d-contents d-contents-float">
+<nav class="l-text toc figcaption" id="TOC">
+<h3>Contents</h3>
+<ul>
+<li><a href="#purpose">Purpose</a></li>
+<li><a href="#scraping">Scraping</a></li>
+<li><a href="#data-processing">Data processing</a></li>
+<li><a href="#data-viz-preparation">Data viz preparation</a></li>
+<li><a href="#plotting">Plotting</a></li>
+<li><a href="#conclusion">Conclusion</a></li>
+</ul>
+</nav>
+</div>
+<h2 id="purpose">Purpose</h2>
+<p>In this document I walk through the process to recreate a data visualization from Our World in Data. I use the web scraping package rvest to get the data from Wikipedia and some neat tidyverse tools.</p>
+<p>The graphic depicts the metal–oxide–silicon (MOS) transistor count on commercially available microprocessors over time. This progression is known as Moore’s law, which observed that the transistor count doubles approximately every two years.</p>
+<center>
+<figure>
+<img src="figures/Moore&#39;s_Law_Transistor_Count_1971-2018.png" alt="" /><figcaption>Graphic showing Moore’s Law - Our World In Data</figcaption>
+</figure>
+</center>
+<p>First, I show the wikipedia page that contains the information that I want to scrape (and contains the Our World in Data graphic).</p>
+<center>
+<figure>
+<img src="figures/transistor-count-wiki-page.PNG" id="id" class="class" style="width:50.0%;height:50.0%" alt="" /><figcaption>Wikipedia article</figcaption>
+</figure>
+</center>
+<p>The Wikipedia article on transistor counts includes a table containing 193 microprocessors released between 1971 and 2020, shown below. Crucially, it specifies for each chip the release year and transistor count.</p>
+<center>
+<figure>
+<img src="figures/transistor-table.PNG" id="id" class="class" style="width:50.0%;height:50.0%" alt="" /><figcaption>Table showing transistor count</figcaption>
+</figure>
+</center>
+<h2 id="scraping">Scraping</h2>
+<p>This chunk of code grabs the HTML of the Wikipedia page, selects all the tables on the page and saves the one we want to analyze as a tibble, a very handy dataframe alternative. Rvest’s <code>html_table</code> function returns all of the elements of a web table, neat!</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>url</span> <span class='op'>&lt;-</span> <span class='st'>"https://en.wikipedia.org/wiki/Transistor_count"</span>
+
+<span class='va'>html</span> <span class='op'>&lt;-</span> <span class='fu'>read_html</span><span class='op'>(</span><span class='va'>url</span><span class='op'>)</span>
+
+<span class='va'>html_nodeset</span> <span class='op'>&lt;-</span> <span class='va'>html</span> <span class='op'>%&gt;%</span> 
+  <span class='fu'>html_nodes</span><span class='op'>(</span><span class='st'>"table"</span><span class='op'>)</span>
+
+<span class='va'>df_transistors</span> <span class='op'>&lt;-</span> <span class='va'>html_nodeset</span><span class='op'>[[</span><span class='fl'>2</span><span class='op'>]</span><span class='op'>]</span> <span class='op'>%&gt;%</span> 
+  <span class='fu'>html_table</span><span class='op'>(</span><span class='op'>)</span> <span class='op'>%&gt;%</span> 
+  <span class='fu'>as_tibble</span><span class='op'>(</span><span class='op'>)</span>
+</code></pre>
+</div>
+</div>
+<h2 id="data-processing">Data processing</h2>
+<p>As visible in the screen capture of the table above, a few cells also hyper-link to sources for the stats. These square brackets prevent R from reading the column as a set of numbers, instead the cell contents are returned as characters. In the chunk below I use readr’s <code>parse_number</code> function to extract the numbers from each cell and store them as a double.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>df_transistors</span> <span class='op'>&lt;-</span> <span class='va'>df_transistors</span> <span class='op'>%&gt;%</span> 
+  <span class='fu'>janitor</span><span class='fu'>::</span><span class='fu'><a href='https://rdrr.io/pkg/janitor/man/clean_names.html'>clean_names</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'>%&gt;%</span> 
+  <span class='fu'>mutate</span><span class='op'>(</span>processor <span class='op'>=</span> <span class='fu'>str_squish</span><span class='op'>(</span><span class='fu'>str_remove</span><span class='op'>(</span><span class='va'>processor</span>, <span class='st'>"\\(.*"</span><span class='op'>)</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>%&gt;%</span> 
+  <span class='fu'>mutate_at</span><span class='op'>(</span><span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"mos_transistor_count"</span>, <span class='st'>"date_ofintroduction"</span>, <span class='st'>"mos_process_nm"</span>, <span class='st'>"area_mm2"</span><span class='op'>)</span>, <span class='va'>parse_number</span><span class='op'>)</span>
+</code></pre>
+</div>
+</div>
+<h2 id="data-viz-preparation">Data viz preparation</h2>
+<p>In this chunk I lump together the chip designers into the five largest groups and an ‘other’ category with forcats’ <code>fct_lump</code> function. It returns these categories as factors. To make the graphic readable, I <code>sample</code> 50 of the processors from the table of 193 to annotate onto the plot I also store some graph labels.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>df_transistors</span> <span class='op'>%&gt;%</span> 
+  <span class='fu'>count</span><span class='op'>(</span><span class='va'>designer</span>, sort <span class='op'>=</span> <span class='cn'>T</span><span class='op'>)</span>
+</code></pre>
+</div>
+<pre><code># A tibble: 40 x 2
+   designer              n
+   &lt;chr&gt;             &lt;int&gt;
+ 1 Intel                63
+ 2 AMD                  18
+ 3 Apple                14
+ 4 IBM                  13
+ 5 Fujitsu              10
+ 6 Huawei                7
+ 7 Motorola              7
+ 8 Qualcomm              7
+ 9 Texas Instruments     5
+10 Acorn                 4
+# ... with 30 more rows</code></pre>
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>df_transistors</span> <span class='op'>&lt;-</span> <span class='va'>df_transistors</span> <span class='op'>%&gt;%</span> 
+  <span class='fu'>mutate</span><span class='op'>(</span>designer <span class='op'>=</span> <span class='fu'>fct_lump</span><span class='op'>(</span><span class='va'>designer</span>, <span class='fl'>5</span><span class='op'>)</span><span class='op'>)</span>
+
+<span class='va'>processor_labels</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/sample.html'>sample</a></span><span class='op'>(</span><span class='va'>df_transistors</span><span class='op'>$</span><span class='va'>processor</span>, <span class='fl'>50</span><span class='op'>)</span>
+
+<span class='va'>title</span> <span class='op'>&lt;-</span> <span class='st'>"Moore's Law"</span>
+
+<span class='va'>subtitle</span> <span class='op'>&lt;-</span> <span class='st'>"The number of transistors on integrated circuit chips (1971-2020)"</span>
+
+<span class='va'>caption</span> <span class='op'>&lt;-</span> <span class='st'>"Source: Wikipedia - Transistor Count: https://en.wikipedia.org/wiki/Transistor_count"</span>
+</code></pre>
+</div>
+</div>
+<h2 id="plotting">Plotting</h2>
+<p>Here I draw the graphic using ggplot2.</p>
+<div class="layout-chunk" data-layout="l-body">
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'># jpeg(</span>
+<span class='co'>#     filename="C:/Users/User/Documents/Recon/jjayes_distill/_posts/2021-04-21-chips/figures/Transistors_colour.jpeg",</span>
+<span class='co'>#     width=6,</span>
+<span class='co'>#     height=4,</span>
+<span class='co'>#     units="in",</span>
+<span class='co'>#     res=1000)</span>
+
+<span class='va'>df_transistors</span> <span class='op'>%&gt;%</span> 
+  <span class='fu'>ggplot</span><span class='op'>(</span><span class='fu'>aes</span><span class='op'>(</span><span class='va'>date_ofintroduction</span>, <span class='va'>mos_transistor_count</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'>geom_smooth</span><span class='op'>(</span>group <span class='op'>=</span> <span class='fl'>1</span>, alpha <span class='op'>=</span> <span class='fl'>.1</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'>geom_point</span><span class='op'>(</span><span class='fu'>aes</span><span class='op'>(</span>colour <span class='op'>=</span> <span class='va'>designer</span>, shape <span class='op'>=</span> <span class='va'>designer</span><span class='op'>)</span>, cex <span class='op'>=</span> <span class='fl'>3</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'>geom_text_repel</span><span class='op'>(</span>data <span class='op'>=</span> <span class='va'>df_transistors</span> <span class='op'>%&gt;%</span> 
+                    <span class='fu'><a href='https://rdrr.io/r/stats/filter.html'>filter</a></span><span class='op'>(</span><span class='va'>processor</span> <span class='op'>%in%</span> <span class='va'>processor_labels</span><span class='op'>)</span>, 
+                  <span class='fu'>aes</span><span class='op'>(</span><span class='va'>date_ofintroduction</span>, <span class='va'>mos_transistor_count</span>, label <span class='op'>=</span> <span class='va'>processor</span><span class='op'>)</span>,
+                  cex <span class='op'>=</span> <span class='fl'>3</span>, colour <span class='op'>=</span> <span class='st'>"#505050"</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'>scale_color_brewer</span><span class='op'>(</span>palette <span class='op'>=</span> <span class='st'>"Dark2"</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'>scale_shape_manual</span><span class='op'>(</span>values <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/seq.html'>seq</a></span><span class='op'>(</span><span class='fl'>15</span>,<span class='fl'>20</span>, by <span class='op'>=</span> <span class='fl'>1</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'>scale_y_log10</span><span class='op'>(</span>labels <span class='op'>=</span> <span class='fu'>scales</span><span class='fu'>::</span><span class='fu'><a href='https://scales.r-lib.org/reference/label_number.html'>comma_format</a></span><span class='op'>(</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span>
+  <span class='fu'>labs</span><span class='op'>(</span>x <span class='op'>=</span> <span class='st'>"Year"</span>,
+       y <span class='op'>=</span> <span class='st'>"Transistor Count (log scale)"</span>,
+       shape <span class='op'>=</span> <span class='st'>"Chip Designer"</span>,
+       colour <span class='op'>=</span> <span class='st'>"Chip Designer"</span>,
+       caption <span class='op'>=</span> <span class='va'>caption</span>,
+       title <span class='op'>=</span> <span class='va'>title</span>,
+       subtitle <span class='op'>=</span> <span class='va'>subtitle</span><span class='op'>)</span>
+</code></pre>
+</div>
+<img src="chips_files/figure-html5/unnamed-chunk-4-1.png" width="960" />
+<div class="sourceCode">
+<pre class="sourceCode r"><code class="sourceCode r"><span class='co'># dev.off()</span>
+</code></pre>
+</div>
+</div>
+<p>I include a smoothed line of best fit (with <code>geom_smooth</code>) below the points to show how progression in transistor count has slowed since 2005, despite the number of chips designed each year increasing.</p>
+<p>I use <code>geom_text_repel</code> to prevent the labels overlapping each other, and put the y-axis on a log scale to draw attention to the approximate doubling of transistor count each year.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>Thanks for reading along! I hope you learned some neat tricks, and see how easy it is to grab data from the web to visualize.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <!--radix_placeholder_article_footer-->
 <!--/radix_placeholder_article_footer-->
 </div>
@@ -2492,12 +2621,12 @@ Web Apps
   <p>Text and figures are licensed under Creative Commons Attribution <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>. Source code is available at <a href="https://github.com/j-jayes/jjayes_distill">https://github.com/j-jayes/jjayes_distill</a>, unless otherwise noted. The figures that have been reused from other sources don't fall under this license and can be recognized by a note in their caption: "Figure from ...".</p>
   <h3 id="citation">Citation</h3>
   <p>For attribution, please cite this work as</p>
-  <pre class="citation-appendix short">Jayes (2020, March 13). Interlude One: Welcome to Interlude One. Retrieved from https://interludeone.com/posts/welcome/</pre>
+  <pre class="citation-appendix short">Jayes (2020, April 8). Interlude One: Recreating Our World In Data’s Beautiful Transistor Count Graphic. Retrieved from https://interludeone.com/posts/2021-04-21-chips/</pre>
   <p>BibTeX citation</p>
-  <pre class="citation-appendix long">@misc{jayes2020welcome,
+  <pre class="citation-appendix long">@misc{jayes2020recreating,
   author = {Jayes, Jonathan},
-  title = {Interlude One: Welcome to Interlude One},
-  url = {https://interludeone.com/posts/welcome/},
+  title = {Interlude One: Recreating Our World In Data’s Beautiful Transistor Count Graphic},
+  url = {https://interludeone.com/posts/2021-04-21-chips/},
   year = {2020}
 }</pre>
 </div>
