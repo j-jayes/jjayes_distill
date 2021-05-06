@@ -152,7 +152,7 @@ If you want to see the scraping code, have a look at my [GitHub here](https://gi
 I then tokenized the text into words using the tokenizer from the `tidytext` package from [Julia Silge and David Robinson](https://www.tidytextmining.com/).
 
 ```{r}
-df_words <- read_rds("data/df_word.rds")
+# df_words <- read_rds("data/df_word.rds")
 ```
 
 
@@ -166,22 +166,22 @@ df_words <- df %>%
 
 
 ```{r}
-df_words %>% 
-  count(departure, word) %>% 
-  group_by(departure) %>% 
-  slice_max(n, n = 15) %>% 
-  ungroup() %>% 
-  mutate(word = str_to_title(word),
-         word = reorder_within(word, n, departure)) %>% 
-  ggplot(aes(n, word, fill = departure)) +
-  geom_col(show.legend = F) +
-  facet_wrap(~ departure, scales = "free_y") +
-  scale_y_reordered() +
-  scale_x_continuous(labels = scales::number_format()) +
-  scale_fill_brewer(palette = "Dark2") +
-  labs(x = "Number of word uses",
-       y = NULL,
-       title = "Most common words in 8-K fillings by exit reason") 
+# df_words %>% 
+#   count(departure, word) %>% 
+#   group_by(departure) %>% 
+#   slice_max(n, n = 15) %>% 
+#   ungroup() %>% 
+#   mutate(word = str_to_title(word),
+#          word = reorder_within(word, n, departure)) %>% 
+#   ggplot(aes(n, word, fill = departure)) +
+#   geom_col(show.legend = F) +
+#   facet_wrap(~ departure, scales = "free_y") +
+#   scale_y_reordered() +
+#   scale_x_continuous(labels = scales::number_format()) +
+#   scale_fill_brewer(palette = "Dark2") +
+#   labs(x = "Number of word uses",
+#        y = NULL,
+#        title = "Most common words in 8-K fillings by exit reason") 
 
 ```
 
@@ -190,26 +190,26 @@ Tidy log odds package
 ```{r}
 library(tidylo)
 
-df_log_odds <- df_words %>% 
-  count(departure, word) %>% 
-  bind_log_odds(departure, word, n) %>% 
-  filter(n > 200) %>% 
-  group_by(departure) %>% 
-  slice_max(log_odds_weighted, n = 20) %>% 
-  ungroup() %>% 
-  arrange(departure, - log_odds_weighted)
-
-df_log_odds %>% 
-  mutate(word = str_to_title(word),
-         word = reorder_within(word, log_odds_weighted, departure)) %>% 
-  ggplot(aes(log_odds_weighted, word, fill = departure)) +
-  geom_col(show.legend = F) +
-  facet_wrap(~ departure, scales = "free_y") +
-  scale_fill_brewer(palette = "Dark2") +
-  scale_y_reordered() +
-  labs(x = "Weighted log odds",
-       y = NULL,
-       title = "Words most specific to exit reason")
+# df_log_odds <- df_words %>% 
+#   count(departure, word) %>% 
+#   bind_log_odds(departure, word, n) %>% 
+#   filter(n > 200) %>% 
+#   group_by(departure) %>% 
+#   slice_max(log_odds_weighted, n = 20) %>% 
+#   ungroup() %>% 
+#   arrange(departure, - log_odds_weighted)
+# 
+# df_log_odds %>% 
+#   mutate(word = str_to_title(word),
+#          word = reorder_within(word, log_odds_weighted, departure)) %>% 
+#   ggplot(aes(log_odds_weighted, word, fill = departure)) +
+#   geom_col(show.legend = F) +
+#   facet_wrap(~ departure, scales = "free_y") +
+#   scale_fill_brewer(palette = "Dark2") +
+#   scale_y_reordered() +
+#   labs(x = "Weighted log odds",
+#        y = NULL,
+#        title = "Words most specific to exit reason")
 
 ```
 
