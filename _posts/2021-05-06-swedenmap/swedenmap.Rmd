@@ -1,7 +1,8 @@
 ---
 title: "Mapping Sweden's Regional GDP"
 description: |
-  I visualize the relationship between population and regional GDP share in 1571, based on data from Enflo and Missiaia (2018).
+  Visualizing the relationship between population and regional GDP share in 1571, based on data from Enflo and Missiaia (2018).
+preview: images/preview.png
 author:
   - name: Jonathan Jayes
 date: 05-06-2021
@@ -12,6 +13,8 @@ output:
     highlight: haddock
     highlight_downlit: true
     toc: true
+bibliography: bib.bib
+
 ---
 
 ```{r, include=F}
@@ -95,8 +98,8 @@ sweden_scatter <- df %>%
 ```{r}
 girafe(
   ggobj = plot_grid(sweden_scatter, s_map, rel_widths = c(1.2, 1)),
-  width_svg = 10,
-  height_svg = 8,
+  width_svg = 8,
+  height_svg = 6,
   options = list(
     # opts_tooltip(css = tooltip_css, delay_mouseover = 0, delay_mouseout = 0),
     opts_hover(css = "fill: #E69F00; fill-opacity: 1.0; stroke: #E69F00;")
@@ -105,7 +108,9 @@ girafe(
 
 ```
 
-Source: [Enflo K, A Missiaia (2018): Regional GDP estimates for Sweden, 1571-1850, Historical Methods, forthcoming](https://www.ekh.lu.se/en/research/economic-history-data/shra1571-2010)
+
+
+Source: @Enflo, Data accessible [here](https://www.ekh.lu.se/en/research/economic-history-data/shra1571-2010)
 
 <aside>
 Figure inspiration and code from [Claus Wilke](https://wilkelab.org/SDS375/slides/interactive-plots.html#1)
@@ -114,5 +119,5 @@ Figure inspiration and code from [Claus Wilke](https://wilkelab.org/SDS375/slide
 
 ### What do we learn?
 
-In the scatter plot above we can see that the two northernmost counties, though large in land are are very sparsely populated. The line of best fit shows that Västmanland County has a high relative share of GDP compared to it's population, and that Kalmar Län has a high population to it's share of GDP in 1571.
+In the scatter plot above we can see that the two northernmost counties, though large in land are are very sparsely populated. The line of best fit shows that Västmanland County has a high relative share of GDP compared to it's population, and that Kalmar Län has a high population relative to it's share of GDP in 1571.
 
