@@ -110,7 +110,7 @@ girafe(
 
 
 
-Source: @Enflo, Data accessible [here](https://www.ekh.lu.se/en/research/economic-history-data/shra1571-2010)
+Source: @Enflo, Data accessible [here](https://www.ekh.lu.se/en/research/economic-history-data/shra1571-2010).
 
 <aside>
 Figure inspiration and code from [Claus Wilke](https://wilkelab.org/SDS375/slides/interactive-plots.html#1)
