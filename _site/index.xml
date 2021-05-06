@@ -12,7 +12,24 @@
       <link>https://interludeone.com/</link>
     </image>
     <generator>Distill</generator>
-    <lastBuildDate>Thu, 08 Apr 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 05 May 2021 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>Fired or Retired: NLP classification of CEO exits</title>
+      <dc:creator>Jonathan Jayes</dc:creator>
+      <link>https://interludeone.com/posts/2021-05-04-fired</link>
+      <description>In this post I train a text classfier to predict if a CEO is fired or retires, based on the 8-K fillings submitted to the SEC in the 270 days before and after the CEO's departure date.</description>
+      <guid>https://interludeone.com/posts/2021-05-04-fired</guid>
+      <pubDate>Wed, 05 May 2021 00:00:00 +0000</pubDate>
+      <media:content url="https://interludeone.com/posts/2021-05-04-fired/images/preview.png" medium="image" type="image/png" width="851" height="504"/>
+    </item>
+    <item>
+      <title>Mapping Sweden's Regional GDP</title>
+      <dc:creator>Jonathan Jayes</dc:creator>
+      <link>https://interludeone.com/posts/2021-05-06-swedenmap</link>
+      <description>I visualize the relationship between population and regional GDP share in 1571, based on data from Enflo and Missiaia (2018).</description>
+      <guid>https://interludeone.com/posts/2021-05-06-swedenmap</guid>
+      <pubDate>Wed, 05 May 2021 00:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>Shipping and Scraping - Part 1 in a Series on Shipping</title>
       <dc:creator>Jonathan Jayes</dc:creator>
