@@ -2,11 +2,11 @@
 title: "Fired or Retired: NLP classification of CEO exits"
 description: |
   In this post I train a text classfier to predict if a CEO is fired or retires, based on the 8-K fillings submitted to the SEC in the 270 days before and after the CEO's departure date.
+draft: true
 preview: images/preview.png
 author:
   - name: Jonathan Jayes
 date: 05-05-2021
-draft: true
 output:
   distill::distill_article:
     self_contained: false
