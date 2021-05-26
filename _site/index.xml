@@ -12,14 +12,22 @@
       <link>https://interludeone.com/</link>
     </image>
     <generator>Distill</generator>
-    <lastBuildDate>Wed, 05 May 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 20 May 2021 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>Resources for Learning R and Mastering ggplot</title>
+      <dc:creator>Jonathan Jayes</dc:creator>
+      <link>https://interludeone.com/posts/2021-05-21-ggplot-resources</link>
+      <description>A collection of videos and resources to get you started using R and the tidyverse for exploratory data analysis and visualization.</description>
+      <guid>https://interludeone.com/posts/2021-05-21-ggplot-resources</guid>
+      <pubDate>Thu, 20 May 2021 00:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>Mapping Sweden's Regional GDP</title>
       <dc:creator>Jonathan Jayes</dc:creator>
       <link>https://interludeone.com/posts/2021-05-06-swedenmap</link>
       <description>Visualizing the relationship between population and regional GDP share in 1571, based on data from Enflo and Missiaia (2018).</description>
       <guid>https://interludeone.com/posts/2021-05-06-swedenmap</guid>
-      <pubDate>Wed, 05 May 2021 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 06 May 2021 00:00:00 +0000</pubDate>
       <media:content url="https://interludeone.com/posts/2021-05-06-swedenmap/images/preview.png" medium="image" type="image/png" width="1199" height="813"/>
     </item>
     <item>

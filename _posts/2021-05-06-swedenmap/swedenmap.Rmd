@@ -96,15 +96,19 @@ sweden_scatter <- df %>%
 
 
 ```{r}
-girafe(
+int_fig <- girafe(
   ggobj = plot_grid(sweden_scatter, s_map, rel_widths = c(1.2, 1)),
-  width_svg = 8,
-  height_svg = 6,
+  width_svg = 5,
+  height_svg = 3,
   options = list(
     # opts_tooltip(css = tooltip_css, delay_mouseover = 0, delay_mouseout = 0),
     opts_hover(css = "fill: #E69F00; fill-opacity: 1.0; stroke: #E69F00;")
   )
 )
+
+int_fig
+
+# write_rds(int_fig, "data/interactive_fig.rds")
 
 ```
 
