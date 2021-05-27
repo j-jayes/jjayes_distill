@@ -155,6 +155,15 @@ If you are interested in learning more about fonts, [Practical Typography](https
 
 ![Lato is a free Google font](images/google-fonts.png)
 
+[This page](https://www.r-graph-gallery.com/38-rcolorbrewers-palettes.html) from the [R Graph Gallery](https://www.r-graph-gallery.com/38-rcolorbrewers-palettes.html) gives a breakdown of the `RcolorBrewer` package and when to use its different sets of palettes.
+
+![](images/palettes.PNG)
+
+[The color brewer webpage](https://colorbrewer2.org/#type=diverging&scheme=PuOr&n=4) gives fantastic advice on how to choose colours for maps, using the same theory as the package above. It also gives you the hex codes for each colour that you may copy to use yourself.
+
+![](images/colour-map.PNG)
+
+
 [This video on colour theory](https://www.youtube.com/watch?v=AiD6etOB6qI) is a useful primer on colour in data viz.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/AiD6etOB6qI?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
