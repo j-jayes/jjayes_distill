@@ -27,7 +27,9 @@ xaringanExtra::use_panelset()
 
 ## Purpose
 
-I hope that you find these resources useful. They are divided up into different sections
+Data visualisation is super fun and a great tool for communication. I have put together [some slides](https://j-jayes.github.io/data-viz-workshop/) for talk on data visualisation for economic historians at the [Laboratory for the Economics of Africa's Past](https://leapstellenbosch.org.za/). These resources are collected here to help when you think 'where do I start?'.
+
+I hope that you find these resources useful. They are divided up into different sections in the tabs below.
 
 ### Why use R?
 
@@ -36,8 +38,8 @@ There are a multitude of different pieces of software and different workflows th
 I think R is a very good choice. There are three reasons I love R for data viz.
 
 1. `ggplot2` is a fantastic library for making data visualizations - it is customizable and logical. 
-2. The R community is very supportive and makes learning and improving a pleasure.
-3. The entire process of importing and cleaning data, visualizing it, and then sharing it is made easy.
+2. The [R community](https://twitter.com/rstatstweet?lang=en) is very supportive and makes learning and improving a pleasure.
+3. The entire process of importing and cleaning data, visualizing it, and then sharing it is made easy in [Rstudio](https://www.rstudio.com/).
 
 ## Resources
 
