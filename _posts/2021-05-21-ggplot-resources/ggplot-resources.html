@@ -111,7 +111,7 @@ code span.wa { color: #008000; font-weight: bold; } /* Warning */
   <!--/radix_placeholder_rmarkdown_metadata-->
   
   <script type="text/json" id="radix-resource-manifest">
-  {"type":"character","attributes":{},"value":["ggplot-resources_files/anchor-4.2.2/anchor.min.js","ggplot-resources_files/bowser-1.9.3/bowser.min.js","ggplot-resources_files/distill-2.2.21/template.v2.js","ggplot-resources_files/header-attrs-2.7/header-attrs.js","ggplot-resources_files/jquery-1.11.3/jquery.min.js","ggplot-resources_files/panelset-0.2.6/panelset.css","ggplot-resources_files/panelset-0.2.6/panelset.js","ggplot-resources_files/popper-2.6.0/popper.min.js","ggplot-resources_files/tippy-6.2.7/tippy-bundle.umd.min.js","ggplot-resources_files/tippy-6.2.7/tippy-light-border.css","ggplot-resources_files/tippy-6.2.7/tippy.css","ggplot-resources_files/tippy-6.2.7/tippy.umd.min.js","ggplot-resources_files/webcomponents-2.0.0/webcomponents.js","images/colour-map.PNG","images/dat-sci-for-econ.PNG","images/data-is-plural.PNG","images/google-fonts.png","images/jonathan-tan.PNG","images/naked-data.PNG","images/palettes.PNG","images/preview.png","images/r-graph-gallery.PNG","images/r4ds.png","images/sds-375.PNG","images/swd-guide.PNG","images/tidy-tuesday.png","images/tidytextmining.PNG","images/web-plot-digitizer.PNG"]}
+  {"type":"character","attributes":{},"value":["ggplot-resources_files/anchor-4.2.2/anchor.min.js","ggplot-resources_files/bowser-1.9.3/bowser.min.js","ggplot-resources_files/distill-2.2.21/template.v2.js","ggplot-resources_files/header-attrs-2.7/header-attrs.js","ggplot-resources_files/jquery-1.11.3/jquery.min.js","ggplot-resources_files/panelset-0.2.6/panelset.css","ggplot-resources_files/panelset-0.2.6/panelset.js","ggplot-resources_files/popper-2.6.0/popper.min.js","ggplot-resources_files/tippy-6.2.7/tippy-bundle.umd.min.js","ggplot-resources_files/tippy-6.2.7/tippy-light-border.css","ggplot-resources_files/tippy-6.2.7/tippy.css","ggplot-resources_files/tippy-6.2.7/tippy.umd.min.js","ggplot-resources_files/webcomponents-2.0.0/webcomponents.js","images/colour-map.PNG","images/dat-sci-for-econ.PNG","images/data-is-plural.PNG","images/flexdashboard.PNG","images/google-fonts.png","images/jonathan-tan.PNG","images/mastering-shiny.png","images/naked-data.PNG","images/palettes.PNG","images/preview.png","images/r-graph-gallery.PNG","images/r4ds.png","images/sds-375.PNG","images/swd-guide.PNG","images/tidy-tuesday.png","images/tidytextmining.PNG","images/web-plot-digitizer.PNG"]}
   </script>
   <!--radix_placeholder_navigation_in_header-->
   <!--/radix_placeholder_navigation_in_header-->
@@ -1594,6 +1594,21 @@ In this class, students will learn how to visualize data sets and how to reason 
 <p><a href="https://github.com/uo-ec607/lectures">Grant McDermott’s Data science for economists course</a> is a great place to start. He has <a href="https://raw.githack.com/uo-ec607/lectures/master/08-regression/08-regression.html">one lecture</a> on Regression that is super useful.</p>
 <figure>
 <img src="images/dat-sci-for-econ.PNG" alt="Grant McDermott" /><figcaption aria-hidden="true">Grant McDermott</figcaption>
+</figure>
+</div>
+<div class="panel">
+<p><span class="panel-name">R Shiny</span></p>
+<h1 id="if-youre-looking-to-make-interactive-web-pages-with-r-and-r-markdown">If you’re looking to make interactive web pages with R and R Markdown</h1>
+<p>The simplest way to get a quick and dirty interactive dashboard together is to use the <code>flexdashboard</code> package. <a href="https://pkgs.rstudio.com/flexdashboard/">Here is a link</a> to the package. One of the great advantages of <code>flexdashboard</code> is that you can get amazing interactivity with just <code>htmlwidgets</code>, you do not need to use a shiny-runtime. In other words, you can create and host a static html page anywhere, for example on <a href="https://pages.github.com/">GitHub Pages</a>.</p>
+<figure>
+<img src="images/flexdashboard.PNG" alt="Flexdashboard" /><figcaption aria-hidden="true">Flexdashboard</figcaption>
+</figure>
+<p>If you want more interactivity, David Robinson’s video on global crop yields shows a simple Shiny app, with code <a href="https://github.com/dgrtwo/data-screencasts/blob/master/crop-yields-shiny/app.Rmd">here</a>.</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/0uqAhIiK9Rc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+</iframe>
+<p><a href="https://mastering-shiny.org/">Mastering Shiny</a> is a more advanced authoritative book on Shiny, written by Hadley Wickham. It’s a great place to get an understanding of the core of the package.</p>
+<figure>
+<img src="images/mastering-shiny.png" alt="Mastering Shiny" /><figcaption aria-hidden="true">Mastering Shiny</figcaption>
 </figure>
 </div>
 <div class="panel">

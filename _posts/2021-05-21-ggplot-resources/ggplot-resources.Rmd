@@ -182,6 +182,25 @@ If you are interested in learning more about fonts, [Practical Typography](https
 :::
 
 ::: {.panel}
+[R Shiny]{.panel-name}
+
+# If you're looking to make interactive web pages with R and R Markdown
+
+The simplest way to get a quick and dirty interactive dashboard together is to use the `flexdashboard` package. [Here is a link](https://pkgs.rstudio.com/flexdashboard/) to the package. One of the great advantages of `flexdashboard` is that you can get amazing interactivity with just `htmlwidgets`, you do not need to use a shiny-runtime. In other words, you can create and host a static html page anywhere, for example on [GitHub Pages](https://pages.github.com/).
+
+![Flexdashboard](images/flexdashboard.PNG)
+
+If you want more interactivity, David Robinson's video on global crop yields shows a simple Shiny app, with code [here](https://github.com/dgrtwo/data-screencasts/blob/master/crop-yields-shiny/app.Rmd).
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/0uqAhIiK9Rc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+[Mastering Shiny](https://mastering-shiny.org/) is a more advanced authoritative book on Shiny, written by Hadley Wickham. It's a great place to get an understanding of the core of the package.
+
+![Mastering Shiny](images/mastering-shiny.png)
+
+:::
+
+::: {.panel}
 [Recreating Published Figures]{.panel-name}
 
 # When you can't get the authors of an article to share their data
