@@ -217,8 +217,9 @@ An alternative is to recreate the figure yourself by extracting the data from th
 
 A truly fantastic free tool for this purpose is [WebPlotDigitizer](https://automeris.io/WebPlotDigitizer/). This web application allows you to upload a figure and grab the data from it.
 
-![Web Plot Digitizer](images/web-plot-digitizer.PNG)
+Have a look at a short video I made on how to use it here:
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/TVCFedRgg5Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 :::
 
 :::::
