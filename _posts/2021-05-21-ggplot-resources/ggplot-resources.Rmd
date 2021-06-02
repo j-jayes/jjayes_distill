@@ -194,6 +194,10 @@ If you want more interactivity, David Robinson's video on global crop yields sho
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/0uqAhIiK9Rc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
+Another video example of R Shiny comes from [Andrew Couch's YouTube channel](https://www.youtube.com/watch?v=XoCgToAuzsU).
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/XoCgToAuzsU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 [Mastering Shiny](https://mastering-shiny.org/) is a more advanced authoritative book on Shiny, written by Hadley Wickham. It's a great place to get an understanding of the core of the package.
 
 ![Mastering Shiny](images/mastering-shiny.png)
