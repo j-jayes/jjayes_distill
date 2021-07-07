@@ -12,14 +12,23 @@
       <link>https://interludeone.com/</link>
     </image>
     <generator>Distill</generator>
-    <lastBuildDate>Thu, 20 May 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 05 Jul 2021 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>Students Speak</title>
+      <dc:creator>Jonathan Jayes</dc:creator>
+      <link>https://interludeone.com/posts/2021-07-06-students-speak</link>
+      <description>Text analysis of students' diary entries during the Covid-19 lockdown in South Africa</description>
+      <guid>https://interludeone.com/posts/2021-07-06-students-speak</guid>
+      <pubDate>Mon, 05 Jul 2021 00:00:00 +0000</pubDate>
+      <media:content url="https://interludeone.com/posts/2021-07-06-students-speak/images/preview.jpg" medium="image" type="image/jpeg"/>
+    </item>
     <item>
       <title>Resources for Learning R and Mastering ggplot</title>
       <dc:creator>Jonathan Jayes</dc:creator>
       <link>https://interludeone.com/posts/2021-05-21-ggplot-resources</link>
       <description>A collection of videos and resources to get you started using R and the tidyverse for exploratory data analysis and visualization.</description>
       <guid>https://interludeone.com/posts/2021-05-21-ggplot-resources</guid>
-      <pubDate>Thu, 20 May 2021 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 21 May 2021 00:00:00 +0000</pubDate>
       <media:content url="https://interludeone.com/posts/2021-05-21-ggplot-resources/images/preview.png" medium="image" type="image/png" width="1080" height="1080"/>
     </item>
     <item>
