@@ -63,7 +63,7 @@ These data were supplemented to include the number of Covid-19 cases in South Af
 
 We start with a word cloud which shows the words used by the students in their diary entries.
 
-Explanation: the size of the word is correlated to how frequently it is used. The sentiment of the word is scored with the [bing sentiment lexicon](https://emilhvitfeldt.github.io/textdata/reference/lexicon_bing.html), a general purpose English sentiment lexicon that categorizes words in a binary fashion, either positive or negative.
+The size of the word is correlated to how frequently it is used. The sentiment of the word is scored with the [bing sentiment lexicon](https://emilhvitfeldt.github.io/textdata/reference/lexicon_bing.html), a general purpose English sentiment lexicon that categorizes words in a binary fashion, either positive or negative.
 
 ```{r}
 word_cloud <- read_rds("data/word_cloud.rds")
@@ -78,7 +78,7 @@ word_cloud %>%
   filter(!word %in% c("Trump")) %>% 
   acast(word ~ sentiment, value.var = "n", fill = 0) %>%
   comparison.cloud(
-    colors = c("gray20", "gray80"),
+    colors = c("gray20", "gray60"),
                    max.words = 100,
                    # colours = brewer.pal(2, "Dark2"),
                    match.colors = T)
@@ -86,12 +86,30 @@ word_cloud %>%
 
 We can see that common positive words include "support", "privileged", "healthy", "productive", and "excited". Common negative words are dominated by "virus", followed by "difficult", "struggling", and "infected".
 
+This is slightly more informative than a generic word cloud showing word frequency. However, it should be noted that the words must occur in both the students' diary entries and the [bing sentiment lexicon](https://emilhvitfeldt.github.io/textdata/reference/lexicon_bing.html) in order to be shown in the word cloud.
+
+Table \@ref(tab:excluded) shows some common words in the students' diary entries which are excluded from the wordcloud in Figure \@ref(fig:wordcloud).
+
+```{r excluded}
+library(tidytext)
+
+df %>% 
+  unnest_tokens(word, value) %>% 
+  anti_join(stop_words) %>% 
+  anti_join(get_sentiments("bing")) %>% 
+  count(word, sort = T) %>% head(15) %>% 
+  mutate(word = str_to_title(word)) %>% 
+  knitr::kable(col.names = c("Word", "Number of uses"),
+               caption = "Common words excluded from wordcloud")
+
+```
+
+
 ### Evolution of students' diary entry sentiment over time.
 
-Figure \@ref(fig:sentiment) below shows the change in sentiment of the student responses over the course of the lockdown. It requires some explanation. In essence, the words used by the students are grouped by week, scored according to a sentiment lexicon, the score is averaged across the week. The points on the graph represent the average sentiment of the students' diary entries in a particular week.
+Figure \@ref(fig:sentiment) below shows the change in sentiment of the student responses over the course of the lockdown. It requires some explanation: the words used by the students are grouped by week, scored according to a sentiment lexicon, the score is averaged across the week. The points on the graph represent the average sentiment of the students' diary entries in a particular week.
 
 ```{r}
-library(tidytext)
 sentiment_words <- df %>% 
   unnest_tokens(word, value) %>% 
   anti_join(stop_words)
@@ -218,7 +236,7 @@ p1 <- df_sent %>%
   geom_hline(yintercept = 0, lty = 2) +
   expand_limits(y = .08,
                 x = c(lubridate::ymd("2020-03-22"), lubridate::ymd("2020-04-25"))) +
-  labs(y = "Average sentiment of students' diary entries",
+  labs(y = "Average sentiment of\nstudents' diary entries",
        x = NULL)
 
 df <- read_rds("data/clean_text_and_numbers.rds")
@@ -243,10 +261,11 @@ p2 <- df %>%
 p1 / p2 
 ```
 
+It is difficult to conclude about a relationship between the number of cases and the sentiment of the students' reflections. While there appears to be a relationship between average sentiment and number of tests at the outset of the lockdown, I think this is statistical noise rather than some sort of correlation.
 
 ### Interactive figure
 
-We can also make this more attractive interactive chart with some colour and labels.
+We can also make this a little more attractive as an interactive chart with some colour and hover labels.
 
 ```{r}
 library(ggiraph)
@@ -280,7 +299,7 @@ gg_int <- girafe(
 )
 ```
 
-Figure \@ref(fig:interactive) shows the same information as above with a hover field to show the week specific words. Mouse over the points to see the words most specific to each week and the average sentiment of the students' diary entries.
+Figure \@ref(fig:interactive) shows the same information as above with a hover field to show the week-specific words. Mouse over the points to see the words most specific to each week and the average sentiment of the students' diary entries.
 
 ```{r interactive, layout="l-body-outset", fig.width = 6, fig.height=4, fig.cap="Interctive figure"}
 gg_int
