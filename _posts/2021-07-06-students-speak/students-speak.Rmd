@@ -300,14 +300,34 @@ It is difficult to conclude about a relationship between the number of cases and
 
 ### Contextualization of timing of diary entries
 
-I really like the combination of the time trend with the number of cases, but because of the spurious correlation, I want to have it represent something else. Would it be possible to simply plot the number of cases and deaths for the entire first year (maybe until April 23 2021) and then on top of that show the number of entries per day for the days during which the diaries were written. The purpose is simply to show that these thoughts reflect a time when cases were actually very low to what came later. In that sense, they should be seen as reflections within a very specific time, when the future was very unclear.
+The purpose of this selection of figures is to emphasize that the diary entries were recorded at the outset of the pandemic in South Africa. The number of cases was relatively low compared to the steep increase in cases which followed in winter of 2020.
 
-```{r}
+The figures below compare the period of diary entries to the number of cases and deaths in the first year of the pandemic.
+
+I think option two conveys the message clearly and without clutter.
+
+```{r panelset, echo=FALSE, include=F}
+# library(xaringanExtra)
+xaringanExtra::use_panelset()
+```
+
+```{r, echo=FALSE, include=F}
 df_covid <- read.csv("data/owid-covid-data.csv")
 
-g1 <- df_covid %>% as_tibble() %>%
+df_covid <- df_covid %>% as_tibble() %>%
   mutate(date = lubridate::ymd(date)) %>% 
-  filter(date <= lubridate::ymd("2021-03-23")) %>% 
+  filter(date <= lubridate::ymd("2021-03-23"))
+```
+
+::::: {.panelset}
+::: {.panel}
+
+## Option 1 {.panel-name}
+
+Here we have a two panel plot of the Covid-19 statistics and number of diary entries recorded by the students.
+
+```{r}
+g1 <- df_covid %>% 
   ggplot() +
   geom_line(aes(date, total_cases, lty = "Total cases")) +
   geom_line(aes(date, total_deaths, lty = "Total deaths")) +
@@ -322,7 +342,7 @@ g1 <- df_covid %>% as_tibble() %>%
            x = lubridate::ymd("2021-02-23"), 
            y = 163039,
            label = "Total deaths") +
-  labs(y = "Number of cases and deaths",
+  labs(y = "Number of\ncases and deaths",
        x = NULL,
        lty = NULL)
 
@@ -333,40 +353,170 @@ g2 <- df %>%
   geom_col() +
   scale_y_continuous(labels = scales::number_format(accuracy = 1)) +
   expand_limits(x = c(lubridate::ymd("2020-03-22"), lubridate::ymd("2021-03-23"))) +
-  labs(y = "Number of diary entries",
+  labs(y = "Number of\ndiary entries",
        x = NULL)
   
 g1 / g2
 ```
 
+
+:::
+::: {.panel}
+
+## Option 2 {.panel-name}
+
+Next we have a single panel with the period of diary entries superimposed on the Covid-19 statistics.
+
+```{r}
+df_covid %>%
+  ggplot() +
+  geom_rect(aes(xmin = lubridate::ymd("2020-03-22"), 
+                xmax = lubridate::ymd("2020-04-22"),
+                ymin = 0,
+                ymax = 1738961,
+                fill = "Period of diary entries")) + 
+  geom_line(aes(date, total_cases, lty = "Total cases")) +
+  geom_line(aes(date, total_deaths, lty = "Total deaths")) +
+    annotate(geom = "text", 
+           x = lubridate::ymd("2021-02-23"), 
+           y = 1312336,
+           label = "Total cases") +
+      annotate(geom = "text", 
+           x = lubridate::ymd("2021-02-23"), 
+           y = 163039,
+           label = "Total deaths") +
+      annotate(geom = "text", 
+           x = lubridate::ymd("2020-05-22"), 
+           y = 1468961,
+           label = "Period of diary entries",
+           hjust = -.1) +
+      annotate(
+           geom = "curve", 
+           x = lubridate::ymd("2020-04-22"), 
+           y = 1438961, 
+           xend = lubridate::ymd("2020-05-22"), yend = 1468961, 
+           curvature = -.3, arrow = arrow(length = unit(2, "mm"))
+          ) +
+  scale_y_continuous(labels = scales::number_format(accuracy = 1)) +
+  scale_x_date(limits = c(lubridate::ymd("2020-03-22"), lubridate::ymd("2021-03-23"))) +
+  coord_cartesian(ylim = c(NA, 1538961)) +
+  scale_fill_grey(start = .7) +
+  theme(legend.position = "none") +
+  labs(y = "Number of cases and deaths",
+       x = NULL,
+       lty = NULL,
+       fill = NULL)
+```
+
+
+:::
+::: {.panel}
+
+## Option 3 {.panel-name}
+
 Alternatively we can annotate a thick line to show where the diary entries occur.
 
 ```{r}
-df_covid %>% as_tibble() %>%
-  mutate(date = lubridate::ymd(date)) %>% 
-  filter(date <= lubridate::ymd("2021-03-23")) %>% 
+df_covid %>%
   ggplot() +
+  geom_line(aes(date, total_cases, lty = "Total cases")) +
+  geom_line(aes(date, total_deaths, lty = "Total deaths")) +
+  # highlighting when the diary entries took place
+  geom_line(aes(date, total_cases, size = "Period of diary entries"), 
+            data = df_covid %>% 
+              filter(between(date, lubridate::ymd("2020-03-21"), lubridate::ymd("2020-04-22")))) + 
+  scale_y_continuous(labels = scales::number_format(accuracy = 1)) +
+  scale_x_date(limits = c(lubridate::ymd("2020-03-22"), lubridate::ymd("2021-03-23"))) +
+  theme(legend.position = "right") +
+  labs(y = "Number of cases and deaths",
+       x = NULL,
+       lty = NULL,
+       size = NULL)
+```
+
+
+:::
+::: {.panel}
+
+## Option 4 {.panel-name}
+
+Alternatively we can have a legend variant of option 2.
+
+```{r}
+df_covid %>%
+  ggplot() +
+  geom_rect(aes(xmin = lubridate::ymd("2020-03-22"), 
+                xmax = lubridate::ymd("2020-04-22"),
+                ymin = 0,
+                ymax = 1738961,
+                fill = "Period of diary entries")) + 
   geom_line(aes(date, total_cases, lty = "Total cases")) +
   geom_line(aes(date, total_deaths, lty = "Total deaths")) +
   scale_y_continuous(labels = scales::number_format(accuracy = 1)) +
   scale_x_date(limits = c(lubridate::ymd("2020-03-22"), lubridate::ymd("2021-03-23"))) +
-  theme(legend.position = "right") +
-  annotate(geom = "text", 
-           x = lubridate::ymd("2021-02-23"), 
-           y = 1312336,
-           label = "Total cases") +
-    annotate(geom = "line", 
-           x = lubridate::ymd("2021-02-23"), 
-           y = 1312336,
-           label = "Total cases") +
+  scale_fill_grey(start = .7) +
+  coord_cartesian(ylim = c(NA, 1538961)) +
+  theme(legend.position = "bottom") +
   labs(y = "Number of cases and deaths",
        x = NULL,
-       lty = NULL)
+       lty = NULL,
+       fill = NULL)
 ```
 
 
+:::
+:::::
 
-### Interactive figure
+#### Financial markets comparison
+
+```{r}
+df_stocks <- read.csv("data/stocks.csv") %>% 
+  as_tibble() %>% 
+  rename(x = ï..x) %>% 
+  mutate(x = parse_number(x)) %>% 
+  mutate(x = round(x, 0)) %>% 
+  mutate(date = lubridate::ymd("2019-08-05") + x) %>% 
+  select(date, value = y) %>% 
+  mutate(cat = "JSE All Share Index") %>% 
+  filter(between(date, lubridate::ymd("2020-03-22"), lubridate::ymd("2020-04-23")))
+
+df_zar <- read.csv("data/zar.csv") %>% 
+  as_tibble() %>% 
+  mutate(date = lubridate::ymd(Date)) %>% 
+  select(-Date, value = Value) %>% 
+  mutate(cat = "ZAR to USD exchange rate") %>% 
+  filter(between(date, lubridate::ymd("2020-03-22"), lubridate::ymd("2020-04-23")))
+
+sent_df <- sentiment_scores %>% 
+  group_by(week) %>% 
+  mutate(mean_sentimet = mean(value),
+         date_max = max(date)) %>% 
+  ungroup() %>% 
+  select(date = date_max, 
+         value = mean_sentimet) %>% 
+  distinct() %>% 
+  mutate(cat = "Mean sentiment of student's diary entries")
+```
+
+Figure \@ref(fig:fin-mkt-comp) shows the mean sentiment of the students' diary entries alongside the JSE All Share Index for the same period, as well as the Rand to US Dollar exchange rate. Several students question in their entries what will happen to the stock market, with one stating, "I was looking at good stock picks on the JSE today. Every disaster can be an opportunity...".
+
+```{r fin-mkt-comp, layout="l-body-outset", fig.width = 8, fig.height=5, fig.cap="Financial markets comparison figure"}
+sent_df %>% 
+  bind_rows(df_zar, df_stocks) %>% 
+  mutate(cat = fct_relevel(cat, "Mean sentiment of student's diary entries")) %>% 
+  ggplot(aes(date, value, lty = cat)) +
+  geom_line() +
+  theme(legend.position = "none") +
+  facet_wrap(~cat, scales = "free_y",
+             ncol = 1) +
+  scale_y_continuous(labels = scales::number_format()) +
+  labs(x = NULL,
+       y = NULL)
+```
+
+Again the trends displayed may constitute statistical noise. The JSE was rising out of an enormous trough created as investors panicked with Covid-19 spreading into Europe and the US. The Rand is a notoriously volatile currency. Yet, these trends are interesting to show in the context of the early weeks of lockdown.
+
+#### Interactive figure
 
 We can also make this a little more attractive as an interactive chart with some colour and hover labels.
 
