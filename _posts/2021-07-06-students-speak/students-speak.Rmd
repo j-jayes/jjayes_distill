@@ -58,7 +58,6 @@ These data were supplemented to include the number of Covid-19 cases in South Af
 #             colnames = c("Date", "Cases", "Deaths", "Tests", "Text", "Week"))
 ```
 
-
 ### Word Cloud
 
 We start with a word cloud which shows the words used by the students in their diary entries.
@@ -74,14 +73,24 @@ library(reshape2)
 
 
 ```{r wordcloud, layout="l-body-outset", fig.width = 8, fig.height=6, fig.cap="Word cloud"}
-word_cloud %>% 
-  filter(!word %in% c("Trump")) %>% 
+# jpeg(
+#     filename="images/comparison_cloud.jpeg",
+#     width=6,
+#     height=4,
+#     units="in",
+#     res=1000)
+# 
+word_cloud %>%
+  filter(!word %in% c("Trump")) %>%
   acast(word ~ sentiment, value.var = "n", fill = 0) %>%
   comparison.cloud(
     colors = c("gray20", "gray60"),
                    max.words = 100,
                    # colours = brewer.pal(2, "Dark2"),
                    match.colors = T)
+# 
+# dev.off()
+
 ```
 
 We can see that common positive words include "support", "privileged", "healthy", "productive", and "excited". Common negative words are dominated by "virus", followed by "difficult", "struggling", and "infected".
@@ -104,6 +113,32 @@ df %>%
 
 ```
 
+We can also include a conventional word cloud beside the comparison cloud, and shown in Figure \@ref(fig:image-grobs).
+
+```{r}
+# pal <- gray.colors(4, start = 0.2, end = 0.6, gamma = 2, rev = FALSE)
+
+# jpeg(
+#     filename="images/word_cloud.jpeg",
+#     width=6,
+#     height=4,
+#     units="in",
+#     res=1000)
+# 
+# df %>% 
+#   unnest_tokens(word, value) %>% 
+#   anti_join(stop_words) %>% 
+#   mutate(word = str_to_title(word)) %>% 
+#   count(word) %>%  
+#   with(wordcloud(word, n, random.order = FALSE, max.words = 60, 
+#                  colors = pal))
+# 
+# dev.off()
+```
+
+```{r image-grobs, layout="l-body-outset", fig.cap="Conventional word cloud and comparison cloud"}
+knitr::include_graphics("images/word_cloud_composite.jpg")
+```
 
 ### Evolution of students' diary entry sentiment over time.
 
@@ -262,6 +297,74 @@ p1 / p2
 ```
 
 It is difficult to conclude about a relationship between the number of cases and the sentiment of the students' reflections. While there appears to be a relationship between average sentiment and number of tests at the outset of the lockdown, I think this is statistical noise rather than some sort of correlation.
+
+### Contextualization of timing of diary entries
+
+I really like the combination of the time trend with the number of cases, but because of the spurious correlation, I want to have it represent something else. Would it be possible to simply plot the number of cases and deaths for the entire first year (maybe until April 23 2021) and then on top of that show the number of entries per day for the days during which the diaries were written. The purpose is simply to show that these thoughts reflect a time when cases were actually very low to what came later. In that sense, they should be seen as reflections within a very specific time, when the future was very unclear.
+
+```{r}
+df_covid <- read.csv("data/owid-covid-data.csv")
+
+g1 <- df_covid %>% as_tibble() %>%
+  mutate(date = lubridate::ymd(date)) %>% 
+  filter(date <= lubridate::ymd("2021-03-23")) %>% 
+  ggplot() +
+  geom_line(aes(date, total_cases, lty = "Total cases")) +
+  geom_line(aes(date, total_deaths, lty = "Total deaths")) +
+  scale_y_continuous(labels = scales::number_format(accuracy = 1)) +
+  scale_x_date(limits = c(lubridate::ymd("2020-03-22"), lubridate::ymd("2021-03-23"))) +
+  theme(legend.position = "none") +
+  annotate(geom = "text", 
+           x = lubridate::ymd("2021-02-23"), 
+           y = 1312336,
+           label = "Total cases") +
+      annotate(geom = "text", 
+           x = lubridate::ymd("2021-02-23"), 
+           y = 163039,
+           label = "Total deaths") +
+  labs(y = "Number of cases and deaths",
+       x = NULL,
+       lty = NULL)
+
+g2 <- df %>% 
+  count(date) %>% 
+  filter(n < 18) %>% 
+  ggplot(aes(date, n)) +
+  geom_col() +
+  scale_y_continuous(labels = scales::number_format(accuracy = 1)) +
+  expand_limits(x = c(lubridate::ymd("2020-03-22"), lubridate::ymd("2021-03-23"))) +
+  labs(y = "Number of diary entries",
+       x = NULL)
+  
+g1 / g2
+```
+
+Alternatively we can annotate a thick line to show where the diary entries occur.
+
+```{r}
+df_covid %>% as_tibble() %>%
+  mutate(date = lubridate::ymd(date)) %>% 
+  filter(date <= lubridate::ymd("2021-03-23")) %>% 
+  ggplot() +
+  geom_line(aes(date, total_cases, lty = "Total cases")) +
+  geom_line(aes(date, total_deaths, lty = "Total deaths")) +
+  scale_y_continuous(labels = scales::number_format(accuracy = 1)) +
+  scale_x_date(limits = c(lubridate::ymd("2020-03-22"), lubridate::ymd("2021-03-23"))) +
+  theme(legend.position = "right") +
+  annotate(geom = "text", 
+           x = lubridate::ymd("2021-02-23"), 
+           y = 1312336,
+           label = "Total cases") +
+    annotate(geom = "line", 
+           x = lubridate::ymd("2021-02-23"), 
+           y = 1312336,
+           label = "Total cases") +
+  labs(y = "Number of cases and deaths",
+       x = NULL,
+       lty = NULL)
+```
+
+
 
 ### Interactive figure
 

@@ -118,6 +118,10 @@ The intent of Tidy Tuesday is to provide a safe and supportive forum for individ
 
 # Great places to get inspiration, figures and code from
 
+The definitive guide to `ggplot2`, [The ggplot2 Book](https://ggplot2-book.org/index.html) is a fantastic resource for novices and experts alike. It is easy to navigate and has helpful examples with code used to create each figure. (I love to consult the section on annotations as I never remember exactly how they work for some reason.)
+
+![The ggplot2 book](images/ggplot2book.PNG)
+
 The [Storytelling with Data](https://www.storytellingwithdata.com/blog) blog has an excellent selection of articles that give tips and tricks on how to design graphics that are easy to understand.
 
 Their [Chart Guide](https://www.storytellingwithdata.com/chart-guide) is also a fantastic starting point for how to pick a chart.
