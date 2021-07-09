@@ -68,7 +68,7 @@ The RStudio team have put a lot of effort into creating resources that are usefu
 
 ![Rstudio Education graphics](images/rstudio-education.jpg)
 
-### Other great resources
+### Other great video resources
 
 I am a visual learner and as a consequence I like to watch how things are done and copy them. Because Youtube allows for pausing and recapping at your own pace, I think this is a great way to learn. I've collected some videos in these resources which I think are a good place to start.
 
@@ -103,6 +103,10 @@ Written by Julia Silge and David Robinson, this book gives a lovely introduction
 Here is one of his videos on creating functions with the `tidyverse`.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/7oz1qGClrl0?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+### Another resource collection!
+
+The [LearnR4Free website](https://www.learnr4free.com/en/index.html) compiled by [Mine Dogucu](https://twitter.com/MineDogucu) has a great set of resources that are free to use for the learner.
 
 :::
 
@@ -142,21 +146,41 @@ The intent of Tidy Tuesday is to provide a safe and supportive forum for individ
 
 # Great places to get inspiration, figures and code from
 
+### Fundementals of data visualization
+
+There are many books on the theory and practice of data visualization. I think [Fundamentals of Data Visualization](https://clauswilke.com/dataviz/) by [Claus Wilke](https://clauswilke.com/) is an excellent choice to start with. The preface reads:
+
+<blockquote cite="https://clauswilke.com/dataviz/preface.html">
+If you are a scientist, an analyst, a consultant, or anybody else who has to prepare technical documents or reports, one of the most important skills you need to have is the ability to make compelling data visualizations, generally in the form of figures. Figures will typically carry the weight of your arguments. They need to be clear, attractive, and convincing.
+</blockquote>
+
+The book provides great advice for matching your data to a good chart type. For how to make the chosen chart in R, have a look at his course, linked below.
+
+![](images/fundementals-of-data-viz.png)
+
+### The best course in data viz
+
+[Clause Wilke's Course on Data Visualization in R](https://wilkelab.org/SDS375/syllabus.html) is a fantastic accompaniment to the book linked above. The description reads:
+
+<blockquote cite="https://wilkelab.org/SDS375/syllabus.html">
+In this class, students will learn how to visualize data sets and how to reason about and communicate with data visualizations. A substantial component of this class will be dedicated to learning how to program in R. In addition, students will learn how to compile analyses and visualizations into reports, how to make the reports reproducible, and how to post reports on a website or blog.
+</blockquote>
+
+It has wonderful sets of slides including this [delightful primer on visualizing uncertainty](https://wilkelab.org/SDS375/slides/visualizing-uncertainty.html#1), and accompnaying code that can be downloaded and worked through. Bonus: all of the slides are hosted on github such that you can see how they're put together.
+
+### The ggplot2 bible
+
 The definitive guide to `ggplot2`, [The ggplot2 Book](https://ggplot2-book.org/index.html) is a fantastic resource for novices and experts alike. It is easy to navigate and has helpful examples with code used to create each figure. (I love to consult the section on [annotations](https://ggplot2-book.org/annotations.html) as I never remember exactly how they work for some reason.)
 
 ![The ggplot2 book](images/ggplot2book.PNG)
+
+### Other great viz resources
 
 The [Storytelling with Data](https://www.storytellingwithdata.com/blog) blog has an excellent selection of articles that give tips and tricks on how to design graphics that are easy to understand.
 
 Their [Chart Guide](https://www.storytellingwithdata.com/chart-guide) is also a fantastic starting point for how to pick a chart.
 
 ![SWD Chart Guide](images/swd-guide.PNG)
-
-[Clause Wilke's Course on Data Visualization in R](https://wilkelab.org/SDS375/syllabus.html) is perhaps the definitive course on data viz in R. The description reads:
-
-<blockquote cite="https://wilkelab.org/SDS375/syllabus.html">
-In this class, students will learn how to visualize data sets and how to reason about and communicate with data visualizations. A substantial component of this class will be dedicated to learning how to program in R. In addition, students will learn how to compile analyses and visualizations into reports, how to make the reports reproducible, and how to post reports on a website or blog.
-</blockquote>
 
 [Jonathan Tan's exploration of Household Solar Energy in the US](https://jtanwk.github.io/us-solar/) is an amazing data storytelling piece that shows all of the code required to create each figure. It makes great use of annotations to explain each component of the visualizations. 
 
