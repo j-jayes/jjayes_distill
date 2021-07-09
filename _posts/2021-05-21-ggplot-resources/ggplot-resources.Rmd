@@ -47,6 +47,22 @@ In the tabs below, I have collected some resources that I hope will be beneficia
 
 ::::: {.panelset}
 
+
+::: {.panel}
+[Installing R]{.panel-name}
+
+# Getting started
+
+Before we can do the fun stuff, we need to install R and RStudio.
+
+The [Modern Dive textbook](https://moderndive.com) has a great primer on [getting started in R](https://moderndive.com/1-getting-started.html) with an explanation of the difference between R and RStudio:
+
+![Modern Dive analogy](images/modern-dive-analogy.PNG)
+
+The Rstudio Education team also have a great [beginner guide](https://education.rstudio.com/learn/beginner/) to R that covers installation.
+
+:::
+
 ::: {.panel}
 [Learning R]{.panel-name}
 
