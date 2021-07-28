@@ -1,0 +1,138 @@
+---
+title: "Spanish Flu Mortality"
+description: |
+  A short description of the post.
+author:
+  - name: Jonathan Jayes
+    url: {}
+date: 07-28-2021
+output:
+  distill::distill_article:
+    self_contained: false
+    code_folding: true
+    highlight: haddock
+    highlight_downlit: true
+    toc: true
+draft: true
+---
+
+```{r}
+
+library(tidyverse)
+library(tidymodels)
+library(lubridate)
+library(glue)
+library(ggridges)
+
+theme_set(theme_light())
+
+df <- read_rds("data/spanish_flu_data.rds")
+```
+
+
+# The 1918 Spanish flu pandemic in South Africa: assesing mortality
+
+## Abstract
+
+This paper looks at Spanish flu mortality in 15 towns in the Cape Province of South Africa.
+
+40,000 deaths
+
+## Introduction
+
+I assess excess mortality using three different methods to quantify how many people died in each town.
+
+Then I look at three measures of pre-pandemic health and how these correlate with excess mortality.
+
+## Historical background
+
+#### Importance of initial exposure
+
+## Findings in other literature
+
+## Data
+
+## Who died?
+
+Figure \@ref(fig:viridis-deaths) shows a heatmap of the deaths.
+
+```{r viridis-deaths, layout="l-body-outset", fig.width = 8, fig.height=6, fig.cap="Heatmap of deaths per week"}
+df %>%
+  filter(between(death_date, ymd("1915-01-01"), ymd("1920-12-30"))) %>%
+  mutate(death_date = floor_date(death_date, unit = "week")) %>%
+  count(death_date, town) %>%
+  pivot_wider(names_from = "town", values_from = "n", values_fill = 0) %>%
+  pivot_longer(-death_date, names_to = "town", values_to = "n") %>%
+  mutate(town = fct_reorder(town, n)) %>%
+  ggplot(aes(death_date, town, fill = n)) +
+  geom_tile() +
+  geom_vline(xintercept = ymd("1919-01-01"), lty = 2) +
+  scale_fill_viridis_c(trans = "sqrt") +
+  labs(
+    x = NULL,
+    y = NULL,
+    fill = "Number of deaths per week"
+  ) +
+  theme(legend.position = "bottom") +
+  guides(fill = guide_colourbar(
+    barwidth = 30, barheight = .5,
+    title.position = "top",
+    title.hjust = .5
+  ))
+```
+
+```{r}
+# order of towns peak?
+town_order <- df %>%
+  filter(between(death_date, ymd("1918-09-01"), ymd("1919-08-30"))) %>%
+  mutate(death_date = floor_date(death_date, unit = "3 days")) %>%
+  count(death_date, town) %>%
+  group_by(town) %>%
+  slice_max(n, n = 1) %>%
+  ungroup() %>%
+  arrange(death_date) %>%
+  select(town)
+
+town_order <- town_order %>%
+  mutate(row_num = row_number())
+
+df %>%
+  filter(between(death_date, ymd("1918-09-01"), ymd("1918-12-30"))) %>%
+  mutate(death_date = floor_date(death_date, unit = "days")) %>%
+  count(death_date, town) %>%
+  pivot_wider(names_from = "town", values_from = "n", values_fill = 0) %>%
+  pivot_longer(-death_date, names_to = "town", values_to = "n") %>%
+  inner_join(town_order) %>%
+  mutate(town = fct_reorder(town, row_num, .desc = T)) %>%
+  ggplot(aes(x = death_date, y = town, height = n, fill = town, group = town)) +
+  geom_density_ridges(stat = "identity", show.legend = F) +
+  scale_fill_viridis_d() +
+  labs(
+    x = "Date of death",
+    y = NULL
+  )
+
+```
+
+
+### What were the mortality rates in each town?
+
+Necessity of looking at excess mortality rather than Spanish flu deaths alone.
+
+#### By town
+
+#### By town, gender, race, age group...
+
+#### Timing and the absence of subsequent waves
+
+This speaks to the severity of the pandemic. Caveat, Komgha and Oudtshoorn. 
+
+## Correlates
+
+### What is correlated with the death rates in the different towns?
+
+#### Pre-pandemic pneumonia and influenza mortality
+
+#### Pre-pandemic infant mortality rates
+
+#### Percentage of foriegn born individuals and literacy.

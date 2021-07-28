@@ -1,0 +1,20 @@
+---
+title: "Resources"
+description:
+    "Test"
+draft: true
+---
+
+This is a test page.
+
+```{r}
+library(tidyverse)
+theme_set(theme_light())
+
+iris %>% 
+    as_tibble() %>% 
+    ggplot(aes(Sepal.Length, Sepal.Width, colour = Species)) +
+    geom_point()
+
+```
+

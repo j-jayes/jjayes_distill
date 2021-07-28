@@ -240,6 +240,14 @@ df_sent <- df_sent %>%
 This figure superimposes the week-specific words above the line graph that shows the evolution of the students' sentiment across the weeks.
 
 ```{r wwf, layout="l-body-outset", fig.width = 8, fig.height=5, fig.cap="Sentiment and week-words figure"}
+# jpeg(
+#     filename="images/fig_4_sentiment_and_week_words.jpeg",
+#     width=7,
+#     height=5,
+#     units="in",
+#     res=1000)
+
+
 df_sent %>% 
   ggplot(aes(max_date, mean_sentiment, label = words_paste)) +
   geom_line(aes(group = 1)) +
@@ -251,6 +259,8 @@ df_sent %>%
   labs(y = "Average sentiment of students' diary entries",
        x = NULL,
        caption = "Note: words displayed are most specific to each week of diary entries")
+
+# dev.off()
 
 ```
 
@@ -293,7 +303,16 @@ p2 <- df %>%
 
 
 ```{r context, layout="l-body-outset", fig.width = 8, fig.height=6, fig.cap="Comparison figure"}
+# jpeg(
+#     filename="images/fig_5_comparison_figure.jpeg",
+#     width=8,
+#     height=6,
+#     units="in",
+#     res=1000)
+
 p1 / p2 
+
+# dev.off()
 ```
 
 It is difficult to conclude about a relationship between the number of cases and the sentiment of the students' reflections. While there appears to be a relationship between average sentiment and number of tests at the outset of the lockdown, I think this is statistical noise rather than some sort of correlation.
@@ -443,6 +462,15 @@ df_covid %>%
 Alternatively we can have a legend variant of option 2.
 
 ```{r}
+coeff <- 10
+
+# jpeg(
+#     filename="images/fig_7_context_diary_dates.jpeg",
+#     width=6,
+#     height=4,
+#     units="in",
+#     res=1000)
+
 df_covid %>%
   ggplot() +
   geom_rect(aes(xmin = lubridate::ymd("2020-03-22"), 
@@ -451,16 +479,20 @@ df_covid %>%
                 ymax = 1738961,
                 fill = "Period of diary entries")) + 
   geom_line(aes(date, total_cases, lty = "Total cases")) +
-  geom_line(aes(date, total_deaths, lty = "Total deaths")) +
-  scale_y_continuous(labels = scales::number_format(accuracy = 1)) +
+  geom_line(aes(date, total_deaths*coeff, lty = "Total deaths")) +
+  scale_y_continuous(labels = scales::number_format(accuracy = 1),
+                     sec.axis = sec_axis(~.*1/coeff, name="Number of deaths", 
+                                         labels = scales::number_format(accuracy = 1))) +
   scale_x_date(limits = c(lubridate::ymd("2020-03-22"), lubridate::ymd("2021-03-23"))) +
   scale_fill_grey(start = .7) +
   coord_cartesian(ylim = c(NA, 1538961)) +
   theme(legend.position = "bottom") +
-  labs(y = "Number of cases and deaths",
+  labs(y = "Number of cases",
        x = NULL,
        lty = NULL,
        fill = NULL)
+
+# dev.off()
 ```
 
 
@@ -501,6 +533,14 @@ sent_df <- sentiment_scores %>%
 Figure \@ref(fig:fin-mkt-comp) shows the mean sentiment of the students' diary entries alongside the JSE All Share Index for the same period, as well as the Rand to US Dollar exchange rate. Several students question in their entries what will happen to the stock market, with one stating, "I was looking at good stock picks on the JSE today. Every disaster can be an opportunity...".
 
 ```{r fin-mkt-comp, layout="l-body-outset", fig.width = 8, fig.height=5, fig.cap="Financial markets comparison figure"}
+# jpeg(
+#     filename="images/fig_6_fin_mkts.jpeg",
+#     width=6,
+#     height=4,
+#     units="in",
+#     res=1000)
+
+
 sent_df %>% 
   bind_rows(df_zar, df_stocks) %>% 
   mutate(cat = fct_relevel(cat, "Mean sentiment of student's diary entries")) %>% 
@@ -512,6 +552,8 @@ sent_df %>%
   scale_y_continuous(labels = scales::number_format()) +
   labs(x = NULL,
        y = NULL)
+
+# dev.off()
 ```
 
 Again the trends displayed may constitute statistical noise. The JSE was rising out of an enormous trough created as investors panicked with Covid-19 spreading into Europe and the US. The Rand is a notoriously volatile currency. Yet, these trends are interesting to show in the context of the early weeks of lockdown.
