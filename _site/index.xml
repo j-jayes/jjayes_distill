@@ -12,7 +12,16 @@
       <link>https://interludeone.com/</link>
     </image>
     <generator>Distill</generator>
-    <lastBuildDate>Tue, 06 Jul 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 27 Jul 2021 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>Draft: Spanish Flu Mortality</title>
+      <dc:creator>Jonathan Jayes</dc:creator>
+      <link>https://interludeone.com/posts/2021-07-28-spanish-flu-mortality</link>
+      <description>This paper looks at mortality during the Spanish flu pandemic of 1918 in 15 districts in the Cape Province of South Africa.</description>
+      <guid>https://interludeone.com/posts/2021-07-28-spanish-flu-mortality</guid>
+      <pubDate>Tue, 27 Jul 2021 00:00:00 +0000</pubDate>
+      <media:content url="https://interludeone.com/posts/2021-07-28-spanish-flu-mortality/spanish-flu-mortality_files/figure-html5/viridis-deaths-1.png" medium="image" type="image/png" width="1536" height="1152"/>
+    </item>
     <item>
       <title>Students Speak</title>
       <dc:creator>Jonathan Jayes</dc:creator>
