@@ -57,6 +57,59 @@ Forms of Information of a Death. As of Act No. 7 of 1894 of the Cape Colony.
 
 "N.B. -- If the certificate of a Medical Practitioner is produced, the causes of Death and Duration of Illness must be recorded in the Registration Book by the Deputy Registrar and Assistant to the Deputy Registrar as stated in such Certificate, which is to be attached to the form."
 
+### Classification of race from ethnicity
+
+Race is one important feature of the analysis. As noted in @FOURIE2021105407, health and wealth in the Cape Province of 1918 were "closely correlated to race... with race being a strong predictor of income and social status" [@FOURIE2021105407, p. 2]. The death notices provide a field for the race of the deceased to be recorded. However, often ethnicity of the deceased was recorded instead. Further, more than 200 ethnicities appear only once among the records, such that the distribution of observed ethnicities is skewed to the right, with 419 **different** ethnicities recorded.
+
+<aside>
+```{r}
+df %>% 
+  count(race_original, sort = T) %>% 
+  ggplot(aes(n)) +
+  geom_histogram(fill = "midnightblue") +
+  scale_x_log10() +
+  labs(x = "Number of observations of a recorded ethnicity",
+       y = "Number of ethnicities")
+```
+</aside>
+
+In order to classify these 419 different categorical values down into a more manageable number, 3 broad race groupings in use in the Cape at the time and in South Africa today, I use a combination of regular expression and a linear support vector machine learning algorithm.
+
+Specifically, I hand coded the race 
+
+```{r}
+df %>% 
+  filter(race != "NA") %>% 
+  count(race, race_original, sort = T) %>% 
+  group_by(race) %>% 
+  slice_max(n, n = 12, with_ties = F) %>% 
+  ungroup() %>% 
+  mutate(race_original = reorder_within(race_original, n, race)) %>% 
+  ggplot(aes(n, race_original)) +
+  geom_col() +
+  scale_y_reordered() +
+  facet_wrap(~ race, scales = "free")
+
+group_by(town) %>%
+  slice_max(n, n = 12, with_ties = F) %>%
+  ungroup() %>%
+  select(Cradock = causes_of_death, n_cradock = n) %>%
+  head(12) %>%
+  bind_cols(df %>%
+    filter(
+      between(death_date, ymd("1918-09-01"), ymd("1919-01-01")),
+      town %in% c("Cradock", "Paarl")
+    ) %>%
+    count(causes_of_death, town, sort = T) %>%
+    group_by(town) %>%
+    slice_max(n, n = 12) %>%
+    ungroup() %>%
+    select(Paarl = causes_of_death, n_paarl = n) %>%
+    tail(12))
+
+```
+
+
 ## How many died during the pandemic?
 
 Figure \@ref(fig:viridis-deaths) shows a heatmap of the deaths.
