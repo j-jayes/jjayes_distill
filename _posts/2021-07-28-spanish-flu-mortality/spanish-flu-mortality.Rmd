@@ -28,6 +28,7 @@ library(ggridges)
 theme_set(theme_light())
 
 df <- read_rds("data/spanish_flu_data.rds")
+
 ```
 
 
@@ -45,13 +46,35 @@ I assess excess mortality using three different methods to quantify how many peo
 
 Then I look at three measures of pre-pandemic health and how these correlate with excess mortality.
 
-## Historical background
+## Historical background and related literature
 
-#### Importance of initial exposure
+The Spaish flu reached South Africa in mid 1918. A first, less virulent strain spread through Natal and into the Witwatersrand in winter, before a more severe strain gripped the Cape in October of 1918 as soldiers returned from the First World War. Historian Howard Phillips argues that soldiers embarking on the Jaroslav and the Veronej from Freetown in Sierra Leone acquired the disease in port, and brought it with them on their homeward journey before transmitting it to their families and neighbours in the Cape [@Phillips1984, p. 9]. The Cape was ravaged by the pandemic during "Black October" of 1918, and like populations across the world, working age adults suffered high mortality, threatening livelihoods in the midst of and in the aftermath of the pandemic [@Arthi2021]. @Fourie2021 have shown that more than half of those who died during the pandemic in a sample of town in the Cape were between 18 and 50 years of age, evidencing a "w-shaped" mortality curve, in contrast to the more common "u-shaped" curve. @Taubenberger2006 show that this pattern held across the world during the 1918 pandemic, with more than half of those recorded dead between 20 and 40 years of age.
+ 
+In explaining the severity of the disease, @Arthi2021 note that the novelty of the virus "contributed to its desctruction", detailing the time that it takes for a commuity to detect the disease, appreciate its epidemology, create medicines and reach immunity which allowed the flu to rapidly spread and harm populations across the world [@Arthi2021, p. 13]. 
 
-## Findings in other literature
+There is strong evidence of an immunizing effect that the less severe Natal strain provided in South Africa, though this was not known at the time. @Phillips1984 cites the Influenza Epidemic Commission of 1919 in South Africa suggest that different strains of organisms caused the two waves of the pandemic in the country, but that "no definite pronouncement is possible on this subject" [@Phillips1984, p. 293]. However, modern research has shown that cross-protection certinaly lessened the impact of the flu among those exposed to the earlier, milder variant. @Shanks2010 compare mortality rates among diamond miners in Kimberley and gold miners on the Rand during Black October. They find a mortality rate 35 times higher among Kimberley's diamond miners which the authors attribute to their lack of exposure to the less lethal strain earlier in the year. The authors control for the characteristics of the miners in their comparison, including recruitment, working conditions, housing and medical care [@Shanks2010, p. 2]. 
+
+Similarly, in Canada @Bogaert2015 studies protection from initial exposure to the less virulent strain among soldiers in the Canadian Expeditionary Force and finds that soldiers who were exposed to pneumonia and influenza prior to the second wave saw 82 percent protection from severe illness and 84 percent protection from death compared to compatriots who were later recruited from rural farming districts and had supposedly not been exposed to the first strain [@Bogaert2015, p. 34]. This finding is replicated among military camps in the United States at the time. @Barry2008 find that as early as March 1918, a mild strain of the virus was circulating in military camps and provided naturally acquired immunity to the more virulent strain that followed in the fourth quarter of the year. 
+
+There is discussion by @Shanks2016 regarding whether the two waves studied in soldiers in Canada, the United States, Australia and South Africa were caused by different viruses or different strains of the same virus, while @Bogaert2016 argues the distinction does not take away from the crucial point, initial exposure provided protection from the virulent wave in the second half of 1918. 
+
+The severity of the October wave may explain why South Africa was spared the third wave of early 1919 detailed by @Taubenberger2006 and the fourth wave that spread in Asia in mid 1919 noted by @Lin2014 and @Ogasawara2018 in their analysis of the long-run effects of in utero exposure (in Taiwan and China respectively). @Phillips1984 argues that although the epidemic's presence was lethal, "it was short-lived and by the middle of November it had virtually abated" [@Phillips1984, p. 294]. 
+
+### Correlates and causes of pandemic mortality
+
+A wealth of research has sought to examine what features explain the differing levels of mortality in different communities during the pandemic. @AcuaSoto2011InfluenzaAP examine features correlated with mortality from the flu in 66 large cities across the United States. The authors find that baseline health status was important, as proxied by pre-pandemic pneumonia, which they argue is "a bacterial condition with a strong biological interaction with the influenza virus" and infant mortality rates as a surrogate for population health [@AcuaSoto2011InfluenzaAP, p. 13]. @Clay2018 study the effect of pollution from coal fired power plants on pandemic mortality in the United States, and find that poor air quality was "an important cause of mortality during the pandemic" [@Clay2018, p. 79].
+
+### Calculating excess mortality
+
+@AcuaSoto2011InfluenzaAP present a clear method for assessing excess mortality based on a comparison with the historical trend. They define excess mortality as "deaths observed during the pandemic years minus the average death counts in the pre-pandemic years" [@AcuaSoto2011InfluenzaAP, p.23]. The authors had access to seven years of data preceding the pandemic. In addition, they normalize the death counts by population for the inhabitants of their 66 cities in the sample.
+
+### Who died
+
+The question of who died during the pandemic in South Africa has recieved some recent investigation. @Fourie
 
 ## Data
+
+The sources of data available to a researcher without doubt shape the design of their study. In his authoritative account of the Spanish flu pandemic in South Africa, historian Howard Phillips notes that prior to his own study, “extensive documentation... from [unpublished evidence] in the report of the Government-appointed Commission of Inquiry" had laid on the shelves of the Library of Parliament unexamined [@Phillips1984, p.9]. Similarly, the digitization of death records allows me at this time to ask different kinds of questions about the pandemic of 1918. Speficially it opens up an assessment of excess mortality and an indicatation of the importance of pre-existing levels of health in determining pandemic mortality rates within the districts of the Cape.
 
 Forms of Information of a Death. As of Act No. 7 of 1894 of the Cape Colony. 
 
@@ -59,7 +82,13 @@ Forms of Information of a Death. As of Act No. 7 of 1894 of the Cape Colony.
 
 ### Classification of race from ethnicity
 
-Race is one important feature of the analysis. As noted in @FOURIE2021105407, health and wealth in the Cape Province of 1918 were "closely correlated to race... with race being a strong predictor of income and social status" [@FOURIE2021105407, p. 2]. The death notices provide a field for the race of the deceased to be recorded. However, often ethnicity of the deceased was recorded instead. Further, more than 200 ethnicities appear only once among the records, such that the distribution of observed ethnicities is skewed to the right, with 419 **different** ethnicities recorded.
+Race is one important feature of the analysis. As noted in @Fourie2021, health and wealth in the Cape Province of 1918 were "closely correlated to race... with race being a strong predictor of income and social status" [@Fourie2021, p. 2]. The death notices provide a field for the race of the deceased to be recorded. However, often ethnicity of the deceased was recorded instead. See for example the record of Wills Bunu, who died in Queenstown on the 26th of October 1918 whose race is recorded as "Fingo". Fingo is a term for a group of ethnicities who fled Natal in the aftermath of the *Mfecane* to reside in the Xhosa speaking Eastern region of the Cape [@Stapleton, p. 362]. @Mtumane argues that the Fingo were "were embraced and integrated" by Xhosa in the Eastern Cape by the time of the Spanish flu [@Mtumane, p. 68]. 
+
+
+![Form of Information of the death of Wills Bunu](images/wills_bunu.jpg)
+
+
+Further, more than 200 ethnicities appear only once among the records, such that the distribution of observed ethnicities is skewed to the right, with 419 *different* ethnicities recorded.
 
 <aside>
 ```{r}
@@ -73,44 +102,37 @@ df %>%
 ```
 </aside>
 
-In order to classify these 419 different categorical values down into a more manageable number, 3 broad race groupings in use in the Cape at the time and in South Africa today, I use a combination of regular expression and a linear support vector machine learning algorithm.
+To classify these 419 different categorical values down into a more manageable number; 3 broad race groupings in use in the Cape at the time and in South Africa today, I use a combination of regular expression and a linear support vector machine learning algorithm.
 
-Specifically, I hand coded the race 
+To simplify the problem I hand coded the minority class (white) using regular expression (for example, coding "European" and "English" to white), and used a linear support vector machine to classify the remaining observations to black and coloured based on a hand-coded training set. @Suthaharan2016 explains that a linear support vector machine is well suited to binary text classification, as it can make use of sub-word features in a computationally cheap manner. It performs best when the classes in the training set are balanced. Because white individuals make up a minority of the dataset, it is possible to simply hand-code their observations as white and then make use of the machine learning algorithm to classify the remaining roughly equal classes. The binary linear SVM works by dividing the data domain along a hyperplane "to separate classes in the original domain" [@Suthaharan2016, p. 2]. 
 
-```{r}
+The advantage of the linear SVM as opposed to a more flexible machine learning method, for example a neural network, is that the linear SVM is explainable and it is possible to pull out indicators of how the algorithm performs the classification. In this case, I use the sub-word features of the ethnicities as predictors of race. As detailed in the appendix, I achieve an accuracy of 99 percent in the classification problem on previously unseen data. This model is a useful research output as the trained model can be employed by other researches faced with similar data and classification problems.
+
+
+```{r, ethnicity-race-classification, layout="l-body-outset", fig.width = 8, fig.height=6, fig.cap="Output of classification model"}
+
 df %>% 
-  filter(race != "NA") %>% 
+  filter(race != "NA",
+         race_original != "Assyrian") %>% 
   count(race, race_original, sort = T) %>% 
   group_by(race) %>% 
   slice_max(n, n = 12, with_ties = F) %>% 
   ungroup() %>% 
   mutate(race_original = reorder_within(race_original, n, race)) %>% 
-  ggplot(aes(n, race_original)) +
-  geom_col() +
+  ggplot(aes(n, race_original, fill = race)) +
+  geom_col(show.legend = F) +
   scale_y_reordered() +
-  facet_wrap(~ race, scales = "free")
-
-group_by(town) %>%
-  slice_max(n, n = 12, with_ties = F) %>%
-  ungroup() %>%
-  select(Cradock = causes_of_death, n_cradock = n) %>%
-  head(12) %>%
-  bind_cols(df %>%
-    filter(
-      between(death_date, ymd("1918-09-01"), ymd("1919-01-01")),
-      town %in% c("Cradock", "Paarl")
-    ) %>%
-    count(causes_of_death, town, sort = T) %>%
-    group_by(town) %>%
-    slice_max(n, n = 12) %>%
-    ungroup() %>%
-    select(Paarl = causes_of_death, n_paarl = n) %>%
-    tail(12))
+  facet_wrap(~ race, scales = "free") +
+  scale_fill_manual(values = wesanderson::wes_palette(3, name = "Zissou1", type = "continuous")) +
+  labs(x = NULL,
+       y = "Recorded ethnicity")
 
 ```
 
 
 ## How many died during the pandemic?
+
+In quantifying the number of South Africans who died during the pandemic, there were clear challenges to the recording aparatus of the government at the time. @Phillips1984 notes that "even under normal conditions in 1918, the South African governemnt lacked the means to record every death in the country" -- a feature which shows up in the infant and child mortality rates that vary widely between districts calculated from the death notices prior to the pandemic [@Phillips1984, p. 288]. Further, there are likely differences in the quality of records that vary with geography; @Phillips1984 notes that the legislation which stipulated the recording of deaths, the 1894 Births and Deaths Registration Act, "in theory applied to all inhabitants, but in practice was largely a dead letter in predominantly Black rural areas" [@Phillips1984, p. 288]. The text contained on the death notices evidence sensible differences in recording standards by geography, with the direction "If informants in municipalities and special urban areas do not appear peronally before 
 
 Figure \@ref(fig:viridis-deaths) shows a heatmap of the deaths.
 
@@ -138,9 +160,7 @@ df %>%
   ))
 ```
 
-There is considerable variation in the crude death rate by district over time, as shown in Figure \@ref(fig:town-density). Here we can see two important features of the pandemic in our sample of Cape districts. First, the pandemic arrived in different districts at different times. In districts close to Cape Town, where the soldiers arrived soon after they were released from quarantine at port.
-
-[Cite Philips here with the history of the arrival of the ships from Freetown]
+There is considerable variation in the crude death rate by district over time, as shown in Figure \@ref(fig:town-density). Here we can see two important features of the pandemic in our sample of Cape districts. First, the pandemic arrived in different districts at different times. In districts close to Cape Town and along the train line to Kimberley, where the soldiers arrived soon after they were released from quarantine at port, the virus spread rapidly. The evidence in this paper corroborate that of @Phillips1984 regarding the swift abatement of the virus following the peak in October. Only in Oudtshoorn and Komga do the effects of the flu appear to have lingered, with elevated mortality rates into December of 1918.
 
 <aside>
 Crude death rate is the total number of deaths during a given time interval divided by the population.
@@ -188,7 +208,7 @@ A great benefit of the dataset at hand is the recording of a cause of death on t
 - Doctors and families who reported to the registrar the cause of death may not have known that the deaths at the beginning of the pandemic were due to the Spanish flu as news of the disease likely travelled across the country slower than the disease itself.
 - There is likely some selection into the provision of a cause of death by location within a district. The Form of Information of a Death states that "Medical Certificates are essential in Urban Areas", while in "Rural Areas Informants can report in **three** ways -- one being under declaration" (find correct citation for death notice). 
 - There are discrepancies in the reporting of the disease by district. Contrast for instance the labelling of deaths in Cradock and Paarl. In the top facet of Figure \@ref(fig:cradock-paarl-causes), it is evident that the vast majority of deaths during the pandemic are labelled as Spanish flu deaths. In contrast, fewer than half of the deaths that occurred during the pandemic are labelled as Spanish flu deaths in Paarl.
-- To avoid this complication is is tempting to simply count the number of deaths in each district during the pandemic period and conclude that these were caused by the flu. However, districts of different population sizes would have expected different numbers of deaths in the absence of the pandemic. Hence it is not advisable to conclude that all recorded deaths were due to the flu.
+- To avoid this complication it is tempting to simply count the number of deaths in each district during the pandemic period and conclude that these were caused by the flu. However, districts of different population sizes would have expected different numbers of deaths in the absence of the pandemic. Hence it is not advisable to conclude that all recorded deaths were due to the flu.
 
 ```{r cradock-paarl-causes, layout="l-body-outset", fig.width = 8, fig.height=6, fig.cap="Density plot comparing causes of death during the pandemic in Cradock and Paarl"}
 df %>%
@@ -213,7 +233,7 @@ df %>%
        fill = NULL)
 ```
 
-Table \@ref(tab:cradock-paarl-causes-tab) evidences that the majority of deaths in Paarl were labelled simply as "Influenza".
+Table \@ref(tab:cradock-paarl-causes-tab) evidences that the majority of deaths in Paarl during the pandemic were labelled simply as "Influenza".
 
 ```{r cradock-paarl-causes-tab, layout="l-body-outset"}
 df %>%
@@ -241,15 +261,9 @@ df %>%
     knitr::kable(caption = "Comparison of common causes of death in Cradock and Paarl during the pandemic")
 ```
 
-An alternate set of methods for quantifying excess mortality use history as a guide for the number of deaths that we can expect to occur in each district. These use the mortality figures for three years preceding the pandemic as a guide, looking at the average number of deaths in each district during the pandemic peak (October, November and December), taking an average of the whole year mortality in each district, and creating regression models with the historical data to predict the expected number of deaths in the pandemic period. I explain each below.
+An alternate set of methods for quantifying excess mortality use history as a guide for the number of deaths that we can expect to occur in each district. Three methods use the mortality figures for three years preceding the pandemic as a guide, first looking at the average number of deaths in each district during the pandemic peak (October, November and December), second taking an average of the whole year mortality in each district, and third creating regression models with the historical data to predict the expected number of deaths in the pandemic period. I explain each below.
 
-First, making use of the death notices from 1915 to 1917 and following the methodology laid out by the South Africa Medical Research Council in @Dorrington2021, I calculate the average number of deaths per month in each town during the pandemic period in the three preceding years as a baseline. The SAMRC define excess mortality is calculated as "the number of all-cause deaths in the last week less the number that might have been expected to have occurred" [@Dorrington2021, p. 2]. 
-
-I then subtract this expected number of deaths from the observed number during the pandemic to calculate excess mortality.
-
-The advantage of this method is that it captures the seasonal variation in 
-
-Problems: data too coarse to get reasonable estimates at district-week level. aggregate to district-month level. 
+First, making use of the death notices from 1915 to 1917 and following the methodology laid out by the South Africa Medical Research Council in @Dorrington2021, I calculate the average number of deaths per month in each town during the pandemic period in the three preceding years as a baseline. The SAMRC define excess mortality is calculated as "the number of all-cause deaths in the last week less the number that might have been expected to have occurred" [@Dorrington2021, p. 2]. I widen the bandwidth from one week to one month to the coarsity of the data at district level. The resulting smoother estimates have less noise and appear reasonable. I then subtract this expected number of deaths from the observed number during the pandemic to calculate excess mortality during the 3 months of pandemic peak in 1918. The advantage of this method is that it captures the seasonal variation in mortality, as shown in Figure \@ref(fig:seasonality). It is interesting to note that the the smoothed line shows a peak in mortality in the third qarter of the year in the Cape between 1915 and 1920. This is in contrast to the seasonal pattern in mortality in South Africa as a whole in since 2015 as shown by @Dorrington2021 which displays a dramatic peak during winter.
 
 ```{r seasonality, layout="l-body-outset", fig.width = 8, fig.height=6, fig.cap="Mortality by week across districts - excluding 1918"}
 df %>% 
@@ -272,7 +286,31 @@ df %>%
          colour = "Year")
 ```
 
-Second, I calculate a simple average of the number of deaths per year in each district in the three prior years. Table \@ref(tab:mean-mortality-by-district-tab) shows the mortality by district from 1915 to 1917, and the average across these three years.
+This first method results in estimates of excess mortality of 
+
+```{r}
+df %>% 
+    filter(sf_indicator ==1) %>% 
+    mutate(death_date = floor_date(death_date, "week")) %>% 
+    count(death_date) %>% 
+    mutate(year = year(death_date),
+           week = week(death_date)) %>%
+    filter(year != 1918,
+           year > 1914) %>% 
+    ggplot(aes(week, n, colour = factor(year), group = year)) +
+    geom_point() +
+    geom_line() +
+    geom_vline(xintercept = c(40, 44), lty = 2) +
+    geom_smooth(aes(group = 1)) +
+    expand_limits(y = 0) +
+    scale_color_manual(values = wesanderson::wes_palette(5, name = "Zissou1", type = "continuous")) +
+    labs(x = "Week of the year",
+         y = "Number of deaths per week",
+         colour = "Year")
+```
+
+
+Second, following the methodology of @AcuaSoto2011InfluenzaAP I calculate a simple average of the number of deaths per year in each district in the three prior years and subtract the number of deaths in 1918. Table \@ref(tab:mean-mortality-by-district-tab) shows the mortality by district from 1915 to 1917, and the average across these three years.
 
 ```{r mean-mortality-by-district-tab, layout="l-body-outset"}
 df %>% 
@@ -290,8 +328,9 @@ df %>%
                col.names = c("District", "1915", "1916", "1917", "Average"))
 ```
 
+Figure \@ref(fig:excess-mortality-method-2) shows the excess mortality based on method two. 
 
-```{r}
+```{r excess-mortality-method-2, layout="l-body-outset", fig.width = 8, fig.height=6, fig.cap="Mortality by week across districts - excluding 1918"}
 df %>%
   mutate(year = year(death_date)) %>%
   count(year, town) %>%
@@ -548,8 +587,7 @@ df_infant %>%
 ```
 
 
-
-```{r}
+```{r, infant-mortality, layout="l-body-outset", fig.width = 8, fig.height=6, fig.cap="Infant mortality per 1000 children"}
 df_infant %>% 
   mutate(town = reorder_within(town, infant_mort_rate, race)) %>% 
   ggplot(aes(infant_mort_rate, town, colour = race)) +
@@ -593,7 +631,7 @@ Child mortality as a measure of pre-existing health in the different districts.
 
 - Defined as the number of deaths in our death notice dataset, divided by the number of children below 5 years of age from census data. The denominator for white individuals is from the 1918 census, while for Black and Coloured individuals is from the 1911 census. 
 
-```{r}
+```{r child-mortality, layout="l-body-outset", fig.width = 8, fig.height=6, fig.cap="Child mortality per 1000 children"}
 child_mortality <- read_rds("data/child_mortality.rds")
 
 child_mortality %>% 
@@ -706,7 +744,7 @@ pneumonia_influenza %>%
 ```
 
 
-```{r}
+```{r, pneumonia-influenza-mort, layout="l-body-outset", fig.width = 8, fig.height=6, fig.cap="Correlation pneumonia and influenza mortality"}
 pneumonia_influenza_mort <- read_rds("data/pneumonia_infleunza_mort.rds")
 
 pneumonia_influenza_mort %>%
@@ -822,7 +860,7 @@ df %>%
          town = fct_reorder(town, share_literate)) %>%
   ggplot(aes(share_literate, town, fill = race)) +
   scale_fill_manual(values = wesanderson::wes_palette(3, name = "Darjeeling1")) +
-  geom_col(position = "dodge") +
+  geom_col(position = "dodge", show.legend = F) +
   facet_wrap( ~ race) +
   scale_x_continuous(labels = percent_format())
 ```
@@ -1016,3 +1054,273 @@ lm_1 <- birth_place_shares %>%
 <tr><td style="text-align:left">F Statistic</td><td>0.869 (df = 1; 26)</td></tr>
 <tr><td colspan="2" style="border-bottom: 1px solid black"></td></tr><tr><td style="text-align:left"><em>Note:</em></td><td style="text-align:right"><sup>*</sup>p<0.1; <sup>**</sup>p<0.05; <sup>***</sup>p<0.01</td></tr>
 </table>
+
+### Foreign born whites
+
+Test of Phillips' assertion that 
+
+"Whites born in South Africa seemed to be more vulnerable [to the flu] than those who had grown up in Europe." Phillips quotes Dr W Watkins-Pitchford, Director of South African Institute for Medical Research, who said that "It was probable that most of the [European born whites] had acquired a certain amount of immunity in previous epidemics in Europe" [@Phillips1984, p. 295]
+
+```{r}
+sa_words <- c("Cape Province",
+              "Cape",
+              "Orange Free State",
+              "Transvaal",
+              "Kaap Provincie",
+              "Cradock",
+              "Somerset Strand",
+              "Queenstown",
+              "C.P.",
+              "Free State",
+              "Mafeking",
+              "Kaap",
+              "[not included on form]",
+              "Kaap",
+              "Johannesburg",
+              "Natal",
+              "Bechuanaland",
+              "East London",
+              "K.P.",
+              "Williston, Dist Fraserburg",
+              "Fort Beaufort",
+              "Griqualand West",
+              "O F S",
+              "Orange River Colony",
+              "Port Elizabeth",
+              "Sea Point",
+              "South Africa",
+              "Strand",
+              "Tarkastad")
+
+sa_words <- sa_words %>% 
+  paste(collapse = "|")
+
+df %>% 
+  filter(race == "White") %>% 
+  mutate(birthplace_bin = case_when(
+    str_detect(birthplace, sa_words) ~ "SA",
+    TRUE ~ "Europe"
+  )) %>% 
+  filter(between(death_date, ymd("1918-09-01"), ymd("1918-12-30"))) %>% 
+  count(birthplace_bin, town) %>% 
+  mutate(town = fct_reorder(town, n, .fun = sum)) %>% 
+  ggplot(aes(n, town, fill = birthplace_bin)) +
+  geom_col()
+
+
+
+
+# df %>% 
+#   filter(race == "White") %>% 
+#   mutate(birthplace_bin = case_when(
+#     str_detect(birthplace, sa_words) ~ "SA",
+#     TRUE ~ "Europe"
+#   )) %>% 
+#   filter(between(death_date, ymd("1918-09-01"), ymd("1918-12-30"))) %>%
+#   count(birthplace_bin, town) %>% 
+#   inner_join(birth_place_shares %>% 
+#   select(town, share_europe, share_sa) %>% 
+#   distinct()) %>% view
+#   mutate(town = fct_reorder(town, n, .fun = sum)) %>% 
+#   ggplot(aes(n, town, fill = birthplace_bin)) +
+#   geom_col()
+```
+
+
+## Conclusion
+
+## Appendix {.appendix}
+
+### Linear Support Vector Machine specification and workflow
+
+I use a linear support vector machine to classify ethnicity to race for black and coloured individuals based on a hand coded training set of 15 000 observations. I make use of sub-word features in my pre-processing tokenization. I use 10-fold cross validation in order to prevent data leakage and ensure that the classification results are robust.
+
+```{r, code_folding=F}
+df_classification <- read_rds("data/race_classification_15000.rds") 
+
+df_classification %>% sample_n(6)
+```
+
+At outset I use my data budget by separating a training and assessment set from my labelled training set of 33,500 observations. This ensures that I can assess the performance of the model on data that it has not been trained on. The initial split uses 75 percent of the labelled data as training data and reserved 25 percent for testing. This means that there are 3 750 observations that are excluded from the training set, and put aside for assessing model accuracy, sensitivity and specificity after tuning of the hyper parameter. I also stratify the training and testing data based on race in order to ensure that the classes are as balanced as possible.
+
+```{r, code_folding=F}
+set.seed(123)
+
+initial_split <- df_classification %>% initial_split(prop = .75, strata = race)
+initial_split
+
+# creating training and testing data from initial split
+df_train <- training(initial_split)
+df_test <- testing(initial_split)
+```
+
+In an attempt to avoid overfitting on the training data in tuning of the hyper parameter, I create 10 folds of cross validation data. In essence I create 10 datasets that sample from the training data to tune my model parameter before testing the model performance on the testing data. Again I stratify by race in my folds.
+
+```{r, code_folding=F}
+# creating 10-fold cross validation sets
+df_folds <- vfold_cv(df_train, 
+                     v = 10, 
+                     strata = race)
+
+```
+
+#### Preprocessing and feature engineering
+
+Next I create a recipe for pre-processing and tokenizing the text prior to modelling.
+
+I use the `textrecipes` package to tokenize the text into subword features. Using the `tokenizers.bpe` (where bpe stands for Byte-Pair Encoding) argument means that instead of breaking down our words into characters, the tokenizer algorithm will iteratively merge together frequently occurring subword pairs to find sub-words that are important in my dataset [@hvitfeldt2021supervised, p. 223]. It is helpful in this case as we get a sweet spot between character level and word level information. Sub-word information like this is important in NLP models. Further, sub-word models can handle new/unknown words at prediction time, which bag of words models cannot.
+
+I use the `themis` package to deal with class imbalance. The `step_smote` argument generates new examples of the minority class using the nearest neighbours of those cases. In this case coloured is the minority class and as such the smote algorithm will create new examples of coloured observations with existing data from coloured observations.
+
+I set the maximum number of tokens to be tuned later with the `tune()` argument.
+
+```{r, code_folding=F}
+library(textrecipes)
+library(themis)
+
+classifcation_rec <- recipe(race ~ ethnicity_as_recorded, data = df_train) %>% 
+    step_tokenize(ethnicity_as_recorded, 
+                  engine = "tokenizers.bpe",
+                  training_options = list(vocab_size = 200)) %>% 
+    step_tokenfilter(ethnicity_as_recorded, max_tokens = tune()) %>% 
+    step_tf(ethnicity_as_recorded) %>% 
+    step_normalize(all_predictors()) %>% 
+    step_smote(race)
+```
+
+#### Model specification
+
+I use a linear support vector machine, set the mode to classification and the engine that does the computation is LiblineaR, a wrapper for the C++ library LIBLINEAR. The LIBLINEAR library was the winner of ICML 2008 large-scale learning challenge, and can be used for binary as well as multi-class classification [@Fan2008, p. 35].
+
+```{r, code_folding=F}
+svm_spec <- svm_linear() %>% 
+    set_mode("classification") %>% 
+    set_engine("LiblineaR")
+
+svm_spec
+```
+
+#### Model workflow
+
+Here the workflow keeps together the pre-processor or recipe and the model specification. Later the workflow can be finalized with the hyper paramter that performs the best on a specified metric.
+
+```{r, code_folding=F}
+wf <- workflow() %>% 
+    add_recipe(classifcation_rec) %>% 
+    add_model(svm_spec)
+```
+
+#### Tuning grid
+
+The tuning grid specifies the values across which the model will search for the best performing number of tokens or predictors. The choices are specified manually in this case given the simple search space and single tuning parameter.
+
+```{r, code_folding=F}
+grid <- crossing(max_tokens = c(50, 100, 150, 200))
+```
+
+#### Tuning parameters
+
+By tuning the number of tokens using the 10 folds of cross validation data I can seect the 
+
+```{r, code_folding=F, eval=F}
+results <- tune_grid(
+    wf, 
+    df_folds,
+    grid = grid,
+    metrics = metric_set(accuracy, sens, spec)
+)
+```
+
+```{r, include=F}
+results <- read_rds("data/results.rds")
+```
+
+
+#### Autoplot results
+
+Here I draw a plot of model performance across the three metrics we specified above, accuracy, sensitivity and specificity. Balancing type 1 and type 2 errors here is not too important given that both sensitivity and specificity are so high. We can see that moving from 100 to 150 retained tokens, or predictors in our model, improves accuracy, sensitivity and specificity. Moving to 200 tokens worsens specificity marginally.
+
+```{r, code_folding=F}
+results %>% autoplot()
+```
+
+#### Finalize workflow
+
+Here I select the best model based on specificity across the 10 folds of cross validation data. 
+
+```{r, code_folding=F}
+wf_final <- wf %>% 
+  finalize_workflow(select_best(results, "spec"))
+```
+
+#### Final fit on the holdout data
+
+Finally, with the hyper paramter value chosen, I fit the model a last time, training on the training data and tested on the testing data created with the initial split. 
+
+```{r, code_folding=F, eval=F}
+final_fit <- last_fit(wf_final, initial_split,
+         metrics = metric_set(accuracy, sens, spec))
+```
+
+```{r, code_folding=F, include=F}
+final_fit <- read_rds("data/final_fit.rds")
+```
+
+The performance of the model on the testing data is almost identical to the cross validation folds. A success. 
+
+```{r, code_folding=F}
+collect_metrics(final_fit)
+```
+
+#### Confusion matrix
+
+The confusion matrix shows the number of predictions that the classifier made correctly and incorrectly. It is evident that it made 6 mistakes in total, out of the 3750 observations kept in the testing set. Two were predicted black when in truth they were coloured, and four predicted coloured when they were in fact black.
+
+```{r, code_folding=F}
+collect_predictions(final_fit) %>%
+  conf_mat(race, .pred_class) %>%
+  autoplot(type = "heatmap") +
+  scale_fill_viridis_c()
+```
+
+#### Model performance
+
+The model achieves 99.8 percent accuracy on previously unseen testing data, evidencing that it performs well on the sample of 15 000 hand labelled examples. It was then used on the remaining 25 000 individuals in order to collapse ethnicity to race in the full dataset. These predictions were checked by hand in order to correct any errors.
+
+#### Interpreting the model
+
+```{r, code_folding=F, eval=F}
+fit <- pull_workflow_fit(final_fit$.workflow[[1]])
+
+liblinear_obj <- fit$fit$W
+
+liblinear_df <- tibble(term = colnames(liblinear_obj),
+                       estimate = liblinear_obj[1,])
+
+words <- liblinear_df %>% 
+    filter(term != "Bias") %>% 
+    group_by(estimate > 0) %>% 
+    slice_max(abs(estimate), n = 20) %>% 
+    ungroup() %>% 
+    mutate(term = str_remove(term, "tf_ethnicity_as_recorded_"))
+```
+
+```{r, include=F}
+words <- read_rds("data/words.rds")
+```
+
+
+```{r, code_folding=F}
+words %>% 
+    mutate(term = str_extract(term, "\\w.*"),
+           term = str_to_lower(term)) %>% 
+    filter(!term %in% c("h", "b", "g"),
+           !is.na(term)) %>% 
+    ggplot(aes(estimate, fct_reorder(term, estimate), fill = estimate > 0)) +
+    geom_col(show.legend = F) +
+    labs(y = "Words and sub-words",
+         x = "Imprtance of feature")
+
+```
+
+Here we can see that if the ethnicity contains the sub-word features "KA", "Z, "AT", "OL", and "AN", the linear SVM is more likely to classify the individual as Black. In contrast, sub-word features "AR", and "AM", "M" and "L" are associated with coloured individuals.
