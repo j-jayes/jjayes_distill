@@ -50,9 +50,9 @@ Then I look at three measures of pre-pandemic health and how these correlate wit
 
 The Spaish flu reached South Africa in mid 1918. A first, less virulent strain spread through Natal and into the Witwatersrand in winter, before a more severe strain gripped the Cape in October of 1918 as soldiers returned from the First World War. Historian Howard Phillips argues that soldiers embarking on the Jaroslav and the Veronej from Freetown in Sierra Leone acquired the disease in port, and brought it with them on their homeward journey before transmitting it to their families and neighbours in the Cape [@Phillips1984, p. 9]. The Cape was ravaged by the pandemic during "Black October" of 1918, and like populations across the world, working age adults suffered high mortality, threatening livelihoods in the midst of and in the aftermath of the pandemic [@Arthi2021]. @Fourie2021 have shown that more than half of those who died during the pandemic in a sample of town in the Cape were between 18 and 50 years of age, evidencing a "w-shaped" mortality curve, in contrast to the more common "u-shaped" curve. @Taubenberger2006 show that this pattern held across the world during the 1918 pandemic, with more than half of those recorded dead between 20 and 40 years of age.
  
-In explaining the severity of the disease, @Arthi2021 note that the novelty of the virus "contributed to its desctruction", detailing the time that it takes for a commuity to detect the disease, appreciate its epidemology, create medicines and reach immunity which allowed the flu to rapidly spread and harm populations across the world [@Arthi2021, p. 13]. 
+In explaining the severity of the disease, @Arthi2021 note that the novelty of the virus "contributed to its destruction", detailing the time that it takes for a community to detect the disease, appreciate its epidemiology, create medicines and reach immunity which allowed the flu to rapidly spread and harm populations across the world [@Arthi2021, p. 13]. 
 
-There is strong evidence of an immunizing effect that the less severe Natal strain provided in South Africa, though this was not known at the time. @Phillips1984 cites the Influenza Epidemic Commission of 1919 in South Africa suggest that different strains of organisms caused the two waves of the pandemic in the country, but that "no definite pronouncement is possible on this subject" [@Phillips1984, p. 293]. However, modern research has shown that cross-protection certinaly lessened the impact of the flu among those exposed to the earlier, milder variant. @Shanks2010 compare mortality rates among diamond miners in Kimberley and gold miners on the Rand during Black October. They find a mortality rate 35 times higher among Kimberley's diamond miners which the authors attribute to their lack of exposure to the less lethal strain earlier in the year. The authors control for the characteristics of the miners in their comparison, including recruitment, working conditions, housing and medical care [@Shanks2010, p. 2]. 
+There is strong evidence of an immunizing effect that the less severe Natal strain provided in South Africa, though this was not known at the time. @Phillips1984 cites the Influenza Epidemic Commission of 1919 in South Africa suggest that different strains of organisms caused the two waves of the pandemic in the country, but that "no definite pronouncement is possible on this subject" [@Phillips1984, p. 293]. However, modern research has shown that cross-protection certainly lessened the impact of the flu among those exposed to the earlier, milder variant. @Shanks2010 compare mortality rates among diamond miners in Kimberley and gold miners on the Rand during Black October. They find a mortality rate 35 times higher among Kimberley's diamond miners which the authors attribute to their lack of exposure to the less lethal strain earlier in the year. The authors control for the characteristics of the miners in their comparison, including recruitment, working conditions, housing and medical care [@Shanks2010, p. 2]. 
 
 Similarly, in Canada @Bogaert2015 studies protection from initial exposure to the less virulent strain among soldiers in the Canadian Expeditionary Force and finds that soldiers who were exposed to pneumonia and influenza prior to the second wave saw 82 percent protection from severe illness and 84 percent protection from death compared to compatriots who were later recruited from rural farming districts and had supposedly not been exposed to the first strain [@Bogaert2015, p. 34]. This finding is replicated among military camps in the United States at the time. @Barry2008 find that as early as March 1918, a mild strain of the virus was circulating in military camps and provided naturally acquired immunity to the more virulent strain that followed in the fourth quarter of the year. 
 
@@ -60,32 +60,31 @@ There is discussion by @Shanks2016 regarding whether the two waves studied in so
 
 The severity of the October wave may explain why South Africa was spared the third wave of early 1919 detailed by @Taubenberger2006 and the fourth wave that spread in Asia in mid 1919 noted by @Lin2014 and @Ogasawara2018 in their analysis of the long-run effects of in utero exposure (in Taiwan and China respectively). @Phillips1984 argues that although the epidemic's presence was lethal, "it was short-lived and by the middle of November it had virtually abated" [@Phillips1984, p. 294]. 
 
-### Correlates and causes of pandemic mortality
+A wealth of research has sought to examine what features explain the differing levels of mortality in different communities during the pandemic. @AcuaSoto2011InfluenzaAP examine features correlated with mortality from the flu in 66 large cities across the United States. The authors find that baseline health status was important, as proxied by pre-pandemic pneumonia, which they argue is "a bacterial condition with a strong biological interaction with the influenza virus" and infant mortality rates as a surrogate for population health [@AcuaSoto2011InfluenzaAP, p. 13]. @Clay2018 study the effect of pollution from coal fired power plants on pandemic mortality in the United States, and find that poor air quality was "an important cause of mortality during the pandemic" [@Clay2018, p. 79]. The authors find that pollution was a significant contributor to deaths during the pandemic. They find that the magnitude of the effect was approximately half of the effects of pre-existing levels of health in a community. @Arthi2021 as well as @Chowell2008 who study the flu in England and Wales, and @Mamelund2006 who examines the flu in Denmark all find that socio-economic status impact health outcomes. They find that those who live in high density housing, for example the poor in cities, had poorer pre-existing health as measured by cases of and deaths from pneumonia and influenza, and high mortally rates during the pandemic.
 
-A wealth of research has sought to examine what features explain the differing levels of mortality in different communities during the pandemic. @AcuaSoto2011InfluenzaAP examine features correlated with mortality from the flu in 66 large cities across the United States. The authors find that baseline health status was important, as proxied by pre-pandemic pneumonia, which they argue is "a bacterial condition with a strong biological interaction with the influenza virus" and infant mortality rates as a surrogate for population health [@AcuaSoto2011InfluenzaAP, p. 13]. @Clay2018 study the effect of pollution from coal fired power plants on pandemic mortality in the United States, and find that poor air quality was "an important cause of mortality during the pandemic" [@Clay2018, p. 79].
 
-### Calculating excess mortality
-
-@AcuaSoto2011InfluenzaAP present a clear method for assessing excess mortality based on a comparison with the historical trend. They define excess mortality as "deaths observed during the pandemic years minus the average death counts in the pre-pandemic years" [@AcuaSoto2011InfluenzaAP, p.23]. The authors had access to seven years of data preceding the pandemic. In addition, they normalize the death counts by population for the inhabitants of their 66 cities in the sample.
-
-### Who died
-
-The question of who died during the pandemic in South Africa has recieved some recent investigation. @Fourie
+### Rewrite this little section. 
+Third, factors—such as illiteracy and foreign-born status—that might have prevented individuals from adopting public health recommendations were strong predictors of elevated mortality, often above and beyond their association with poverty.36 Higher rates of illiteracy were linked to higher rates of influenza mortality during the pandemic, across both cities and neighborhoods (Clay et al., 2019; Grantz et al., 2016a, b).
+“Crucially, the consequences of these barriers were not limited to the foreign-born: holding all else equal, native-born individuals living in areas with a higher share of foreign-born had higher mortality rates than their counterparts living alongside a lower share of foreign-born neighbors. This emphasizes the importance of neighborhood spillovers in infectious disease transmission—and, of course, demonstrates the interrelated nature of individual- and neighborhood-level mechanisms.” 14
 
 ## Data
 
-The sources of data available to a researcher without doubt shape the design of their study. In his authoritative account of the Spanish flu pandemic in South Africa, historian Howard Phillips notes that prior to his own study, “extensive documentation... from [unpublished evidence] in the report of the Government-appointed Commission of Inquiry" had laid on the shelves of the Library of Parliament unexamined [@Phillips1984, p.9]. Similarly, the digitization of death records allows me at this time to ask different kinds of questions about the pandemic of 1918. Speficially it opens up an assessment of excess mortality and an indicatation of the importance of pre-existing levels of health in determining pandemic mortality rates within the districts of the Cape.
+The sources of data available to a researcher without doubt shape the design of their study. In his authoritative account of the Spanish flu pandemic in South Africa, historian Howard Phillips notes that prior to his own study, “extensive documentation... from [unpublished evidence] in the report of the Government-appointed Commission of Inquiry" had laid on the shelves of the Library of Parliament unexamined [@Phillips1984, p.9]. His analysis of this information told the story of the pandemic in a way that had not been told before. Similarly, the digitization of death records allows different kinds of questions about the pandemic of 1918. Specifically it opens up an assessment of excess mortality and an indication of the importance of pre-existing levels of health in determining pandemic mortality rates within the districts of the Cape.
 
-Forms of Information of a Death. As of Act No. 7 of 1894 of the Cape Colony. 
+The dataset analysed here is made up of 40,000 digitized Forms of Information of a Death of individuals in 15 districts of the Cape Province between 1915 and 1920. The Forms are recorded as of Act No. 7 of 1894 of the Cape Colony. They contain demographic information about the deceased, details about their death, and details about the informant who told the Registrar about their passing. In this study, the date of death, cause of death and demographics are of particular interest. The years prior to the pandemic serve as a baseline against which to compare excess mortality during the pandemic. There are some limitations regarding the recording of cause of death and duration of last illness. These are discussed in detail in @Fourie2021. In short, where a doctor has tended to the deceased and completed a certificate, the Form will include the pertinent information from the Medical Practitioners certificate. In the absence of such a certificate, the Informant can provide this information if known. The text on the Form reads:
 
-"N.B. -- If the certificate of a Medical Practitioner is produced, the causes of Death and Duration of Illness must be recorded in the Registration Book by the Deputy Registrar and Assistant to the Deputy Registrar as stated in such Certificate, which is to be attached to the form."
+<blockquote>
+
+N.B. -- If the certificate of a Medical Practitioner is produced, the causes of Death and Duration of Illness must be recorded in the Registration Book by the Deputy Registrar and Assistant to the Deputy Registrar as stated in such Certificate, which is to be attached to the form.
+
+</blockquote>
 
 ### Classification of race from ethnicity
 
-Race is one important feature of the analysis. As noted in @Fourie2021, health and wealth in the Cape Province of 1918 were "closely correlated to race... with race being a strong predictor of income and social status" [@Fourie2021, p. 2]. The death notices provide a field for the race of the deceased to be recorded. However, often ethnicity of the deceased was recorded instead. See for example the record of Wills Bunu, who died in Queenstown on the 26th of October 1918 whose race is recorded as "Fingo". Fingo is a term for a group of ethnicities who fled Natal in the aftermath of the *Mfecane* to reside in the Xhosa speaking Eastern region of the Cape [@Stapleton, p. 362]. @Mtumane argues that the Fingo were "were embraced and integrated" by Xhosa in the Eastern Cape by the time of the Spanish flu [@Mtumane, p. 68]. 
+Race is one important feature of the analysis which follows. As noted in @Fourie2021, health and wealth in the Cape Province of 1918 were "closely correlated to race... with race being a strong predictor of income and social status" [@Fourie2021, p. 2]. The death notices provide a field for the race of the deceased to be recorded. However, often ethnicity of the deceased was recorded instead. See for example the record of Wills Bunu, who died in Queenstown on the 26th of October 1918 whose race is recorded as "Fingo". Fingo is a term for a group of ethnicities who fled Natal in the aftermath of the *Mfecane* to reside in the Xhosa speaking Eastern region of the Cape [@Stapleton, p. 362]. @Mtumane argues that the Fingo were "were embraced and integrated" by Xhosa in the Eastern Cape by the time of the Spanish flu [@Mtumane, p. 68]. In any event, some categorization has to be done to limit the number of different categories of recorded ethnicity.
 
 
-![Form of Information of the death of Wills Bunu](images/wills_bunu.jpg)
+![Form of Information of the death of Wills Bunu. Source: @Civil1918](images/wills_bunu.jpg)
 
 
 Further, more than 200 ethnicities appear only once among the records, such that the distribution of observed ethnicities is skewed to the right, with 419 *different* ethnicities recorded.
@@ -104,10 +103,11 @@ df %>%
 
 To classify these 419 different categorical values down into a more manageable number; 3 broad race groupings in use in the Cape at the time and in South Africa today, I use a combination of regular expression and a linear support vector machine learning algorithm.
 
-To simplify the problem I hand coded the minority class (white) using regular expression (for example, coding "European" and "English" to white), and used a linear support vector machine to classify the remaining observations to black and coloured based on a hand-coded training set. @Suthaharan2016 explains that a linear support vector machine is well suited to binary text classification, as it can make use of sub-word features in a computationally cheap manner. It performs best when the classes in the training set are balanced. Because white individuals make up a minority of the dataset, it is possible to simply hand-code their observations as white and then make use of the machine learning algorithm to classify the remaining roughly equal classes. The binary linear SVM works by dividing the data domain along a hyperplane "to separate classes in the original domain" [@Suthaharan2016, p. 2]. 
+To simplify the problem I hand coded the minority class (white) using regular expression (for example, coding "European" and "English" to white), and used a linear support vector machine to classify the remaining observations to black and coloured based on a hand-coded training set. @Suthaharan2016 explains that a linear support vector machine is well suited to binary classification using text data, as it can make use of sub-word features in a computationally cheap manner. It performs best when the classes in the training set are balanced. Because white individuals make up a minority of the dataset, it is possible to simply hand-code their observations as white and then make use of the machine learning algorithm to classify the remaining roughly equal classes. The binary linear SVM works by dividing the data domain along a hyperplane "to separate classes in the original domain" [@Suthaharan2016, p. 2]. 
 
-The advantage of the linear SVM as opposed to a more flexible machine learning method, for example a neural network, is that the linear SVM is explainable and it is possible to pull out indicators of how the algorithm performs the classification. In this case, I use the sub-word features of the ethnicities as predictors of race. As detailed in the appendix, I achieve an accuracy of 99 percent in the classification problem on previously unseen data. This model is a useful research output as the trained model can be employed by other researches faced with similar data and classification problems.
+The advantage of the linear SVM as opposed to a more flexible machine learning method, for example a neural network, is that the linear SVM is explainable and it is possible to pull out indicators of how the algorithm performs the classification. In this case, I use the sub-word features of the ethnicities as predictors of race. As detailed in the appendix, I achieve an accuracy of 99.8 percent in the classification problem on previously unseen data. This model is a useful research output as the trained model can be employed by other researches faced with similar data and classification problems. Specifics are detailed in the appendix.
 
+The output of the classification process is shown in \@ref(fig:ethnicity-race-classification) for the 12 most common classes for each race.
 
 ```{r, ethnicity-race-classification, layout="l-body-outset", fig.width = 8, fig.height=6, fig.cap="Output of classification model"}
 
@@ -132,9 +132,9 @@ df %>%
 
 ## How many died during the pandemic?
 
-In quantifying the number of South Africans who died during the pandemic, there were clear challenges to the recording aparatus of the government at the time. @Phillips1984 notes that "even under normal conditions in 1918, the South African governemnt lacked the means to record every death in the country" -- a feature which shows up in the infant and child mortality rates that vary widely between districts calculated from the death notices prior to the pandemic [@Phillips1984, p. 288]. Further, there are likely differences in the quality of records that vary with geography; @Phillips1984 notes that the legislation which stipulated the recording of deaths, the 1894 Births and Deaths Registration Act, "in theory applied to all inhabitants, but in practice was largely a dead letter in predominantly Black rural areas" [@Phillips1984, p. 288]. The text contained on the death notices evidence sensible differences in recording standards by geography, with the direction "If informants in municipalities and special urban areas do not appear peronally before 
+In quantifying the number of South Africans who died during the pandemic, there were clear challenges to the recording apparatus of the government at the time. @Phillips1984 notes that "even under normal conditions in 1918, the South African government lacked the means to record every death in the country" -- a feature which shows up in the infant and child mortality rates that vary widely between districts calculated from the death notices prior to the pandemic [@Phillips1984, p. 288]. Further, there are likely differences in the quality of records that vary with geography; @Phillips1984 notes that the legislation which stipulated the recording of deaths, the 1894 Births and Deaths Registration Act, "in theory applied to all inhabitants, but in practice was largely a dead letter in predominantly Black rural areas" [@Phillips1984, p. 288]. The text contained on the death notices evidence sensible differences in recording standards by geography, with the direction "If informants in municipalities and special urban areas do not appear personally before [District Registrar] proper Declaration must be completed and attached hereto. In *Rural* Areas Informants can report in *three* ways -- one being under declaration. Medical Certificates essential in Urban Areas" [@Civil1918]. Evidently, government officials at the time accounted for the difficulty in recording deaths in rural areas by lessening the requirements. Nonetheless, in comparing pre-pandemic figures with the information presented from the pandemic itself, we require not that under-reporting did not exist, but the less onerous assumption that the level of under-reporting remained constant within each district. 
 
-Figure \@ref(fig:viridis-deaths) shows a heatmap of the deaths.
+Figure \@ref(fig:viridis-deaths) shows a heatmap of the frequency of deaths in each district. The pandemic period is striking. Further, we see lighter coloured areas in larger districts like Oudtshoorn and Queenstown which have higher mortality prior to the pandemic (owing to their larger populations and hence greater number of deaths) than small districts such as Elliot and Sea Point.
 
 ```{r viridis-deaths, layout="l-body-outset", fig.width = 8, fig.height=6, fig.cap="Heatmap of deaths per week"}
 df %>%
@@ -160,7 +160,7 @@ df %>%
   ))
 ```
 
-There is considerable variation in the crude death rate by district over time, as shown in Figure \@ref(fig:town-density). Here we can see two important features of the pandemic in our sample of Cape districts. First, the pandemic arrived in different districts at different times. In districts close to Cape Town and along the train line to Kimberley, where the soldiers arrived soon after they were released from quarantine at port, the virus spread rapidly. The evidence in this paper corroborate that of @Phillips1984 regarding the swift abatement of the virus following the peak in October. Only in Oudtshoorn and Komga do the effects of the flu appear to have lingered, with elevated mortality rates into December of 1918.
+There is considerable variation in the crude death rate by district during the pandemic, as shown in Figure \@ref(fig:town-density). Here we can see two important features of the pandemic in our sample of Cape districts. First, the pandemic arrived in different districts at different times. In districts close to Cape Town and along the train line to Kimberley, where the soldiers arrived soon after they were released from quarantine at port, the virus spread rapidly. The evidence in this paper corroborate that of @Phillips1984 regarding the swift abatement of the virus following the peak in October. Only in Oudtshoorn and Komga do the effects of the flu appear to have lingered, with elevated mortality rates into December of 1918. Second, the rate of death, and likely the spread of the disease, differed between districts. For example, the steep surge of cases in Queenstown contrasts with a sustained deadly spread in Oudtshoorn.
 
 <aside>
 Crude death rate is the total number of deaths during a given time interval divided by the population.
@@ -199,14 +199,14 @@ df %>%
 ```
 
 
-### What were the mortality rates in each district?
+### What were the mortality rates in each district during the pandemic?
 
 #### Candidate methods for assessing (excess) mortality.
 
 A great benefit of the dataset at hand is the recording of a cause of death on the notice. This was either copied from the Certificate of the Medical Practitioner, or in the absence of such a certificate, told to the registrar by the informant. Hence, the most intuitive method to assess how many people died in each district of the Spanish flu is simply to count the number of deaths recorded with "Spanish flu" listed in the cause of death column. However, there are a number of drawbacks to this method.
 
-- Doctors and families who reported to the registrar the cause of death may not have known that the deaths at the beginning of the pandemic were due to the Spanish flu as news of the disease likely travelled across the country slower than the disease itself.
-- There is likely some selection into the provision of a cause of death by location within a district. The Form of Information of a Death states that "Medical Certificates are essential in Urban Areas", while in "Rural Areas Informants can report in **three** ways -- one being under declaration" (find correct citation for death notice). 
+- Doctors and families who reported to the registrar the cause of death may not have known that the deaths at the beginning of the pandemic were due to the Spanish flu as news of the disease likely travelled across the country slower than the disease itself, as explained by @Arthi2021.
+- There is likely some selection into the provision of a cause of death by location within a district. As noted in the data explanation, deaths in rural areas were not required to have a certificate of a medical practitioner who would have investigated the death and recorded its cause.
 - There are discrepancies in the reporting of the disease by district. Contrast for instance the labelling of deaths in Cradock and Paarl. In the top facet of Figure \@ref(fig:cradock-paarl-causes), it is evident that the vast majority of deaths during the pandemic are labelled as Spanish flu deaths. In contrast, fewer than half of the deaths that occurred during the pandemic are labelled as Spanish flu deaths in Paarl.
 - To avoid this complication it is tempting to simply count the number of deaths in each district during the pandemic period and conclude that these were caused by the flu. However, districts of different population sizes would have expected different numbers of deaths in the absence of the pandemic. Hence it is not advisable to conclude that all recorded deaths were due to the flu.
 
@@ -261,9 +261,17 @@ df %>%
     knitr::kable(caption = "Comparison of common causes of death in Cradock and Paarl during the pandemic")
 ```
 
-An alternate set of methods for quantifying excess mortality use history as a guide for the number of deaths that we can expect to occur in each district. Three methods use the mortality figures for three years preceding the pandemic as a guide, first looking at the average number of deaths in each district during the pandemic peak (October, November and December), second taking an average of the whole year mortality in each district, and third creating regression models with the historical data to predict the expected number of deaths in the pandemic period. I explain each below.
+An alternate set of methods for quantifying excess mortality use history as a guide for the number of deaths that we can expect to occur in each district. I use three methods wherein the mortality figures for three years preceding the pandemic are used as a guide, first looking at the average number of deaths in each district during the pandemic peak (October, November and December), second taking an average of the whole year mortality in each district, and third creating regression models with the historical data to predict the expected number of deaths in the pandemic period. I explain each below.
 
-First, making use of the death notices from 1915 to 1917 and following the methodology laid out by the South Africa Medical Research Council in @Dorrington2021, I calculate the average number of deaths per month in each town during the pandemic period in the three preceding years as a baseline. The SAMRC define excess mortality is calculated as "the number of all-cause deaths in the last week less the number that might have been expected to have occurred" [@Dorrington2021, p. 2]. I widen the bandwidth from one week to one month to the coarsity of the data at district level. The resulting smoother estimates have less noise and appear reasonable. I then subtract this expected number of deaths from the observed number during the pandemic to calculate excess mortality during the 3 months of pandemic peak in 1918. The advantage of this method is that it captures the seasonal variation in mortality, as shown in Figure \@ref(fig:seasonality). It is interesting to note that the the smoothed line shows a peak in mortality in the third qarter of the year in the Cape between 1915 and 1920. This is in contrast to the seasonal pattern in mortality in South Africa as a whole in since 2015 as shown by @Dorrington2021 which displays a dramatic peak during winter.
+First, making use of the death notices from 1915 to 1917 and following the methodology laid out by the South Africa Medical Research Council (SAMRC) in @Dorrington2021, I calculate the average number of deaths per month in each town during the pandemic peak of October, November and December in the three preceding years as a baseline. The SAMRC define excess mortality is calculated as "the number of all-cause deaths in the last week less the number that might have been expected to have occurred" [@Dorrington2021, p. 2]. I widen the bandwidth from one week to one month due to the coarsity of the data at district level. The resulting smoother estimates have less noise and appear reasonable. I then subtract this expected number of deaths from the observed number during the pandemic to calculate excess mortality during the 3 months of pandemic peak in 1918. The advantage of this method is that it captures the seasonal variation in mortality, as shown in Figure \@ref(fig:seasonality). It is interesting to note that the the smoothed line shows a peak in mortality in the third quarter of the year in the Cape between 1915 and 1920. This is in contrast to the seasonal pattern in mortality in South Africa as a whole in since 2015 as shown by @Dorrington2021 which displays a dramatic peak during mid-winter shown in \@ref(fig:samrc-pattern).
+
+<aside>
+
+```{r, samrc-pattern, echo=FALSE, out.width='40%', fig.cap="Seasonal pattern in mortality in South Africa"}
+knitr::include_graphics('images/samrc.PNG')
+```
+Source: @Dorrington2021
+</aside>
 
 ```{r seasonality, layout="l-body-outset", fig.width = 8, fig.height=6, fig.cap="Mortality by week across districts - excluding 1918"}
 df %>% 
@@ -286,49 +294,80 @@ df %>%
          colour = "Year")
 ```
 
-This first method results in estimates of excess mortality of 
+This first method results in estimates of excess mortality shown in Table \@ref(tab:samrc-method-tab). Here it is evident that while the largest number of deaths occurred in Queenstown and Paarl, the districts of Peddie and Elliot saw more than 10 times as many deaths as they had in the period between October and December in the three years preceding the pandemic.
 
-```{r}
-df %>% 
-    filter(sf_indicator ==1) %>% 
-    mutate(death_date = floor_date(death_date, "week")) %>% 
-    count(death_date) %>% 
-    mutate(year = year(death_date),
-           week = week(death_date)) %>%
-    filter(year != 1918,
-           year > 1914) %>% 
-    ggplot(aes(week, n, colour = factor(year), group = year)) +
-    geom_point() +
-    geom_line() +
-    geom_vline(xintercept = c(40, 44), lty = 2) +
-    geom_smooth(aes(group = 1)) +
-    expand_limits(y = 0) +
-    scale_color_manual(values = wesanderson::wes_palette(5, name = "Zissou1", type = "continuous")) +
-    labs(x = "Week of the year",
-         y = "Number of deaths per week",
-         colour = "Year")
+```{r samrc-method-tab, layout="l-body-outset"}
+df %>%
+  mutate(
+    week = week(death_date),
+    year = year(death_date)
+  ) %>%
+  filter(
+    between(week, 40, 53),
+    death_date < ymd("1918-01-01")
+  ) %>%
+  count(town, year) %>%
+  group_by(town) %>%
+  mutate(mean_deaths_1915_1917 = mean(n)) %>%
+  ungroup() %>%
+  distinct(town, mean_deaths_1915_1917) %>%
+  inner_join(df %>%
+    mutate(
+      week = week(death_date),
+      year = year(death_date)
+    ) %>%
+    filter(
+      between(week, 40, 53),
+      year == 1918
+    ) %>%
+    count(town, year) %>%
+    rename(deaths_1918 = n), by = "town") %>%
+  select(-year) %>%
+  arrange(desc(deaths_1918)) %>%
+  mutate(
+    excess_mortality = deaths_1918 - mean_deaths_1915_1917,
+    across(where(is.numeric), round),
+    excess_mort_perc = scales::percent(excess_mortality / mean_deaths_1915_1917, accuracy = 1)
+  ) %>%
+  knitr::kable(
+    col.names = c("District", "Pre-pandemic mean", "Pandemic period", "Excess mortality", "Percent excess mortality"),
+    caption = "Excess mortality based on SAMRC method",
+    align = c("l", rep('r', 4))
+  )
+
 ```
 
 
-Second, following the methodology of @AcuaSoto2011InfluenzaAP I calculate a simple average of the number of deaths per year in each district in the three prior years and subtract the number of deaths in 1918. Table \@ref(tab:mean-mortality-by-district-tab) shows the mortality by district from 1915 to 1917, and the average across these three years.
+Second, I follow the methodology of @AcuaSoto2011InfluenzaAP who define excess mortality as "deaths observed during the pandemic years minus the average death counts in the pre-pandemic years" [@AcuaSoto2011InfluenzaAP, p.23]. While these authors had access to seven years of data preceding the pandemic, I calculate a simple average of the number of deaths per year in each district in the three prior years and subtract the number of deaths in 1918. Table \@ref(tab:mean-mortality-by-district-tab) shows the mortality by district from 1915 to 1917, and the average across these three years.
 
 ```{r mean-mortality-by-district-tab, layout="l-body-outset"}
-df %>% 
-  filter(death_date < ymd("1918-01-01")) %>% 
-  mutate(year = year(death_date)) %>% 
-  count(town, year) %>% 
-  group_by(town) %>% 
-  mutate(average = mean(n)) %>% 
-  ungroup() %>% 
-  pivot_wider(names_from = "year", values_from = "n") %>% 
-  relocate(average, .after = `1917`) %>% 
-  mutate(across(-town, ~ round(., 0))) %>% 
-  arrange(desc(average)) %>% 
-  knitr::kable(caption = "Mortality by district in years preceding pandemic",
-               col.names = c("District", "1915", "1916", "1917", "Average"))
+df %>%
+  filter(death_date < ymd("1918-01-01")) %>%
+  mutate(year = year(death_date)) %>%
+  count(town, year) %>%
+  group_by(town) %>%
+  mutate(average = mean(n)) %>%
+  ungroup() %>%
+  pivot_wider(names_from = "year", values_from = "n") %>%
+  relocate(average, .after = `1917`) %>%
+  mutate(across(-town, ~ round(., 0))) %>%
+  inner_join(df %>%
+    mutate(year = year(death_date)) %>%
+    filter(year == 1918) %>%
+    count(town) %>% rename(`1918` = n)) %>%
+  mutate(
+    excess_mortality = `1918` - average,
+    excess_mort_perc = scales::percent(excess_mortality / average, accuracy = 1)
+  ) %>%
+    arrange(desc(excess_mortality)) %>%
+  knitr::kable(
+    caption = "Excess mortality based on Acuña-Soto, Viboud, and Chowell method",
+    col.names = c("District", "1915", "1916", "1917", "'15-'17 Average", "1918", "Excess mortality", "Percent excess mortality"),
+    align = c("l", rep("r", 7))
+  )
 ```
 
-Figure \@ref(fig:excess-mortality-method-2) shows the excess mortality based on method two. 
+Figure \@ref(fig:excess-mortality-method-2) shows the excess mortality based on method two. Here we can see that Peddie and Elliot stand out with large excess mortality relative to their mean mortality preceding the pandemic.
 
 ```{r excess-mortality-method-2, layout="l-body-outset", fig.width = 8, fig.height=6, fig.cap="Mortality by week across districts - excluding 1918"}
 df %>%
@@ -507,13 +546,15 @@ df_reg %>%
 
 ```{r}
 df_reg %>% 
-  distinct(town, observed, mean_projected_deaths) %>% 
+  distinct(town, mean_projected_deaths, observed) %>% 
   mutate(excess_mortality = observed - mean_projected_deaths,
-         across(where(is.numeric), .fns = round)) %>% 
+         across(where(is.numeric), .fns = round),
+         excess_mortality_pct = scales::percent(excess_mortality / mean_projected_deaths, accuracy = 1)) %>% 
   arrange(desc(excess_mortality)) %>% 
-  # mutate(across(where(is.numeric), .fns = ~ number_format(.x, ))) %>% 
-  knitr::kable(col.names = c("District", "Observed", "Projected", "Excess"),
-               caption = "Observed, predicted and excess mortality based on regression methods")
+  # mutate(across(where(is.numeric), .fns = ~ scales::number_format(.x, accuracy = 1))) %>%
+  knitr::kable(col.names = c("District", "Projected", "Observed", "Excess", " Percentage excess"),
+               caption = "Excess mortality based on regression methods",
+               align = c("l", rep("r", 4)))
 ```
 
 
@@ -521,14 +562,9 @@ df_reg %>%
 
 A possible choice at this point would be to classify any death occurring during the pandemic with respiratory disease such as pneumonia or influenza listed in the cause of death as a Spanish flu death. [To be completed: In the appendix I show that this can be done effectively with a machine learning model and a relatively small set of hand-labelled training data.]
 
-
 ```{r}
 # show figure from presentation that has Phillips numbers compared to our own.
 ```
-
-#### Timing and the absence of subsequent waves
-
-This speaks to the severity of the pandemic. Caveat, Komgha and Oudtshoorn. 
 
 ## Correlates
 
@@ -611,7 +647,7 @@ infant_mortality %>%
   filter(births > 5) %>% 
   ggplot(aes(infant_mort_rate, mort_rate)) +
   geom_point(aes(size = total, colour = race)) +
-  geom_smooth(method = "lm", se = F, aes(colour = "Both groups")) +
+  # geom_smooth(method = "lm", se = F, aes(colour = "Both groups")) +
   geom_smooth(aes(colour = race), method = "lm", se = F) +
   scale_x_continuous(labels = number_format(scale = 1000)) +
   scale_y_continuous(labels = number_format(scale = 1000)) +
@@ -622,6 +658,20 @@ infant_mortality %>%
        colour = "Race group")
 
 ```
+
+
+```{r}
+lm_1 <- infant_mortality %>%
+  filter(race == "Both groups") %>% 
+  lm(mort_rate ~ infant_mort_rate, data = .)
+
+lm_2 <- infant_mortality %>%
+  filter(race != "Both groups") %>% 
+  lm(mort_rate ~ infant_mort_rate + race, data = .)
+
+stargazer::stargazer(lm_1, lm_2, type = "html")
+```
+
 
 [Conclude here]
 
@@ -635,6 +685,7 @@ Child mortality as a measure of pre-existing health in the different districts.
 child_mortality <- read_rds("data/child_mortality.rds")
 
 child_mortality %>% 
+  filter(race != "Both groups") %>% 
   mutate(town = reorder_within(town, child_mort_rate, race)) %>%
   ggplot(aes(child_mort_rate, town, colour = race)) +
   geom_point() +
@@ -652,6 +703,7 @@ child_mortality %>%
 
 ```{r}
 child_mortality %>% 
+  filter(race != "Both groups") %>% 
   group_by(town) %>% 
   mutate(n_under_5_t = sum(n_under_5),
          deaths_t = sum(deaths),
@@ -672,7 +724,6 @@ Now we can compare these mortality statistics during the pandemic
 child_mortality %>% 
   ggplot(aes(child_mort_rate, mort_rate)) +
   geom_point(aes(size = total, colour = race)) +
-  geom_smooth(method = "lm", se = F, aes(colour = "Both groups")) +
   geom_smooth(aes(colour = race), method = "lm", se = F) +
   scale_x_continuous(labels = number_format(scale = 1000)) +
   scale_y_continuous(labels = number_format(scale = 1000)) +
@@ -685,12 +736,14 @@ child_mortality %>%
 
 
 ```{r}
-# lm_1 <- child_mortality %>%
-#   lm(mort_rate ~ child_mort_rate, data = .)
-# 
-# lm_2 <- child_mortality %>%
-#   lm(mort_rate ~ child_mort_rate + race, data = .)
-# 
+lm_1 <- child_mortality %>%
+  filter(race == "Both groups") %>% 
+  lm(mort_rate ~ child_mort_rate, data = .)
+
+lm_2 <- child_mortality %>%
+  filter(race != "Both groups") %>% 
+  lm(mort_rate ~ child_mort_rate + race, data = .)
+
 # stargazer::stargazer(lm_1, lm_2, type = "html")
 ```
 
@@ -698,20 +751,20 @@ child_mortality %>%
 <tr><td></td><td colspan="2" style="border-bottom: 1px solid black"></td></tr>
 <tr><td style="text-align:left"></td><td colspan="2">mort_rate</td></tr>
 <tr><td style="text-align:left"></td><td>(1)</td><td>(2)</td></tr>
-<tr><td colspan="3" style="border-bottom: 1px solid black"></td></tr><tr><td style="text-align:left">child_mort_rate</td><td>0.132<sup>***</sup></td><td>0.066<sup>*</sup></td></tr>
-<tr><td style="text-align:left"></td><td>(0.030)</td><td>(0.038)</td></tr>
+<tr><td colspan="3" style="border-bottom: 1px solid black"></td></tr><tr><td style="text-align:left">child_mort_rate</td><td>0.095</td><td>0.066<sup>*</sup></td></tr>
+<tr><td style="text-align:left"></td><td>(0.058)</td><td>(0.038)</td></tr>
 <tr><td style="text-align:left"></td><td></td><td></td></tr>
 <tr><td style="text-align:left">raceWhite</td><td></td><td>-0.020<sup>**</sup></td></tr>
 <tr><td style="text-align:left"></td><td></td><td>(0.008)</td></tr>
 <tr><td style="text-align:left"></td><td></td><td></td></tr>
-<tr><td style="text-align:left">Constant</td><td>0.008</td><td>0.028<sup>***</sup></td></tr>
-<tr><td style="text-align:left"></td><td>(0.005)</td><td>(0.009)</td></tr>
+<tr><td style="text-align:left">Constant</td><td>0.017</td><td>0.028<sup>***</sup></td></tr>
+<tr><td style="text-align:left"></td><td>(0.011)</td><td>(0.009)</td></tr>
 <tr><td style="text-align:left"></td><td></td><td></td></tr>
-<tr><td colspan="3" style="border-bottom: 1px solid black"></td></tr><tr><td style="text-align:left">Observations</td><td>28</td><td>28</td></tr>
-<tr><td style="text-align:left">R<sup>2</sup></td><td>0.425</td><td>0.544</td></tr>
-<tr><td style="text-align:left">Adjusted R<sup>2</sup></td><td>0.403</td><td>0.508</td></tr>
-<tr><td style="text-align:left">Residual Std. Error</td><td>0.017 (df = 26)</td><td>0.015 (df = 25)</td></tr>
-<tr><td style="text-align:left">F Statistic</td><td>19.243<sup>***</sup> (df = 1; 26)</td><td>14.919<sup>***</sup> (df = 2; 25)</td></tr>
+<tr><td colspan="3" style="border-bottom: 1px solid black"></td></tr><tr><td style="text-align:left">Observations</td><td>14</td><td>28</td></tr>
+<tr><td style="text-align:left">R<sup>2</sup></td><td>0.184</td><td>0.544</td></tr>
+<tr><td style="text-align:left">Adjusted R<sup>2</sup></td><td>0.116</td><td>0.508</td></tr>
+<tr><td style="text-align:left">Residual Std. Error</td><td>0.016 (df = 12)</td><td>0.015 (df = 25)</td></tr>
+<tr><td style="text-align:left">F Statistic</td><td>2.707 (df = 1; 12)</td><td>14.919<sup>***</sup> (df = 2; 25)</td></tr>
 <tr><td colspan="3" style="border-bottom: 1px solid black"></td></tr><tr><td style="text-align:left"><em>Note:</em></td><td colspan="2" style="text-align:right"><sup>*</sup>p<0.1; <sup>**</sup>p<0.05; <sup>***</sup>p<0.01</td></tr>
 </table>
 
@@ -721,11 +774,32 @@ child_mortality %>%
 
 I follow their process here:
 
-First I calculate the pre-pandemic mortality rates by district for influenza, pneumonia and both. These are shown in Table [cite] below.
+First I calculate the pre-pandemic mortality rates by district from influenza, pneumonia and both. These are shown in Table [cite] below.
 
 ```{r}
 pneumonia_influenza <- read_rds("data/pneumonia_influenza.rds")
   
+pneumonia_influenza
+
+pneumonia_influenza %>% 
+  group_by(town) %>% 
+  mutate(across(c(influenza_deaths, pneumonia_deaths, total), ~ sum(.x, na.rm = T))) %>% 
+  ungroup() %>% 
+  distinct(town, influenza_deaths, pneumonia_deaths, total) %>% 
+  mutate(influenza_mort = influenza_deaths / total,
+         pneumonia_mort = pneumonia_deaths / total,
+         pneumonia_influenza_mort = (influenza_deaths + pneumonia_deaths) / total) %>% 
+  inner_join(pneumonia_influenza_mort %>% 
+  select(town, deaths) %>% 
+  group_by(town) %>% 
+  mutate(deaths = sum(deaths)) %>% 
+  ungroup() %>% 
+  distinct(town, deaths) %>% 
+  filter(!is.na(town))) %>% 
+  mutate(pandemic_mort = deaths / total) %>% 
+  mutate(race = "Both groups") %>% 
+  bind_rows(pneumonia_influenza) %>% view()
+
 pneumonia_influenza %>% 
   group_by(town) %>% 
   mutate(influenza_deaths_grouped = sum(influenza_deaths, na.rm = T),
@@ -751,7 +825,6 @@ pneumonia_influenza_mort %>%
   ggplot(aes(pneumonia_influenza_mort, pandemic_mort_rate)) +
   geom_point(aes(colour = race, size = total_pop)) +
   geom_smooth(method = "lm", aes(colour = race), se = F) +
-  geom_smooth(method = "lm", aes(colour = "Both groups"), se = F) +
   scale_x_continuous(labels = number_format(scale = 1000)) +
   scale_y_continuous(labels = number_format(scale = 1000)) +
   # theme(legend.position = "bottom") +
@@ -868,34 +941,12 @@ df %>%
 Is there an association between this proxy and the pandemic mortality rates?
 
 ```{r}
-town_race_mort_rates_pandemic <- read_rds("data/town_race_mort_rates.rds")
+df_literacy <- read_rds("data/df_literacy.rds")
 
-df %>%
-  filter(death_date < ymd("1918-09-01")) %>%
-  mutate(signed_yes_or_no = str_to_lower(signed_yes_or_no)) %>%
-  mutate(literate_proxy = case_when(
-    str_detect(signed_yes_or_no, "maark|mark|merk|no|x") ~ "No",
-    str_detect(signed_yes_or_no, "yes") ~ "Yes",
-    TRUE ~ "No"
-  )) %>%
-  filter(!race %in% c(NA, "NA")) %>%
-  count(race, town, literate_proxy) %>%
-  pivot_wider(names_from = "literate_proxy", values_from = "n") %>%
-  mutate(across(c(No, Yes), ~ replace_na(., 0))) %>%
-  mutate(race = case_when(
-    str_detect(race, "White") ~ "White",
-    TRUE ~ "Black and Coloured"
-  )) %>%
-  group_by(town, race) %>%
-  mutate(across(c(No, Yes), .fns = sum)) %>%
-  ungroup() %>%
-  distinct() %>%
-  mutate(share_literate = Yes / (Yes + No)) %>%
-  inner_join(town_race_mort_rates_pandemic) %>% 
+df_literacy %>% 
   ggplot(aes(share_literate, mort_rate)) +
   geom_point(aes(colour = race, size = total)) +
   geom_smooth(method = "lm", aes(colour = race), se = F) +
-  geom_smooth(method = "lm", aes(colour = "Both groups"), se = F) +
   scale_x_continuous(labels = percent_format()) +
   scale_y_continuous(labels = number_format(scale = 1000)) +
   # need to choose a better colour
@@ -909,52 +960,12 @@ df %>%
 We can also test for statistical correlation:
 
 ```{r}
-lm_1 <- df %>%
-  filter(death_date < ymd("1918-09-01")) %>%
-  mutate(signed_yes_or_no = str_to_lower(signed_yes_or_no)) %>%
-  mutate(literate_proxy = case_when(
-    str_detect(signed_yes_or_no, "maark|mark|merk|no|x") ~ "No",
-    str_detect(signed_yes_or_no, "yes") ~ "Yes",
-    TRUE ~ "No"
-  )) %>%
-  filter(!race %in% c(NA, "NA")) %>%
-  count(race, town, literate_proxy) %>%
-  pivot_wider(names_from = "literate_proxy", values_from = "n") %>%
-  mutate(across(c(No, Yes), ~ replace_na(., 0))) %>%
-  mutate(race = case_when(
-    str_detect(race, "White") ~ "White",
-    TRUE ~ "Black and Coloured"
-  )) %>%
-  group_by(town, race) %>%
-  mutate(across(c(No, Yes), .fns = sum)) %>%
-  ungroup() %>%
-  distinct() %>%
-  mutate(share_literate = Yes / (Yes + No)) %>%
-  inner_join(town_race_mort_rates_pandemic) %>%
+lm_1 <- df_literacy %>% 
+  filter(race == "Both groups") %>% 
   lm(mort_rate ~ share_literate, data = .)
 
-lm_2 <- df %>%
-  filter(death_date < ymd("1918-09-01")) %>%
-  mutate(signed_yes_or_no = str_to_lower(signed_yes_or_no)) %>%
-  mutate(literate_proxy = case_when(
-    str_detect(signed_yes_or_no, "maark|mark|merk|no|x") ~ "No",
-    str_detect(signed_yes_or_no, "yes") ~ "Yes",
-    TRUE ~ "No"
-  )) %>%
-  filter(!race %in% c(NA, "NA")) %>%
-  count(race, town, literate_proxy) %>%
-  pivot_wider(names_from = "literate_proxy", values_from = "n") %>%
-  mutate(across(c(No, Yes), ~ replace_na(., 0))) %>%
-  mutate(race = case_when(
-    str_detect(race, "White") ~ "White",
-    TRUE ~ "Black and Coloured"
-  )) %>%
-  group_by(town, race) %>%
-  mutate(across(c(No, Yes), .fns = sum)) %>%
-  ungroup() %>%
-  distinct() %>%
-  mutate(share_literate = Yes / (Yes + No)) %>%
-  inner_join(town_race_mort_rates_pandemic) %>%
+lm_2 <- df_literacy %>% 
+  filter(race != "Both groups") %>% 
   lm(mort_rate ~ share_literate + race, data = .)
 
 # stargazer::stargazer(lm_1, lm_2, type = "html")
@@ -964,20 +975,20 @@ lm_2 <- df %>%
 <tr><td></td><td colspan="2" style="border-bottom: 1px solid black"></td></tr>
 <tr><td style="text-align:left"></td><td colspan="2">mort_rate</td></tr>
 <tr><td style="text-align:left"></td><td>(1)</td><td>(2)</td></tr>
-<tr><td colspan="3" style="border-bottom: 1px solid black"></td></tr><tr><td style="text-align:left">child_mort_rate</td><td>0.132<sup>***</sup></td><td>0.066<sup>*</sup></td></tr>
-<tr><td style="text-align:left"></td><td>(0.030)</td><td>(0.038)</td></tr>
+<tr><td colspan="3" style="border-bottom: 1px solid black"></td></tr><tr><td style="text-align:left">share_literate</td><td>-0.009</td><td>0.019</td></tr>
+<tr><td style="text-align:left"></td><td>(0.018)</td><td>(0.014)</td></tr>
 <tr><td style="text-align:left"></td><td></td><td></td></tr>
-<tr><td style="text-align:left">raceWhite</td><td></td><td>-0.020<sup>**</sup></td></tr>
-<tr><td style="text-align:left"></td><td></td><td>(0.008)</td></tr>
+<tr><td style="text-align:left">raceWhite</td><td></td><td>-0.042<sup>***</sup></td></tr>
+<tr><td style="text-align:left"></td><td></td><td>(0.011)</td></tr>
 <tr><td style="text-align:left"></td><td></td><td></td></tr>
-<tr><td style="text-align:left">Constant</td><td>0.008</td><td>0.028<sup>***</sup></td></tr>
-<tr><td style="text-align:left"></td><td>(0.005)</td><td>(0.009)</td></tr>
+<tr><td style="text-align:left">Constant</td><td>0.037<sup>***</sup></td><td>0.036<sup>***</sup></td></tr>
+<tr><td style="text-align:left"></td><td>(0.009)</td><td>(0.006)</td></tr>
 <tr><td style="text-align:left"></td><td></td><td></td></tr>
-<tr><td colspan="3" style="border-bottom: 1px solid black"></td></tr><tr><td style="text-align:left">Observations</td><td>28</td><td>28</td></tr>
-<tr><td style="text-align:left">R<sup>2</sup></td><td>0.425</td><td>0.544</td></tr>
-<tr><td style="text-align:left">Adjusted R<sup>2</sup></td><td>0.403</td><td>0.508</td></tr>
-<tr><td style="text-align:left">Residual Std. Error</td><td>0.017 (df = 26)</td><td>0.015 (df = 25)</td></tr>
-<tr><td style="text-align:left">F Statistic</td><td>19.243<sup>***</sup> (df = 1; 26)</td><td>14.919<sup>***</sup> (df = 2; 25)</td></tr>
+<tr><td colspan="3" style="border-bottom: 1px solid black"></td></tr><tr><td style="text-align:left">Observations</td><td>14</td><td>28</td></tr>
+<tr><td style="text-align:left">R<sup>2</sup></td><td>0.020</td><td>0.523</td></tr>
+<tr><td style="text-align:left">Adjusted R<sup>2</sup></td><td>-0.062</td><td>0.485</td></tr>
+<tr><td style="text-align:left">Residual Std. Error</td><td>0.017 (df = 12)</td><td>0.016 (df = 25)</td></tr>
+<tr><td style="text-align:left">F Statistic</td><td>0.245 (df = 1; 12)</td><td>13.694<sup>***</sup> (df = 2; 25)</td></tr>
 <tr><td colspan="3" style="border-bottom: 1px solid black"></td></tr><tr><td style="text-align:left"><em>Note:</em></td><td colspan="2" style="text-align:right"><sup>*</sup>p<0.1; <sup>**</sup>p<0.05; <sup>***</sup>p<0.01</td></tr>
 </table>
 
