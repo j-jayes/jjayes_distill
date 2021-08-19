@@ -37,15 +37,11 @@ df <- read_rds("data/spanish_flu_data.rds")
 
 ## Abstract
 
-This paper examines mortality during the Spanish flu pandemic of 1918 in 15 districts in the Cape Province of South Africa. I make use of 40,000 digitized Forms of Notice of a Death produced in the Cape districts between 1915 and 1920. I use three methods to assess excess mortality across the districts, and assess the extent to which measures of pre-existing health and social status which are correlated with mortality from the flu. I use a linear support vector machine to collapse the recorded ethnicity of individuals to a three-class race grouping. I find that XXX.
-
-40,000 death notices.
+*This paper examines mortality during the Spanish flu pandemic of 1918 in 15 districts in the Cape Province of South Africa. I make use of 40,000 digitized Forms of Notice of a Death produced in the Cape districts between 1915 and 1920. I use three methods to assess excess mortality across the districts, and assess the extent to which measures of pre-existing health and social status which are correlated with mortality from the flu. I use a linear support vector machine to collapse the recorded ethnicity of individuals to a three-class race grouping. I find after assessing excess mortality that it is unlikely there was significant under counting of the number of deaths during the Spanish flu pandemic due to misclassification of cause. Regarding the features correlated with pandemic mortality, I find that pre-existing levels of health in a district indicated by child mortality are strongly correlated with mortality rates during the pandemic. I find that district with high levels of mortality from pneumonia and influenza prior to the pandemic suffered severely from mortality during the pandemic. Finally, I find no support for the notion that socio-economic factors proxied by the literacy of a family member or foreign born status are correlated with pandemic mortality rates.*
 
 ## Introduction
 
-I assess excess mortality using three different methods to quantify how many people died in each district due to the pandemic.
-
-Then I look at three measures of pre-pandemic health and how these correlate with excess mortality. Finally I look at measures of socio-economic status including family literacy and immigrant status and how these correlated with mortality rates at the district level.
+The Spanish flu was one of the worst pre-cursors to the current Covid-19 pandemic, extracting a high death toll on working age populations the world over. The disease spread rapidly, and took a heavy toll on populations with poor pre-existing health conditions, and those who could not take measures to lessen the burden of the disease once infected. It is worth looking back into the past to find out how the pandemic engulfed the civil apparatus who recorded mortality from the flu at the time, as well as trying to identify features that existed in communities prior to the pandemic which were correlated with high mortality during the flu. This is what I attempt in the paper below. I cover some of the literature which guides my investigation, examine excess mortality during the pandemic, and identify features associated with high mortality across 15 districts in the Cape.
 
 ## Historical background and related literature
 
@@ -67,7 +63,7 @@ A wealth of research has sought to examine what features explain the differing l
 
 The sources of data available to a researcher without doubt shape the design of their study. In his authoritative account of the Spanish flu pandemic in South Africa, historian Howard Phillips notes that prior to his own study, “extensive documentation... from [unpublished evidence] in the report of the Government-appointed Commission of Inquiry" had laid on the shelves of the Library of Parliament unexamined [-@Phillips1984, p.9]. His analysis of this information told the story of the pandemic in a way that had not been told before. Similarly, the digitization of death records allows different kinds of questions about the pandemic of 1918. Specifically it opens up an assessment of excess mortality and an indication of the importance of pre-existing levels of health in determining pandemic mortality rates within the districts of the Cape.
 
-The dataset analysed here is made up of 40,000 digitized Forms of Information of a Death of individuals in 15 districts of the Cape Province between 1915 and 1920. The Forms are recorded as of Act No. 7 of 1894 of the Cape Colony. They contain demographic information about the deceased, details about their death, and details about the informant who told the Registrar about their passing. In this study, the date of death, cause of death and demographics are of particular interest. The years prior to the pandemic serve as a baseline against which to compare excess mortality during the pandemic. There are some limitations regarding the recording of cause of death and duration of last illness. These are discussed in detail in @Fourie2021. In short, where a doctor has tended to the deceased and completed a certificate, the Form will include the pertinent information from the Medical Practitioners certificate. In the absence of such a certificate, the Informant can provide this information if known. The text on the Form reads:
+The dataset analysed here is made up of 40,000 digitized Forms of Information of a Death of individuals in 15 districts of the Cape Province between 1915 and 1920. The Forms are recorded as of Act No. 7 of 1894 of the Cape Colony. They contain demographic information about the deceased, details about their death, and details about the informant who told the Registrar about their passing. Most often the informant was a family member, as recorded on the Forms. In this study, the date of death, cause of death and demographics are of particular interest. The years prior to the pandemic serve as a baseline against which to compare excess mortality during the pandemic. There are some limitations regarding the recording of cause of death and duration of last illness. These are discussed in detail in @Fourie2021. In short, where a doctor has tended to the deceased and completed a certificate, the Form will include the pertinent information from the Medical Practitioners certificate. In the absence of such a certificate, the Informant can provide this information if known. The text on the Form reads:
 
 <blockquote>
 
@@ -404,7 +400,7 @@ Next I use a simple linear regression. This accounts, for instance, for populati
 
 The linear trend is shown in Figure \@ref(fig:linear-trend) here, alongside a line of equality: 
 
-```{r, linear-trend, layout="l-body-outset", fig.width = 8, fig.height=6, fig.cap="Caption"}
+```{r, linear-trend, layout="l-body-outset", fig.width = 8, fig.height=6, fig.cap="Linear trend for predicted and excess mortality"}
 library(ggrepel)
 df %>%
   mutate(year = year(death_date)) %>%
@@ -625,7 +621,7 @@ Here we observe that in the districts with larger populations, the estimates cit
 
 In all districts, my estimated excess mortality values are lower than the other two estimates. This means that we need not be concerned about under counting of pandemic deaths, if they are not recorded as such. We would be concerned about this if the excess mortality exceeded the estimates of Spanish flu deaths. In the remainder of the paper I calculate mortality and mortality rates based on respiratory deaths during the pandemic.
 
-## Correlates
+##District features correlated with pandemic mortality rates
 
 ### Pre-existing health
 
@@ -885,7 +881,7 @@ pneumonia_influenza %>%
 Figure \@ref(fig:pneumonia-influenza-mort) shows that while the slopes separated by race are lower, there is still a strong correlation between pre-existing pneumonia and influenza mortality rates and the pandemic mortality rate in each district. The strongest correlation appears to be the aggregated sample.
 
 
-```{r, pneumonia-influenza-mort, layout="l-body-outset", fig.width = 8, fig.height=6, fig.cap="Correlation pneumonia and influenza mortality"}
+```{r, pneumonia-influenza-mort, layout="l-body-outset", fig.width = 8, fig.height=6, fig.cap="Scatterplot and linear fit of pneumonia mortality and pandemic mortality by district"}
 pneumonia_influenza_mort <- read_rds("data/pneumonia_infleunza_mort.rds")
 
 pneumonia_influenza_mort %>%
@@ -1012,9 +1008,9 @@ df %>%
        y = NULL)
 ```
 
-Is there an association between this proxy and the pandemic mortality rates?
+In Figure \@ref(fig:literacy-scatter), the best fit line for "Both groups", shown in yellow, leads us to believe that as the proportion of our district with the literacy proxy increases, the pandemic mortality decreases, in line with our hypothesis. Further, amongst black and coloured individuals, an increasing share of literate informants appears to result in marginally lower mortality rates during the pandemic. This is in support of the hypothesis. Yet amongst the white population of the districts, there appears to be an upward slope at the top end of the literacy distribution. 
 
-```{r}
+```{r, literacy-scatter, layout="l-body-outset", fig.width = 8, fig.height=6, fig.cap="Caption"}
 df_literacy <- read_rds("data/df_literacy.rds")
 
 df_literacy %>% 
@@ -1030,48 +1026,56 @@ df_literacy %>%
        y = "Pandemic mortality per 1000 residents",
        size = "District population",
        colour = NULL)
-```
 
-We can also test for statistical correlation:
-
-```{r}
-lm_1 <- df_literacy %>% 
-  filter(race == "Both groups") %>% 
+lm_1 <- df_literacy %>%
+  filter(!town %in% c("Elliot", "Fraserburg", "Sea Point")) %>%
+  filter(race == "Both groups") %>%
   lm(mort_rate ~ share_literate, data = .)
 
-lm_2 <- df_literacy %>% 
-  filter(race != "Both groups") %>% 
+lm_2 <- df_literacy %>%
+  filter(!town %in% c("Elliot", "Fraserburg", "Sea Point")) %>%
+  filter(race != "Both groups") %>%
   lm(mort_rate ~ share_literate + race, data = .)
 
-# stargazer::stargazer(lm_1, lm_2, type = "html")
+# stargazer::stargazer(lm_1, lm_2,
+#   type = "html", 
+#   title = "Infant and pandemic mortality", 
+#   dep.var.caption = " ",
+#   dep.var.labels = "Pandemic mortality rate",
+#   covariate.labels = c("Share of informants who sign", "White")
+# )
+
 ```
 
-<table style="text-align:center"><tr><td colspan="3" style="border-bottom: 1px solid black"></td></tr><tr><td style="text-align:left"></td><td colspan="2"><em>Dependent variable:</em></td></tr>
+<table style="text-align:center"><caption><strong>Literacy of the informant and pandemic mortality</strong></caption>
+<tr><td colspan="3" style="border-bottom: 1px solid black"></td></tr><tr><td style="text-align:left"></td><td colspan="2"></td></tr>
 <tr><td></td><td colspan="2" style="border-bottom: 1px solid black"></td></tr>
-<tr><td style="text-align:left"></td><td colspan="2">mort_rate</td></tr>
+<tr><td style="text-align:left"></td><td colspan="2">Pandemic mortality rate</td></tr>
 <tr><td style="text-align:left"></td><td>(1)</td><td>(2)</td></tr>
-<tr><td colspan="3" style="border-bottom: 1px solid black"></td></tr><tr><td style="text-align:left">share_literate</td><td>-0.009</td><td>0.019</td></tr>
-<tr><td style="text-align:left"></td><td>(0.018)</td><td>(0.014)</td></tr>
+<tr><td colspan="3" style="border-bottom: 1px solid black"></td></tr><tr><td style="text-align:left">Share of informants who sign</td><td>-0.063<sup>*</sup></td><td>-0.009</td></tr>
+<tr><td style="text-align:left"></td><td>(0.031)</td><td>(0.036)</td></tr>
 <tr><td style="text-align:left"></td><td></td><td></td></tr>
-<tr><td style="text-align:left">raceWhite</td><td></td><td>-0.042<sup>***</sup></td></tr>
-<tr><td style="text-align:left"></td><td></td><td>(0.011)</td></tr>
+<tr><td style="text-align:left">White</td><td></td><td>-0.021</td></tr>
+<tr><td style="text-align:left"></td><td></td><td>(0.026)</td></tr>
 <tr><td style="text-align:left"></td><td></td><td></td></tr>
-<tr><td style="text-align:left">Constant</td><td>0.037<sup>***</sup></td><td>0.036<sup>***</sup></td></tr>
-<tr><td style="text-align:left"></td><td>(0.009)</td><td>(0.006)</td></tr>
+<tr><td style="text-align:left">Constant</td><td>0.054<sup>***</sup></td><td>0.042<sup>***</sup></td></tr>
+<tr><td style="text-align:left"></td><td>(0.012)</td><td>(0.009)</td></tr>
 <tr><td style="text-align:left"></td><td></td><td></td></tr>
-<tr><td colspan="3" style="border-bottom: 1px solid black"></td></tr><tr><td style="text-align:left">Observations</td><td>14</td><td>28</td></tr>
-<tr><td style="text-align:left">R<sup>2</sup></td><td>0.020</td><td>0.523</td></tr>
-<tr><td style="text-align:left">Adjusted R<sup>2</sup></td><td>-0.062</td><td>0.485</td></tr>
-<tr><td style="text-align:left">Residual Std. Error</td><td>0.017 (df = 12)</td><td>0.016 (df = 25)</td></tr>
-<tr><td style="text-align:left">F Statistic</td><td>0.245 (df = 1; 12)</td><td>13.694<sup>***</sup> (df = 2; 25)</td></tr>
+<tr><td colspan="3" style="border-bottom: 1px solid black"></td></tr><tr><td style="text-align:left">Observations</td><td>12</td><td>24</td></tr>
+<tr><td style="text-align:left">R<sup>2</sup></td><td>0.284</td><td>0.512</td></tr>
+<tr><td style="text-align:left">Adjusted R<sup>2</sup></td><td>0.212</td><td>0.465</td></tr>
+<tr><td style="text-align:left">Residual Std. Error</td><td>0.015 (df = 10)</td><td>0.014 (df = 21)</td></tr>
+<tr><td style="text-align:left">F Statistic</td><td>3.958<sup>*</sup> (df = 1; 10)</td><td>11.005<sup>***</sup> (df = 2; 21)</td></tr>
 <tr><td colspan="3" style="border-bottom: 1px solid black"></td></tr><tr><td style="text-align:left"><em>Note:</em></td><td colspan="2" style="text-align:right"><sup>*</sup>p<0.1; <sup>**</sup>p<0.05; <sup>***</sup>p<0.01</td></tr>
 </table>
 
-In this case, the best fit line for "Both groups", shown in yellow, leads us to believe that as the proportion of our district with the literacy proxy increases, the pandemic mortality decreases, in line with our hypothesis. However, when we control for race, we see that the effect is not significant and the sign is in fact in the opposite direction, as visible in the blue and red lines in the figure. We cannot reject the hypothesis that our literacy proxy has no impact on mortality rate at the district level after controlling for race, even at the ten percent level.
+Regression table \@ref(fig:literacy-scatter) shows that when we control for race, we see that the effect of literacy is not significant and magnitude of the effect fall. We cannot reject the hypothesis that our literacy proxy has no impact on mortality rate at the district level after controlling for race, even at the ten percent level.
 
-#### Percentage of foriegn born individuals and 
+#### Percentage of foriegn born individuals
 
-```{r}
+Another measure of social capital is foreign born status, with the hypothesis being that foreign born individuals are less likely to adopt the health measures suggested by local governments. Figure \@ref(fig:birth-places) shows the proportion of residents of each district born in various regions outside of the Cape (shown in red). This data is from the Statistics of Population of 1918 [@OfficeofCensusandStatisticsPretoria1918]. This means that we would expect the mortality rate during the flu to increase with the share of residents born outside the Cape.
+
+```{r, birth-places, layout="l-body-outset", fig.width = 8, fig.height=6, fig.cap="Birth places of district residents"}
 birth_place_shares <- read_rds("data/birth_place_shares.rds")
 
 birth_place_shares %>% 
@@ -1095,9 +1099,9 @@ birth_place_shares %>%
        y = NULL)
 ```
 
-Visual correlation.
+Figure \@ref(fig:birth-place-corr) shows that across our districts, there is a slight negative correlation between the share of residents born outside of the Cape. However, the confidence interval around this linear fit is wide. Regression table \@ref(fig:birth-place-corr) confirms that there is no significant correlation between the share of residents born outside of the Cape and pandemic mortality rates, even at the ten percent level.
 
-```{r}
+```{r, birth-place-corr, layout="l-body-outset", fig.width = 8, fig.height=6, fig.cap="Birth places of residents"}
 birth_place_shares %>% 
   group_by(town) %>% 
   mutate(pandemic_mort_grouped = sum(deaths) / sum(total_pop)) %>% 
@@ -1111,21 +1115,26 @@ birth_place_shares %>%
   labs(x = "Share of residents born outside the Cape Province",
        y = "Pandemic mortality per 1000 residents",
        size = "District population")
-```
 
-Statistical correlation
-
-```{r}
 lm_1 <- birth_place_shares %>% 
   lm(pandemic_mort_rate ~ share_not_cape, data = .)
 
-# stargazer::stargazer(lm_1, type = "html")
+# stargazer::stargazer(lm_1,
+#   type = "html", 
+#   title = "Infant and pandemic mortality", 
+#   dep.var.caption = " ",
+#   dep.var.labels = "Pandemic mortality rate",
+#   covariate.labels = c("Share of residents born outside of the Cape")
+# )
+
+
 ```
 
-<table style="text-align:center"><tr><td colspan="2" style="border-bottom: 1px solid black"></td></tr><tr><td style="text-align:left"></td><td><em>Dependent variable:</em></td></tr>
+<table style="text-align:center"><caption><strong>Foreign born residents and pandemic mortality</strong></caption>
+<tr><td colspan="2" style="border-bottom: 1px solid black"></td></tr><tr><td style="text-align:left"></td><td></td></tr>
 <tr><td></td><td colspan="1" style="border-bottom: 1px solid black"></td></tr>
-<tr><td style="text-align:left"></td><td>pandemic_mort_rate</td></tr>
-<tr><td colspan="2" style="border-bottom: 1px solid black"></td></tr><tr><td style="text-align:left">share_not_cape</td><td>-0.032</td></tr>
+<tr><td style="text-align:left"></td><td>Pandemic mortality rate</td></tr>
+<tr><td colspan="2" style="border-bottom: 1px solid black"></td></tr><tr><td style="text-align:left">Share of residents born outside of the Cape</td><td>-0.032</td></tr>
 <tr><td style="text-align:left"></td><td>(0.034)</td></tr>
 <tr><td style="text-align:left"></td><td></td></tr>
 <tr><td style="text-align:left">Constant</td><td>0.032<sup>***</sup></td></tr>
@@ -1139,88 +1148,11 @@ lm_1 <- birth_place_shares %>%
 <tr><td colspan="2" style="border-bottom: 1px solid black"></td></tr><tr><td style="text-align:left"><em>Note:</em></td><td style="text-align:right"><sup>*</sup>p<0.1; <sup>**</sup>p<0.05; <sup>***</sup>p<0.01</td></tr>
 </table>
 
-### Foreign born whites
-
-Test of Phillips' assertion that:
-
-<blockquote>
-
-"Whites born in South Africa seemed to be more vulnerable [to the flu] than those who had grown up in Europe."
-</blockquote>
-
-Phillips cites Dr W Watkins-Pitchford, Director of South African Institute for Medical Research, who said that "It was probable that most of the [European born whites] had acquired a certain amount of immunity in previous epidemics in Europe" [-@Phillips1984, p. 295]
-
-```{r}
-sa_words <- c("Cape Province",
-              "Cape",
-              "Orange Free State",
-              "Transvaal",
-              "Kaap Provincie",
-              "Cradock",
-              "Somerset Strand",
-              "Queenstown",
-              "C.P.",
-              "Free State",
-              "Mafeking",
-              "Kaap",
-              "[not included on form]",
-              "Kaap",
-              "Johannesburg",
-              "Natal",
-              "Bechuanaland",
-              "East London",
-              "K.P.",
-              "Williston, Dist Fraserburg",
-              "Fort Beaufort",
-              "Griqualand West",
-              "O F S",
-              "Orange River Colony",
-              "Port Elizabeth",
-              "Sea Point",
-              "South Africa",
-              "Strand",
-              "Tarkastad")
-
-sa_words <- sa_words %>% 
-  paste(collapse = "|")
-
-df %>% 
-  filter(race == "White") %>% 
-  mutate(birthplace_bin = case_when(
-    str_detect(birthplace, sa_words) ~ "SA",
-    TRUE ~ "Europe"
-  )) %>% 
-  filter(between(death_date, ymd("1918-09-01"), ymd("1918-12-30"))) %>% 
-  count(birthplace_bin, town) %>% 
-  mutate(town = fct_reorder(town, n, .fun = sum)) %>% 
-  ggplot(aes(n, town, fill = birthplace_bin)) +
-  geom_col()
-
-
-
-
-# df %>% 
-#   filter(race == "White") %>% 
-#   mutate(birthplace_bin = case_when(
-#     str_detect(birthplace, sa_words) ~ "SA",
-#     TRUE ~ "Europe"
-#   )) %>% 
-#   filter(between(death_date, ymd("1918-09-01"), ymd("1918-12-30"))) %>%
-#   count(birthplace_bin, town) %>% 
-#   inner_join(birth_place_shares %>% 
-#   select(town, share_europe, share_sa) %>% 
-#   distinct()) %>% view
-#   mutate(town = fct_reorder(town, n, .fun = sum)) %>% 
-#   ggplot(aes(n, town, fill = birthplace_bin)) +
-#   geom_col()
-```
-
-
 ## Conclusion
 
-<!-- <div id="refs"></div> -->
+After analysing a dataset of 40,000 deaths in the Cape, and supplementing this information with birth and census data from prior to the pandemic, I find after assessing excess mortality that it is unlikely there was significant under counting of the number of deaths during the Spanish flu pandemic due to misclassification of cause of death. Regarding the features correlated with pandemic mortality, I find that pre-existing levels of health in a district indicated by child mortality are strongly correlated with mortality rates during the pandemic. I find that district with high levels of mortality from pneumonia and influenza prior to the pandemic suffered severely from mortality during the pandemic. Finally, I find no support for the notion that socio-economic factors proxied by the literacy of a family member or foreign born status are correlated with pandemic mortality rates.
 
-## Appendix {.appendix}
+## Appendix
 
 ### Linear Support Vector Machine specification and workflow
 
