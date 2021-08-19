@@ -36,36 +36,31 @@ df <- read_rds("data/spanish_flu_data.rds")
 
 ## Abstract
 
-This paper looks at mortality during the Spanish flu pandemic of 1918 in 15 districts in the Cape Province of South Africa.
+This paper examines mortality during the Spanish flu pandemic of 1918 in 15 districts in the Cape Province of South Africa. I make use of 40,000 digitized Forms of Notice of a Death produced in the Cape districts between 1915 and 1920. I use three methods to assess excess mortality across the districts, and assess the extent to which measures of pre-existing health and social status which are correlated with mortality from the flu. I use a linear support vector machine to collapse the recorded ethnicity of individuals to a three-class race grouping. I find that XXX.
 
 40,000 death notices.
 
 ## Introduction
 
-I assess excess mortality using three different methods to quantify how many people died in each district.
+I assess excess mortality using three different methods to quantify how many people died in each district due to the pandemic.
 
-Then I look at three measures of pre-pandemic health and how these correlate with excess mortality.
+Then I look at three measures of pre-pandemic health and how these correlate with excess mortality. Finally I look at measures of socio-economic status including family literacy and immigrant status and how these correlated with mortality rates at the district level.
 
 ## Historical background and related literature
 
-The Spaish flu reached South Africa in mid 1918. A first, less virulent strain spread through Natal and into the Witwatersrand in winter, before a more severe strain gripped the Cape in October of 1918 as soldiers returned from the First World War. Historian Howard Phillips argues that soldiers embarking on the Jaroslav and the Veronej from Freetown in Sierra Leone acquired the disease in port, and brought it with them on their homeward journey before transmitting it to their families and neighbours in the Cape [@Phillips1984, p. 9]. The Cape was ravaged by the pandemic during "Black October" of 1918, and like populations across the world, working age adults suffered high mortality, threatening livelihoods in the midst of and in the aftermath of the pandemic [@Arthi2021]. @Fourie2021 have shown that more than half of those who died during the pandemic in a sample of town in the Cape were between 18 and 50 years of age, evidencing a "w-shaped" mortality curve, in contrast to the more common "u-shaped" curve. @Taubenberger2006 show that this pattern held across the world during the 1918 pandemic, with more than half of those recorded dead between 20 and 40 years of age.
+The Spanish flu reached South Africa in mid 1918. A first, less virulent strain spread through Natal and into the Witwatersrand in winter, before a more severe strain gripped the Cape in October of 1918 as soldiers returned from the First World War. Historian Howard Phillips argues that soldiers embarking on the Jaroslav and the Veronej from Freetown in Sierra Leone acquired the disease in port, and brought it with them on their homeward journey before transmitting it to their families and neighbours in the Cape [@Phillips1984, p. 9]. The Cape was ravaged by the pandemic during "Black October" of 1918, and like populations across the world, working age adults suffered high mortality, threatening livelihoods in the midst of and in the aftermath of the pandemic [@Arthi2021]. @Fourie2021 have shown that more than half of those who died during the pandemic in a sample of districts in the Cape were between 18 and 50 years of age, evidencing a "w-shaped" mortality curve, in contrast to the more common "u-shaped" curve. @Taubenberger2006 show that this pattern held across the world during the 1918 pandemic, with more than half of those recorded dead between 20 and 40 years of age.
  
 In explaining the severity of the disease, @Arthi2021 note that the novelty of the virus "contributed to its destruction", detailing the time that it takes for a community to detect the disease, appreciate its epidemiology, create medicines and reach immunity which allowed the flu to rapidly spread and harm populations across the world [@Arthi2021, p. 13]. 
 
-There is strong evidence of an immunizing effect that the less severe Natal strain provided in South Africa, though this was not known at the time. @Phillips1984 cites the Influenza Epidemic Commission of 1919 in South Africa suggest that different strains of organisms caused the two waves of the pandemic in the country, but that "no definite pronouncement is possible on this subject" [@Phillips1984, p. 293]. However, modern research has shown that cross-protection certainly lessened the impact of the flu among those exposed to the earlier, milder variant. @Shanks2010 compare mortality rates among diamond miners in Kimberley and gold miners on the Rand during Black October. They find a mortality rate 35 times higher among Kimberley's diamond miners which the authors attribute to their lack of exposure to the less lethal strain earlier in the year. The authors control for the characteristics of the miners in their comparison, including recruitment, working conditions, housing and medical care [@Shanks2010, p. 2]. 
+There is strong evidence of an immunizing effect that the less severe Natal strain provided in South Africa, though this was not known at the time. @Phillips1984 cites the Influenza Epidemic Commission of 1919 in South Africa suggest that different strains of organisms caused the two waves of the pandemic in the country, but that regarding the immunizing effect, "no definite pronouncement is possible on this subject" [@Phillips1984, p. 293]. However, modern research has shown that cross-protection certainly lessened the impact of the flu among those exposed to the earlier, milder variant. @Shanks2010 compare mortality rates among diamond miners in Kimberley and gold miners on the Rand during Black October. They find a mortality rate 35 times higher among Kimberley's diamond miners than Rand gold miners which the authors attribute to the formers' lack of exposure to the less lethal strain earlier in the year. The authors control for the characteristics of the miners in their comparison, including recruitment, working conditions, housing and medical care [@Shanks2010, p. 2]. 
 
 Similarly, in Canada @Bogaert2015 studies protection from initial exposure to the less virulent strain among soldiers in the Canadian Expeditionary Force and finds that soldiers who were exposed to pneumonia and influenza prior to the second wave saw 82 percent protection from severe illness and 84 percent protection from death compared to compatriots who were later recruited from rural farming districts and had supposedly not been exposed to the first strain [@Bogaert2015, p. 34]. This finding is replicated among military camps in the United States at the time. @Barry2008 find that as early as March 1918, a mild strain of the virus was circulating in military camps and provided naturally acquired immunity to the more virulent strain that followed in the fourth quarter of the year. 
 
 There is discussion by @Shanks2016 regarding whether the two waves studied in soldiers in Canada, the United States, Australia and South Africa were caused by different viruses or different strains of the same virus, while @Bogaert2016 argues the distinction does not take away from the crucial point, initial exposure provided protection from the virulent wave in the second half of 1918. 
 
-The severity of the October wave may explain why South Africa was spared the third wave of early 1919 detailed by @Taubenberger2006 and the fourth wave that spread in Asia in mid 1919 noted by @Lin2014 and @Ogasawara2018 in their analysis of the long-run effects of in utero exposure (in Taiwan and China respectively). @Phillips1984 argues that although the epidemic's presence was lethal, "it was short-lived and by the middle of November it had virtually abated" [@Phillips1984, p. 294]. 
+The severity of the October wave may explain why South Africa was spared the third wave of early 1919 detailed by @Taubenberger2006 and the fourth wave that spread in Asia in mid 1919 noted by @Lin2014 and @Ogasawara2018 in their analysis of the long-run effects of *in utero* exposure (in Taiwan and China respectively). @Phillips1984 argues that although the epidemic's presence was lethal, "it was short-lived and by the middle of November it had virtually abated" [@Phillips1984, p. 294]. 
 
-A wealth of research has sought to examine what features explain the differing levels of mortality in different communities during the pandemic. @AcuaSoto2011InfluenzaAP examine features correlated with mortality from the flu in 66 large cities across the United States. The authors find that baseline health status was important, as proxied by pre-pandemic pneumonia, which they argue is "a bacterial condition with a strong biological interaction with the influenza virus" and infant mortality rates as a surrogate for population health [@AcuaSoto2011InfluenzaAP, p. 13]. @Clay2018 study the effect of pollution from coal fired power plants on pandemic mortality in the United States, and find that poor air quality was "an important cause of mortality during the pandemic" [@Clay2018, p. 79]. The authors find that pollution was a significant contributor to deaths during the pandemic. They find that the magnitude of the effect was approximately half of the effects of pre-existing levels of health in a community. @Arthi2021 as well as @Chowell2008 who study the flu in England and Wales, and @Mamelund2006 who examines the flu in Denmark all find that socio-economic status impact health outcomes. They find that those who live in high density housing, for example the poor in cities, had poorer pre-existing health as measured by cases of and deaths from pneumonia and influenza, and high mortally rates during the pandemic.
-
-
-### Rewrite this little section. 
-Third, factors—such as illiteracy and foreign-born status—that might have prevented individuals from adopting public health recommendations were strong predictors of elevated mortality, often above and beyond their association with poverty.36 Higher rates of illiteracy were linked to higher rates of influenza mortality during the pandemic, across both cities and neighborhoods (Clay et al., 2019; Grantz et al., 2016a, b).
-“Crucially, the consequences of these barriers were not limited to the foreign-born: holding all else equal, native-born individuals living in areas with a higher share of foreign-born had higher mortality rates than their counterparts living alongside a lower share of foreign-born neighbors. This emphasizes the importance of neighborhood spillovers in infectious disease transmission—and, of course, demonstrates the interrelated nature of individual- and neighborhood-level mechanisms.” 14
+A wealth of research has sought to examine what features explain the differing levels of mortality in disparate communities during the pandemic. @AcuaSoto2011InfluenzaAP examine features correlated with mortality from the flu in 66 large cities across the United States. The authors find that baseline health status was important, as proxied by pre-pandemic pneumonia, which they argue is "a bacterial condition with a strong biological interaction with the influenza virus" and infant mortality rates as a surrogate for population health [@AcuaSoto2011InfluenzaAP, p. 13]. @Clay2018 study the effect of pollution from coal fired power plants on pandemic mortality in the United States, and find that poor air quality was "an important cause of mortality during the pandemic" [@Clay2018, p. 79]. The authors find that pollution was a significant contributor to deaths during the pandemic. They find that the magnitude of the effect was approximately half of the effects of pre-existing levels of health in a community. A recent study on fog events in London corroborates the interaction between pollution and mortality from respiratory diseases [@Hanlon2018LondonFA]. @Arthi2021 in their meta-analysis, as well as @Chowell2008 who study the flu in England and Wales, and @Mamelund2006 who examines the flu in Denmark all find that socio-economic status impact health outcomes. They collectively find that those who live in high density housing, for example the poor in cities, had poorer pre-existing health as measured by cases of and deaths from pneumonia and influenza, and high mortally rates during the pandemic. @Clay2018 posit that further socio-economic indicators such as foreign born status and illiteracy may have precluded residents from implementing public health guidelines. @Grantz2016 examine the differential mortality from the pandemic across Chicago and find that higher rates of illiteracy correlated with higher rates of mortality across districts. Importantly, these socio-demographic effects evidenced spillovers, as literate and native born residents in districts with high shares of effects of illiteracy and foreign born residents saw a higher mortality than compatriots with similar observable characteristics @Arthi2021.
 
 ## Data
 
@@ -77,6 +72,7 @@ The dataset analysed here is made up of 40,000 digitized Forms of Information of
 
 N.B. -- If the certificate of a Medical Practitioner is produced, the causes of Death and Duration of Illness must be recorded in the Registration Book by the Deputy Registrar and Assistant to the Deputy Registrar as stated in such Certificate, which is to be attached to the form.
 
+Source: @Civil1918
 </blockquote>
 
 ### Classification of race from ethnicity
@@ -103,32 +99,11 @@ df %>%
 
 To classify these 419 different categorical values down into a more manageable number; 3 broad race groupings in use in the Cape at the time and in South Africa today, I use a combination of regular expression and a linear support vector machine learning algorithm.
 
-To simplify the problem I hand coded the minority class (white) using regular expression (for example, coding "European" and "English" to white), and used a linear support vector machine to classify the remaining observations to black and coloured based on a hand-coded training set. @Suthaharan2016 explains that a linear support vector machine is well suited to binary classification using text data, as it can make use of sub-word features in a computationally cheap manner. It performs best when the classes in the training set are balanced. Because white individuals make up a minority of the dataset, it is possible to simply hand-code their observations as white and then make use of the machine learning algorithm to classify the remaining roughly equal classes. The binary linear SVM works by dividing the data domain along a hyperplane "to separate classes in the original domain" [@Suthaharan2016, p. 2]. 
+To simplify the problem I hand coded the minority class (white) using regular expression (for example, coding "European" and "English" to white), and used a linear support vector machine to classify the remaining observations to black and coloured based on a hand-coded training set. @Suthaharan2016 explains that a linear support vector machine is well suited to binary classification using text data, as it can make use of many sub-word features in a computationally cheap manner. It performs best when the classes in the training set are balanced. Because white individuals make up a minority of the dataset, it is possible to simply hand-code their observations as white and then make use of the machine learning algorithm to classify the remaining roughly equal classes. The binary linear SVM works by dividing the data domain along a hyperplane "to separate classes in the original domain" [@Suthaharan2016, p. 2]. 
 
 The advantage of the linear SVM as opposed to a more flexible machine learning method, for example a neural network, is that the linear SVM is explainable and it is possible to pull out indicators of how the algorithm performs the classification. In this case, I use the sub-word features of the ethnicities as predictors of race. As detailed in the appendix, I achieve an accuracy of 99.8 percent in the classification problem on previously unseen data. This model is a useful research output as the trained model can be employed by other researches faced with similar data and classification problems. Specifics are detailed in the appendix.
 
-The output of the classification process is shown in \@ref(fig:ethnicity-race-classification) for the 12 most common classes for each race.
-
-```{r, ethnicity-race-classification, layout="l-body-outset", fig.width = 8, fig.height=6, fig.cap="Output of classification model"}
-
-df %>% 
-  filter(race != "NA",
-         race_original != "Assyrian") %>% 
-  count(race, race_original, sort = T) %>% 
-  group_by(race) %>% 
-  slice_max(n, n = 12, with_ties = F) %>% 
-  ungroup() %>% 
-  mutate(race_original = reorder_within(race_original, n, race)) %>% 
-  ggplot(aes(n, race_original, fill = race)) +
-  geom_col(show.legend = F) +
-  scale_y_reordered() +
-  facet_wrap(~ race, scales = "free") +
-  scale_fill_manual(values = wesanderson::wes_palette(3, name = "Zissou1", type = "continuous")) +
-  labs(x = NULL,
-       y = "Recorded ethnicity")
-
-```
-
+The output of the classification process is shown in \@ref(fig:ethnicity-race-classification) in the appendix for the 12 most common classes for each race.
 
 ## How many died during the pandemic?
 
@@ -202,6 +177,8 @@ df %>%
 ### What were the mortality rates in each district during the pandemic?
 
 #### Candidate methods for assessing (excess) mortality.
+
+Question that poses some difficulties to answer is how many South Africans died during the pandemic, and how many died specifically of the flu.
 
 A great benefit of the dataset at hand is the recording of a cause of death on the notice. This was either copied from the Certificate of the Medical Practitioner, or in the absence of such a certificate, told to the registrar by the informant. Hence, the most intuitive method to assess how many people died in each district of the Spanish flu is simply to count the number of deaths recorded with "Spanish flu" listed in the cause of death column. However, there are a number of drawbacks to this method.
 
@@ -369,7 +346,7 @@ df %>%
 
 Figure \@ref(fig:excess-mortality-method-2) shows the excess mortality based on method two. Here we can see that Peddie and Elliot stand out with large excess mortality relative to their mean mortality preceding the pandemic.
 
-```{r excess-mortality-method-2, layout="l-body-outset", fig.width = 8, fig.height=6, fig.cap="Mortality by week across districts - excluding 1918"}
+```{r excess-mortality-method-2, layout="l-body-outset", fig.width = 8, fig.height=6, fig.cap="Excess mortality based on methodology by @AcuaSoto2011InfluenzaAP"}
 df %>%
   mutate(year = year(death_date)) %>%
   count(year, town) %>%
@@ -389,7 +366,7 @@ df %>%
   mutate(type = case_when(
     
     str_detect(type, "deaths_1918") ~ "Mortality in 1918",
-    TRUE ~ "Mean motality between 1915 and 1917"
+    TRUE ~ "Mean mortality between 1915 and 1917"
   )) %>% 
   ggplot(aes(deaths, town)) +
   geom_line(aes(group = town)) +
@@ -779,26 +756,24 @@ First I calculate the pre-pandemic mortality rates by district from influenza, p
 ```{r}
 pneumonia_influenza <- read_rds("data/pneumonia_influenza.rds")
   
-pneumonia_influenza
-
-pneumonia_influenza %>% 
-  group_by(town) %>% 
-  mutate(across(c(influenza_deaths, pneumonia_deaths, total), ~ sum(.x, na.rm = T))) %>% 
-  ungroup() %>% 
-  distinct(town, influenza_deaths, pneumonia_deaths, total) %>% 
-  mutate(influenza_mort = influenza_deaths / total,
-         pneumonia_mort = pneumonia_deaths / total,
-         pneumonia_influenza_mort = (influenza_deaths + pneumonia_deaths) / total) %>% 
-  inner_join(pneumonia_influenza_mort %>% 
-  select(town, deaths) %>% 
-  group_by(town) %>% 
-  mutate(deaths = sum(deaths)) %>% 
-  ungroup() %>% 
-  distinct(town, deaths) %>% 
-  filter(!is.na(town))) %>% 
-  mutate(pandemic_mort = deaths / total) %>% 
-  mutate(race = "Both groups") %>% 
-  bind_rows(pneumonia_influenza) %>% view()
+# pneumonia_influenza %>% 
+#   group_by(town) %>% 
+#   mutate(across(c(influenza_deaths, pneumonia_deaths, total), ~ sum(.x, na.rm = T))) %>% 
+#   ungroup() %>% 
+#   distinct(town, influenza_deaths, pneumonia_deaths, total) %>% 
+#   mutate(influenza_mort = influenza_deaths / total,
+#          pneumonia_mort = pneumonia_deaths / total,
+#          pneumonia_influenza_mort = (influenza_deaths + pneumonia_deaths) / total) %>% 
+#   inner_join(pneumonia_influenza_mort %>% 
+#   select(town, deaths) %>% 
+#   group_by(town) %>% 
+#   mutate(deaths = sum(deaths)) %>% 
+#   ungroup() %>% 
+#   distinct(town, deaths) %>% 
+#   filter(!is.na(town))) %>% 
+#   mutate(pandemic_mort = deaths / total) %>% 
+#   mutate(race = "Both groups") %>% 
+#   bind_rows(pneumonia_influenza) %>% view()
 
 pneumonia_influenza %>% 
   group_by(town) %>% 
@@ -992,11 +967,9 @@ lm_2 <- df_literacy %>%
 <tr><td colspan="3" style="border-bottom: 1px solid black"></td></tr><tr><td style="text-align:left"><em>Note:</em></td><td colspan="2" style="text-align:right"><sup>*</sup>p<0.1; <sup>**</sup>p<0.05; <sup>***</sup>p<0.01</td></tr>
 </table>
 
-Here we observe the Yule-Simpson effect in practice, how exciting! This statistical effect occurs when a true effect is marked by failing to control for an additional variable. In this case, the best fit line for "Both groups", shown in yellow, leads us to believe that as the proportion of our district with the literacy proxy increases, the pandemic mortality decreases, in line with our hypothesis. However, when we control for race, we see that the effect is not significant and the sign is in fact in the opposite direction, as visible in the blue and red lines in the figure.
+Here we observe the Yule-Simpson effect in practice, how exciting! This statistical effect occurs when a true effect is marked by failing to control for an additional variable. In this case, the best fit line for "Both groups", shown in yellow, leads us to believe that as the proportion of our district with the literacy proxy increases, the pandemic mortality decreases, in line with our hypothesis. However, when we control for race, we see that the effect is not significant and the sign is in fact in the opposite direction, as visible in the blue and red lines in the figure. We cannot reject the hypothesis that our literacy proxy has no impact on mortality rate at the district level after controlling for race, even at the ten percent level.
 
 #### Percentage of foriegn born individuals and 
-
-
 
 ```{r}
 birth_place_shares <- read_rds("data/birth_place_shares.rds")
@@ -1247,7 +1220,7 @@ results <- read_rds("data/results.rds")
 ```
 
 
-#### Autoplot results
+#### Visualizing the results
 
 Here I draw a plot of model performance across the three metrics we specified above, accuracy, sensitivity and specificity. Balancing type 1 and type 2 errors here is not too important given that both sensitivity and specificity are so high. We can see that moving from 100 to 150 retained tokens, or predictors in our model, improves accuracy, sensitivity and specificity. Moving to 200 tokens worsens specificity marginally.
 
@@ -1335,3 +1308,28 @@ words %>%
 ```
 
 Here we can see that if the ethnicity contains the sub-word features "KA", "Z, "AT", "OL", and "AN", the linear SVM is more likely to classify the individual as Black. In contrast, sub-word features "AR", and "AM", "M" and "L" are associated with coloured individuals.
+
+#### Classification output
+
+Figure \@ref(fig:ethnicity-race-classification) shows the 12 most common classes in each race grouping.
+
+```{r, ethnicity-race-classification, layout="l-body-outset", fig.width = 8, fig.height=6, fig.cap="Output of classification model"}
+
+df %>% 
+  filter(race != "NA",
+         race_original != "Assyrian") %>% 
+  count(race, race_original, sort = T) %>% 
+  group_by(race) %>% 
+  slice_max(n, n = 12, with_ties = F) %>% 
+  ungroup() %>% 
+  mutate(race_original = reorder_within(race_original, n, race)) %>% 
+  ggplot(aes(n, race_original, fill = race)) +
+  geom_col(show.legend = F) +
+  scale_y_reordered() +
+  facet_wrap(~ race, scales = "free") +
+  scale_fill_manual(values = wesanderson::wes_palette(3, name = "Zissou1", type = "continuous")) +
+  labs(x = NULL,
+       y = "Recorded ethnicity")
+
+```
+
