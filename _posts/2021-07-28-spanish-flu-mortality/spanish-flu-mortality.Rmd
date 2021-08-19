@@ -100,7 +100,7 @@ To simplify the problem I hand coded the minority class (white) using regular ex
 
 The advantage of the linear SVM as opposed to a more flexible machine learning method, for example a neural network, is that the linear SVM is explainable and it is possible to pull out indicators of how the algorithm performs the classification. In this case, I use the sub-word features of the ethnicities as predictors of race. As detailed in the appendix, I achieve an accuracy of 99.8 percent in the classification problem on previously unseen data. This model is a useful research output as the trained model can be employed by other researches faced with similar data and classification problems. Specifics are detailed in the appendix.
 
-The output of the classification process is shown in \@ref(fig:ethnicity-race-classification) in the appendix for the 12 most common classes for each race.
+The output of the classification process is shown in Figure \@ref(fig:ethnicity-race-classification) in the appendix for the 12 most common classes for each race.
 
 ## How many died during the pandemic?
 
