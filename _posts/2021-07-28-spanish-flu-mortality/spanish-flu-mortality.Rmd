@@ -1,7 +1,8 @@
 ---
 title: "Draft: Spanish Flu Mortality"
 description: |
-  This paper looks at mortality during the Spanish flu pandemic of 1918 in 15 districts in the Cape Province of South Africa.
+  This paper examines mortality during the Spanish flu pandemic of 1918 in 15 districts in the Cape Province of South Africa.
+preview: images/ridge-plot.jpeg
 author:
   - name: Jonathan Jayes
 date: 07-28-2021
@@ -48,23 +49,23 @@ Then I look at three measures of pre-pandemic health and how these correlate wit
 
 ## Historical background and related literature
 
-The Spanish flu reached South Africa in mid 1918. A first, less virulent strain spread through Natal and into the Witwatersrand in winter, before a more severe strain gripped the Cape in October of 1918 as soldiers returned from the First World War. Historian Howard Phillips argues that soldiers embarking on the Jaroslav and the Veronej from Freetown in Sierra Leone acquired the disease in port, and brought it with them on their homeward journey before transmitting it to their families and neighbours in the Cape [@Phillips1984, p. 9]. The Cape was ravaged by the pandemic during "Black October" of 1918, and like populations across the world, working age adults suffered high mortality, threatening livelihoods in the midst of and in the aftermath of the pandemic [@Arthi2021]. @Fourie2021 have shown that more than half of those who died during the pandemic in a sample of districts in the Cape were between 18 and 50 years of age, evidencing a "w-shaped" mortality curve, in contrast to the more common "u-shaped" curve. @Taubenberger2006 show that this pattern held across the world during the 1918 pandemic, with more than half of those recorded dead between 20 and 40 years of age.
+The Spanish flu reached South Africa in mid 1918. A first, less virulent strain spread through Natal and into the Witwatersrand in winter, before a more severe strain gripped the Cape in October of 1918 as soldiers returned from the First World War. Historian Howard Phillips argues that soldiers embarking on the Jaroslav and the Veronej from Freetown in Sierra Leone acquired the disease in port, and brought it with them on their homeward journey before transmitting it to their families and neighbours in the Cape [-@Phillips1984, p. 9]. The Cape was ravaged by the pandemic during "Black October" of 1918, and like populations across the world, working age adults suffered high mortality, threatening livelihoods in the midst of and in the aftermath of the pandemic [@Arthi2021]. @Fourie2021 have shown that more than half of those who died during the pandemic in a sample of districts in the Cape were between 18 and 50 years of age, evidencing a "w-shaped" mortality curve, in contrast to the more common "u-shaped" curve. @Taubenberger2006 show that this pattern held across the world during the 1918 pandemic, with more than half of those recorded dead between 20 and 40 years of age.
  
-In explaining the severity of the disease, @Arthi2021 note that the novelty of the virus "contributed to its destruction", detailing the time that it takes for a community to detect the disease, appreciate its epidemiology, create medicines and reach immunity which allowed the flu to rapidly spread and harm populations across the world [@Arthi2021, p. 13]. 
+In explaining the severity of the disease, @Arthi2021 note that the novelty of the virus "contributed to its destruction", detailing the time that it takes for a community to detect the disease, appreciate its epidemiology, create medicines and reach immunity which allowed the flu to rapidly spread and harm populations across the world [-@Arthi2021, p. 13]. 
 
-There is strong evidence of an immunizing effect that the less severe Natal strain provided in South Africa, though this was not known at the time. @Phillips1984 cites the Influenza Epidemic Commission of 1919 in South Africa suggest that different strains of organisms caused the two waves of the pandemic in the country, but that regarding the immunizing effect, "no definite pronouncement is possible on this subject" [@Phillips1984, p. 293]. However, modern research has shown that cross-protection certainly lessened the impact of the flu among those exposed to the earlier, milder variant. @Shanks2010 compare mortality rates among diamond miners in Kimberley and gold miners on the Rand during Black October. They find a mortality rate 35 times higher among Kimberley's diamond miners than Rand gold miners which the authors attribute to the formers' lack of exposure to the less lethal strain earlier in the year. The authors control for the characteristics of the miners in their comparison, including recruitment, working conditions, housing and medical care [@Shanks2010, p. 2]. 
+There is strong evidence of an immunizing effect that the less severe Natal strain provided in South Africa, though this was not known at the time. @Phillips1984 cites the Influenza Epidemic Commission of 1919 in South Africa suggest that different strains of organisms caused the two waves of the pandemic in the country, but that regarding the immunizing effect, "no definite pronouncement is possible on this subject" [-@Phillips1984, p. 293]. However, modern research has shown that cross-protection certainly lessened the impact of the flu among those exposed to the earlier, milder variant. @Shanks2010 compare mortality rates among diamond miners in Kimberley and gold miners on the Rand during Black October. They find a mortality rate 35 times higher among Kimberley's diamond miners than Rand gold miners which the authors attribute to the formers' lack of exposure to the less lethal strain earlier in the year. The authors control for the characteristics of the miners in their comparison, including recruitment, working conditions, housing and medical care [@Shanks2010, p. 2]. 
 
-Similarly, in Canada @Bogaert2015 studies protection from initial exposure to the less virulent strain among soldiers in the Canadian Expeditionary Force and finds that soldiers who were exposed to pneumonia and influenza prior to the second wave saw 82 percent protection from severe illness and 84 percent protection from death compared to compatriots who were later recruited from rural farming districts and had supposedly not been exposed to the first strain [@Bogaert2015, p. 34]. This finding is replicated among military camps in the United States at the time. @Barry2008 find that as early as March 1918, a mild strain of the virus was circulating in military camps and provided naturally acquired immunity to the more virulent strain that followed in the fourth quarter of the year. 
+Similarly, in Canada @Bogaert2015 studies protection from initial exposure to the less virulent strain among soldiers in the Canadian Expeditionary Force and finds that soldiers who were exposed to pneumonia and influenza prior to the second wave saw 82 percent protection from severe illness and 84 percent protection from death compared to compatriots who were later recruited from rural farming districts and had supposedly not been exposed to the first strain [-@Bogaert2015, p. 34]. This finding is replicated among military camps in the United States at the time. @Barry2008 find that as early as March 1918, a mild strain of the virus was circulating in military camps and provided naturally acquired immunity to the more virulent strain that followed in the fourth quarter of the year. 
 
 There is discussion by @Shanks2016 regarding whether the two waves studied in soldiers in Canada, the United States, Australia and South Africa were caused by different viruses or different strains of the same virus, while @Bogaert2016 argues the distinction does not take away from the crucial point, initial exposure provided protection from the virulent wave in the second half of 1918. 
 
-The severity of the October wave may explain why South Africa was spared the third wave of early 1919 detailed by @Taubenberger2006 and the fourth wave that spread in Asia in mid 1919 noted by @Lin2014 and @Ogasawara2018 in their analysis of the long-run effects of *in utero* exposure (in Taiwan and China respectively). @Phillips1984 argues that although the epidemic's presence was lethal, "it was short-lived and by the middle of November it had virtually abated" [@Phillips1984, p. 294]. 
+The severity of the October wave may explain why South Africa was spared the third wave of early 1919 detailed by @Taubenberger2006 and the fourth wave that spread in Asia in mid 1919 noted by @Lin2014 and @Ogasawara2018 in their analysis of the long-run effects of *in utero* exposure (in Taiwan and China respectively). @Phillips1984 argues that although the epidemic's presence was lethal, "it was short-lived and by the middle of November it had virtually abated" [-@Phillips1984, p. 294]. 
 
-A wealth of research has sought to examine what features explain the differing levels of mortality in disparate communities during the pandemic. @AcuaSoto2011InfluenzaAP examine features correlated with mortality from the flu in 66 large cities across the United States. The authors find that baseline health status was important, as proxied by pre-pandemic pneumonia, which they argue is "a bacterial condition with a strong biological interaction with the influenza virus" and infant mortality rates as a surrogate for population health [@AcuaSoto2011InfluenzaAP, p. 13]. @Clay2018 study the effect of pollution from coal fired power plants on pandemic mortality in the United States, and find that poor air quality was "an important cause of mortality during the pandemic" [@Clay2018, p. 79]. The authors find that pollution was a significant contributor to deaths during the pandemic. They find that the magnitude of the effect was approximately half of the effects of pre-existing levels of health in a community. A recent study on fog events in London corroborates the interaction between pollution and mortality from respiratory diseases [@Hanlon2018LondonFA]. @Arthi2021 in their meta-analysis, as well as @Chowell2008 who study the flu in England and Wales, and @Mamelund2006 who examines the flu in Denmark all find that socio-economic status impact health outcomes. They collectively find that those who live in high density housing, for example the poor in cities, had poorer pre-existing health as measured by cases of and deaths from pneumonia and influenza, and high mortally rates during the pandemic. @Clay2018 posit that further socio-economic indicators such as foreign born status and illiteracy may have precluded residents from implementing public health guidelines. @Grantz2016 examine the differential mortality from the pandemic across Chicago and find that higher rates of illiteracy correlated with higher rates of mortality across districts. Importantly, these socio-demographic effects evidenced spillovers, as literate and native born residents in districts with high shares of effects of illiteracy and foreign born residents saw a higher mortality than compatriots with similar observable characteristics @Arthi2021.
+A wealth of research has sought to examine what features explain the differing levels of mortality in disparate communities during the pandemic. @AcuaSoto2011InfluenzaAP examine features correlated with mortality from the flu in 66 large cities across the United States. The authors find that baseline health status was important, as proxied by pre-pandemic pneumonia, which they argue is "a bacterial condition with a strong biological interaction with the influenza virus" and infant mortality rates as a surrogate for population health [-@AcuaSoto2011InfluenzaAP, p. 13]. @Clay2018 study the effect of pollution from coal fired power plants on pandemic mortality in the United States, and find that poor air quality was "an important cause of mortality during the pandemic" [-@Clay2018, p. 79]. The authors find that pollution was a significant contributor to deaths during the pandemic. They find that the magnitude of the effect was approximately half of the effects of pre-existing levels of health in a community. A recent study on fog events in London corroborates the interaction between pollution and mortality from respiratory diseases [@Hanlon2018LondonFA]. @Arthi2021 in their meta-analysis, as well as @Chowell2008 who study the flu in England and Wales, and @Mamelund2006 who examines the flu in Denmark all find that socio-economic status impact health outcomes. They collectively find that those who live in high density housing, for example the poor in cities, had poorer pre-existing health as measured by cases of and deaths from pneumonia and influenza, and high mortally rates during the pandemic. @Clay2018 posit that further socio-economic indicators such as foreign born status and illiteracy may have precluded residents from implementing public health guidelines. @Grantz2016 examine the differential mortality from the pandemic across Chicago and find that higher rates of illiteracy correlated with higher rates of mortality across districts. Importantly, these socio-demographic effects evidenced spillovers, as literate and native born residents in districts with high shares of effects of illiteracy and foreign born residents saw a higher mortality than compatriots with similar observable characteristics [@Arthi2021].
 
 ## Data
 
-The sources of data available to a researcher without doubt shape the design of their study. In his authoritative account of the Spanish flu pandemic in South Africa, historian Howard Phillips notes that prior to his own study, “extensive documentation... from [unpublished evidence] in the report of the Government-appointed Commission of Inquiry" had laid on the shelves of the Library of Parliament unexamined [@Phillips1984, p.9]. His analysis of this information told the story of the pandemic in a way that had not been told before. Similarly, the digitization of death records allows different kinds of questions about the pandemic of 1918. Specifically it opens up an assessment of excess mortality and an indication of the importance of pre-existing levels of health in determining pandemic mortality rates within the districts of the Cape.
+The sources of data available to a researcher without doubt shape the design of their study. In his authoritative account of the Spanish flu pandemic in South Africa, historian Howard Phillips notes that prior to his own study, “extensive documentation... from [unpublished evidence] in the report of the Government-appointed Commission of Inquiry" had laid on the shelves of the Library of Parliament unexamined [-@Phillips1984, p.9]. His analysis of this information told the story of the pandemic in a way that had not been told before. Similarly, the digitization of death records allows different kinds of questions about the pandemic of 1918. Specifically it opens up an assessment of excess mortality and an indication of the importance of pre-existing levels of health in determining pandemic mortality rates within the districts of the Cape.
 
 The dataset analysed here is made up of 40,000 digitized Forms of Information of a Death of individuals in 15 districts of the Cape Province between 1915 and 1920. The Forms are recorded as of Act No. 7 of 1894 of the Cape Colony. They contain demographic information about the deceased, details about their death, and details about the informant who told the Registrar about their passing. In this study, the date of death, cause of death and demographics are of particular interest. The years prior to the pandemic serve as a baseline against which to compare excess mortality during the pandemic. There are some limitations regarding the recording of cause of death and duration of last illness. These are discussed in detail in @Fourie2021. In short, where a doctor has tended to the deceased and completed a certificate, the Form will include the pertinent information from the Medical Practitioners certificate. In the absence of such a certificate, the Informant can provide this information if known. The text on the Form reads:
 
@@ -77,16 +78,16 @@ Source: @Civil1918
 
 ### Classification of race from ethnicity
 
-Race is one important feature of the analysis which follows. As noted in @Fourie2021, health and wealth in the Cape Province of 1918 were "closely correlated to race... with race being a strong predictor of income and social status" [@Fourie2021, p. 2]. The death notices provide a field for the race of the deceased to be recorded. However, often ethnicity of the deceased was recorded instead. See for example the record of Wills Bunu, who died in Queenstown on the 26th of October 1918 whose race is recorded as "Fingo". Fingo is a term for a group of ethnicities who fled Natal in the aftermath of the *Mfecane* to reside in the Xhosa speaking Eastern region of the Cape [@Stapleton, p. 362]. @Mtumane argues that the Fingo were "were embraced and integrated" by Xhosa in the Eastern Cape by the time of the Spanish flu [@Mtumane, p. 68]. In any event, some categorization has to be done to limit the number of different categories of recorded ethnicity.
+Race is one important feature of the analysis which follows. As noted in @Fourie2021, health and wealth in the Cape Province of 1918 were "closely correlated to race... with race being a strong predictor of income and social status" [-@Fourie2021, p. 2]. The Forms of Information of a Death provide a field for the race of the deceased to be recorded. However, often ethnicity of the deceased was recorded instead. See for example the record of Wills Bunu, who died in Queenstown on the 26th of October 1918 whose race is recorded as "Fingo". Fingo is a term for a group of ethnicities who fled Natal in the aftermath of the *Mfecane* to reside in the Xhosa speaking Eastern region of the Cape [@Stapleton, p. 362]. @Mtumane argues that the Fingo were "were embraced and integrated" by Xhosa in the Eastern Cape by the time of the Spanish flu [@Mtumane, p. 68]. In any event, some categorization has to be done to limit the number of different categories of recorded ethnicity.
 
 
 ![Form of Information of the death of Wills Bunu. Source: @Civil1918](images/wills_bunu.jpg)
 
 
-Further, more than 200 ethnicities appear only once among the records, such that the distribution of observed ethnicities is skewed to the right, with 419 *different* ethnicities recorded.
+Further, more than 200 ethnicities appear only once among the records, such that the distribution of observed ethnicities is skewed to the right, with 419 *different* ethnicities recorded, evident in Figure \@ref(fig:ethnicity-distribution). 
 
 <aside>
-```{r}
+```{r, ethnicity-distribution, fig.cap="Distribution of ethnicities recorded on Forms of Information of a Death"}
 df %>% 
   count(race_original, sort = T) %>% 
   ggplot(aes(n)) +
@@ -143,6 +144,13 @@ Crude death rate is the total number of deaths during a given time interval divi
 
 ```{r town-density, layout="l-body-outset", fig.width = 8, fig.height=6, fig.cap="Ridge plot of number of deaths in district by date"}
 
+# jpeg(
+#     filename="images/ridge-plot.jpeg",
+#     width=6,
+#     height=4,
+#     units="in",
+#     res=1000)
+
 df %>%
   filter(between(death_date, ymd("1918-09-01"), ymd("1918-12-30"))) %>%
   mutate(death_date = floor_date(death_date, unit = "days")) %>%
@@ -171,6 +179,7 @@ df %>%
     y = NULL
   )
 
+# dev.off()
 ```
 
 
@@ -274,7 +283,7 @@ df %>%
 This first method results in estimates of excess mortality shown in Table \@ref(tab:samrc-method-tab). Here it is evident that while the largest number of deaths occurred in Queenstown and Paarl, the districts of Peddie and Elliot saw more than 10 times as many deaths as they had in the period between October and December in the three years preceding the pandemic.
 
 ```{r samrc-method-tab, layout="l-body-outset"}
-df %>%
+df_samrc <- df %>%
   mutate(
     week = week(death_date),
     year = year(death_date)
@@ -305,7 +314,9 @@ df %>%
     excess_mortality = deaths_1918 - mean_deaths_1915_1917,
     across(where(is.numeric), round),
     excess_mort_perc = scales::percent(excess_mortality / mean_deaths_1915_1917, accuracy = 1)
-  ) %>%
+  )
+
+df_samrc %>% 
   knitr::kable(
     col.names = c("District", "Pre-pandemic mean", "Pandemic period", "Excess mortality", "Percent excess mortality"),
     caption = "Excess mortality based on SAMRC method",
@@ -318,7 +329,7 @@ df %>%
 Second, I follow the methodology of @AcuaSoto2011InfluenzaAP who define excess mortality as "deaths observed during the pandemic years minus the average death counts in the pre-pandemic years" [@AcuaSoto2011InfluenzaAP, p.23]. While these authors had access to seven years of data preceding the pandemic, I calculate a simple average of the number of deaths per year in each district in the three prior years and subtract the number of deaths in 1918. Table \@ref(tab:mean-mortality-by-district-tab) shows the mortality by district from 1915 to 1917, and the average across these three years.
 
 ```{r mean-mortality-by-district-tab, layout="l-body-outset"}
-df %>%
+df_acuasoto <- df %>%
   filter(death_date < ymd("1918-01-01")) %>%
   mutate(year = year(death_date)) %>%
   count(town, year) %>%
@@ -336,7 +347,9 @@ df %>%
     excess_mortality = `1918` - average,
     excess_mort_perc = scales::percent(excess_mortality / average, accuracy = 1)
   ) %>%
-    arrange(desc(excess_mortality)) %>%
+    arrange(desc(excess_mortality))
+
+df_acuasoto %>% 
   knitr::kable(
     caption = "Excess mortality based on Acuña-Soto, Viboud, and Chowell method",
     col.names = c("District", "1915", "1916", "1917", "'15-'17 Average", "1918", "Excess mortality", "Percent excess mortality"),
@@ -383,15 +396,15 @@ df %>%
 
 Third, I use regression models to extrapolate the mortality we would expect in each district if the historical trends from 1915 to 1917 continued.
 
-I use three regression models. These are linear model with only an intercept - in effect the same as the averaging procedure from above, but over a shorter window. Specifically, I average the number of deaths in the three month period including October, November and December in the three years prior to 1918 as a guide for the average number of deaths per district. This accounts for the seasonality shown in Figure \@ref(fig:seasonality), whereby there are a greater number of deaths in the second half of the year.
+I use three regression models. These are linear model with only an intercept - in effect the same as the averaging procedure from above. Specifically, I average the number of deaths in the year in the three years prior to 1918 as a guide for the average number of deaths per district.
 
-Next I use a simple linear regression. This accounts, for instance, for population growth and consequent linear increases in the number of registered deaths per district per year.
+Next I use a simple linear regression. This accounts, for instance, for population growth and consequent linear increases in the number of registered deaths per district per year that we would expect with a larger population.
 
 <aside>
 
-The linear trend is shown in the figure here: 
+The linear trend is shown in Figure \@ref(fig:linear-trend) here, alongside a line of equality: 
 
-```{r}
+```{r, linear-trend, layout="l-body-outset", fig.width = 8, fig.height=6, fig.cap="Caption"}
 library(ggrepel)
 df %>%
   mutate(year = year(death_date)) %>%
@@ -420,11 +433,16 @@ df %>%
   ) 
 ```
 
+Is appears that towns with higher predicted mortality in 1918 based on the linear trend have higher actual mortality in 1918. 
+
 </aside>
 
-Further I use a regression model from Serfling that accounts for the seasonality of respiratory diseases like flu and influenza. “Serfling’s method uses cyclic regression to model the weekly proportion of deaths from pneumonia and influenza and to define an epidemic threshold that is adjusted for seasonal effects." [@Cowling2006, 4].
+Further I use a regression model from Serfling that accounts for the seasonality of respiratory diseases like flu and influenza. According to @Cowling2006, “Serfling’s method uses cyclic regression to model the weekly proportion of deaths from pneumonia and influenza and to define an epidemic threshold that is adjusted for seasonal effects." [-@Cowling2006, 4].
 
-```{r}
+Figure \@ref(fig:regression-methods) shows the mean and predicted ranges of expected mortality based on the three methods, as well as the observed pandemic mortality. It is evident that the districts with larger populations also have a larger range in the mortality protections. Oudtshoorn has a wide range in the projected mortality, followed by Paarl and Queenstown.
+
+
+```{r, regression-methods, layout="l-body-outset", fig.width = 8, fig.height=6, fig.cap="Excess mortality based on regression methods"}
 df_reg <- df %>%
   mutate(date = floor_date(death_date, "week")) %>%
   count(date, town) %>%
@@ -518,10 +536,13 @@ df_reg %>%
     colour = NULL,
     shape = NULL,
     y = NULL
-  )
+  ) +
+  theme(legend.position = "bottom")
 ```
 
-```{r}
+In table \@ref(tab:regression-tab-range) I show the excess mortality based on these regression methods. The estimates of excess mortality are similar to the estimates produced following the Acua-Soto methodology. The excess mortality percentages are lower than that calculated by following the SAMRC methodology due to a lower smaller detonator in calculating the latter, just the three months of the pandemic peak.
+
+```{r, regression-tab-range, layout="l-body-outset"}
 df_reg %>% 
   distinct(town, mean_projected_deaths, observed) %>% 
   mutate(excess_mortality = observed - mean_projected_deaths,
@@ -534,14 +555,75 @@ df_reg %>%
                align = c("l", rep("r", 4)))
 ```
 
+Table \@ref(tab:excess-mort-comparison-tab) shows the differences in the number and percentage estimates of excess mortality produced following the three methods detailed above. The estimates differ between the methods, and there is not a clear relationship amongst the different methods as to which produces the largest across all the districts.
 
-### Conclusion of excess mortalty calculations is to use all respiratory deaths during pandemic as pandemic deaths - more reliable than lsicing data in preceding years thinly - due to data coarsity.
+```{r, excess-mort-comparison-tab, layout="l-body-outset"}
+df_excess_mort_comp <- df_samrc %>%
+  select(town,
+    excess_mortality_samrc = excess_mortality,
+    excess_mort_perc_samrc = excess_mort_perc
+  ) %>%
+  inner_join(df_acuasoto %>%
+    select(town,
+      excess_mortality_acuasoto = excess_mortality,
+      excess_mort_perc_acuasoto = excess_mort_perc
+    ), by = "town") %>%
+  inner_join(df_reg %>%
+    mutate(
+      excess_mortality = round(observed - mean_projected_deaths, 0),
+      excess_mort_perc = scales::percent(excess_mortality / mean_projected_deaths)
+    ) %>%
+    mutate(
+      excess_mortality_regression = excess_mortality,
+      excess_mort_perc_regression = excess_mort_perc
+    ) %>%
+    select(town, excess_mortality_regression, excess_mort_perc_regression) %>%
+    distinct(), by = "town") %>% 
+  arrange(desc(excess_mortality_acuasoto))
 
-A possible choice at this point would be to classify any death occurring during the pandemic with respiratory disease such as pneumonia or influenza listed in the cause of death as a Spanish flu death. [To be completed: In the appendix I show that this can be done effectively with a machine learning model and a relatively small set of hand-labelled training data.]
-
-```{r}
-# show figure from presentation that has Phillips numbers compared to our own.
+df_excess_mort_comp %>% 
+    knitr::kable(col.names = c("District", "SAMRC", "SAMRC", "Acua-Soto", "Acua-Soto", "Regression", "Regression"),
+               caption = "Comparison of excess mortality estimates",
+               align = c("l", rep("r", 6)))
 ```
+
+
+In an effort to contextualize these estimates, I compare the excess mortality figures in each town with the number of deaths recorded as caused by respiratory diseases^[The specific terms are detailed in the appendix], as well as figures from the Pandemic Commission of Inquiry referenced by @Phillips1984.
+
+```{r, phillips-comparison-fig, layout="l-body-outset", fig.width = 8, fig.height=6, fig.cap="Comparison of excess mortality estimates, respiratory deaths and government estimates"}
+phillips <- read_rds("data/phillips-comparison-august.rds") %>% 
+  janitor::clean_names() %>% 
+  mutate(stat = case_when(
+    str_detect(stat, "Deaths from Death Notices") ~ "Respiratory deaths during pandemic",
+    TRUE ~ "Estimates cited in Phillips"
+  ))
+
+df_excess_mort_comp %>%
+  select(!contains("perc")) %>%
+  pivot_longer(-town) %>%
+  group_by(town) %>%
+  mutate(value = mean(value)) %>%
+  ungroup() %>%
+  select(town, value) %>%
+  distinct() %>%
+  mutate(stat = "Mean estimated excess mortality") %>%
+  bind_rows(phillips) %>%
+  mutate(town = fct_reorder(town, value)) %>%
+  filter(town != "Sea Point") %>%
+  mutate(stat = fct_relevel(stat, "Estimates cited in Phillips")) %>% 
+  ggplot(aes(value, town, fill = stat)) +
+  theme(legend.position = "bottom") +
+  geom_col(position = "dodge") +
+  scale_fill_manual(values = wesanderson::wes_palette(3, name = "Zissou1", type = "continuous")) +
+  labs(fill = NULL,
+       y = NULL,
+       x = "Number of deaths")
+
+```
+
+Here we observe that in the districts with larger populations, the estimates cited in @Phillips1984 are greater than both the number of respiratory deaths, and the mean excess mortality calculated with the three methods detailed above. In contrast, in the smaller districts, from Fryburg to Riversdale, the number of deaths from respiratory illness recorded during the pandemic are greater than the estimates cited in @Phillips1984. This is potentially indicative of under counting on the part of the Commission of Inquiry in the smaller districts. 
+
+In all districts, my estimated excess mortality values are lower than the other two estimates. This means that we need not be concerned about under counting of pandemic deaths, if they are not recorded as such. We would be concerned about this if the excess mortality exceeded the estimates of Spanish flu deaths. In the remainder of the paper I calculate mortality and mortality rates based on respiratory deaths during the pandemic.
 
 ## Correlates
 
@@ -553,15 +635,11 @@ I examine two measures of pre-existing health in the 15 districts which constitu
 
 #### Pre-pandemic infant and child mortality rates
 
-We start with infant mortality rates. Defined as the share of children below 1 dying each year divided by the number of births each year.
+I begin with a proxy for pre-existing health in a district by calculating the infant mortality rate prior to the pandemic. I make use of the recorded infant deaths between January 1915 and December 1917, divided by the population of infants in each district as recorded in the Statistics of Population, Vital and Health Statistics of 1916 [@OfficeofCensusandStatisticsPretoria1918]. I extrapolate the full population of infants each year by multiplying the 1916 figure by three. This snapshot of the infants born in 1916 could be critiqued as unrepresentative of birth in the two surrounding years, yet it is the best data available.
 
-Two sources of data:
-- infant deaths from our death notices in each district. Taken from 1915 - 1917. 
-- infant births - record from blue books/archive... (CITAION). Multiply the snapshot by three to get an average mortality rate prior to the pandemic and make the most of the data at our disposal.
+Table \@ref(tab:births-tab) shows the number of births in 1916 in each district, by race, multiplied by 3. Figure \@ref(fig:infant-mortality) shows these figures with a confidence interval around them. It is clear that there is heterogeneity in infant mortality by race and district, such that this may be correlated with pandemic mortality rates. While the infant mortality rates may appear very high, it is possible that there is under-reporting in the number of births by district, while the death of a child is so tragic that it is recorded at a higher rate than the birth of a child. It is not prescient to conclude on these anomalies without additional sources of data.
 
-Infant mortality: deaths of those below children born in each town.
-
-```{r}
+```{r, births-tab, layout="l-body-outset"}
 births_by_town <- read_rds("data/births_by_town.rds")
 
 df_infant <- births_by_town %>%
@@ -615,9 +693,11 @@ df_infant %>%
        y = NULL)
 ```
 
-Now we know what the pre-existing infant mortality data looked like, we can examine how it was correlated with the pandemic mortality. 
+Figure \@ref(fig:infant-mort-scatter) shows the relationship between infant mortality rates (detailed above) and pandemic mortality rates, calculated by dividing the number of respiratory deaths from the Forms by the population of individuals by race in each district from the 1911 census (in the case of black and coloured individuals) and the 1918 census (in the case of white individuals, conducted just prior to the pandemic). The aggregation of black and coloured mortality rates is a function of the denominator (population) reported in the census in aggregate.
 
-```{r}
+Figure \@ref(fig:infant-mort-scatter) evidences a strong linear correlation between infant mortality rates and pandemic mortality rates across districts for black and coloured individuals, and across groups. The slope of the linear fit is less among white residents of the 14 districts^[Sea Point lacks a denominator as it was not recorded separately from Cape Town].
+
+```{r, infant-mort-scatter, layout="l-body-outset", fig.width = 8, fig.height=6, fig.cap="Scatterplot and linear fit of infant and pandemic mortality by district"}
 infant_mortality <- read_rds("data/infant_mortality.rds")
 
 infant_mortality %>% 
@@ -629,15 +709,12 @@ infant_mortality %>%
   scale_x_continuous(labels = number_format(scale = 1000)) +
   scale_y_continuous(labels = number_format(scale = 1000)) +
   scale_color_manual(values = wesanderson::wes_palette(3, name = "Zissou1", type = "continuous")) +
-  labs(x = "Child mortality rate",
+  labs(x = "Infant mortality rate",
        y = "Pandemic mortality rate",
        size = "District population",
        colour = "Race group")
 
-```
 
-
-```{r}
 lm_1 <- infant_mortality %>%
   filter(race == "Both groups") %>% 
   lm(mort_rate ~ infant_mort_rate, data = .)
@@ -646,17 +723,44 @@ lm_2 <- infant_mortality %>%
   filter(race != "Both groups") %>% 
   lm(mort_rate ~ infant_mort_rate + race, data = .)
 
-stargazer::stargazer(lm_1, lm_2, type = "html")
+# stargazer::stargazer(lm_1, lm_2,
+#   type = "html", 
+#   title = "Infant and pandemic mortality", 
+#   dep.var.caption = " ",
+#   dep.var.labels = "Pandemic mortality rate",
+#   covariate.labels = c("Infant mortality rate", "White")
+# )
 ```
 
+<table style="text-align:center"><caption><strong>Infant and pandemic mortality</strong></caption>
+<tr><td colspan="3" style="border-bottom: 1px solid black"></td></tr><tr><td style="text-align:left"></td><td colspan="2"></td></tr>
+<tr><td></td><td colspan="2" style="border-bottom: 1px solid black"></td></tr>
+<tr><td style="text-align:left"></td><td colspan="2">Pandemic mortality rate</td></tr>
+<tr><td style="text-align:left"></td><td>(1)</td><td>(2)</td></tr>
+<tr><td colspan="3" style="border-bottom: 1px solid black"></td></tr><tr><td style="text-align:left">Infant mortality rate</td><td>0.139<sup>**</sup></td><td>0.015</td></tr>
+<tr><td style="text-align:left"></td><td>(0.046)</td><td>(0.012)</td></tr>
+<tr><td style="text-align:left"></td><td></td><td></td></tr>
+<tr><td style="text-align:left">White</td><td></td><td>-0.028<sup>***</sup></td></tr>
+<tr><td style="text-align:left"></td><td></td><td>(0.006)</td></tr>
+<tr><td style="text-align:left"></td><td></td><td></td></tr>
+<tr><td style="text-align:left">Constant</td><td>0.003</td><td>0.038<sup>***</sup></td></tr>
+<tr><td style="text-align:left"></td><td>(0.010)</td><td>(0.005)</td></tr>
+<tr><td style="text-align:left"></td><td></td><td></td></tr>
+<tr><td colspan="3" style="border-bottom: 1px solid black"></td></tr><tr><td style="text-align:left">Observations</td><td>14</td><td>28</td></tr>
+<tr><td style="text-align:left">R<sup>2</sup></td><td>0.428</td><td>0.521</td></tr>
+<tr><td style="text-align:left">Adjusted R<sup>2</sup></td><td>0.380</td><td>0.482</td></tr>
+<tr><td style="text-align:left">Residual Std. Error</td><td>0.013 (df = 12)</td><td>0.016 (df = 25)</td></tr>
+<tr><td style="text-align:left">F Statistic</td><td>8.975<sup>**</sup> (df = 1; 12)</td><td>13.574<sup>***</sup> (df = 2; 25)</td></tr>
+<tr><td colspan="3" style="border-bottom: 1px solid black"></td></tr><tr><td style="text-align:left"><em>Note:</em></td><td colspan="2" style="text-align:right"><sup>*</sup>p<0.1; <sup>**</sup>p<0.05; <sup>***</sup>p<0.01</td></tr>
+</table>
 
-[Conclude here]
+Regression table \@ref(fig:infant-mort-scatter) shows before controlling for race, there is a strong correlation between infant mortality rate and pandemic mortality rates across districts, with a five percent significance level and a slope coefficient of 0.139. However, after accounting for race, infant mortality rate is not longer significantly correlated with pandemic mortality.
 
 ##### Child mortality
 
-Child mortality as a measure of pre-existing health in the different districts.
+In a similar vein, I assess the correlation between child mortality and pandemic mortality. Child mortality is calculated as the number of children who died prior to the pandemic below five years of age from the Forms, divided by the population below five years of age from the 1911 and 1918 census for black and coloured and white individuals, respectively.
 
-- Defined as the number of deaths in our death notice dataset, divided by the number of children below 5 years of age from census data. The denominator for white individuals is from the 1918 census, while for Black and Coloured individuals is from the 1911 census. 
+Figure \@ref(fig:child-mortality) shows that there is heterogeneity amongst the districts in child mortality, and that on average child mortality for white residents is lower than for black and coloured residents.
 
 ```{r child-mortality, layout="l-body-outset", fig.width = 8, fig.height=6, fig.cap="Child mortality per 1000 children"}
 child_mortality <- read_rds("data/child_mortality.rds")
@@ -677,8 +781,9 @@ child_mortality %>%
 
 ```
 
+Table \@ref(tab:child-mort-tab)
 
-```{r}
+```{r, child-mort-tab, layout="l-body-outset"}
 child_mortality %>% 
   filter(race != "Both groups") %>% 
   group_by(town) %>% 
@@ -694,9 +799,9 @@ child_mortality %>%
                caption = "Child mortality per 1000 recorded births")
 ```
 
-Now we can compare these mortality statistics during the pandemic
+Figure \@ref(fig:child-mort-scatter) shows the linear fits superimposed on the scatter plots of child mortality rates and pandemic mortality rates. Visually, all three have a positive slope, with the steepest gradient on the aggregate sample.
 
-```{r}
+```{r, child-mort-scatter, layout="l-body-outset", fig.width = 8, fig.height=6, fig.cap="Scatterplot and linear fit of child and pandemic mortality by district"}
 
 child_mortality %>% 
   ggplot(aes(child_mort_rate, mort_rate)) +
@@ -709,10 +814,7 @@ child_mortality %>%
        y = "Pandemic mortality rate",
        size = "District population",
        colour = "Race group")
-```
 
-
-```{r}
 lm_1 <- child_mortality %>%
   filter(race == "Both groups") %>% 
   lm(mort_rate ~ child_mort_rate, data = .)
@@ -721,17 +823,24 @@ lm_2 <- child_mortality %>%
   filter(race != "Both groups") %>% 
   lm(mort_rate ~ child_mort_rate + race, data = .)
 
-# stargazer::stargazer(lm_1, lm_2, type = "html")
+# stargazer::stargazer(lm_1, lm_2,
+#   type = "html", 
+#   title = "Child and pandemic mortality", 
+#   dep.var.caption = " ",
+#   dep.var.labels = "Pandemic mortality rate",
+#   covariate.labels = c("Child mortality rate", "White")
+# )
 ```
 
-<table style="text-align:center"><tr><td colspan="3" style="border-bottom: 1px solid black"></td></tr><tr><td style="text-align:left"></td><td colspan="2"><em>Dependent variable:</em></td></tr>
+<table style="text-align:center"><caption><strong>Child and pandemic mortality</strong></caption>
+<tr><td colspan="3" style="border-bottom: 1px solid black"></td></tr><tr><td style="text-align:left"></td><td colspan="2"></td></tr>
 <tr><td></td><td colspan="2" style="border-bottom: 1px solid black"></td></tr>
-<tr><td style="text-align:left"></td><td colspan="2">mort_rate</td></tr>
+<tr><td style="text-align:left"></td><td colspan="2">Pandemic mortality rate</td></tr>
 <tr><td style="text-align:left"></td><td>(1)</td><td>(2)</td></tr>
-<tr><td colspan="3" style="border-bottom: 1px solid black"></td></tr><tr><td style="text-align:left">child_mort_rate</td><td>0.095</td><td>0.066<sup>*</sup></td></tr>
+<tr><td colspan="3" style="border-bottom: 1px solid black"></td></tr><tr><td style="text-align:left">Child mortality rate</td><td>0.095</td><td>0.066<sup>*</sup></td></tr>
 <tr><td style="text-align:left"></td><td>(0.058)</td><td>(0.038)</td></tr>
 <tr><td style="text-align:left"></td><td></td><td></td></tr>
-<tr><td style="text-align:left">raceWhite</td><td></td><td>-0.020<sup>**</sup></td></tr>
+<tr><td style="text-align:left">White</td><td></td><td>-0.020<sup>**</sup></td></tr>
 <tr><td style="text-align:left"></td><td></td><td>(0.008)</td></tr>
 <tr><td style="text-align:left"></td><td></td><td></td></tr>
 <tr><td style="text-align:left">Constant</td><td>0.017</td><td>0.028<sup>***</sup></td></tr>
@@ -745,36 +854,17 @@ lm_2 <- child_mortality %>%
 <tr><td colspan="3" style="border-bottom: 1px solid black"></td></tr><tr><td style="text-align:left"><em>Note:</em></td><td colspan="2" style="text-align:right"><sup>*</sup>p<0.1; <sup>**</sup>p<0.05; <sup>***</sup>p<0.01</td></tr>
 </table>
 
+Regression table \@ref(fig:child-mort-scatter) shows that after accounting for race, child mortality is correlated with pandemic mortality at the ten percent level, with a slope coefficient of 0.066.
+
 #### Pre-pandemic pneumonia and influenza mortality
 
 @AcuaSoto2011InfluenzaAP show how influenza and pneumonia mortality prior to the pandemic are predictive of mortality rates during the pandemic in 66 large cities in the United States.
 
-I follow their process here:
+I follow their methodology here to assess the same question. First I calculate the pre-pandemic mortality rates by district from influenza, pneumonia and both. These are shown in Table \@ref(tab:pneumonia-influenza-tab) below.
 
-First I calculate the pre-pandemic mortality rates by district from influenza, pneumonia and both. These are shown in Table [cite] below.
-
-```{r}
+```{r, pneumonia-influenza-tab, layout="l-body-outset"}
 pneumonia_influenza <- read_rds("data/pneumonia_influenza.rds")
   
-# pneumonia_influenza %>% 
-#   group_by(town) %>% 
-#   mutate(across(c(influenza_deaths, pneumonia_deaths, total), ~ sum(.x, na.rm = T))) %>% 
-#   ungroup() %>% 
-#   distinct(town, influenza_deaths, pneumonia_deaths, total) %>% 
-#   mutate(influenza_mort = influenza_deaths / total,
-#          pneumonia_mort = pneumonia_deaths / total,
-#          pneumonia_influenza_mort = (influenza_deaths + pneumonia_deaths) / total) %>% 
-#   inner_join(pneumonia_influenza_mort %>% 
-#   select(town, deaths) %>% 
-#   group_by(town) %>% 
-#   mutate(deaths = sum(deaths)) %>% 
-#   ungroup() %>% 
-#   distinct(town, deaths) %>% 
-#   filter(!is.na(town))) %>% 
-#   mutate(pandemic_mort = deaths / total) %>% 
-#   mutate(race = "Both groups") %>% 
-#   bind_rows(pneumonia_influenza) %>% view()
-
 pneumonia_influenza %>% 
   group_by(town) %>% 
   mutate(influenza_deaths_grouped = sum(influenza_deaths, na.rm = T),
@@ -791,6 +881,8 @@ pneumonia_influenza %>%
                caption = "Influenza and Pneumonia mortality per 1000 residents")
 
 ```
+
+Figure \@ref(fig:pneumonia-influenza-mort) shows that while the slopes separated by race are lower, there is still a strong correlation between pre-existing pneumonia and influenza mortality rates and the pandemic mortality rate in each district. The strongest correlation appears to be the aggregated sample.
 
 
 ```{r, pneumonia-influenza-mort, layout="l-body-outset", fig.width = 8, fig.height=6, fig.cap="Correlation pneumonia and influenza mortality"}
@@ -811,11 +903,7 @@ pneumonia_influenza_mort %>%
     colour = "Race group",
     size = "District population"
   )
-```
 
-While the individual slopes are lower, there is still a strong correlation between pre-existing pneumonia and influenza mortality rates and the pandemic mortality rate in each district.
-
-```{r}
 lm_1 <- read_rds("data/influenza_mort.rds") %>% 
   lm(pandemic_mort_rate ~ influenza_mort + race, data = .)
 
@@ -825,45 +913,56 @@ lm_2 <- read_rds("data/pneumonia_mort.rds") %>%
 lm_3 <- pneumonia_influenza_mort %>% 
  lm(pandemic_mort_rate ~ pneumonia_influenza_mort + race, data = .)
 
-# stargazer::stargazer(lm_1, lm_2, lm_3, type = "html")
+# stargazer::stargazer(lm_1, lm_2, lm_3,
+#   type = "html", 
+#   title = "Infant and pandemic mortality", 
+#   dep.var.caption = " ",
+#   dep.var.labels = "Pandemic mortality rate",
+#   covariate.labels = c("Influenza mortality", "Pneumonia mortality", "Pneumonia and influenza mort.", "White")
+# )
 
 ```
 
-<table style="text-align:center"><tr><td colspan="4" style="border-bottom: 1px solid black"></td></tr><tr><td style="text-align:left"></td><td colspan="3"><em>Dependent variable:</em></td></tr>
+<table style="text-align:center"><caption><strong>Pneumonia and influenza and pandemic mortality</strong></caption>
+<tr><td colspan="4" style="border-bottom: 1px solid black"></td></tr><tr><td style="text-align:left"></td><td colspan="3"></td></tr>
 <tr><td></td><td colspan="3" style="border-bottom: 1px solid black"></td></tr>
-<tr><td style="text-align:left"></td><td colspan="3">pandemic_mort_rate</td></tr>
+<tr><td style="text-align:left"></td><td colspan="3">Pandemic mortality rate</td></tr>
 <tr><td style="text-align:left"></td><td>(1)</td><td>(2)</td><td>(3)</td></tr>
-<tr><td colspan="4" style="border-bottom: 1px solid black"></td></tr><tr><td style="text-align:left">influenza_mort</td><td>3.228<sup>**</sup></td><td></td><td></td></tr>
+<tr><td colspan="4" style="border-bottom: 1px solid black"></td></tr><tr><td style="text-align:left">Influenza mortality</td><td>3.228<sup>**</sup></td><td></td><td></td></tr>
 <tr><td style="text-align:left"></td><td>(1.437)</td><td></td><td></td></tr>
 <tr><td style="text-align:left"></td><td></td><td></td><td></td></tr>
-<tr><td style="text-align:left">pneumonia_mort</td><td></td><td>1.370<sup>**</sup></td><td></td></tr>
+<tr><td style="text-align:left">Pneumonia mortality</td><td></td><td>1.370<sup>**</sup></td><td></td></tr>
 <tr><td style="text-align:left"></td><td></td><td>(0.511)</td><td></td></tr>
 <tr><td style="text-align:left"></td><td></td><td></td><td></td></tr>
-<tr><td style="text-align:left">pneumonia_influenza_mort</td><td></td><td></td><td>1.481<sup>***</sup></td></tr>
-<tr><td style="text-align:left"></td><td></td><td></td><td>(0.431)</td></tr>
+<tr><td style="text-align:left">Pneumonia and influenza mort.</td><td></td><td></td><td>1.596<sup>***</sup></td></tr>
+<tr><td style="text-align:left"></td><td></td><td></td><td>(0.336)</td></tr>
 <tr><td style="text-align:left"></td><td></td><td></td><td></td></tr>
-<tr><td style="text-align:left">raceWhite</td><td>-0.023<sup>***</sup></td><td>-0.019<sup>***</sup></td><td>-0.015<sup>**</sup></td></tr>
-<tr><td style="text-align:left"></td><td>(0.007)</td><td>(0.007)</td><td>(0.007)</td></tr>
+<tr><td style="text-align:left">White</td><td></td><td></td><td>-0.004</td></tr>
+<tr><td style="text-align:left"></td><td></td><td></td><td>(0.005)</td></tr>
 <tr><td style="text-align:left"></td><td></td><td></td><td></td></tr>
-<tr><td style="text-align:left">Constant</td><td>0.033<sup>***</sup></td><td>0.029<sup>***</sup></td><td>0.023<sup>***</sup></td></tr>
-<tr><td style="text-align:left"></td><td>(0.006)</td><td>(0.006)</td><td>(0.007)</td></tr>
+<tr><td style="text-align:left">raceWhite</td><td>-0.023<sup>***</sup></td><td>-0.019<sup>***</sup></td><td>-0.014<sup>**</sup></td></tr>
+<tr><td style="text-align:left"></td><td>(0.007)</td><td>(0.007)</td><td>(0.006)</td></tr>
 <tr><td style="text-align:left"></td><td></td><td></td><td></td></tr>
-<tr><td colspan="4" style="border-bottom: 1px solid black"></td></tr><tr><td style="text-align:left">Observations</td><td>26</td><td>28</td><td>28</td></tr>
-<tr><td style="text-align:left">R<sup>2</sup></td><td>0.567</td><td>0.602</td><td>0.652</td></tr>
-<tr><td style="text-align:left">Adjusted R<sup>2</sup></td><td>0.530</td><td>0.571</td><td>0.624</td></tr>
-<tr><td style="text-align:left">Residual Std. Error</td><td>0.015 (df = 23)</td><td>0.014 (df = 25)</td><td>0.013 (df = 25)</td></tr>
-<tr><td style="text-align:left">F Statistic</td><td>15.075<sup>***</sup> (df = 2; 23)</td><td>18.945<sup>***</sup> (df = 2; 25)</td><td>23.435<sup>***</sup> (df = 2; 25)</td></tr>
+<tr><td style="text-align:left">Constant</td><td>0.033<sup>***</sup></td><td>0.029<sup>***</sup></td><td>0.022<sup>***</sup></td></tr>
+<tr><td style="text-align:left"></td><td>(0.006)</td><td>(0.006)</td><td>(0.006)</td></tr>
+<tr><td style="text-align:left"></td><td></td><td></td><td></td></tr>
+<tr><td colspan="4" style="border-bottom: 1px solid black"></td></tr><tr><td style="text-align:left">Observations</td><td>26</td><td>28</td><td>42</td></tr>
+<tr><td style="text-align:left">R<sup>2</sup></td><td>0.567</td><td>0.602</td><td>0.617</td></tr>
+<tr><td style="text-align:left">Adjusted R<sup>2</sup></td><td>0.530</td><td>0.571</td><td>0.587</td></tr>
+<tr><td style="text-align:left">Residual Std. Error</td><td>0.015 (df = 23)</td><td>0.014 (df = 25)</td><td>0.013 (df = 38)</td></tr>
+<tr><td style="text-align:left">F Statistic</td><td>15.075<sup>***</sup> (df = 2; 23)</td><td>18.945<sup>***</sup> (df = 2; 25)</td><td>20.387<sup>***</sup> (df = 3; 38)</td></tr>
 <tr><td colspan="4" style="border-bottom: 1px solid black"></td></tr><tr><td style="text-align:left"><em>Note:</em></td><td colspan="3" style="text-align:right"><sup>*</sup>p<0.1; <sup>**</sup>p<0.05; <sup>***</sup>p<0.01</td></tr>
 </table>
 
+Regression table \@ref(fig:pneumonia-influenza-mort) shows that after controlling for race, mortality rates from influenza, pneumonia and both diseases are highly correlated with mortality rates during the pandemic, at the 5 percent level and below. The combination are significantly correlated with pandemic mortality rates at the one percent level. 
 
 #### Literacy proxy
 
-I use a proxy for literacy of the individual's family to assess if literacy has an impact on how well residents of a district fare during the pandemic. The hypothesis is that districts with higher literacy rates will better adopt the best practices proposed by health authorities in an attempt to quell the pandemic and stop the spread of the disease.
+I use a proxy for literacy of the individual's family to assess if literacy has an impact on how well residents of a district fare during the pandemic. The hypothesis is that districts with higher literacy rates will better adopt the best practices proposed by health authorities in an attempt to quell the pandemic and stop the spread of the disease, according to @Clay2018.
 
-Table [Cite] shows that there is considerable variation in our literacy proxy by district and race.
+Table \@ref(tab:literacy-tab) shows that there is considerable variation in our literacy proxy by district and race. Figure \@ref(fig:literacy-fig) shows that the share of informants who sign the Forms in Sea Point, Fraserburg and Elliot is 100 percent. Given that it is likely the registrar signed each form on behalf of the informant, I will exclude these three from the regression.
 
-```{r}
+```{r, literacy-tab, layout="l-body-outset"}
 df %>%
   filter(death_date < ymd("1918-09-01")) %>% 
   mutate(signed_yes_or_no = str_to_lower(signed_yes_or_no)) %>%
@@ -889,9 +988,7 @@ df %>%
                caption = "Percentage of district death notices wherein Informant signed")
 ```
 
-Figure [cite] shows the same thing.
-
-```{r}
+```{r, literacy-fig, layout="l-body-outset", fig.width = 8, fig.height=6, fig.cap="Share of informants who sign"}
 df %>%
   filter(death_date < ymd("1918-09-01")) %>% 
   mutate(signed_yes_or_no = str_to_lower(signed_yes_or_no)) %>%
@@ -910,7 +1007,9 @@ df %>%
   scale_fill_manual(values = wesanderson::wes_palette(3, name = "Darjeeling1")) +
   geom_col(position = "dodge", show.legend = F) +
   facet_wrap( ~ race) +
-  scale_x_continuous(labels = percent_format())
+  scale_x_continuous(labels = percent_format()) +
+  labs(x = "Share of informants who sign Form",
+       y = NULL)
 ```
 
 Is there an association between this proxy and the pandemic mortality rates?
@@ -919,6 +1018,7 @@ Is there an association between this proxy and the pandemic mortality rates?
 df_literacy <- read_rds("data/df_literacy.rds")
 
 df_literacy %>% 
+  filter(!town %in% c("Elliot", "Fraserburg", "Sea Point")) %>% 
   ggplot(aes(share_literate, mort_rate)) +
   geom_point(aes(colour = race, size = total)) +
   geom_smooth(method = "lm", aes(colour = race), se = F) +
@@ -967,7 +1067,7 @@ lm_2 <- df_literacy %>%
 <tr><td colspan="3" style="border-bottom: 1px solid black"></td></tr><tr><td style="text-align:left"><em>Note:</em></td><td colspan="2" style="text-align:right"><sup>*</sup>p<0.1; <sup>**</sup>p<0.05; <sup>***</sup>p<0.01</td></tr>
 </table>
 
-Here we observe the Yule-Simpson effect in practice, how exciting! This statistical effect occurs when a true effect is marked by failing to control for an additional variable. In this case, the best fit line for "Both groups", shown in yellow, leads us to believe that as the proportion of our district with the literacy proxy increases, the pandemic mortality decreases, in line with our hypothesis. However, when we control for race, we see that the effect is not significant and the sign is in fact in the opposite direction, as visible in the blue and red lines in the figure. We cannot reject the hypothesis that our literacy proxy has no impact on mortality rate at the district level after controlling for race, even at the ten percent level.
+In this case, the best fit line for "Both groups", shown in yellow, leads us to believe that as the proportion of our district with the literacy proxy increases, the pandemic mortality decreases, in line with our hypothesis. However, when we control for race, we see that the effect is not significant and the sign is in fact in the opposite direction, as visible in the blue and red lines in the figure. We cannot reject the hypothesis that our literacy proxy has no impact on mortality rate at the district level after controlling for race, even at the ten percent level.
 
 #### Percentage of foriegn born individuals and 
 
@@ -1041,9 +1141,14 @@ lm_1 <- birth_place_shares %>%
 
 ### Foreign born whites
 
-Test of Phillips' assertion that 
+Test of Phillips' assertion that:
 
-"Whites born in South Africa seemed to be more vulnerable [to the flu] than those who had grown up in Europe." Phillips quotes Dr W Watkins-Pitchford, Director of South African Institute for Medical Research, who said that "It was probable that most of the [European born whites] had acquired a certain amount of immunity in previous epidemics in Europe" [@Phillips1984, p. 295]
+<blockquote>
+
+"Whites born in South Africa seemed to be more vulnerable [to the flu] than those who had grown up in Europe."
+</blockquote>
+
+Phillips cites Dr W Watkins-Pitchford, Director of South African Institute for Medical Research, who said that "It was probable that most of the [European born whites] had acquired a certain amount of immunity in previous epidemics in Europe" [-@Phillips1984, p. 295]
 
 ```{r}
 sa_words <- c("Cape Province",
@@ -1112,6 +1217,8 @@ df %>%
 
 
 ## Conclusion
+
+<!-- <div id="refs"></div> -->
 
 ## Appendix {.appendix}
 
@@ -1222,9 +1329,9 @@ results <- read_rds("data/results.rds")
 
 #### Visualizing the results
 
-Here I draw a plot of model performance across the three metrics we specified above, accuracy, sensitivity and specificity. Balancing type 1 and type 2 errors here is not too important given that both sensitivity and specificity are so high. We can see that moving from 100 to 150 retained tokens, or predictors in our model, improves accuracy, sensitivity and specificity. Moving to 200 tokens worsens specificity marginally.
+In Figure \@ref(fig:tuning-fig) I draw a plot of model performance across the three metrics we specified above, accuracy, sensitivity and specificity. Balancing type 1 and type 2 errors here is not too important given that both sensitivity and specificity are so high. We can see that moving from 100 to 150 retained tokens, or predictors in our model, improves accuracy, sensitivity and specificity. Moving to 200 tokens worsens specificity marginally.
 
-```{r, code_folding=F}
+```{r, tuning-fig, layout="l-body-outset", fig.width = 8, fig.height=6, fig.cap="Model metrics for classification model and hyperparamter values", code_folding=F}
 results %>% autoplot()
 ```
 
@@ -1258,9 +1365,9 @@ collect_metrics(final_fit)
 
 #### Confusion matrix
 
-The confusion matrix shows the number of predictions that the classifier made correctly and incorrectly. It is evident that it made 6 mistakes in total, out of the 3750 observations kept in the testing set. Two were predicted black when in truth they were coloured, and four predicted coloured when they were in fact black.
+The confusion matrix shown in Figre \@ref(fig:conf-mat-fig) displays the number of predictions that the classifier made correctly and incorrectly. It is evident that it made 6 mistakes in total, out of the 3750 observations kept in the testing set. Two were predicted black when in truth they were coloured, and four predicted coloured when they were in fact black.
 
-```{r, code_folding=F}
+```{r, conf-mat-fig, layout="l-body-outset", fig.width = 8, fig.height=6, fig.cap="Confusion matrix for classification model", code_folding=F}
 collect_predictions(final_fit) %>%
   conf_mat(race, .pred_class) %>%
   autoplot(type = "heatmap") +
@@ -1283,6 +1390,8 @@ liblinear_df <- tibble(term = colnames(liblinear_obj),
 
 words <- liblinear_df %>% 
     filter(term != "Bias") %>% 
+    mutate(term = str_replace_all(term, "Kaffir", "K*****"),
+           term = str_replace_all(term, "Hottentot", "H********")) %>% 
     group_by(estimate > 0) %>% 
     slice_max(abs(estimate), n = 20) %>% 
     ungroup() %>% 
@@ -1294,7 +1403,7 @@ words <- read_rds("data/words.rds")
 ```
 
 
-```{r, code_folding=F}
+```{r, words-fig, layout="l-body-outset", fig.width = 8, fig.height=6, fig.cap="Determinants of classification model", code_folding=F}
 words %>% 
     mutate(term = str_extract(term, "\\w.*"),
            term = str_to_lower(term)) %>% 
@@ -1307,7 +1416,7 @@ words %>%
 
 ```
 
-Here we can see that if the ethnicity contains the sub-word features "KA", "Z, "AT", "OL", and "AN", the linear SVM is more likely to classify the individual as Black. In contrast, sub-word features "AR", and "AM", "M" and "L" are associated with coloured individuals.
+Figure \@ref(fig:words-fig) allows us to see that if the ethnicity contains the sub-word features "KA", "Z, "AT", "OL", and "AN", the linear SVM is more likely to classify the individual as Black. In contrast, sub-word features "AR", and "AM", "M" and "L" are associated with coloured individuals.
 
 #### Classification output
 
@@ -1322,6 +1431,8 @@ df %>%
   group_by(race) %>% 
   slice_max(n, n = 12, with_ties = F) %>% 
   ungroup() %>% 
+  mutate(race_original = str_replace_all(race_original, "Kaffir", "K*****"),
+         race_original = str_replace_all(race_original, "Hottentot", "H********")) %>% 
   mutate(race_original = reorder_within(race_original, n, race)) %>% 
   ggplot(aes(n, race_original, fill = race)) +
   geom_col(show.legend = F) +
@@ -1331,5 +1442,15 @@ df %>%
   labs(x = NULL,
        y = "Recorded ethnicity")
 
+```
+
+### Respiratory disease deaths
+
+I classify any death occurring during the pandemic period a respiratory death if the recorded cause of death includes any of the following phrases.
+
+```{r, code_folding = F}
+respiratory_terms <- c("respiratory", "Spanish influenza","Pneumonia","Bronchitis","Infleuzna","broncho pneumonia","consumption","whooping cough","inflammation of lungs","inflammation of the lungs","pulmonary tuberculosis","tuberculosis","phthisis","influenza pneumonia","inflammation in lungs","croup","phthisis pulmonalis","epidemic influenza","inflammation in the lungs","inflamation of lungs","spanish influenza pneumonia","flu","spanish flu","pneumonia following on an attack of influenza","pulmonary pneumonia","pneumonia influenza","inflamation of the lungs","pulmonary phthisis","inflamation in the lungs","double pneumonia","lobar pneumonia","tuberculosis Pulmonum","spanish influenza","general tuberculosis", "flu", "spanish", "epidemic", "lung", "Spaanse Griep")
+
+respiratory_terms
 ```
 
