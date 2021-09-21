@@ -1061,9 +1061,6 @@ lm_3 <- pneumonia_influenza_mort %>%
 <tr><td style="text-align:left">Pneumonia and influenza mort.</td><td></td><td></td><td>1.596<sup>\*\*\*</sup></td></tr>
 <tr><td style="text-align:left"></td><td></td><td></td><td>(0.336)</td></tr>
 <tr><td style="text-align:left"></td><td></td><td></td><td></td></tr>
-<tr><td style="text-align:left">White</td><td></td><td></td><td>-0.004</td></tr>
-<tr><td style="text-align:left"></td><td></td><td></td><td>(0.005)</td></tr>
-<tr><td style="text-align:left"></td><td></td><td></td><td></td></tr>
 <tr><td style="text-align:left">raceWhite</td><td>-0.023<sup>\*\*\*</sup></td><td>-0.019<sup>\*\*\*</sup></td><td>-0.014<sup>\*\*</sup></td></tr>
 <tr><td style="text-align:left"></td><td>(0.007)</td><td>(0.007)</td><td>(0.006)</td></tr>
 <tr><td style="text-align:left"></td><td></td><td></td><td></td></tr>
@@ -1076,7 +1073,7 @@ lm_3 <- pneumonia_influenza_mort %>%
 <tr><td style="text-align:left">Residual Std. Error</td><td>0.015 (df = 23)</td><td>0.014 (df = 25)</td><td>0.013 (df = 38)</td></tr>
 <tr><td style="text-align:left">F Statistic</td><td>15.075<sup>\*\*\*</sup> (df = 2; 23)</td><td>18.945<sup>\*\*\*</sup> (df = 2; 25)</td><td>20.387<sup>\*\*\*</sup> (df = 3; 38)</td></tr>
 <tr><td colspan="4" style="border-bottom: 1px solid black"></td></tr><tr><td style="text-align:left"><em>Note:</em></td><td colspan="3" style="text-align:right"><sup>\*</sup>p<0.1; <sup>\*\*</sup>p<0.05; <sup>\*\*\*</sup>p<0.01</td></tr>
-<td colspan="4"></td></tr><tr><td style="text-align:left"><em></em></td><td colspan="2" style="text-align:right"><em>Heteroskedasticity robust SEs from Sandwich package</em></td>
+<td colspan="4"></td></tr><tr><td style="text-align:left"><em></em></td><td colspan="3" style="text-align:right"><em>Heteroskedasticity robust SEs from Sandwich package</em></td>
 </table>
 
 Regression table \@ref(fig:pneumonia-influenza-mort) shows that after controlling for race, mortality rates from influenza, pneumonia and both diseases are highly correlated with mortality rates during the pandemic, at the 5 percent level and below. The combination are significantly correlated with pandemic mortality rates at the one percent level. 
