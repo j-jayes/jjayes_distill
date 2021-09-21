@@ -946,7 +946,7 @@ lm_2 <- child_mortality %>%
 # )
 ```
 
-<table style="text-align:center"><caption><strong>Child and pandemic mortality</strong></caption>
+<table style="text-align:center"><caption><strong>Child mortality and pandemic mortality</strong></caption>
 <tr><td colspan="3" style="border-bottom: 1px solid black"></td></tr><tr><td style="text-align:left"></td><td colspan="2"></td></tr>
 <tr><td></td><td colspan="2" style="border-bottom: 1px solid black"></td></tr>
 <tr><td style="text-align:left"></td><td colspan="2">Pandemic mortality rate</td></tr>
