@@ -4270,7 +4270,7 @@ Pneumonia and influenza mort.
 </tr>
 <tr>
 <td style="text-align:left">
-raceWhite
+White
 </td>
 <td>
 -0.023<sup>***</sup>
@@ -5188,14 +5188,14 @@ F Statistic
 </code></pre>
 </div>
 <pre><code># A tibble: 6 x 2
-  race  ethnicity_as_recorded
-  &lt;chr&gt; &lt;chr&gt;                
-1 Black Kaffir               
-2 Black Fingo                
-3 Black Kaffir               
-4 Black Fingo                
-5 Black Kaffir               
-6 Black Tembu                </code></pre>
+  race     ethnicity_as_recorded
+  &lt;chr&gt;    &lt;chr&gt;                
+1 Coloured Coloured             
+2 Black    Fingo                
+3 Black    Kaffir               
+4 Coloured Gemengd              
+5 Black    Kaffir               
+6 Black    Kaffir               </code></pre>
 </div>
 <p>At outset I use my data budget by separating a training and assessment set from my labelled training set of 33,500 observations. This ensures that I can assess the performance of the model on data that it has not been trained on. The initial split uses 75 percent of the labelled data as training data and reserved 25 percent for testing. This means that there are 3 750 observations that are excluded from the training set, and put aside for assessing model accuracy, sensitivity and specificity after tuning of the hyper parameter. I also stratify the training and testing data based on race in order to ensure that the classes are as balanced as possible.</p>
 <div class="layout-chunk" data-layout="l-body">
