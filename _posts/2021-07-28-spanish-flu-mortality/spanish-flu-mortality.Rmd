@@ -84,13 +84,23 @@ Further, more than 200 ethnicities appear only once among the records, such that
 
 <aside>
 ```{r, ethnicity-distribution, fig.cap="Distribution of ethnicities recorded on Forms of Information of a Death"}
+
+# jpeg(
+#     filename="images/ethnicity-distribution.jpeg",
+#     width=6,
+#     height=4,
+#     units="in",
+#     res=1000)
+
 df %>% 
   count(race_original, sort = T) %>% 
   ggplot(aes(n)) +
   geom_histogram(fill = "midnightblue") +
   scale_x_log10() +
-  labs(x = "Number of observations of a recorded ethnicity",
+  labs(x = "Number of observations of a recorded ethnicity (log scale)",
        y = "Number of ethnicities")
+
+# dev.off()
 ```
 </aside>
 
@@ -109,6 +119,14 @@ In quantifying the number of South Africans who died during the pandemic, there 
 Figure \@ref(fig:viridis-deaths) shows a heatmap of the frequency of deaths in each district. The pandemic period is striking. Further, we see lighter coloured areas in larger districts like Oudtshoorn and Queenstown which have higher mortality prior to the pandemic (owing to their larger populations and hence greater number of deaths) than small districts such as Elliot and Sea Point.
 
 ```{r viridis-deaths, layout="l-body-outset", fig.width = 8, fig.height=6, fig.cap="Heatmap of deaths per week"}
+
+# jpeg(
+#     filename="images/viridis-deaths.jpeg",
+#     width=6,
+#     height=4,
+#     units="in",
+#     res=1000)
+
 df %>%
   filter(between(death_date, ymd("1915-01-01"), ymd("1920-12-30"))) %>%
   mutate(death_date = floor_date(death_date, unit = "week")) %>%
@@ -130,6 +148,8 @@ df %>%
     title.position = "top",
     title.hjust = .5
   ))
+
+# dev.off()
 ```
 
 There is considerable variation in the crude death rate by district during the pandemic, as shown in Figure \@ref(fig:town-density). Here we can see two important features of the pandemic in our sample of Cape districts. First, the pandemic arrived in different districts at different times. In districts close to Cape Town and along the train line to Kimberley, where the soldiers arrived soon after they were released from quarantine at port, the virus spread rapidly. The evidence in this paper corroborate that of @Phillips1984 regarding the swift abatement of the virus following the peak in October. Only in Oudtshoorn and Komga do the effects of the flu appear to have lingered, with elevated mortality rates into December of 1918. Second, the rate of death, and likely the spread of the disease, differed between districts. For example, the steep surge of cases in Queenstown contrasts with a sustained deadly spread in Oudtshoorn.
@@ -183,7 +203,7 @@ df %>%
 
 #### Candidate methods for assessing (excess) mortality.
 
-Question that poses some difficulties to answer is how many South Africans died during the pandemic, and how many died specifically of the flu.
+A question that poses some difficulties to answer is how many South Africans died during the pandemic, and how many died specifically of the flu.
 
 A great benefit of the dataset at hand is the recording of a cause of death on the notice. This was either copied from the Certificate of the Medical Practitioner, or in the absence of such a certificate, told to the registrar by the informant. Hence, the most intuitive method to assess how many people died in each district of the Spanish flu is simply to count the number of deaths recorded with "Spanish flu" listed in the cause of death column. However, there are a number of drawbacks to this method.
 
@@ -193,6 +213,14 @@ A great benefit of the dataset at hand is the recording of a cause of death on t
 - To avoid this complication it is tempting to simply count the number of deaths in each district during the pandemic period and conclude that these were caused by the flu. However, districts of different population sizes would have expected different numbers of deaths in the absence of the pandemic. Hence it is not advisable to conclude that all recorded deaths were due to the flu.
 
 ```{r cradock-paarl-causes, layout="l-body-outset", fig.width = 8, fig.height=6, fig.cap="Density plot comparing causes of death during the pandemic in Cradock and Paarl"}
+
+# jpeg(
+#     filename="images/cradock-paarl-causes.jpeg",
+#     width=6,
+#     height=4,
+#     units="in",
+#     res=1000)
+
 df %>%
   filter(between(death_date, ymd("1918-09-01"), ymd("1919-01-01")),
          town %in% c("Cradock", "Paarl")) %>%
@@ -213,6 +241,8 @@ df %>%
   labs(x = NULL, 
        y = "Number of deaths per week",
        fill = NULL)
+
+# dev.off()
 ```
 
 Table \@ref(tab:cradock-paarl-causes-tab) evidences that the majority of deaths in Paarl during the pandemic were labelled simply as "Influenza".
@@ -256,6 +286,13 @@ Source: @Dorrington2021
 </aside>
 
 ```{r seasonality, layout="l-body-outset", fig.width = 8, fig.height=6, fig.cap="Mortality by week across districts - excluding 1918"}
+# jpeg(
+#     filename="images/seasonality.jpeg",
+#     width=6,
+#     height=4,
+#     units="in",
+#     res=1000)
+
 df %>% 
     filter(sf_indicator ==1) %>% 
     mutate(death_date = floor_date(death_date, "week")) %>% 
@@ -273,7 +310,10 @@ df %>%
     scale_color_manual(values = wesanderson::wes_palette(5, name = "Zissou1", type = "continuous")) +
     labs(x = "Week of the year",
          y = "Number of deaths per week",
-         colour = "Year")
+         colour = NULL) +
+  theme(legend.position = "bottom")
+
+# dev.off()
 ```
 
 This first method results in estimates of excess mortality shown in Table \@ref(tab:samrc-method-tab). Here it is evident that while the largest number of deaths occurred in Queenstown and Paarl, the districts of Peddie and Elliot saw more than 10 times as many deaths as they had in the period between October and December in the three years preceding the pandemic.
@@ -356,6 +396,13 @@ df_acuasoto %>%
 Figure \@ref(fig:excess-mortality-method-2) shows the excess mortality based on method two. Here we can see that Peddie and Elliot stand out with large excess mortality relative to their mean mortality preceding the pandemic.
 
 ```{r excess-mortality-method-2, layout="l-body-outset", fig.width = 8, fig.height=6, fig.cap="Excess mortality based on methodology by @AcuaSoto2011InfluenzaAP"}
+# jpeg(
+#     filename="images/excess-mortality-method-2.jpeg",
+#     width=6,
+#     height=4,
+#     units="in",
+#     res=1000)
+
 df %>%
   mutate(year = year(death_date)) %>%
   count(year, town) %>%
@@ -388,13 +435,15 @@ df %>%
     y = NULL,
     x = "Mortality"
   )
+
+# dev.off()
 ```
 
 Third, I use regression models to extrapolate the mortality we would expect in each district if the historical trends from 1915 to 1917 continued.
 
 I use three regression models. These are linear model with only an intercept - in effect the same as the averaging procedure from above. Specifically, I average the number of deaths in the year in the three years prior to 1918 as a guide for the average number of deaths per district.
 
-Next I use a simple linear regression. This accounts, for instance, for population growth and consequent linear increases in the number of registered deaths per district per year that we would expect with a larger population.
+Next, I use a simple linear regression. This accounts, for instance, for population growth and consequent linear increases in the number of registered deaths per district per year that we would expect with a larger population.
 
 <aside>
 
@@ -402,6 +451,14 @@ The linear trend is shown in Figure \@ref(fig:linear-trend) here, alongside a li
 
 ```{r, linear-trend, layout="l-body-outset", fig.width = 8, fig.height=6, fig.cap="Linear trend for predicted and excess mortality"}
 library(ggrepel)
+
+# jpeg(
+#     filename="images/linear-trend.jpeg",
+#     width=6,
+#     height=4,
+#     units="in",
+#     res=1000)
+
 df %>%
   mutate(year = year(death_date)) %>%
   count(year, town) %>%
@@ -425,8 +482,10 @@ df %>%
   geom_text_repel() +
   labs(
     x = "Predicted 1918 mortality based on linear trend",
-    y = "Actual 1918 mortality"
+    y = "Observed 1918 mortality"
   ) 
+
+# dev.off()
 ```
 
 Is appears that towns with higher predicted mortality in 1918 based on the linear trend have higher actual mortality in 1918. 
@@ -518,6 +577,12 @@ df_reg <- df %>%
   mutate(mean_projected_deaths = mean(n)) %>% 
   ungroup()
 
+# jpeg(
+#     filename="images/regression-methods.jpeg",
+#     width=6,
+#     height=4,
+#     units="in",
+#     res=1000)
 
 df_reg %>% 
   ggplot(aes(n, town)) +
@@ -534,9 +599,11 @@ df_reg %>%
     y = NULL
   ) +
   theme(legend.position = "bottom")
+
+# dev.off()
 ```
 
-In table \@ref(tab:regression-tab-range) I show the excess mortality based on these regression methods. The estimates of excess mortality are similar to the estimates produced following the Acua-Soto methodology. The excess mortality percentages are lower than that calculated by following the SAMRC methodology due to a lower smaller detonator in calculating the latter, just the three months of the pandemic peak.
+In Table \@ref(tab:regression-tab-range) I show the excess mortality based on these regression methods. The estimates of excess mortality are similar to the estimates produced following the Acua-Soto methodology. The excess mortality percentages are lower than that calculated by following the SAMRC methodology due to a lower smaller detonator in calculating the latter, just the three months of the pandemic peak.
 
 ```{r, regression-tab-range, layout="l-body-outset"}
 df_reg %>% 
@@ -594,6 +661,13 @@ phillips <- read_rds("data/phillips-comparison-august.rds") %>%
     TRUE ~ "Estimates cited in Phillips"
   ))
 
+# jpeg(
+#     filename="images/phillips-comparison-fig.jpeg",
+#     width=6,
+#     height=4,
+#     units="in",
+#     res=1000)
+
 df_excess_mort_comp %>%
   select(!contains("perc")) %>%
   pivot_longer(-town) %>%
@@ -613,15 +687,17 @@ df_excess_mort_comp %>%
   scale_fill_manual(values = wesanderson::wes_palette(3, name = "Zissou1", type = "continuous")) +
   labs(fill = NULL,
        y = NULL,
-       x = "Number of deaths")
+       x = "Number of deaths") +
+  guides(fill = guide_legend(nrow = 2))
 
+# dev.off()
 ```
 
 Here we observe that in the districts with larger populations, the estimates cited in @Phillips1984 are greater than both the number of respiratory deaths, and the mean excess mortality calculated with the three methods detailed above. In contrast, in the smaller districts, from Fryburg to Riversdale, the number of deaths from respiratory illness recorded during the pandemic are greater than the estimates cited in @Phillips1984. This is potentially indicative of under counting on the part of the Commission of Inquiry in the smaller districts. 
 
 In all districts, my estimated excess mortality values are lower than the other two estimates. This means that we need not be concerned about under counting of pandemic deaths, if they are not recorded as such. We would be concerned about this if the excess mortality exceeded the estimates of Spanish flu deaths. In the remainder of the paper I calculate mortality and mortality rates based on respiratory deaths during the pandemic.
 
-##District features correlated with pandemic mortality rates
+## District features correlated with pandemic mortality rates
 
 ### Pre-existing health
 
@@ -675,6 +751,14 @@ df_infant %>%
 
 
 ```{r, infant-mortality, layout="l-body-outset", fig.width = 8, fig.height=6, fig.cap="Infant mortality per 1000 children"}
+
+# jpeg(
+#     filename="images/infant-mortality.jpeg",
+#     width=6,
+#     height=6,
+#     units="in",
+#     res=1000)
+
 df_infant %>% 
   mutate(town = reorder_within(town, infant_mort_rate, race)) %>% 
   ggplot(aes(infant_mort_rate, town, colour = race)) +
@@ -687,6 +771,8 @@ df_infant %>%
   facet_wrap(~ race, nrow = 3, scales = "free_y") +
   labs(x = "Infant mortality per 1000 recorded births",
        y = NULL)
+
+# dev.off()
 ```
 
 Figure \@ref(fig:infant-mort-scatter) shows the relationship between infant mortality rates (detailed above) and pandemic mortality rates, calculated by dividing the number of respiratory deaths from the Forms by the population of individuals by race in each district from the 1911 census (in the case of black and coloured individuals) and the 1918 census (in the case of white individuals, conducted just prior to the pandemic). The aggregation of black and coloured mortality rates is a function of the denominator (population) reported in the census in aggregate.
@@ -695,6 +781,13 @@ Figure \@ref(fig:infant-mort-scatter) evidences a strong linear correlation betw
 
 ```{r, infant-mort-scatter, layout="l-body-outset", fig.width = 8, fig.height=6, fig.cap="Scatterplot and linear fit of infant and pandemic mortality by district"}
 infant_mortality <- read_rds("data/infant_mortality.rds")
+
+# jpeg(
+#     filename="images/infant-mort-scatter.jpeg",
+#     width=6,
+#     height=4,
+#     units="in",
+#     res=1000)
 
 infant_mortality %>% 
   filter(births > 5) %>% 
@@ -708,7 +801,12 @@ infant_mortality %>%
   labs(x = "Infant mortality rate",
        y = "Pandemic mortality rate",
        size = "District population",
-       colour = "Race group")
+       colour = "Race group") +
+  theme(legend.position = "bottom") +
+  guides(colour = guide_legend(nrow = 3),
+         size = guide_legend(nrow = 3))
+
+# dev.off()
 
 
 lm_1 <- infant_mortality %>%
@@ -720,11 +818,12 @@ lm_2 <- infant_mortality %>%
   lm(mort_rate ~ infant_mort_rate + race, data = .)
 
 # stargazer::stargazer(lm_1, lm_2,
-#   type = "html", 
-#   title = "Infant and pandemic mortality", 
+#   type = "text",
+#   title = "Infant and pandemic mortality",
 #   dep.var.caption = " ",
 #   dep.var.labels = "Pandemic mortality rate",
-#   covariate.labels = c("Infant mortality rate", "White")
+#   covariate.labels = c("Infant mortality rate", "White"),
+#   out="regs/infant-mort-scatter.txt"
 # )
 ```
 
@@ -733,21 +832,22 @@ lm_2 <- infant_mortality %>%
 <tr><td></td><td colspan="2" style="border-bottom: 1px solid black"></td></tr>
 <tr><td style="text-align:left"></td><td colspan="2">Pandemic mortality rate</td></tr>
 <tr><td style="text-align:left"></td><td>(1)</td><td>(2)</td></tr>
-<tr><td colspan="3" style="border-bottom: 1px solid black"></td></tr><tr><td style="text-align:left">Infant mortality rate</td><td>0.139<sup>**</sup></td><td>0.015</td></tr>
+<tr><td colspan="3" style="border-bottom: 1px solid black"></td></tr><tr><td style="text-align:left">Infant mortality rate</td><td>0.139<sup>\*\*</sup></td><td>0.015</td></tr>
 <tr><td style="text-align:left"></td><td>(0.046)</td><td>(0.012)</td></tr>
 <tr><td style="text-align:left"></td><td></td><td></td></tr>
-<tr><td style="text-align:left">White</td><td></td><td>-0.028<sup>***</sup></td></tr>
+<tr><td style="text-align:left">White</td><td></td><td>-0.028<sup>\*\*\*</sup></td></tr>
 <tr><td style="text-align:left"></td><td></td><td>(0.006)</td></tr>
 <tr><td style="text-align:left"></td><td></td><td></td></tr>
-<tr><td style="text-align:left">Constant</td><td>0.003</td><td>0.038<sup>***</sup></td></tr>
+<tr><td style="text-align:left">Constant</td><td>0.003</td><td>0.038<sup>\*\*\*</sup></td></tr>
 <tr><td style="text-align:left"></td><td>(0.010)</td><td>(0.005)</td></tr>
 <tr><td style="text-align:left"></td><td></td><td></td></tr>
 <tr><td colspan="3" style="border-bottom: 1px solid black"></td></tr><tr><td style="text-align:left">Observations</td><td>14</td><td>28</td></tr>
 <tr><td style="text-align:left">R<sup>2</sup></td><td>0.428</td><td>0.521</td></tr>
 <tr><td style="text-align:left">Adjusted R<sup>2</sup></td><td>0.380</td><td>0.482</td></tr>
 <tr><td style="text-align:left">Residual Std. Error</td><td>0.013 (df = 12)</td><td>0.016 (df = 25)</td></tr>
-<tr><td style="text-align:left">F Statistic</td><td>8.975<sup>**</sup> (df = 1; 12)</td><td>13.574<sup>***</sup> (df = 2; 25)</td></tr>
-<tr><td colspan="3" style="border-bottom: 1px solid black"></td></tr><tr><td style="text-align:left"><em>Note:</em></td><td colspan="2" style="text-align:right"><sup>*</sup>p<0.1; <sup>**</sup>p<0.05; <sup>***</sup>p<0.01</td></tr>
+<tr><td style="text-align:left">F Statistic</td><td>8.975<sup>\*\*</sup> (df = 1; 12)</td><td>13.574<sup>\*\*\*</sup> (df = 2; 25)</td></tr>
+<tr><td colspan="3" style="border-bottom: 1px solid black"></td></tr><tr><td style="text-align:left"><em>Note:</em></td><td colspan="2" style="text-align:right"><sup>\*</sup>p<0.1; <sup>\*\*</sup>p<0.05; <sup>\*\*\*</sup>p<0.01</td></tr>
+<td colspan="3"></td></tr><tr><td style="text-align:left"><em></em></td><td colspan="2" style="text-align:right"><em>Heteroskedasticity robust SEs from Sandwich package</em></td>
 </table>
 
 Regression table \@ref(fig:infant-mort-scatter) shows before controlling for race, there is a strong correlation between infant mortality rate and pandemic mortality rates across districts, with a five percent significance level and a slope coefficient of 0.139. However, after accounting for race, infant mortality rate is not longer significantly correlated with pandemic mortality.
@@ -760,6 +860,13 @@ Figure \@ref(fig:child-mortality) shows that there is heterogeneity amongst the 
 
 ```{r child-mortality, layout="l-body-outset", fig.width = 8, fig.height=6, fig.cap="Child mortality per 1000 children"}
 child_mortality <- read_rds("data/child_mortality.rds")
+
+# jpeg(
+#     filename="images/child-mortality.jpeg",
+#     width=6,
+#     height=4,
+#     units="in",
+#     res=1000)
 
 child_mortality %>% 
   filter(race != "Both groups") %>% 
@@ -774,6 +881,8 @@ child_mortality %>%
   theme(legend.position = "none") +
   labs(x = "Child mortality per 1000 children",
        y = NULL)
+
+# dev.off()
 
 ```
 
@@ -799,6 +908,13 @@ Figure \@ref(fig:child-mort-scatter) shows the linear fits superimposed on the s
 
 ```{r, child-mort-scatter, layout="l-body-outset", fig.width = 8, fig.height=6, fig.cap="Scatterplot and linear fit of child and pandemic mortality by district"}
 
+# jpeg(
+#     filename="images/child-mort-scatter.jpeg",
+#     width=6,
+#     height=4,
+#     units="in",
+#     res=1000)
+
 child_mortality %>% 
   ggplot(aes(child_mort_rate, mort_rate)) +
   geom_point(aes(size = total, colour = race)) +
@@ -810,6 +926,8 @@ child_mortality %>%
        y = "Pandemic mortality rate",
        size = "District population",
        colour = "Race group")
+
+# dev.off()
 
 lm_1 <- child_mortality %>%
   filter(race == "Both groups") %>% 
@@ -833,21 +951,22 @@ lm_2 <- child_mortality %>%
 <tr><td></td><td colspan="2" style="border-bottom: 1px solid black"></td></tr>
 <tr><td style="text-align:left"></td><td colspan="2">Pandemic mortality rate</td></tr>
 <tr><td style="text-align:left"></td><td>(1)</td><td>(2)</td></tr>
-<tr><td colspan="3" style="border-bottom: 1px solid black"></td></tr><tr><td style="text-align:left">Child mortality rate</td><td>0.095</td><td>0.066<sup>*</sup></td></tr>
+<tr><td colspan="3" style="border-bottom: 1px solid black"></td></tr><tr><td style="text-align:left">Child mortality rate</td><td>0.095</td><td>0.066<sup>\*</sup></td></tr>
 <tr><td style="text-align:left"></td><td>(0.058)</td><td>(0.038)</td></tr>
 <tr><td style="text-align:left"></td><td></td><td></td></tr>
-<tr><td style="text-align:left">White</td><td></td><td>-0.020<sup>**</sup></td></tr>
+<tr><td style="text-align:left">White</td><td></td><td>-0.020<sup>\*\*</sup></td></tr>
 <tr><td style="text-align:left"></td><td></td><td>(0.008)</td></tr>
 <tr><td style="text-align:left"></td><td></td><td></td></tr>
-<tr><td style="text-align:left">Constant</td><td>0.017</td><td>0.028<sup>***</sup></td></tr>
+<tr><td style="text-align:left">Constant</td><td>0.017</td><td>0.028<sup>\*\*\*</sup></td></tr>
 <tr><td style="text-align:left"></td><td>(0.011)</td><td>(0.009)</td></tr>
 <tr><td style="text-align:left"></td><td></td><td></td></tr>
 <tr><td colspan="3" style="border-bottom: 1px solid black"></td></tr><tr><td style="text-align:left">Observations</td><td>14</td><td>28</td></tr>
 <tr><td style="text-align:left">R<sup>2</sup></td><td>0.184</td><td>0.544</td></tr>
 <tr><td style="text-align:left">Adjusted R<sup>2</sup></td><td>0.116</td><td>0.508</td></tr>
 <tr><td style="text-align:left">Residual Std. Error</td><td>0.016 (df = 12)</td><td>0.015 (df = 25)</td></tr>
-<tr><td style="text-align:left">F Statistic</td><td>2.707 (df = 1; 12)</td><td>14.919<sup>***</sup> (df = 2; 25)</td></tr>
-<tr><td colspan="3" style="border-bottom: 1px solid black"></td></tr><tr><td style="text-align:left"><em>Note:</em></td><td colspan="2" style="text-align:right"><sup>*</sup>p<0.1; <sup>**</sup>p<0.05; <sup>***</sup>p<0.01</td></tr>
+<tr><td style="text-align:left">F Statistic</td><td>2.707 (df = 1; 12)</td><td>14.919<sup>\*\*\*</sup> (df = 2; 25)</td></tr>
+<tr><td colspan="3" style="border-bottom: 1px solid black"></td></tr><tr><td style="text-align:left"><em>Note:</em></td><td colspan="2" style="text-align:right"><sup>\*</sup>p<0.1; <sup>\*\*</sup>p<0.05; <sup>\*\*\*</sup>p<0.01</td></tr>
+<td colspan="3"></td></tr><tr><td style="text-align:left"><em></em></td><td colspan="2" style="text-align:right"><em>Heteroskedasticity robust SEs from Sandwich package</em></td>
 </table>
 
 Regression table \@ref(fig:child-mort-scatter) shows that after accounting for race, child mortality is correlated with pandemic mortality at the ten percent level, with a slope coefficient of 0.066.
@@ -884,6 +1003,13 @@ Figure \@ref(fig:pneumonia-influenza-mort) shows that while the slopes separated
 ```{r, pneumonia-influenza-mort, layout="l-body-outset", fig.width = 8, fig.height=6, fig.cap="Scatterplot and linear fit of pneumonia mortality and pandemic mortality by district"}
 pneumonia_influenza_mort <- read_rds("data/pneumonia_infleunza_mort.rds")
 
+# jpeg(
+#     filename="images/pneumonia-influenza-mort.jpeg",
+#     width=6,
+#     height=4,
+#     units="in",
+#     res=1000)
+
 pneumonia_influenza_mort %>%
   ggplot(aes(pneumonia_influenza_mort, pandemic_mort_rate)) +
   geom_point(aes(colour = race, size = total_pop)) +
@@ -899,6 +1025,8 @@ pneumonia_influenza_mort %>%
     colour = "Race group",
     size = "District population"
   )
+
+# dev.off()
 
 lm_1 <- read_rds("data/influenza_mort.rds") %>% 
   lm(pandemic_mort_rate ~ influenza_mort + race, data = .)
@@ -924,30 +1052,31 @@ lm_3 <- pneumonia_influenza_mort %>%
 <tr><td></td><td colspan="3" style="border-bottom: 1px solid black"></td></tr>
 <tr><td style="text-align:left"></td><td colspan="3">Pandemic mortality rate</td></tr>
 <tr><td style="text-align:left"></td><td>(1)</td><td>(2)</td><td>(3)</td></tr>
-<tr><td colspan="4" style="border-bottom: 1px solid black"></td></tr><tr><td style="text-align:left">Influenza mortality</td><td>3.228<sup>**</sup></td><td></td><td></td></tr>
+<tr><td colspan="4" style="border-bottom: 1px solid black"></td></tr><tr><td style="text-align:left">Influenza mortality</td><td>3.228<sup>\*\*</sup></td><td></td><td></td></tr>
 <tr><td style="text-align:left"></td><td>(1.437)</td><td></td><td></td></tr>
 <tr><td style="text-align:left"></td><td></td><td></td><td></td></tr>
-<tr><td style="text-align:left">Pneumonia mortality</td><td></td><td>1.370<sup>**</sup></td><td></td></tr>
+<tr><td style="text-align:left">Pneumonia mortality</td><td></td><td>1.370<sup>\*\*</sup></td><td></td></tr>
 <tr><td style="text-align:left"></td><td></td><td>(0.511)</td><td></td></tr>
 <tr><td style="text-align:left"></td><td></td><td></td><td></td></tr>
-<tr><td style="text-align:left">Pneumonia and influenza mort.</td><td></td><td></td><td>1.596<sup>***</sup></td></tr>
+<tr><td style="text-align:left">Pneumonia and influenza mort.</td><td></td><td></td><td>1.596<sup>\*\*\*</sup></td></tr>
 <tr><td style="text-align:left"></td><td></td><td></td><td>(0.336)</td></tr>
 <tr><td style="text-align:left"></td><td></td><td></td><td></td></tr>
 <tr><td style="text-align:left">White</td><td></td><td></td><td>-0.004</td></tr>
 <tr><td style="text-align:left"></td><td></td><td></td><td>(0.005)</td></tr>
 <tr><td style="text-align:left"></td><td></td><td></td><td></td></tr>
-<tr><td style="text-align:left">raceWhite</td><td>-0.023<sup>***</sup></td><td>-0.019<sup>***</sup></td><td>-0.014<sup>**</sup></td></tr>
+<tr><td style="text-align:left">raceWhite</td><td>-0.023<sup>\*\*\*</sup></td><td>-0.019<sup>\*\*\*</sup></td><td>-0.014<sup>\*\*</sup></td></tr>
 <tr><td style="text-align:left"></td><td>(0.007)</td><td>(0.007)</td><td>(0.006)</td></tr>
 <tr><td style="text-align:left"></td><td></td><td></td><td></td></tr>
-<tr><td style="text-align:left">Constant</td><td>0.033<sup>***</sup></td><td>0.029<sup>***</sup></td><td>0.022<sup>***</sup></td></tr>
+<tr><td style="text-align:left">Constant</td><td>0.033<sup>\*\*\*</sup></td><td>0.029<sup>\*\*\*</sup></td><td>0.022<sup>\*\*\*</sup></td></tr>
 <tr><td style="text-align:left"></td><td>(0.006)</td><td>(0.006)</td><td>(0.006)</td></tr>
 <tr><td style="text-align:left"></td><td></td><td></td><td></td></tr>
 <tr><td colspan="4" style="border-bottom: 1px solid black"></td></tr><tr><td style="text-align:left">Observations</td><td>26</td><td>28</td><td>42</td></tr>
 <tr><td style="text-align:left">R<sup>2</sup></td><td>0.567</td><td>0.602</td><td>0.617</td></tr>
 <tr><td style="text-align:left">Adjusted R<sup>2</sup></td><td>0.530</td><td>0.571</td><td>0.587</td></tr>
 <tr><td style="text-align:left">Residual Std. Error</td><td>0.015 (df = 23)</td><td>0.014 (df = 25)</td><td>0.013 (df = 38)</td></tr>
-<tr><td style="text-align:left">F Statistic</td><td>15.075<sup>***</sup> (df = 2; 23)</td><td>18.945<sup>***</sup> (df = 2; 25)</td><td>20.387<sup>***</sup> (df = 3; 38)</td></tr>
-<tr><td colspan="4" style="border-bottom: 1px solid black"></td></tr><tr><td style="text-align:left"><em>Note:</em></td><td colspan="3" style="text-align:right"><sup>*</sup>p<0.1; <sup>**</sup>p<0.05; <sup>***</sup>p<0.01</td></tr>
+<tr><td style="text-align:left">F Statistic</td><td>15.075<sup>\*\*\*</sup> (df = 2; 23)</td><td>18.945<sup>\*\*\*</sup> (df = 2; 25)</td><td>20.387<sup>\*\*\*</sup> (df = 3; 38)</td></tr>
+<tr><td colspan="4" style="border-bottom: 1px solid black"></td></tr><tr><td style="text-align:left"><em>Note:</em></td><td colspan="3" style="text-align:right"><sup>\*</sup>p<0.1; <sup>\*\*</sup>p<0.05; <sup>\*\*\*</sup>p<0.01</td></tr>
+<td colspan="3"></td></tr><tr><td style="text-align:left"><em></em></td><td colspan="2" style="text-align:right"><em>Heteroskedasticity robust SEs from Sandwich package</em></td>
 </table>
 
 Regression table \@ref(fig:pneumonia-influenza-mort) shows that after controlling for race, mortality rates from influenza, pneumonia and both diseases are highly correlated with mortality rates during the pandemic, at the 5 percent level and below. The combination are significantly correlated with pandemic mortality rates at the one percent level. 
@@ -985,6 +1114,14 @@ df %>%
 ```
 
 ```{r, literacy-fig, layout="l-body-outset", fig.width = 8, fig.height=6, fig.cap="Share of informants who sign"}
+
+# jpeg(
+#     filename="images/literacy-fig.jpeg",
+#     width=6,
+#     height=4,
+#     units="in",
+#     res=1000)
+
 df %>%
   filter(death_date < ymd("1918-09-01")) %>% 
   mutate(signed_yes_or_no = str_to_lower(signed_yes_or_no)) %>%
@@ -1006,12 +1143,21 @@ df %>%
   scale_x_continuous(labels = percent_format()) +
   labs(x = "Share of informants who sign Form",
        y = NULL)
+
+# dev.off()
 ```
 
 In Figure \@ref(fig:literacy-scatter), the best fit line for "Both groups", shown in yellow, leads us to believe that as the proportion of our district with the literacy proxy increases, the pandemic mortality decreases, in line with our hypothesis. Further, amongst black and coloured individuals, an increasing share of literate informants appears to result in marginally lower mortality rates during the pandemic. This is in support of the hypothesis. Yet amongst the white population of the districts, there appears to be an upward slope at the top end of the literacy distribution. 
 
-```{r, literacy-scatter, layout="l-body-outset", fig.width = 8, fig.height=6, fig.cap="Caption"}
+```{r, literacy-scatter, layout="l-body-outset", fig.width = 8, fig.height=6, fig.cap="Scatter plot and linear fit of literacy proxy and pandemic mortality by district"}
 df_literacy <- read_rds("data/df_literacy.rds")
+
+# jpeg(
+#     filename="images/literacy-scatter.jpeg",
+#     width=6,
+#     height=4,
+#     units="in",
+#     res=1000)
 
 df_literacy %>% 
   filter(!town %in% c("Elliot", "Fraserburg", "Sea Point")) %>% 
@@ -1026,6 +1172,8 @@ df_literacy %>%
        y = "Pandemic mortality per 1000 residents",
        size = "District population",
        colour = NULL)
+
+# dev.off()
 
 lm_1 <- df_literacy %>%
   filter(!town %in% c("Elliot", "Fraserburg", "Sea Point")) %>%
@@ -1052,31 +1200,39 @@ lm_2 <- df_literacy %>%
 <tr><td></td><td colspan="2" style="border-bottom: 1px solid black"></td></tr>
 <tr><td style="text-align:left"></td><td colspan="2">Pandemic mortality rate</td></tr>
 <tr><td style="text-align:left"></td><td>(1)</td><td>(2)</td></tr>
-<tr><td colspan="3" style="border-bottom: 1px solid black"></td></tr><tr><td style="text-align:left">Share of informants who sign</td><td>-0.063<sup>*</sup></td><td>-0.009</td></tr>
+<tr><td colspan="3" style="border-bottom: 1px solid black"></td></tr><tr><td style="text-align:left">Share of informants who sign</td><td>-0.063<sup>\*</sup></td><td>-0.009</td></tr>
 <tr><td style="text-align:left"></td><td>(0.031)</td><td>(0.036)</td></tr>
 <tr><td style="text-align:left"></td><td></td><td></td></tr>
 <tr><td style="text-align:left">White</td><td></td><td>-0.021</td></tr>
 <tr><td style="text-align:left"></td><td></td><td>(0.026)</td></tr>
 <tr><td style="text-align:left"></td><td></td><td></td></tr>
-<tr><td style="text-align:left">Constant</td><td>0.054<sup>***</sup></td><td>0.042<sup>***</sup></td></tr>
+<tr><td style="text-align:left">Constant</td><td>0.054<sup>\*\*\*</sup></td><td>0.042<sup>\*\*\*</sup></td></tr>
 <tr><td style="text-align:left"></td><td>(0.012)</td><td>(0.009)</td></tr>
 <tr><td style="text-align:left"></td><td></td><td></td></tr>
 <tr><td colspan="3" style="border-bottom: 1px solid black"></td></tr><tr><td style="text-align:left">Observations</td><td>12</td><td>24</td></tr>
 <tr><td style="text-align:left">R<sup>2</sup></td><td>0.284</td><td>0.512</td></tr>
 <tr><td style="text-align:left">Adjusted R<sup>2</sup></td><td>0.212</td><td>0.465</td></tr>
 <tr><td style="text-align:left">Residual Std. Error</td><td>0.015 (df = 10)</td><td>0.014 (df = 21)</td></tr>
-<tr><td style="text-align:left">F Statistic</td><td>3.958<sup>*</sup> (df = 1; 10)</td><td>11.005<sup>***</sup> (df = 2; 21)</td></tr>
-<tr><td colspan="3" style="border-bottom: 1px solid black"></td></tr><tr><td style="text-align:left"><em>Note:</em></td><td colspan="2" style="text-align:right"><sup>*</sup>p<0.1; <sup>**</sup>p<0.05; <sup>***</sup>p<0.01</td></tr>
+<tr><td style="text-align:left">F Statistic</td><td>3.958<sup>\*</sup> (df = 1; 10)</td><td>11.005<sup>\*\*\*</sup> (df = 2; 21)</td></tr>
+<tr><td colspan="3" style="border-bottom: 1px solid black"></td></tr><tr><td style="text-align:left"><em>Note:</em></td><td colspan="2" style="text-align:right"><sup>\*</sup>p<0.1; <sup>\*\*</sup>p<0.05; <sup>\*\*\*</sup>p<0.01</td></tr>
+<td colspan="3"></td></tr><tr><td style="text-align:left"><em></em></td><td colspan="2" style="text-align:right"><em>Heteroskedasticity robust SEs from Sandwich package</em></td>
 </table>
 
 Regression table \@ref(fig:literacy-scatter) shows that when we control for race, we see that the effect of literacy is not significant and magnitude of the effect fall. We cannot reject the hypothesis that our literacy proxy has no impact on mortality rate at the district level after controlling for race, even at the ten percent level.
 
-#### Percentage of foriegn born individuals
+#### Percentage of foreign-born individuals
 
 Another measure of social capital is foreign born status, with the hypothesis being that foreign born individuals are less likely to adopt the health measures suggested by local governments. Figure \@ref(fig:birth-places) shows the proportion of residents of each district born in various regions outside of the Cape (shown in red). This data is from the Statistics of Population of 1918 [@OfficeofCensusandStatisticsPretoria1918]. This means that we would expect the mortality rate during the flu to increase with the share of residents born outside the Cape.
 
 ```{r, birth-places, layout="l-body-outset", fig.width = 8, fig.height=6, fig.cap="Birth places of district residents"}
 birth_place_shares <- read_rds("data/birth_place_shares.rds")
+
+# jpeg(
+#     filename="images/birth-places.jpeg",
+#     width=6,
+#     height=4,
+#     units="in",
+#     res=1000)
 
 birth_place_shares %>% 
   mutate(town = fct_reorder(town, share_not_cape)) %>% 
@@ -1097,11 +1253,20 @@ birth_place_shares %>%
   labs(fill = "Proportion of residents born in",
        x = NULL,
        y = NULL)
+
+# dev.off()
 ```
 
 Figure \@ref(fig:birth-place-corr) shows that across our districts, there is a slight negative correlation between the share of residents born outside of the Cape. However, the confidence interval around this linear fit is wide. Regression table \@ref(fig:birth-place-corr) confirms that there is no significant correlation between the share of residents born outside of the Cape and pandemic mortality rates, even at the ten percent level.
 
-```{r, birth-place-corr, layout="l-body-outset", fig.width = 8, fig.height=6, fig.cap="Birth places of residents"}
+```{r, birth-place-corr, layout="l-body-outset", fig.width = 8, fig.height=6, fig.cap="Scatter plot and linear fit of residents born outside of the Cape Province and pandemic mortality by district"}
+# jpeg(
+#     filename="images/birth-place-corr.jpeg",
+#     width=6,
+#     height=4,
+#     units="in",
+#     res=1000)
+
 birth_place_shares %>% 
   group_by(town) %>% 
   mutate(pandemic_mort_grouped = sum(deaths) / sum(total_pop)) %>% 
@@ -1115,6 +1280,8 @@ birth_place_shares %>%
   labs(x = "Share of residents born outside the Cape Province",
        y = "Pandemic mortality per 1000 residents",
        size = "District population")
+
+# dev.off()
 
 lm_1 <- birth_place_shares %>% 
   lm(pandemic_mort_rate ~ share_not_cape, data = .)
@@ -1137,7 +1304,7 @@ lm_1 <- birth_place_shares %>%
 <tr><td colspan="2" style="border-bottom: 1px solid black"></td></tr><tr><td style="text-align:left">Share of residents born outside of the Cape</td><td>-0.032</td></tr>
 <tr><td style="text-align:left"></td><td>(0.034)</td></tr>
 <tr><td style="text-align:left"></td><td></td></tr>
-<tr><td style="text-align:left">Constant</td><td>0.032<sup>***</sup></td></tr>
+<tr><td style="text-align:left">Constant</td><td>0.032<sup>\*\*\*</sup></td></tr>
 <tr><td style="text-align:left"></td><td>(0.006)</td></tr>
 <tr><td style="text-align:left"></td><td></td></tr>
 <tr><td colspan="2" style="border-bottom: 1px solid black"></td></tr><tr><td style="text-align:left">Observations</td><td>28</td></tr>
@@ -1145,7 +1312,8 @@ lm_1 <- birth_place_shares %>%
 <tr><td style="text-align:left">Adjusted R<sup>2</sup></td><td>-0.005</td></tr>
 <tr><td style="text-align:left">Residual Std. Error</td><td>0.022 (df = 26)</td></tr>
 <tr><td style="text-align:left">F Statistic</td><td>0.869 (df = 1; 26)</td></tr>
-<tr><td colspan="2" style="border-bottom: 1px solid black"></td></tr><tr><td style="text-align:left"><em>Note:</em></td><td style="text-align:right"><sup>*</sup>p<0.1; <sup>**</sup>p<0.05; <sup>***</sup>p<0.01</td></tr>
+<tr><td colspan="2" style="border-bottom: 1px solid black"></td></tr><tr><td style="text-align:left"><em>Note:</em></td><td style="text-align:right"><sup>\*</sup>p<0.1; <sup>\*\*</sup>p<0.05; <sup>\*\*\*</sup>p<0.01</td></tr>
+<td colspan="3"></td></tr><tr><td style="text-align:left"><em></em></td><td colspan="2" style="text-align:right"><em>Heteroskedasticity robust SEs from Sandwich package</em></td>
 </table>
 
 ## Conclusion
@@ -1243,7 +1411,7 @@ grid <- crossing(max_tokens = c(50, 100, 150, 200))
 
 #### Tuning parameters
 
-By tuning the number of tokens using the 10 folds of cross validation data I can seect the 
+By tuning the number of tokens using the 10 folds of cross validation data I can select the optimal parameters for the best performance of the model across the 10 folds of my training data.
 
 ```{r, code_folding=F, eval=F}
 results <- tune_grid(
@@ -1264,7 +1432,16 @@ results <- read_rds("data/results.rds")
 In Figure \@ref(fig:tuning-fig) I draw a plot of model performance across the three metrics we specified above, accuracy, sensitivity and specificity. Balancing type 1 and type 2 errors here is not too important given that both sensitivity and specificity are so high. We can see that moving from 100 to 150 retained tokens, or predictors in our model, improves accuracy, sensitivity and specificity. Moving to 200 tokens worsens specificity marginally.
 
 ```{r, tuning-fig, layout="l-body-outset", fig.width = 8, fig.height=6, fig.cap="Model metrics for classification model and hyperparamter values", code_folding=F}
+# jpeg(
+#     filename="images/tuning-fig.jpeg",
+#     width=6,
+#     height=4,
+#     units="in",
+#     res=1000)
+
 results %>% autoplot()
+
+# dev.off()
 ```
 
 #### Finalize workflow
@@ -1278,7 +1455,7 @@ wf_final <- wf %>%
 
 #### Final fit on the holdout data
 
-Finally, with the hyper paramter value chosen, I fit the model a last time, training on the training data and tested on the testing data created with the initial split. 
+Finally, with the hyper parameter value chosen, I fit the model a last time, training on the training data and tested on the testing data created with the initial split. 
 
 ```{r, code_folding=F, eval=F}
 final_fit <- last_fit(wf_final, initial_split,
@@ -1300,10 +1477,20 @@ collect_metrics(final_fit)
 The confusion matrix shown in Figre \@ref(fig:conf-mat-fig) displays the number of predictions that the classifier made correctly and incorrectly. It is evident that it made 6 mistakes in total, out of the 3750 observations kept in the testing set. Two were predicted black when in truth they were coloured, and four predicted coloured when they were in fact black.
 
 ```{r, conf-mat-fig, layout="l-body-outset", fig.width = 8, fig.height=6, fig.cap="Confusion matrix for classification model", code_folding=F}
+
+# jpeg(
+#     filename="images/conf-mat-fig.jpeg",
+#     width=6,
+#     height=4,
+#     units="in",
+#     res=1000)
+
 collect_predictions(final_fit) %>%
   conf_mat(race, .pred_class) %>%
   autoplot(type = "heatmap") +
   scale_fill_viridis_c()
+
+# dev.off()
 ```
 
 #### Model performance
@@ -1336,6 +1523,14 @@ words <- read_rds("data/words.rds")
 
 
 ```{r, words-fig, layout="l-body-outset", fig.width = 8, fig.height=6, fig.cap="Determinants of classification model", code_folding=F}
+
+# jpeg(
+#     filename="images/words-fig.jpeg",
+#     width=6,
+#     height=4,
+#     units="in",
+#     res=1000)
+
 words %>% 
     mutate(term = str_extract(term, "\\w.*"),
            term = str_to_lower(term)) %>% 
@@ -1346,6 +1541,7 @@ words %>%
     labs(y = "Words and sub-words",
          x = "Imprtance of feature")
 
+# dev.off()
 ```
 
 Figure \@ref(fig:words-fig) allows us to see that if the ethnicity contains the sub-word features "KA", "Z, "AT", "OL", and "AN", the linear SVM is more likely to classify the individual as Black. In contrast, sub-word features "AR", and "AM", "M" and "L" are associated with coloured individuals.
@@ -1355,6 +1551,13 @@ Figure \@ref(fig:words-fig) allows us to see that if the ethnicity contains the 
 Figure \@ref(fig:ethnicity-race-classification) shows the 12 most common classes in each race grouping.
 
 ```{r, ethnicity-race-classification, layout="l-body-outset", fig.width = 8, fig.height=6, fig.cap="Output of classification model"}
+
+# jpeg(
+#     filename="images/ethnicity-race-classification.jpeg",
+#     width=6,
+#     height=4,
+#     units="in",
+#     res=1000)
 
 df %>% 
   filter(race != "NA",
@@ -1373,6 +1576,8 @@ df %>%
   scale_fill_manual(values = wesanderson::wes_palette(3, name = "Zissou1", type = "continuous")) +
   labs(x = NULL,
        y = "Recorded ethnicity")
+
+# dev.off()
 
 ```
 
