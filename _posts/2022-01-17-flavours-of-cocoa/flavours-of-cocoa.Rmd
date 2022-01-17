@@ -9,7 +9,7 @@ date: 2022-01-17
 output:
   distill::distill_article:
     self_contained: false
-    code_folding: true
+    code_folding: false
     highlight: haddock
     highlight_downlit: true
     toc: true
@@ -17,7 +17,7 @@ output:
 
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = F, message = F, warning = F)
+knitr::opts_chunk$set(echo = TRUE, message = F, warning = F)
 
 ```
 
@@ -50,14 +50,63 @@ knitr::include_url("http://flavorsofcacao.com/chocolate_database.html")
 
 ## Ingest the data
 
-I've copied and pasted the data into an Excel spreadsheet, accessible on my [Github]() if you want to download it an analyse it yourself.
+I've copied and pasted the data into an Excel spreadsheet, accessible on my [Github](https://github.com/j-jayes/jjayes_distill/blob/main/_posts/2022-01-17-flavours-of-cocoa/data/chocolate-bar-ratings.xlsx) if you want to download it an analyse it yourself.
 
 <aside>
 
 The underlying data is served in a Javascript container on the website rather than vanilla HTML. This makes it a little bit more difficult to scrape with a package like `rvest`, for example. Hence the Excel spreadsheet.
 
 </aside>
-```{r}
 
+To begin the analysis, we'll read in the Excel file using the `readxl` package, and the `here`^[The `here` package allows us to abstract from the specific file path on our local computer and use a generic path that will work on any computer that we download our R project to. For example, instead of specifying the path "C:/Users/Jonathan/Documents/R-work/jjayes_distill/_posts/2022-01-17-flavours-of-cocoa/data/chocolate-bar-ratings.xlsx" we can just call the `here` function from the package with the same name - here("_posts", "2022-01-17-flavours-of-cocoa", "data", "chocolate-bar-ratings.xlsx"). This is wonderful for switching between, for example, a Windows and a Mac, where the slashes are in opposite directions and can cause some frustration!] package that helps us with file paths.^[We don't need to load the packages via the `library(readxl)` command because we're only going to use them once or twice. Instead we can call the name of the package followed by two colons and the command, as shown below.]
+
+
+```{r}
+library(tidyverse)
+# read in the data
+df <- readxl::read_excel(here::here("_posts", 
+                                    "2022-01-17-flavours-of-cocoa", 
+                                    "data", 
+                                    "chocolate-bar-ratings.xlsx"))
+
+# display the first six rows of tibble
+head(df)
+```
+
+This gives us a `tibble` (similar to a dataframe) with 10 columns (4 numeric and 6 character) and 2,530 individual reviews. We can use the janitor package to make the column names snake case (lower case with words separated by an underscore).
+
+```{r}
+# clean names
+df <- df %>% 
+    janitor::clean_names()
+
+# display the tibble again
+head(df)
+```
+
+Now that we have a nice `tibble` with clean names, we can ask what the data itself looks like. There are many ways to get summary statistics of a dataset. I love the `skim` function from the `skimr` package.
+
+```{r, layout = "l-body-outset"}
+skimr::skim(df)
+```
+
+Great! Our reviews are almost all complete. 
+- Only 3 percent are missing information on the ingredients. 
+- The reviews begin in 2006, the mean review is from 2014, and the latest is from 2021. 
+- The percent of the bar comprising of cocoa ranges from 42 to 100, with a mean of 72.
+- We have 62 unique countries of origin for the beans, and 67 countries of manufacture.
+- There are 21 unique combinations of ingredients, comprising of seven elements in total.
+
+The ref column is just a reference number.
+
+## Data cleaning and feature engineering
+
+Next, let's have a look at some data cleaning.
+
+Let's have a look at the ingredients column.
+
+```{r}
+df %>% 
+    distinct(ingredients)
 ```
 
