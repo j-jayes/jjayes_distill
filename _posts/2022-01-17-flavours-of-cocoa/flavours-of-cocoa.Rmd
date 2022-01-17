@@ -1,0 +1,63 @@
+---
+title: "Flavours-of-cocoa"
+description: |
+  A short description of the post.
+author:
+  - name: Jonathan Jayes
+    url: {interludeone.com}
+date: 2022-01-17
+output:
+  distill::distill_article:
+    self_contained: false
+    code_folding: true
+    highlight: haddock
+    highlight_downlit: true
+    toc: true
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = F, message = F, warning = F)
+
+```
+
+# Flavours of Cocoa
+
+Welcome to the first in a series of data screencasts where I attempt to show you how great the R language is.
+
+This post follows along with the data screencast and includes the code methodically.
+
+It begins by reading in the data, then tidying it, analysing it, making some visualizations and then performing some predictive modelling.
+
+## What's the deal with beans?
+
+I'm signed up to a fantastic newsletter called ["Data is Plural"](https://www.data-is-plural.com/) curated by journalist Jeremy Singer-Vine. Truly, it is a treasure trove of interesting public datasets from all over the internet. You can sign up to the newsletter [here](https://buttondown.email/data-is-plural) if this sounds up your alley. 
+
+This week it included a link to a fun selection of chocolate bar reviews, which Jeremy described as:
+
+<blockquote>
+
+Chocolate bar reviews. The [Manhattan Chocolate Society](http://flavorsofcacao.com/mcs_index.html)’s [Brady Brelinski](http://flavorsofcacao.com/contact.html) has reviewed 2,500+ bars of craft chocolate since 2006, and compiles his findings into a [copy-paste-able](http://flavorsofcacao.com/chocolate_database.html) table that lists each bar’s manufacturer, bean origin, percent cocoa, ingredients, review notes, and numerical rating.
+
+</blockquote>
+
+A live link to the database is shown below.
+
+```{r}
+knitr::include_url("http://flavorsofcacao.com/chocolate_database.html")
+```
+
+
+## Ingest the data
+
+I've copied and pasted the data into an Excel spreadsheet, accessible on my [Github]() if you want to download it an analyse it yourself.
+
+<aside>
+
+The underlying data is served in a Javascript container on the website rather than vanilla HTML. This makes it a little bit more difficult to scrape with a package like `rvest`, for example. Hence the Excel spreadsheet.
+
+</aside>
+```{r}
+
+```
+

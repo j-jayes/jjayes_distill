@@ -12,14 +12,22 @@
       <link>https://interludeone.com/</link>
     </image>
     <generator>Distill</generator>
-    <lastBuildDate>Tue, 27 Jul 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 16 Jan 2022 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>Flavours-of-cocoa</title>
+      <dc:creator>Jonathan Jayes</dc:creator>
+      <link>https://interludeone.com/posts/2022-01-17-flavours-of-cocoa</link>
+      <description>A short description of the post.</description>
+      <guid>https://interludeone.com/posts/2022-01-17-flavours-of-cocoa</guid>
+      <pubDate>Sun, 16 Jan 2022 00:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>Draft: Spanish Flu Mortality</title>
       <dc:creator>Jonathan Jayes</dc:creator>
       <link>https://interludeone.com/posts/2021-07-28-spanish-flu-mortality</link>
       <description>This paper examines mortality during the Spanish flu pandemic of 1918 in 15 districts in the Cape Province of South Africa.</description>
       <guid>https://interludeone.com/posts/2021-07-28-spanish-flu-mortality</guid>
-      <pubDate>Tue, 27 Jul 2021 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 28 Jul 2021 00:00:00 +0000</pubDate>
       <media:content url="https://interludeone.com/posts/2021-07-28-spanish-flu-mortality/images/ridge-plot.jpeg" medium="image" type="image/jpeg"/>
     </item>
     <item>
