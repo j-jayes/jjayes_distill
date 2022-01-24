@@ -1,7 +1,7 @@
 ---
 title: "R vs Python? R & Python!"
 description: |
-  A short description of the post.
+  Mining the twitter archive of [Fathom Data](https://www.fathomdata.dev/)
 author:
   - name: Jonathan Jayes
     url: {interludeone.com}
@@ -41,6 +41,7 @@ df <- get_timelines(c("fathomdata", "datawookie"), n = 3200)
 
 ```{r, include=F}
 library(tidyverse)
+library(scales)
 df <- read_rds(here::here("_posts", "2022-01-24-fathom-twitter", "df_fathom_datawookie.rds"))
 theme_set(theme_light())
 ```
@@ -78,7 +79,7 @@ I've made use of the lovely `reorder_within` command in combination with the `sc
 
 </aside>
 
-```{r, layout = "l-body-outset"}
+```{r, layout = "l-body-outset", fig.cap= "Column chart of hashtag frequency by tweet type"}
 library(tidytext)
 # ggsci package for nice blue fill scale
 library(ggsci)
@@ -102,7 +103,7 @@ hashtags %>%
 
 Another way to compare these is the stacked column chart below, which shows the number of uses of hashtags for each language as a percentage of the total number of language tags. Rstats tags make us just less than half of the tweets posted to the Fathom Data account, but more than 90 percent of the retweet tags! Wow! It certainly seems like the person in charge of the twitter account enjoys sharing tweets about Rstats.
 
-```{r, layout = "l-body-outset", fig.height=4, fig.width=8}
+```{r, layout = "l-body-outset", fig.height=4, fig.width=8, fig.cap="Stacked column chart comparing language hashtag frequency by tweet type"}
 hashtags %>%
   filter(hashtags %in% c("rstats", "python", "sql", "css")) %>%
   mutate(hashtags = fct_reorder(hashtags, n),
@@ -157,4 +158,87 @@ df %>%
   knitr::kable(col.names = c("Accout name", "Number of retweets"))
 ```
 
+We can also see that Fathom founder Andrew Collier appears at the top of the list of Rstats retweets from the Fathom account, with 43. The next section looks at how his feed and the Fathom Data feed overlap.
+
+## What is the overlap between private and public?
+
+Following the fantastic resource [Text Mining with R](https://www.tidytextmining.com/twitter.html) the code chunk below calculates the frequency with which each word used in the tweets of the Fathom Data accound and by Andrew Collier as a share of the total number of distinct words used.
+
+```{r}
+# taking out URLs
+remove_bits <- "&amp;|&lt;|&gt;"
+
+tidy_tweets <- df %>%
+  filter(!str_detect(text, "^RT")) %>%
+  mutate(text = str_remove_all(text, remove_bits)) %>%
+  unnest_tokens(word, text, token = "tweets") %>%
+    # remove stopwords
+  filter(
+    !word %in% stop_words$word,
+    !word %in% str_remove_all(stop_words$word, "'"),
+    str_detect(word, "[a-z]")
+  ) 
+
+frequency <- tidy_tweets %>% 
+  group_by(screen_name) %>% 
+  count(word, sort = TRUE) %>% 
+  left_join(tidy_tweets %>% 
+              group_by(screen_name) %>% 
+              summarise(total = n())) %>%
+  mutate(freq = n/total)
+
+frequency <- frequency %>% 
+  select(screen_name, word, freq) %>% 
+  pivot_wider(names_from = screen_name, values_from = freq) %>%
+  arrange(desc(datawookie, fathomdata))
+
+
+```
+
+The visualization below shows the relative frequencies for terms used by both accounts. Words near the red line are used in about equal proportion by the Fathom account and by Andrew, while words above the line are more specific to the Fathom account and words below the line are more specific to Andrew.
+
+In the top right of the plot we can see that #datascience, data and #Rstats are used frequently by both accounts, and roughly in equal proportions. Terms like courses, #sql and keynote are more specific to the Fathom account, while #linux and binance are more specific to Andrew's tweets.
+
+```{r, layout = "l-body-outset", fig.cap= "Comparing the frequency of words used by the Fathom Data account and Andrew Collier"}
+frequency %>% 
+  ggplot(aes(datawookie, fathomdata)) +
+  geom_jitter(alpha = 0.1, size = 2.5, width = 0.25, height = 0.25) +
+  geom_text(aes(label = word), check_overlap = TRUE, vjust = 1.5) +
+  scale_x_log10(labels = percent_format()) +
+  scale_y_log10(labels = percent_format()) +
+  geom_abline(color = "red") +
+  theme(legend.position = "none") +
+    labs(x = "Andrew Collier",
+         y = "Fathom Data")
+```
+
+Interestingly, standard bank stands out in the bottom right of the plot, highlighted in the version below. It seems that Andrew uses his personal account to call out poor customer service!
+
+```{r, layout = "l-body-outset", fig.cap = "Highlighting Standard Bank account mentions"}
+frequency %>% 
+  mutate(highlight = word == "@standardbankza") %>% 
+  ggplot(aes(datawookie, fathomdata)) +
+  geom_jitter(alpha = 0.1, size = 2.5, width = 0.25, height = 0.25) +
+  geom_text(aes(label = word, colour = highlight), check_overlap = TRUE, vjust = 1.5) +
+  scale_x_log10(labels = percent_format()) +
+  scale_y_log10(labels = percent_format()) +
+  geom_abline(color = "red") +
+  scale_color_manual(values = c("grey80", "midnightblue")) +
+  theme(legend.position = "none")
+```
+
+This is clearly the case! Have a look at the top terms, haha!
+
+```{r}
+frequency %>%
+  filter(is.na(fathomdata)) %>%
+  select(-fathomdata) %>%
+  mutate(datawookie = scales::percent(datawookie)) %>%
+  slice_head(n = 10) %>%
+  knitr::kable(col.names = c("Word", "Relative specificity to Andrew Collier's tweets"))
+```
+
+## Conclusion
+
+It appears that Fathom has a good mix of open source languages in use, and on their twitter, with a slight skew towards Rstats.
 
