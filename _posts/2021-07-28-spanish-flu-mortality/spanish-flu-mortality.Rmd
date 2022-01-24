@@ -1,5 +1,5 @@
 ---
-title: "Draft: Spanish Flu Mortality"
+title: "Spanish Flu Mortality"
 description: |
   This paper examines mortality during the Spanish flu pandemic of 1918 in 15 districts in the Cape Province of South Africa.
 preview: images/ridge-plot.jpeg
