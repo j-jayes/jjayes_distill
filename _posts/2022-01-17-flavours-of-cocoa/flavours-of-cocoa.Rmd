@@ -5,7 +5,7 @@ description: |
 author:
   - name: Jonathan Jayes
     url: {interludeone.com}
-date: 2022-01-17
+date: 2022-02-15
 output:
   distill::distill_article:
     self_contained: false
@@ -18,7 +18,6 @@ output:
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE, message = F, warning = F)
-
 ```
 
 # Flavours of Cocoa
@@ -64,6 +63,7 @@ We don't need to load the packages via the `library(readxl)` command because we'
 
 ```{r}
 library(tidyverse)
+theme_set(theme_light())
 # read in the data
 df <- readxl::read_excel(here::here("_posts", 
                                     "2022-01-17-flavours-of-cocoa", 
@@ -191,19 +191,24 @@ First we break our ingredients into 6 columns. The problem we run into is that f
 
 ```{r}
 df <- df %>% 
-  separate(ingredients, into = c("ing_1",
-                                 "ing_2",
-                                 "ing_3",
-                                 "ing_4",
-                                 "ing_5",
-                                 "ing_6"),
+  separate(ingredients, into = c(paste0("ingredient_", rep(1:6))),
            sep = ",") 
 
 df %>% 
-    select(company_manufacturer , starts_with("ing")) %>%
+    select(company_manufacturer , starts_with("ingredient_")) %>%
     slice(c(1L, 51L, 54L))
 ```
 
+Tidymodels 
+
+```{r}
+library(tidymodels)
+dummy_multi_choice_rec <- recipe(~ ., data = df) %>%
+  step_dummy_multi_choice(starts_with("ingredient_")) %>%
+  prep()
+
+df <- bake(dummy_multi_choice_rec, new_data = NULL)
+```
 
 ## Analysing the data
 
@@ -288,20 +293,217 @@ df %>%
 
 This confirms what we saw in the boxplots above: fewer low scores in more recent years mean that the mean has increased, while the top of the distributions remain largely the same.
 
+### What are the frequencies of ingredients and percentages?
+
+```{r, layout = "l-body-outset"}
+df %>% 
+  mutate(cocoa_percent = round(cocoa_percent, 1)) %>% 
+  count(cocoa_percent, n_ingredients) %>% 
+  ggplot(aes(cocoa_percent, n_ingredients, fill = n)) +
+  geom_tile() +
+  scale_fill_viridis_c() +
+  scale_x_continuous(labels = scales::percent_format()) +
+  labs(x = "Cocoa percent",
+       y = "Number of ingredients",
+       fill = "Number of bars reviewed") +
+  theme(legend.position = "bottom") +
+  guides(fill = guide_colorbar(title.position = "bottom",
+                               barwidth = 25,
+                               title.hjust = .5))
+```
+
+
 ### What about the different countries??
 
-```{r}
+```{r, layout = "l-body-outset"}
 df %>% 
   count(country_of_bean_origin, sort = T)
 
 df %>% 
-  add_count(country_of_bean_origin) %>% 
+  add_count(country_of_bean_origin) %>%
+  # only include countries with more than 60 bars
   filter(n > 60) %>% 
   group_by(country_of_bean_origin) %>% 
   summarise(mean_rating = mean(rating)) %>% 
   mutate(country_of_bean_origin = fct_reorder(country_of_bean_origin, mean_rating)) %>% 
   ggplot(aes(mean_rating, country_of_bean_origin)) +
-  geom_col() +
-  coord_cartesian(xlim = c(3,3.3))
+  geom_col(fill = "midnightblue", alpha = .8) +
+  # ensure that x-axis looks appropriate.
+  coord_cartesian(xlim = c(3,3.3)) +
+    labs(x = "Average rating for countries of origin with more than 60 bars reviewed",
+         y = NULL)
 ```
 
+
+### Country map
+
+```{r}
+library(tmap)
+data("World")
+
+world <- World %>% as_tibble()
+```
+
+To join our data on chocolate to this map, we need to get coutnry codes, using the `countrycode` package.
+
+```{r}
+library(countrycode)
+
+df <- df %>% 
+    mutate(iso_a3 = countrycode(sourcevar = country_of_bean_origin, origin = "country.name", destination = "iso3c"))
+```
+
+
+```{r}
+library(sf)
+
+df_map <- df %>% 
+    group_by(iso_a3) %>%
+    add_count() %>% 
+    summarise(mean_rating = mean(rating),
+              n = n) %>% 
+    ungroup() %>% 
+    distinct() %>% 
+    left_join(world, by = "iso_a3")
+```
+
+
+```{r, layout = "l-body-outset"}
+df_map %>% 
+    filter(n > 3) %>% 
+    st_as_sf() %>% ggplot() +
+    geom_sf(data = World, fill = "grey80", alpha = .5) +
+    geom_sf(aes(fill = mean_rating)) +
+    scale_fill_viridis_c(trans = "sqrt") +
+    labs(fill = "Mean country rating")
+```
+
+## Word model
+
+```{r}
+df_characteristics <- df %>% 
+  select(c(most_memorable_characteristics, rating)) %>% 
+  separate_rows(most_memorable_characteristics, sep = ",") %>% 
+  mutate(most_memorable_characteristics = str_squish(most_memorable_characteristics))
+```
+
+
+```{r}
+df_characteristics %>% 
+  count(most_memorable_characteristics, sort = T)
+```
+
+We can start with a naive analysis that looks only at average score per word. These are the highest scoring words.
+
+```{r}
+# df_characteristics %>% 
+#   group_by(most_memorable_characteristics) %>% 
+#   add_count() %>% 
+#   mutate(avg_rating = mean(rating)) %>% 
+#   ungroup() %>% 
+#   slice_max(avg_rating, n = 12, with_ties = F)
+
+df_characteristics %>% 
+  group_by(most_memorable_characteristics) %>% 
+  add_count() %>% 
+  filter(n > 3) %>% 
+  mutate(avg_rating = mean(rating)) %>% 
+  ungroup() %>% 
+  distinct(most_memorable_characteristics, avg_rating) %>% 
+  slice_max(avg_rating, n = 12, with_ties = F) %>% 
+    mutate(avg_rating = round(avg_rating, 2)) %>% 
+    knitr::kable(col.names = c("Most memorable characteristics", "Average rating"))
+```
+
+
+```{r}
+library(tidymodels)
+library(textrecipes)
+
+df_characteristics_folds <- vfold_cv(df_characteristics)
+
+glmnet_recipe <- 
+  recipe(formula = rating ~ ., data = df_characteristics) %>% 
+  step_tokenize(most_memorable_characteristics) %>% 
+  step_tokenfilter(most_memorable_characteristics, max_tokens = 100) %>% 
+  step_tf(most_memorable_characteristics) %>% 
+  step_normalize(all_predictors(), -all_nominal())
+```
+
+
+```{r}
+glmnet_recipe %>% prep() %>% juice()
+```
+
+
+```{r, eval=F}
+glmnet_spec <- 
+  linear_reg(penalty = tune(), mixture = 1) %>% 
+  set_mode("regression") %>% 
+  set_engine("glmnet") 
+
+glmnet_workflow <- 
+  workflow() %>% 
+  add_recipe(glmnet_recipe) %>% 
+  add_model(glmnet_spec) 
+
+glmnet_grid <- tidyr::crossing(penalty = 10^seq(-6, -1, length.out = 20)) 
+
+glmnet_tune <- 
+  tune_grid(glmnet_workflow, df_characteristics_folds, grid = glmnet_grid)
+```
+
+```{r, include=F}
+glmnet_tune <- read_rds(here::here("_posts", 
+                                    "2022-01-17-flavours-of-cocoa", 
+                                    "data", 
+                                    "glm_tune.rds"))
+```
+
+
+```{r}
+glmnet_tune %>% 
+  autoplot()
+```
+
+
+```{r, eval=F}
+glmnet_model_final <- finalize_workflow(glmnet_workflow, glmnet_tune %>% 
+  select_best())
+
+final_fit <- glmnet_model_final %>% 
+  fit(df_characteristics)
+```
+
+What does the fit look like? These are the terms that have the greatest effect on bar rating.
+
+```{r, include=F}
+final_fit <- read_rds(here::here("_posts", 
+                                    "2022-01-17-flavours-of-cocoa", 
+                                    "data", 
+                                    "final_fit.rds"))
+```
+
+
+```{r, layout = "l-body-outset"}
+final_fit %>%
+  extract_fit_parsnip() %>%
+  tidy() %>%
+  filter(term != "(Intercept)") %>%
+  mutate(term = str_remove(term, "tf_most_memorable_characteristics_")) %>%
+  mutate(sign = estimate > 0) %>%
+  group_by(sign) %>%
+  slice_max(estimate, n = 12) %>%
+  ungroup() %>%
+  filter(estimate != 0) %>%
+  mutate(term = fct_reorder(term, estimate)) %>%
+  ggplot(aes(estimate, term, fill = sign)) +
+  geom_col(show.legend = F) +
+  geom_vline(xintercept = 0, lty = 2) +
+  scale_fill_brewer(palette = "Paired") +
+  labs(x = "Effect of term on chocolate bar score",
+       y = "Memorable characteristic")
+```
+
+
+Wow! have a look at the terms up top - "creamy", "complex" and "rich" are good chocolate words. On the other side, "intense", "acidic" and "coarse" are terms that lower the score of the bar.
