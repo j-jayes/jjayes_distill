@@ -1,0 +1,96 @@
+---
+title: "Draft: Programmatically generate tabs in Rmarkdown"
+description: |
+  A walk-though for writing code that writes it's own code.
+author:
+  - name: Jonathan Jayes
+    url:
+      interludeone.com: {}
+date: 2022-03-04
+output:
+  distill::distill_article:
+    self_contained: false
+    code_folding: false
+    highlight: haddock
+    highlight_downlit: true
+    toc: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = T, message = F, warning = F)
+```
+
+## Purpose
+
+I need to create a number of tabs in an Rmarkdown document, depending on the contents of the data queried.
+
+In short, the Rmarkdown document must have a tab for each factor in a dataset, and draw a ggplot in the tab.
+
+I am using the fenced div structure to create tabsets from `xaringanExtra`.
+
+```{r}
+library(tidyverse)
+library(xaringanExtra)
+xaringanExtra::use_panelset()
+theme_set(theme_light())
+
+# prep dataset
+df <- iris %>%
+  as_tibble() %>%
+  janitor::clean_names()
+```
+
+## Make the panels
+
+This function makes the panels, in this case one for each species in the iris dataset.
+
+Following [The Rmarkdown Cookbook's](https://bookdown.org/yihui/rmarkdown-cookbook/results-asis.html) super helpful section on outputting text as raw markdown content, we include a number of line breaks, with the command `cat("\n")`.
+
+```{r}
+make_panel <- function(spec) {
+  cat("::: {.panel}\n")
+
+  cat("##", spec, "{.panel-name}\n")
+
+  cat("Plot of", spec, "\n")
+
+  p <- df %>%
+    filter(species == spec) %>%
+    ggplot(aes(sepal_length, sepal_width, colour = petal_width)) +
+    geom_point()
+
+  print(p)
+
+  cat("\n")
+
+  cat(":::\n")
+}
+
+```
+
+## Panelset
+
+Here we initiate the panel using  the fenced div formatting that begins with:
+
+`::::: {.panelset}` 
+
+and ends with: 
+
+`:::::`
+
+::::: {.panelset}
+
+```{r, results='asis'}
+
+species_tbl <- df %>% distinct(species)
+
+for(i in species_tbl$species){
+  
+  make_panel(i)
+  
+}
+
+```
+
+:::::
+
