@@ -2490,11 +2490,7 @@ the frequencies of ingredients and percentages?</a></li>
 different countries??</a></li>
 <li><a href="#country-map">Country map</a></li>
 </ul></li>
-<li><a href="#word-model">Word model</a>
-<ul>
-<li><a href="#what-about-just-a-linear-model">What about just a linear
-model?</a></li>
-</ul></li>
+<li><a href="#word-model">Word model</a></li>
 </ul></li>
 </ul>
 </nav>
@@ -3582,9 +3578,10 @@ greatest effect on bar rating.</p>
   <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>term <span class='op'>=</span> <span class='fu'><a href='https://stringr.tidyverse.org/reference/str_remove.html'>str_remove</a></span><span class='op'>(</span><span class='va'>term</span>, <span class='st'>"tf_most_memorable_characteristics_"</span><span class='op'>)</span><span class='op'>)</span> <span class='op'><a href='https://textrecipes.tidymodels.org/reference/pipe.html'>%&gt;%</a></span>
   <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>sign <span class='op'>=</span> <span class='va'>estimate</span> <span class='op'>&gt;</span> <span class='fl'>0</span><span class='op'>)</span> <span class='op'><a href='https://textrecipes.tidymodels.org/reference/pipe.html'>%&gt;%</a></span>
   <span class='fu'><a href='https://dplyr.tidyverse.org/reference/group_by.html'>group_by</a></span><span class='op'>(</span><span class='va'>sign</span><span class='op'>)</span> <span class='op'><a href='https://textrecipes.tidymodels.org/reference/pipe.html'>%&gt;%</a></span>
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>estimate <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/MathFun.html'>abs</a></span><span class='op'>(</span><span class='va'>estimate</span><span class='op'>)</span><span class='op'>)</span> <span class='op'><a href='https://textrecipes.tidymodels.org/reference/pipe.html'>%&gt;%</a></span> 
   <span class='fu'><a href='https://dplyr.tidyverse.org/reference/slice.html'>slice_max</a></span><span class='op'>(</span><span class='va'>estimate</span>, n <span class='op'>=</span> <span class='fl'>12</span><span class='op'>)</span> <span class='op'><a href='https://textrecipes.tidymodels.org/reference/pipe.html'>%&gt;%</a></span>
   <span class='fu'><a href='https://dplyr.tidyverse.org/reference/group_by.html'>ungroup</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'><a href='https://textrecipes.tidymodels.org/reference/pipe.html'>%&gt;%</a></span>
-  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/filter.html'>filter</a></span><span class='op'>(</span><span class='va'>estimate</span> <span class='op'>!=</span> <span class='fl'>0</span><span class='op'>)</span> <span class='op'><a href='https://textrecipes.tidymodels.org/reference/pipe.html'>%&gt;%</a></span>
+  <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>estimate <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/ifelse.html'>ifelse</a></span><span class='op'>(</span><span class='va'>sign</span> <span class='op'>==</span> <span class='cn'>TRUE</span>, <span class='va'>estimate</span>, <span class='op'>-</span><span class='va'>estimate</span><span class='op'>)</span><span class='op'>)</span> <span class='op'><a href='https://textrecipes.tidymodels.org/reference/pipe.html'>%&gt;%</a></span> 
   <span class='fu'><a href='https://dplyr.tidyverse.org/reference/mutate.html'>mutate</a></span><span class='op'>(</span>term <span class='op'>=</span> <span class='fu'><a href='https://forcats.tidyverse.org/reference/fct_reorder.html'>fct_reorder</a></span><span class='op'>(</span><span class='va'>term</span>, <span class='va'>estimate</span><span class='op'>)</span><span class='op'>)</span> <span class='op'><a href='https://textrecipes.tidymodels.org/reference/pipe.html'>%&gt;%</a></span>
   <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span><span class='op'>(</span><span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span><span class='va'>estimate</span>, <span class='va'>term</span>, fill <span class='op'>=</span> <span class='va'>sign</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span>
   <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_bar.html'>geom_col</a></span><span class='op'>(</span>show.legend <span class='op'>=</span> <span class='cn'>F</span><span class='op'>)</span> <span class='op'>+</span>
@@ -3597,53 +3594,9 @@ greatest effect on bar rating.</p>
 <p><img src="flavours-of-cocoa_files/figure-html5/unnamed-chunk-36-1.png" width="624" /></p>
 </div>
 <p>Wow! have a look at the terms up top - “creamy”, “complex” and “rich”
-are good chocolate words. On the other side, “intense”, “acidic” and
-“coarse” are terms that lower the score of the bar.</p>
-<h3 id="what-about-just-a-linear-model">What about just a linear
-model?</h3>
-<div class="layout-chunk" data-layout="l-body">
-<div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>df_characteristics</span>
-</code></pre>
-</div>
-<pre><code># A tibble: 6,839 x 2
-   most_memorable_characteristics rating
-   &lt;chr&gt;                           &lt;dbl&gt;
- 1 rich cocoa                       3.25
- 2 fatty                            3.25
- 3 bready                           3.25
- 4 cocoa                            3.5 
- 5 vegetal                          3.5 
- 6 savory                           3.5 
- 7 cocoa                            3.75
- 8 blackberry                       3.75
- 9 full body                        3.75
-10 chewy                            3   
-# ... with 6,829 more rows</code></pre>
-<div class="sourceCode">
-<pre class="sourceCode r"><code class="sourceCode r"><span class='va'>lm_spec</span> <span class='op'>&lt;-</span> 
-  <span class='fu'>linear_reg</span><span class='op'>(</span><span class='op'>)</span> <span class='op'><a href='https://textrecipes.tidymodels.org/reference/pipe.html'>%&gt;%</a></span> 
-  <span class='fu'>set_mode</span><span class='op'>(</span><span class='st'>"regression"</span><span class='op'>)</span> <span class='op'><a href='https://textrecipes.tidymodels.org/reference/pipe.html'>%&gt;%</a></span> 
-  <span class='fu'>set_engine</span><span class='op'>(</span><span class='st'>"lm"</span><span class='op'>)</span> 
-
-<span class='va'>lm_workflow</span> <span class='op'>&lt;-</span> 
-  <span class='fu'>workflow</span><span class='op'>(</span><span class='op'>)</span> <span class='op'><a href='https://textrecipes.tidymodels.org/reference/pipe.html'>%&gt;%</a></span> 
-  <span class='fu'>add_recipe</span><span class='op'>(</span><span class='va'>glmnet_recipe</span><span class='op'>)</span> <span class='op'><a href='https://textrecipes.tidymodels.org/reference/pipe.html'>%&gt;%</a></span> 
-  <span class='fu'>add_model</span><span class='op'>(</span><span class='va'>lm_spec</span><span class='op'>)</span> 
-
-<span class='va'>lm_res</span> <span class='op'>&lt;-</span> 
-  <span class='fu'>fit_resamples</span><span class='op'>(</span><span class='va'>lm_workflow</span>, <span class='va'>df_characteristics_folds</span><span class='op'>)</span>
-
-<span class='va'>lm_res</span> <span class='op'><a href='https://textrecipes.tidymodels.org/reference/pipe.html'>%&gt;%</a></span> 
-    <span class='fu'><a href='https://tidyr.tidyverse.org/reference/nest.html'>unnest</a></span><span class='op'>(</span><span class='va'>.metrics</span><span class='op'>)</span> <span class='op'><a href='https://textrecipes.tidymodels.org/reference/pipe.html'>%&gt;%</a></span> 
-    <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span><span class='op'>(</span><span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span><span class='op'>(</span><span class='va'>.estimate</span>, <span class='va'>id</span>, fill <span class='op'>=</span> <span class='va'>.metric</span><span class='op'>)</span><span class='op'>)</span> <span class='op'>+</span>
-    <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_bar.html'>geom_col</a></span><span class='op'>(</span><span class='op'>)</span> <span class='op'>+</span>
-    <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/facet_wrap.html'>facet_wrap</a></span><span class='op'>(</span><span class='op'>~</span> <span class='va'>.metric</span><span class='op'>)</span>
-</code></pre>
-</div>
-<p><img src="flavours-of-cocoa_files/figure-html5/unnamed-chunk-37-1.png" width="624" /></p>
-</div>
-<div class="sourceCode" id="cb13"><pre
+are good chocolate words. On the other side, “bitter”, “off” and
+“chemical” are terms that lower the score of the bar.</p>
+<div class="sourceCode" id="cb12"><pre
 class="sourceCode r distill-force-highlighting-css"><code class="sourceCode r"></code></pre></div>
 <section class="footnotes footnotes-end-of-document"
 role="doc-endnotes">

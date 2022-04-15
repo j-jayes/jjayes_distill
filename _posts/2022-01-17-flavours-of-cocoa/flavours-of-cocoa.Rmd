@@ -510,9 +510,10 @@ final_fit %>%
   mutate(term = str_remove(term, "tf_most_memorable_characteristics_")) %>%
   mutate(sign = estimate > 0) %>%
   group_by(sign) %>%
+  mutate(estimate = abs(estimate)) %>% 
   slice_max(estimate, n = 12) %>%
   ungroup() %>%
-  filter(estimate != 0) %>%
+  mutate(estimate = ifelse(sign == TRUE, estimate, -estimate)) %>% 
   mutate(term = fct_reorder(term, estimate)) %>%
   ggplot(aes(estimate, term, fill = sign)) +
   geom_col(show.legend = F) +
@@ -523,30 +524,5 @@ final_fit %>%
 ```
 
 
-Wow! have a look at the terms up top - "creamy", "complex" and "rich" are good chocolate words. On the other side, "intense", "acidic" and "coarse" are terms that lower the score of the bar.
-
-### What about just a linear model?
-
-```{r}
-df_characteristics
-
-lm_spec <- 
-  linear_reg() %>% 
-  set_mode("regression") %>% 
-  set_engine("lm") 
-
-lm_workflow <- 
-  workflow() %>% 
-  add_recipe(glmnet_recipe) %>% 
-  add_model(lm_spec) 
-
-lm_res <- 
-  fit_resamples(lm_workflow, df_characteristics_folds)
-
-lm_res %>% 
-    unnest(.metrics) %>% 
-    ggplot(aes(.estimate, id, fill = .metric)) +
-    geom_col() +
-    facet_wrap(~ .metric)
-```
+Wow! have a look at the terms up top - "creamy", "complex" and "rich" are good chocolate words. On the other side, "bitter", "off" and "chemical" are terms that lower the score of the bar.
 
