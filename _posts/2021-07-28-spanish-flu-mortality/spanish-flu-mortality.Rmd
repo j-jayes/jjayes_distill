@@ -2,6 +2,7 @@
 title: "Spanish Flu Mortality"
 description: |
   This paper examines mortality during the Spanish flu pandemic of 1918 in 15 districts in the Cape Province of South Africa.
+draft: true
 preview: images/ridge-plot.jpeg
 author:
   - name: Jonathan Jayes
@@ -553,7 +554,7 @@ The linear trend is shown in Figure \@ref(fig:linear-trend) here, alongside a li
 library(ggrepel)
 
 # jpeg(
-#     filename="images/grey-linear-trend.jpeg",
+#     filename="images/grey-linear-trend_2.jpeg",
 #     width=6,
 #     height=4,
 #     units="in",
@@ -582,8 +583,8 @@ df %>%
   geom_text_repel() +
   labs(
     x = "Predicted 1918 mortality based on linear trend",
-    y = "Observed 1918 mortality",
-    # caption = "Note: dotted line is line of equality and solid line is line of best fit"
+    y = "Actual 1918 mortality",
+    caption = "Note: dotted line is line of equality and solid line is line of best fit"
   ) 
 
 # dev.off()
@@ -1039,7 +1040,7 @@ t1 <- tbl_regression(lm_1,
                `(Intercept)` = "Constant"),
   intercept = T
 ) %>%
-  add_n() %>%
+  # add_n() %>%
   add_significance_stars(thresholds = c(0.01, 0.05, .1))
 
 
@@ -1052,7 +1053,7 @@ t2 <- tbl_regression(lm_2,
   ),
   intercept = T
 ) %>%
-  add_n() %>%
+  # add_n() %>%
   add_significance_stars(thresholds = c(0.01, 0.05, .1))
 
 
@@ -1177,11 +1178,11 @@ child_mortality %>%
 
 # dev.off()
 
-lm_1 <- child_mortality %>%
+lm_1_c <- child_mortality %>%
   filter(race == "Both groups") %>% 
   lm(mort_rate ~ child_mort_rate, data = .)
 
-lm_2 <- child_mortality %>%
+lm_2_c <- child_mortality %>%
   filter(race != "Both groups") %>% 
   lm(mort_rate ~ child_mort_rate + race, data = .)
 
@@ -1193,16 +1194,16 @@ lm_2 <- child_mortality %>%
 #   covariate.labels = c("Child mortality rate", "White")
 # )
 
-t1 <- tbl_regression(lm_1,
+t1_c <- tbl_regression(lm_1_c,
   label = list(child_mort_rate = "Child mortality rate",
                `(Intercept)` = "Constant"),
   intercept = T
 ) %>%
-  add_n() %>%
+  # add_n() %>%
   add_significance_stars(thresholds = c(0.01, 0.05, .1))
 
 
-t2 <- tbl_regression(lm_2,
+t2_c <- tbl_regression(lm_2_c,
   label = list(
     race = "Race",
     child_mort_rate = "Child mortality rate", raceWhite = "White",
@@ -1210,13 +1211,24 @@ t2 <- tbl_regression(lm_2,
   ),
   intercept = T
 ) %>%
-  add_n() %>%
+  # add_n() %>%
   add_significance_stars(thresholds = c(0.01, 0.05, .1))
 
 
+# tbl_merge_ex1 <- tbl_merge(
+#     tbls = list(t1, t2),
+#     tab_spanner = c("**(1)**", "**(2)**")
+#   ) %>% 
+#     bold_labels() %>% 
+#       modify_header(label = "**Variable**") %>%
+#       as_flex_table() %>% 
+#       footnote(i = 2, j = c(4, 7), value = as_paragraph("Heteroskedastic SE's from Sandwich package"),
+#                ref_symbols = c("a"),
+#                part = "header")
+
 tbl_merge_ex1 <- tbl_merge(
-    tbls = list(t1, t2),
-    tab_spanner = c("**(1)**", "**(2)**")
+    tbls = list(t1, t2, t1_c, t2_c),
+    tab_spanner = c("**(1)**", "**(2)**", "**(3)**", "**(4)**")
   ) %>% 
     bold_labels() %>% 
       modify_header(label = "**Variable**") %>%
@@ -1916,5 +1928,84 @@ I classify any death occurring during the pandemic period a respiratory death if
 respiratory_terms <- c("respiratory", "Spanish influenza","Pneumonia","Bronchitis","Infleuzna","broncho pneumonia","consumption","whooping cough","inflammation of lungs","inflammation of the lungs","pulmonary tuberculosis","tuberculosis","phthisis","influenza pneumonia","inflammation in lungs","croup","phthisis pulmonalis","epidemic influenza","inflammation in the lungs","inflamation of lungs","spanish influenza pneumonia","flu","spanish flu","pneumonia following on an attack of influenza","pulmonary pneumonia","pneumonia influenza","inflamation of the lungs","pulmonary phthisis","inflamation in the lungs","double pneumonia","lobar pneumonia","tuberculosis Pulmonum","spanish influenza","general tuberculosis", "flu", "spanish", "epidemic", "lung", "Spaanse Griep")
 
 respiratory_terms
+```
+
+## Appendix 2
+
+I’m trying to do something innovative. There is a high likelihood that it fails. I want to write the economic history of South Africa through the Fouries. Sounds silly, but it might just work. 
+
+Would it be possible to send me a graph of our research on the Spanish flu, where you show all the Fouries? You can decide what is the easiest/prettiest, but I can imagine that there are a lot of Fouries in Oudtshoorn, so if you only want to focus on that town, that could work. Maybe something similar to what you did for the Bunus?
+
+The story is actually about Paarl as well, so perhaps two graphs (I know I’m pushing my luck): one showing the disparity in death rates between white and coloured households in Paarl before and during the flu, and one showing the number of Fouries that died in Oudtshoorn.
+
+<blockquote>
+
+The project began, in 2018, as an attempt to ascertain the effects of the Spanish flu a hundred years earlier. I could not have imagined that only two years later the world would experience another pandemic. Our research on the flu was suddenly in demand; we now only submitted a report to the Presidency in April 2020, but with then Masters student Jonathan Jayes, I published two papers on the effects of the flu, showing how it exacerbated existing inequalities in the health care system, a finding that has relevance for today. In the graph I show the difference in mortality rates of Paarl residents, by race. It is clear that the flu disproportionally affected coloured residents. That is not to say that death was not pervasive amongst all groups. As the next graph shows, in Oudtshoorn where my great-grandfather lived, many Fouries were also amongst the dead.
+
+</blockquote>
+
+### Fig 2
+
+```{r}
+library(lubridate)
+
+df %>% 
+    filter(town == "Paarl") %>% 
+    filter(between(death_date, ymd("1918-09-01"), ymd("1919-03-01"))) %>% 
+    count(race)
+```
+
+
+```{r}
+df_fourie <- df %>%
+  mutate(surname = str_to_lower(surname)) %>%
+  filter(str_detect(surname, "fourie")) %>%
+  mutate(fourie = TRUE)
+
+df_fourie %>%
+  filter(!is.na(sex)) %>%
+  count(town, sort = T) %>%
+  mutate(town = fct_reorder(town, n)) %>%
+  ggplot(aes(n, town)) +
+  geom_col(fill = "Midnightblue") +
+  scale_fill_grey() +
+  labs(x = "Number of observations in dataset")
+
+df_fourie %>%
+  count(sex)
+
+df_fourie %>%
+  count(occupation, sort = T) %>%
+  reactable::reactable(columns = c(list(
+    occupation = colDef(name = "Occupation"),
+    n = colDef(name = "Number")
+  )))
+
+df_plot <- df %>%
+  mutate(fourie = str_detect(surname, "Fourie")) %>%
+  filter(
+    between(death_date, ymd("1918-09-01"), ymd("1919-02-01")),
+    !is.na(sex),
+    town == "Oudtshoorn"
+  )
+
+df_plot %>%
+  ggplot(aes(x = death_date, y = age_years, shape = sex)) +
+  geom_point(cex = 2, alpha = .2) +
+  geom_label(data = df_plot %>% filter(fourie == T), aes(label = christian_names), show.legend = FALSE) +
+  theme(
+    legend.position = "bottom",
+    legend.title = element_blank()
+  ) +
+  scale_color_brewer(palette = "Dark2") +
+  # geom_vline(lty = 2, xintercept = ymd("1918-10-26")) +
+  # geom_hline(lty = 2, yintercept = 23) +
+  labs(
+    # title = "Scatter plot of age at death for indivduals dying of Spanish influenza in Queenstown",
+    # subtitle = "October 1918",
+    y = "Age in years",
+    x = "Date of death"
+  ) +
+  theme(legend.text = element_text(size = 15))
 ```
 

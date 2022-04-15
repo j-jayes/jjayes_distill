@@ -1,7 +1,7 @@
 ---
-title: "Draft: Flavours of cocoa"
+title: "Flavours of cocoa"
 description: |
-  A short description of the post.
+  An exploration of chocolate bar reviews
 author:
   - name: Jonathan Jayes
     url: {interludeone.com}
@@ -190,24 +190,41 @@ Finally, let's break the ingredients from a comma separated list into a binary v
 First we break our ingredients into 6 columns. The problem we run into is that for bars that contain different ingredients, the order of the ingredients split into the columns is not constant.
 
 ```{r}
-df <- df %>% 
-  separate(ingredients, into = c(paste0("ingredient_", rep(1:6))),
-           sep = ",") 
+# df <- df %>% 
+#   separate(ingredients, into = c(paste0("ingredient_", rep(1:6))),
+#            sep = ",") 
 
-df %>% 
-    select(company_manufacturer , starts_with("ingredient_")) %>%
-    slice(c(1L, 51L, 54L))
+# df %>% 
+#     select(company_manufacturer , starts_with("ingredient_")) %>%
+#     slice(c(1L, 51L, 54L))
 ```
+
+Perhaps there is a better way to do this? Separate rows and pivot wider?
+
+```{r}
+df %>% 
+    separate_rows(ingredients, sep = ",") %>%
+    count(ingredients)
+
+
+df <- df %>% 
+    separate_rows(ingredients, sep = ",") %>%
+    filter(!is.na(ingredients)) %>% 
+    pivot_wider(names_from = ingredients, values_from = ingredients) %>% 
+    mutate(across(beans:non_sugar_sweetener, ~ ifelse(is.na(.), 0, 1)))
+```
+
+
 
 Tidymodels 
 
 ```{r}
-library(tidymodels)
-dummy_multi_choice_rec <- recipe(~ ., data = df) %>%
-  step_dummy_multi_choice(starts_with("ingredient_")) %>%
-  prep()
-
-df <- bake(dummy_multi_choice_rec, new_data = NULL)
+# library(tidymodels)
+# dummy_multi_choice_rec <- recipe(~ ., data = df) %>%
+#   step_dummy_multi_choice(starts_with("ingredient_")) %>%
+#   prep()
+# 
+# df <- bake(dummy_multi_choice_rec, new_data = NULL)
 ```
 
 ## Analysing the data
@@ -507,3 +524,29 @@ final_fit %>%
 
 
 Wow! have a look at the terms up top - "creamy", "complex" and "rich" are good chocolate words. On the other side, "intense", "acidic" and "coarse" are terms that lower the score of the bar.
+
+### What about just a linear model?
+
+```{r}
+df_characteristics
+
+lm_spec <- 
+  linear_reg() %>% 
+  set_mode("regression") %>% 
+  set_engine("lm") 
+
+lm_workflow <- 
+  workflow() %>% 
+  add_recipe(glmnet_recipe) %>% 
+  add_model(lm_spec) 
+
+lm_res <- 
+  fit_resamples(lm_workflow, df_characteristics_folds)
+
+lm_res %>% 
+    unnest(.metrics) %>% 
+    ggplot(aes(.estimate, id, fill = .metric)) +
+    geom_col() +
+    facet_wrap(~ .metric)
+```
+
