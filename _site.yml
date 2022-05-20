@@ -19,8 +19,6 @@ navbar:
           href: http://jonathan-jayes.shinyapps.io/gumtree-price-explorer
     - text: "Home"
       href: index.html
-    - text: "Resources"
-      href: resources.html
     - text: "About"
       href: about.html
     - icon: fab fa-github
