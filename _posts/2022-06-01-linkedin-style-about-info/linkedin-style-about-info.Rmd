@@ -1,0 +1,24 @@
+---
+title: "LinkedIn style about info"
+description: |
+  A post on how to us the gt table package in your about page.
+author:
+  - name: Jonathan Jayes
+    url:
+      interludeone.com: {}
+date: 2022-06-01
+preview: "https://raw.githubusercontent.com/j-jayes/screencasts/main/figures/Chocolate_bar_ratings.jpeg"
+output:
+  distill::distill_article:
+    self_contained: false
+    code_folding: false
+    highlight: haddock
+    highlight_downlit: true
+    toc: true
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
