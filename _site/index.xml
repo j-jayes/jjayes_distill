@@ -20,7 +20,7 @@
       <description>A post on how to us the {gt} table package to make tables for the about page of a pesonal website or blog.</description>
       <guid>https://interludeone.com/posts/2022-06-01-linkedin-style-about-info</guid>
       <pubDate>Tue, 31 May 2022 00:00:00 +0000</pubDate>
-      <media:content url="https://raw.githubusercontent.com/j-jayes/jjayes_distill/main/_posts/2022-06-01-linkedin-style-about-info/images/linkedin_experience.PNG" medium="image" type="image/png"/>
+      <media:content url="https://raw.githubusercontent.com/j-jayes/jjayes_distill/main/_posts/2022-06-01-linkedin-style-about-info/images/gt_educ.PNG" medium="image" type="image/png"/>
     </item>
     <item>
       <title>Programmatically generate tabs in Rmarkdown</title>
