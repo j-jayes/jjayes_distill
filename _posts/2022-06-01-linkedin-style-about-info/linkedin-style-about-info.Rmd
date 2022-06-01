@@ -83,7 +83,7 @@ education <- education %>%
 
 In the cell above we create an image tag for the logo, putting a hyperlink tag for the link to the university website inside it. Here we use the [**glue** package](https://glue.tidyverse.org/) which is useful for working with strings constructed from other columns. You can think of it as *gluing* together the html tag parts and the content from our dataframe. Next we put the institution in bold, and grey out the dates and grades with the html style tag, `'opacity: .7;'`.^[We opt to use the `<span>` tag rather than the `<p>` tag because `<span>` does not introduce any extra space.]
 
-Now we can stick these text components together into one call (just called text) and keep just the logo and text columns.^[We use `str_c` from the **stringr** package for its nice syntax, we could have used glue here again] Finally we use the map function from the [**purrr** package](https://purrr.tidyverse.org/) to transform the character strings into html. Printing the tibble shows that it now contains html elements inside each cell. 
+Now we can stick these text components together into one cell (just called text) and keep only the logo and text columns.^[We use `str_c` from the **stringr** package for its nice syntax, we could have used glue here again] Finally we use the map function from the [**purrr** package](https://purrr.tidyverse.org/) to transform the character strings into html. Printing the tibble shows that it now contains html elements inside each cell. 
 
 ```{r, code_folding = F}
 education <- education %>%
