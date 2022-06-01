@@ -12,7 +12,16 @@
       <link>https://interludeone.com/</link>
     </image>
     <generator>Distill</generator>
-    <lastBuildDate>Fri, 04 Mar 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 31 May 2022 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>LinkedIn style education tables for personal websites</title>
+      <dc:creator>Jonathan Jayes</dc:creator>
+      <link>https://interludeone.com/posts/2022-06-01-linkedin-style-about-info</link>
+      <description>A post on how to us the {gt} table package to make tables for the about page of a pesonal website or blog.</description>
+      <guid>https://interludeone.com/posts/2022-06-01-linkedin-style-about-info</guid>
+      <pubDate>Tue, 31 May 2022 00:00:00 +0000</pubDate>
+      <media:content url="https://raw.githubusercontent.com/j-jayes/jjayes_distill/main/_posts/2022-06-01-linkedin-style-about-info/images/linkedin_experience.PNG" medium="image" type="image/png"/>
+    </item>
     <item>
       <title>Programmatically generate tabs in Rmarkdown</title>
       <dc:creator>Jonathan Jayes</dc:creator>
