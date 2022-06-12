@@ -11,7 +11,13 @@ links:
 output:
   postcards::trestles
 ---
- 
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = F, warning = F, message = F)
+
+```
+
+
 ## Bio
 
 "I enjoy some of the old and I enjoy the new. 
@@ -22,39 +28,58 @@ And if I can find a balance between it, that's where I find my satisfaction."
 
 ## Education
 
-**Lund University** | Lund, Sweden
 
-To begin a PhD in Economic History in August 2021 under [Prof. Kerstin Enflo](https://sites.google.com/view/kerstinenflo/).
+```{r}
+library(gt)
+library(tidyverse)
 
-Exchange Semester | January 2021 - June 2021
+education <- tribble(
+  ~logo, ~link, ~institution, ~degree, ~date, ~grade_comment,
+  # LU
+  "images/lu.jfif", "https://ehl.lu.se/ekonomisk-historia", "Lund University", "Master's degree, Economics", "2021", "Exchange semester",
+  # SU
+  "images/su.jfif", "https://www.ekon.sun.ac.za/", "Stellenbosch University", "Master's degree, Economics", "2020", "Grade: <em>cum laude</em>",
+  # uct hnours
+  "images/uct.jfif", "http://www.economics.uct.ac.za/", "University of Cape Town", "Honours degree, Economics", "2018", "Grade: 2:1",
+  # uct undergrad
+  "images/uct.jfif", "http://www.economics.uct.ac.za/", "University of Cape Town", "Bachelor's degree, Economics and Economic History", "2015-2017", "Grade: 2:1",
+)
 
-**Stellenbosch University** | Stellenbosch, South Africa
+education <- education %>%
+  mutate(
+    logo = glue::glue("<a href = {link}>
+                        <img src='{logo}' width='50' height='50'>
+                      </a>"),
+    institution = glue::glue("<b>{institution}</b>"),
+    date = glue::glue("<span style='opacity: .7;'> {date} </span>"),
+    grade_comment = glue::glue("<span style='opacity: .7;'> {grade_comment} </span>"),
+  )
 
-Masters of Commerce in Economics | January 2020 - July 2021
+education <- education %>%
+  mutate(text = str_c(
+    institution, "<br>",
+    degree, "<br>",
+    date, "<br>",
+    grade_comment
+  )) %>%
+  select(logo, text) %>%
+  mutate(
+    logo = purrr::map(logo, gt::html),
+    text = purrr::map(text, gt::html)
+  )
 
-**The University of Cape Town** | Cape Town, South Africa
-
-Honours in Economics | February 2018 - November 2018
-
-Bachelor of Social Science in Economics and Economic History | February 2015 - November 2017
+education %>%
+  gt() %>%
+  # tab_header(md("**Education**")) %>%
+  cols_align(align = c("left"), columns = text) %>%
+  cols_label(
+    logo = "",
+    text = "",
+  )
+```
 
 ## Experience
 
 **Laboratory for the Economics of Africa's Past** | Researcher under [Prof Johan Fourie](https://www.johanfourie.com/)| January 2020 - July 2021
 
 **FTI Consulting** | Junior Economist in [Economic and Financial Consulting Practice](https://www.linkedin.com/showcase/fti-consulting-south-africa/) | March 2019 - January 2020
-
-
-
-## Tables
-
-```{r}
-library(tidyverse)
-library(gt)
-
-educ <- tribble(
-    ~ name, ~link, ~image,
-    "University of Cape Town"
-)
-```
-
