@@ -1,5 +1,5 @@
 ---
-title: "LinkedIn style education tables for personal websites"
+title: "LinkedIn style tables for personal websites"
 description: |
   A post on how to us the {gt} table package to make tables for the about page of a pesonal website or blog.
 author:

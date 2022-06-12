@@ -14,7 +14,7 @@
     <generator>Distill</generator>
     <lastBuildDate>Tue, 31 May 2022 00:00:00 +0000</lastBuildDate>
     <item>
-      <title>LinkedIn style education tables for personal websites</title>
+      <title>LinkedIn style tables for personal websites</title>
       <dc:creator>Jonathan Jayes</dc:creator>
       <link>https://interludeone.com/posts/2022-06-01-linkedin-style-about-info</link>
       <description>A post on how to us the {gt} table package to make tables for the about page of a pesonal website or blog.</description>
