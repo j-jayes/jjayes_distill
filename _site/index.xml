@@ -12,15 +12,24 @@
       <link>https://interludeone.com/</link>
     </image>
     <generator>Distill</generator>
-    <lastBuildDate>Tue, 31 May 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 01 Jun 2022 00:00:00 +0000</lastBuildDate>
     <item>
       <title>LinkedIn style tables for personal websites</title>
       <dc:creator>Jonathan Jayes</dc:creator>
       <link>https://interludeone.com/posts/2022-06-01-linkedin-style-about-info</link>
       <description>A post on how to us the {gt} table package to make tables for the about page of a pesonal website or blog.</description>
       <guid>https://interludeone.com/posts/2022-06-01-linkedin-style-about-info</guid>
-      <pubDate>Tue, 31 May 2022 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 01 Jun 2022 00:00:00 +0000</pubDate>
       <media:content url="https://raw.githubusercontent.com/j-jayes/jjayes_distill/main/_posts/2022-06-01-linkedin-style-about-info/images/gt_educ.PNG" medium="image" type="image/png"/>
+    </item>
+    <item>
+      <title>Our World In Data choropleth</title>
+      <dc:creator>Jonathan Jayes</dc:creator>
+      <link>https://interludeone.com/posts/2022-10-17-our-world-in-data-choropleth</link>
+      <description>A post on how recreate the Our World In Data characteristic choropleth in R.</description>
+      <guid>https://interludeone.com/posts/2022-10-17-our-world-in-data-choropleth</guid>
+      <pubDate>Wed, 01 Jun 2022 00:00:00 +0000</pubDate>
+      <media:content url="https://github.com/j-jayes/img-repo/raw/1f154af0b081a6423c73c6fe453c93ea16c891c2/images/owid_smokers.PNG" medium="image" type="image/png"/>
     </item>
     <item>
       <title>Programmatically generate tabs in Rmarkdown</title>
