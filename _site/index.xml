@@ -12,7 +12,16 @@
       <link>https://interludeone.com/</link>
     </image>
     <generator>Distill</generator>
-    <lastBuildDate>Wed, 01 Jun 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 15 Dec 2022 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>Coefficient plots in `ggplot`</title>
+      <dc:creator>Jonathan Jayes</dc:creator>
+      <link>https://interludeone.com/posts/2022-12-15-coef-plots</link>
+      <description>Drawing coefficient plots in R and `ggplot`.</description>
+      <guid>https://interludeone.com/posts/2022-12-15-coef-plots</guid>
+      <pubDate>Thu, 15 Dec 2022 00:00:00 +0000</pubDate>
+      <media:content url="https://interludeone.com/posts/2022-12-15-coef-plots/lter_penguins.png" medium="image" type="image/png" width="1800" height="1074"/>
+    </item>
     <item>
       <title>LinkedIn style tables for personal websites</title>
       <dc:creator>Jonathan Jayes</dc:creator>
