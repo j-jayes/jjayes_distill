@@ -1,5 +1,24 @@
 [
   {
+    "path": "posts/2022-12-20-gpt-chat-blog-post-author/",
+    "title": "Chat-GPT blog post author",
+    "description": "A post on how recreate the Our World In Data characteristic choropleth in R.",
+    "author": [
+      {
+        "name": "Jonathan Jayes",
+        "url": {
+          "interludeone.com": {}
+        }
+      }
+    ],
+    "date": "2022-12-20",
+    "categories": [],
+    "contents": "\r\nDistill is a publication format for scientific and technical writing, native to the web.\r\nLearn more about using Distill at https://rstudio.github.io/distill.\r\n\r\n\r\n\r\n",
+    "preview": "https://github.com/j-jayes/img-repo/raw/1f154af0b081a6423c73c6fe453c93ea16c891c2/images/owid_smokers.PNG",
+    "last_modified": "2022-12-20T16:39:37+02:00",
+    "input_file": "gpt-chat-blog-post-author.knit.md"
+  },
+  {
     "path": "posts/2022-12-15-coef-plots/",
     "title": "Coefficient plots in `ggplot`",
     "description": "Drawing coefficient plots in R and `ggplot`.",

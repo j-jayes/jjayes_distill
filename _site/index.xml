@@ -12,7 +12,16 @@
       <link>https://interludeone.com/</link>
     </image>
     <generator>Distill</generator>
-    <lastBuildDate>Thu, 15 Dec 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 19 Dec 2022 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>Chat-GPT blog post author</title>
+      <dc:creator>Jonathan Jayes</dc:creator>
+      <link>https://interludeone.com/posts/2022-12-20-gpt-chat-blog-post-author</link>
+      <description>A post on how recreate the Our World In Data characteristic choropleth in R.</description>
+      <guid>https://interludeone.com/posts/2022-12-20-gpt-chat-blog-post-author</guid>
+      <pubDate>Mon, 19 Dec 2022 00:00:00 +0000</pubDate>
+      <media:content url="https://github.com/j-jayes/img-repo/raw/1f154af0b081a6423c73c6fe453c93ea16c891c2/images/owid_smokers.PNG" medium="image" type="image/png"/>
+    </item>
     <item>
       <title>Coefficient plots in `ggplot`</title>
       <dc:creator>Jonathan Jayes</dc:creator>
