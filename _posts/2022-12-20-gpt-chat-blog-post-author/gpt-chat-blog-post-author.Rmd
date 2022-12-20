@@ -165,4 +165,4 @@ ggplot(reg_tidy, aes(x = estimate, y = term)) +
   )
 ```
 
-Wow! Amazing. I learned a bunch about **ggplot** and R from reading David Robinson's 
+Wow! Amazing. I learned a bunch about **ggplot** and R from reading the code which accompanied [David Robinson's screencasts]() in 2019 and 2020. I am excited for the generation of data analysts beginning their journey now - being able to ask for tailored instructions for a task is a real boon!
