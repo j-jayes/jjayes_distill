@@ -14,13 +14,13 @@
     <generator>Distill</generator>
     <lastBuildDate>Mon, 19 Dec 2022 00:00:00 +0000</lastBuildDate>
     <item>
-      <title>Chat-GPT blog post author</title>
+      <title>ChatGPT fills in for me as a blog post author</title>
       <dc:creator>Jonathan Jayes</dc:creator>
       <link>https://interludeone.com/posts/2022-12-20-gpt-chat-blog-post-author</link>
-      <description>A post on how recreate the Our World In Data characteristic choropleth in R.</description>
+      <description>I ask ChatGPT to write a blog post in the same manner as one I wrote last week. The results will amaze you!</description>
       <guid>https://interludeone.com/posts/2022-12-20-gpt-chat-blog-post-author</guid>
       <pubDate>Mon, 19 Dec 2022 00:00:00 +0000</pubDate>
-      <media:content url="https://github.com/j-jayes/img-repo/raw/1f154af0b081a6423c73c6fe453c93ea16c891c2/images/owid_smokers.PNG" medium="image" type="image/png"/>
+      <media:content url="https://github.com/j-jayes/jjayes_distill/raw/fba82ad50bbd00f3768079fb983f8c8d2706cde2/_posts/2022-12-20-gpt-chat-blog-post-author/images/DALL%C2%B7E%202022-12-20%2016.38.40%20-%20A%20diagram%20of%20three%20penguins%20in%20the%20style%20of%20Paul%20C%C3%A9zanne%2C%20hyper%20realistic%2C%20beautiful%20art.png" medium="image" type="image/png"/>
     </item>
     <item>
       <title>Coefficient plots in `ggplot`</title>
