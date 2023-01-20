@@ -12,14 +12,14 @@
       <link>https://interludeone.com/</link>
     </image>
     <generator>Distill</generator>
-    <lastBuildDate>Mon, 19 Dec 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 20 Dec 2022 00:00:00 +0000</lastBuildDate>
     <item>
       <title>ChatGPT fills in for me as a blog post author</title>
       <dc:creator>Jonathan Jayes</dc:creator>
       <link>https://interludeone.com/posts/2022-12-20-gpt-chat-blog-post-author</link>
       <description>I ask ChatGPT to write a blog post in the same manner as one I wrote last week. The results will amaze you!</description>
       <guid>https://interludeone.com/posts/2022-12-20-gpt-chat-blog-post-author</guid>
-      <pubDate>Mon, 19 Dec 2022 00:00:00 +0000</pubDate>
+      <pubDate>Tue, 20 Dec 2022 00:00:00 +0000</pubDate>
       <media:content url="https://github.com/j-jayes/jjayes_distill/raw/fba82ad50bbd00f3768079fb983f8c8d2706cde2/_posts/2022-12-20-gpt-chat-blog-post-author/images/DALL%C2%B7E%202022-12-20%2016.38.40%20-%20A%20diagram%20of%20three%20penguins%20in%20the%20style%20of%20Paul%20C%C3%A9zanne%2C%20hyper%20realistic%2C%20beautiful%20art.png" medium="image" type="image/png"/>
     </item>
     <item>
@@ -48,6 +48,15 @@
       <guid>https://interludeone.com/posts/2022-10-17-our-world-in-data-choropleth</guid>
       <pubDate>Wed, 01 Jun 2022 00:00:00 +0000</pubDate>
       <media:content url="https://github.com/j-jayes/img-repo/raw/1f154af0b081a6423c73c6fe453c93ea16c891c2/images/owid_smokers.PNG" medium="image" type="image/png"/>
+    </item>
+    <item>
+      <title>ChatGPT cooks me dinner</title>
+      <dc:creator>Jonathan Jayes</dc:creator>
+      <link>https://interludeone.com/posts/2023-01-20-chatgpt-cooks-me-dinner</link>
+      <description>🍲 Master the kitchen like a pro with the help of ChatGPT! 🍴 I tried it out and the results will blow your mind! 🤯 Find out what happened when I asked a language model for recipe ideas and cooking instructions. 😲 You won't believe how delicious my Gammon and Vegetable Stew with Mint turned out! 🍽️ Don't miss out on this must-read blog post! 👀</description>
+      <guid>https://interludeone.com/posts/2023-01-20-chatgpt-cooks-me-dinner</guid>
+      <pubDate>Tue, 31 May 2022 00:00:00 +0000</pubDate>
+      <media:content url="https://interludeone.com/posts/2023-01-20-chatgpt-cooks-me-dinner/images/13.jpg" medium="image" type="image/jpeg"/>
     </item>
     <item>
       <title>Programmatically generate tabs in Rmarkdown</title>

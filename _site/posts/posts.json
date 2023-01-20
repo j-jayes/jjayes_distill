@@ -78,6 +78,25 @@
     "input_file": {}
   },
   {
+    "path": "posts/2023-01-20-chatgpt-cooks-me-dinner/",
+    "title": "ChatGPT cooks me dinner",
+    "description": "🍲 Master the kitchen like a pro with the help of ChatGPT! 🍴 I tried it out and the results will blow your mind! 🤯 Find out what happened when I asked a language model for recipe ideas and cooking instructions. 😲 You won't believe how delicious my Gammon and Vegetable Stew with Mint turned out! 🍽️ Don't miss out on this must-read blog post! 👀",
+    "author": [
+      {
+        "name": "Jonathan Jayes",
+        "url": {
+          "interludeone.com": {}
+        }
+      }
+    ],
+    "date": "2022-06-01",
+    "categories": [],
+    "contents": "\r\n\r\nContents\r\nIntro\r\nProcess\r\nSuggested blog post text\r\nConclusion\r\n\r\nIntro\r\nI ask ChatGPT to help my cook dinner based on the ingredients I had in the fridge - it was a great success!\r\nHave a look below at how it went!\r\nI also asked it to write this blog post, the output for which I include below.\r\nProcess\r\n\r\n\r\n\r\nVideo\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\nVideo\r\nSuggested blog post text\r\nCooking is always a fun and creative experience, but sometimes it can be challenging to come up with new and exciting recipes. That’s why having a helpful tool like ChatGPT can make a big difference in the kitchen.\r\nRecently, I had the opportunity to put ChatGPT to the test as a cooking assistant. I provided a list of ingredients that I had on hand and asked for a recipe suggestion. ChatGPT quickly came up with a recipe for a Gammon and Vegetable Stew with Mint, along with detailed instructions for cooking the dish.\r\nI was impressed with the speed and accuracy of ChatGPT’s suggestion, and even more impressed with the quality of the recipe. The stew turned out to be delicious, hearty, and comforting - exactly what I was looking for on a cold winter day.\r\nBut ChatGPT’s assistance didn’t stop there. I asked if I could add a splash of Chardonnay to the stew and ChatGPT not only gave me a positive response, but also provided instructions on when and how to add the wine, along with a reminder to use a good quality Chardonnay to enhance the overall taste of the dish.\r\nOverall, my experience with ChatGPT as a cooking assistant was extremely positive. It was able to provide me with a recipe and instructions that resulted in a delicious and satisfying meal. I was impressed with its speed, accuracy, and helpful suggestions, and I would definitely use ChatGPT again for recipe ideas and cooking instructions.\r\nConclusion\r\nWhat an amazing tool!\r\n\r\n\r\n\r\n",
+    "preview": "posts/2023-01-20-chatgpt-cooks-me-dinner/images/13.jpg",
+    "last_modified": "2023-01-20T09:56:12+02:00",
+    "input_file": "chatgpt-cooks-me-dinner.knit.md"
+  },
+  {
     "path": "posts/2022-03-04-programmatically-generate-tabs-in-rmarkdown/",
     "title": "Programmatically generate tabs in Rmarkdown",
     "description": "A walk-though for writing code that writes it's own code.",
