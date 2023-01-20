@@ -12,7 +12,16 @@
       <link>https://interludeone.com/</link>
     </image>
     <generator>Distill</generator>
-    <lastBuildDate>Tue, 20 Dec 2022 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 19 Jan 2023 00:00:00 +0000</lastBuildDate>
+    <item>
+      <title>ChatGPT cooks me dinner</title>
+      <dc:creator>Jonathan Jayes</dc:creator>
+      <link>https://interludeone.com/posts/2023-01-20-chatgpt-cooks-me-dinner</link>
+      <description>🍲 Master the kitchen like a pro with the help of ChatGPT! 🍴 I tried it out and the results will blow your mind! 🤯 Find out what happened when I asked a language model for recipe ideas and cooking instructions. 😲 You won't believe how delicious my Gammon and Vegetable Stew with Mint turned out! 🍽️ Don't miss out on this must-read blog post! 👀</description>
+      <guid>https://interludeone.com/posts/2023-01-20-chatgpt-cooks-me-dinner</guid>
+      <pubDate>Thu, 19 Jan 2023 00:00:00 +0000</pubDate>
+      <media:content url="https://interludeone.com/posts/2023-01-20-chatgpt-cooks-me-dinner/images/13.jpg" medium="image" type="image/jpeg"/>
+    </item>
     <item>
       <title>ChatGPT fills in for me as a blog post author</title>
       <dc:creator>Jonathan Jayes</dc:creator>
@@ -48,15 +57,6 @@
       <guid>https://interludeone.com/posts/2022-10-17-our-world-in-data-choropleth</guid>
       <pubDate>Wed, 01 Jun 2022 00:00:00 +0000</pubDate>
       <media:content url="https://github.com/j-jayes/img-repo/raw/1f154af0b081a6423c73c6fe453c93ea16c891c2/images/owid_smokers.PNG" medium="image" type="image/png"/>
-    </item>
-    <item>
-      <title>ChatGPT cooks me dinner</title>
-      <dc:creator>Jonathan Jayes</dc:creator>
-      <link>https://interludeone.com/posts/2023-01-20-chatgpt-cooks-me-dinner</link>
-      <description>🍲 Master the kitchen like a pro with the help of ChatGPT! 🍴 I tried it out and the results will blow your mind! 🤯 Find out what happened when I asked a language model for recipe ideas and cooking instructions. 😲 You won't believe how delicious my Gammon and Vegetable Stew with Mint turned out! 🍽️ Don't miss out on this must-read blog post! 👀</description>
-      <guid>https://interludeone.com/posts/2023-01-20-chatgpt-cooks-me-dinner</guid>
-      <pubDate>Tue, 31 May 2022 00:00:00 +0000</pubDate>
-      <media:content url="https://interludeone.com/posts/2023-01-20-chatgpt-cooks-me-dinner/images/13.jpg" medium="image" type="image/jpeg"/>
     </item>
     <item>
       <title>Programmatically generate tabs in Rmarkdown</title>
